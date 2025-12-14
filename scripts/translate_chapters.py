@@ -5,76 +5,73 @@ import google.generativeai as genai
 from google.api_core import exceptions
 
 # ============================================================================
-#  DEBUG MODE & MODEL CHAIN
+#  MODEL FALLBACK CHAIN (Updated based on your API response)
 # ============================================================================
 MODEL_CHAIN = [
-    "gemini-1.5-flash",       # Standard
-    "gemini-1.5-flash-latest",
-    "gemini-1.5-flash-001",
-    "gemini-1.5-pro",
-    "gemini-1.0-pro"          # Oldest stable backup
+    "gemini-2.0-flash",       # Primary: Fast & High limits
+    "gemini-2.0-flash-exp",   # Secondary: Experimental version
+    "gemini-flash-latest",    # Tertiary: Rolling release
+    "gemini-1.5-pro-latest",  # Fallback: Higher capability
+    "gemini-pro"              # Last Resort
 ]
 
 # 1. Setup & Key Verification
 API_KEY = os.environ.get("GEMINI_API_KEY")
 if not API_KEY:
-    raise ValueError("❌ CRITICAL: GEMINI_API_KEY is missing from environment variables!")
-
-# Mask key for logs (safety)
-print(f"🔑 API Key loaded (starts with: {API_KEY[:4]}...)")
+    print("❌ CRITICAL: GEMINI_API_KEY is missing from environment variables!")
+    exit(1)
 
 genai.configure(api_key=API_KEY)
 
 def get_working_model():
-    """Iterates through MODEL_CHAIN to find a usable model and PRINTS ERRORS."""
+    """Iterates through MODEL_CHAIN to find a usable model."""
     print("🔄 Testing model connectivity...")
     
     for model_name in MODEL_CHAIN:
         try:
             print(f"   👉 Attempting: {model_name}...", end=" ")
             model = genai.GenerativeModel(model_name)
-            # Simple test generation
+            # Simple test generation to verify connection
             response = model.generate_content("Hi") 
             print("✅ SUCCESS!")
             return model_name
         except Exception as e:
-            # PRINT THE ACTUAL ERROR
+            # We catch the error and print it so you can see if it's 404 or 403
             print(f"\n      ❌ FAILED. Error details: {str(e)}")
             continue
             
-    raise ValueError(f"All models failed. Check the error logs above for 403 (Key) or 404 (Model) details.")
+    print("🔥 FATAL: All models failed.")
+    exit(1)
 
 # Initialize the working model
-try:
-    ACTIVE_MODEL_NAME = get_working_model()
-except Exception as e:
-    print(f"🔥 FATAL ERROR: {e}")
-    exit(1)
+ACTIVE_MODEL_NAME = get_working_model()
 
 def translate_chapter(pdf_file, chapter):
     model = genai.GenerativeModel(model_name=ACTIVE_MODEL_NAME)
 
     prompt = f"""
-    You are a translator for Class 5 students.
+    You are an educational translator for Class 5 students.
     Analyze pages {chapter['start_page']} to {chapter['end_page']} of the provided PDF.
     Topic: {chapter['topic']}.
 
     **TASK 1: TRANSLATION (Story/Poem)**
-    - Ignore headers/footers.
+    - Ignore headers, footers, and page numbers.
     - Output a Markdown table: | Telugu | Pronunciation | Meaning |
+    - Use clear English script for pronunciation.
 
     **TASK 2: SEPARATOR**
     Output strictly this string on a new line: <<<SPLIT_HERE>>>
 
     **TASK 3: EXERCISES**
-    Format:
+    - Identify questions and grammar tasks.
+    - Format exactly like this:
     #### Q: [Telugu Text]
     * **Pronunciation:** ...
     * **Meaning:** ...
     * **Answer:** [Telugu Answer]
     """
 
-    # Retry logic
+    # Retry logic for generation
     max_retries = 3
     for attempt in range(max_retries):
         try:
@@ -92,7 +89,8 @@ def translate_chapter(pdf_file, chapter):
 def main():
     config_path = 'class5/chapters.json'
     if not os.path.exists(config_path):
-        raise FileNotFoundError(f"Config not found: {config_path}")
+        print(f"❌ Config not found at: {config_path}")
+        exit(1)
 
     with open(config_path, 'r') as f:
         config = json.load(f)
@@ -101,8 +99,8 @@ def main():
     try:
         pdf_file = genai.upload_file(path=config['pdf_path'])
     except Exception as e:
-        print(f"❌ Upload Failed: {e}")
-        raise e
+        print(f"❌ Upload Failed. Check file path. Details: {e}")
+        exit(1)
     
     print("⏳ Waiting for PDF processing...")
     while pdf_file.state.name == "PROCESSING":
@@ -110,7 +108,8 @@ def main():
         pdf_file = genai.get_file(pdf_file.name)
     
     if pdf_file.state.name == "FAILED":
-        raise ValueError("PDF processing failed by Google API.")
+        print("❌ PDF processing failed by Google API.")
+        exit(1)
 
     print(f"🚀 Processing with model: {ACTIVE_MODEL_NAME}")
 
@@ -140,7 +139,7 @@ def main():
                 f.write(f"# ✍️ Exercises\n\n{exer.strip()}")
                 
             print(f"✅ Done.")
-            time.sleep(5)
+            time.sleep(5) # Gentle rate limiting
 
         except Exception as e:
             print(f"❌ Error: {e}")
