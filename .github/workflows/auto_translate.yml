@@ -3,6 +3,11 @@ name: 🤖 AI Translator
 on:
   workflow_dispatch: # Manual trigger
 
+# --- FIX 1: Add Permissions Block ---
+permissions:
+  contents: write
+# ------------------------------------
+
 jobs:
   translate:
     runs-on: ubuntu-latest
@@ -23,12 +28,20 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          # This runs the script. If it fails, the workflow stops here.
           python scripts/translate_chapters.py
 
       - name: Commit Changes
         run: |
           git config --global user.name "AI Translator Bot"
           git config --global user.email "bot@github.com"
+          
+          # Check status to see what changed
+          git status
+          
+          # Add all new markdown files
           git add .
-          git commit -m "✨ AI Translated content updated" || echo "No changes"
+          
+          # Commit and Push
+          git commit -m "✨ AI Translated content updated" || echo "Nothing to commit"
           git push
