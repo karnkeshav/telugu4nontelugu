@@ -3,10 +3,9 @@ name: 🤖 AI Translator
 on:
   workflow_dispatch: # Manual trigger
 
-# --- FIX 1: Add Permissions Block ---
+# FIX: Permission to write changes back to the repo
 permissions:
   contents: write
-# ------------------------------------
 
 jobs:
   translate:
@@ -20,28 +19,33 @@ jobs:
         with:
           python-version: '3.10'
 
+      # FIX: Force upgrade to get the latest model definitions
       - name: Install Dependencies
         run: |
-          pip install google-generativeai
+          pip install --upgrade google-generativeai
 
       - name: Run Translator Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # This runs the script. If it fails, the workflow stops here.
           python scripts/translate_chapters.py
 
-      - name: Commit Changes
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          if [[ -z $(git status --porcelain) ]]; then
+            echo "No changes detected."
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected."
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and Push
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config --global user.name "AI Translator Bot"
           git config --global user.email "bot@github.com"
-          
-          # Check status to see what changed
-          git status
-          
-          # Add all new markdown files
           git add .
-          
-          # Commit and Push
-          git commit -m "✨ AI Translated content updated" || echo "Nothing to commit"
+          git commit -m "✨ AI Translated content updated"
           git push
