@@ -1,0 +1,34 @@
+name: 🤖 AI Translator
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-generativeai
+
+      - name: Run Translator Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/translate_chapters.py
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "AI Translator Bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "✨ AI Translated content updated" || echo "No changes"
+          git push
