@@ -55,20 +55,31 @@ def translate_chapter(pdf_file, chapter):
     Topic: {chapter['topic']}.
 
     **TASK 1: TRANSLATION (Story/Poem)**
-    - Ignore headers, footers, and page numbers.
-    - Output a Markdown table: | Telugu | Pronunciation | Meaning |
-    - Use clear English script for pronunciation.
+    - Your task is to provide a word-by-word translation of the story or poem.
+    - You must output a single Markdown table with three columns: | Telugu | Pronunciation | Meaning |.
+    - The process for each sentence is as follows:
+    1.  First, create a row for the complete sentence. The text in all three columns for this row must be bold (e.g., `**Full Sentence**`).
+    2.  Then, for each individual word in that sentence, create a new row in the table. This row will contain the single Telugu word, its pronunciation in simple English script, and its English meaning.
+    - Continue this pattern for all sentences in the text.
+    - Example:
+    | Telugu | Pronunciation | Meaning |
+    |---|---|---|
+    | **కుందేలు తాబేలు పందెమాడినవి.** | **Kundēlu tābēlu pandemāḍinavi.** | **The rabbit and the tortoise raced.** |
+    | కుందేలు | Kundēlu | rabbit |
+    | తాబేలు | tābēlu | tortoise |
+    | పందెమాడినవి | pandemāḍinavi | they raced |
 
     **TASK 2: SEPARATOR**
     Output strictly this string on a new line: <<<SPLIT_HERE>>>
 
     **TASK 3: EXERCISES**
     - Identify questions and grammar tasks.
-    - Format exactly like this:
+    - Format exactly like this, providing pronunciation for the answer as well:
     #### Q: [Telugu Text]
     * **Pronunciation:** ...
     * **Meaning:** ...
     * **Answer:** [Telugu Answer]
+    * **Answer Pronunciation:** ...
     """
 
     # Retry logic for generation

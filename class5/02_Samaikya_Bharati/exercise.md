@@ -1,92 +1,77 @@
 # ✍️ Exercises
 
-#### Q: N) Kindi padālalō vērugā unna dāni-ni gurtinchaṇḍi.
-* **Pronunciation:** I) Kindi padālalō vērugā unna dāni-ni gurtinchaṇḍi.
-* **Meaning:** I) Identify the odd word out in the following word rows.
-* **Answer:**
-    1) kāvali (ø±e), tātā (‘ê‘ê), yādhi (j·÷~), gāli (>±)
-        * **Odd word (by context):** N/A (Abstract visual/phonetic task not resolvable here.)
-    2) nūtanam (q÷‘·q+), bhīmasēnudu (uÛ°eüdõqT&ÉT), navaṁ (qe+), nīraṁ (˙s¡+).
-        * **Odd word:** **Bhīmasēnudu** (Proper Noun/Name of a person, while others are general nouns).
+#### Q: గేయాన్ని రాగయుక్తంగా పాడండి. అభినయం చేయండి.
+* **Pronunciation:** Gēyānni rāgayuktaṅgā pāḍaṇḍi. abhinayaṁ chēyaṇḍi.
+* **Meaning:** Sing the song melodiously. Act it out.
+* **Answer:** N/A (Instruction/Activity)
+* **Answer Pronunciation:** N/A
 
-#### Q: Ā) Kindi padālalaku bahuvachanālanu rāyaṇḍi.
-* **Pronunciation:** Ā) Kindi padālalaku bahuvachanālanu rāyaṇḍi.
-* **Meaning:** Ā) Write the plural forms for the following words.
-* **Answer:**
-    1) Dēśaṁ (<˚X¯+): **Deśālu** (<˚XÊ\T)
-    2) Yugaṁ (j·TT>∑+): **Yugālu** (j·TT>±\T)
-    3) Illu (Ç\T¢): **Iḷḷḷu** (Çfi¯ófl)
-    4) Puṣpaṁ (|ü⁄wüŒ+): **Puṣpālu** (|ü⁄wüŒ±\T)
-    5) Nīḍa (˙&É): **Nīḍalu** (˙&É\T)
-    6) Tīraṁ (rraṁ): **Tīrālu** (r sê\T)
-    7) Kōṭa (ø√≥): **Kōṭalu** (ø√≥\T)
+#### Q: మీ పాఠశాలలో ఇలాగే జెండా వందనం చేస్తారా? అప్పుడు మీకు ఏమనిపిస్తుంది.
+* **Pronunciation:** Mī pāṭhaśālalō ilāgē jeṇḍā vandanaṁ chēstārā? appuḍu mīku ēmanipistundi.
+* **Meaning:** Do you perform flag hoisting in your school like this? How do you feel then?
+* **Answer:** N/A (Personal response)
+* **Answer Pronunciation:** N/A
 
-#### Q: I) Kindi vākyālalō gīta gīsina padāniki arthaṁ rāyaṇḍi.
-* **Pronunciation:** I) Kindi vākyālalō gīta gīsina padāniki arthaṁ rāyaṇḍi.
-* **Meaning:** I) Write the meaning of the underlined word in the following sentences.
+#### Q: గేయం ఆధారంగా సంబంధం ఉన్న పదాలు జత చేసి రాయండి. (Match the related words based on the poem)
+* **Pronunciation:** Gēyaṁ ādhāraṅgā sambandhaṁ unna padālu jata chēsi rāyaṇḍi.
+* **Meaning:** Based on the poem, match the related words and write them.
 * **Answer:**
-    1) Śiva, Raṅgavaṁśa parugu paṁdaṁ okkaṭukunnāru. (Underlined: Paṁdaṁ)
-        * **Meaning:** **Pōṭī / Āṭa** (Race / Game)
-    2) Nīkaṭlō vache śabdālanu rādha chevulu nikkichchi vinasaṅgindi. (Underlined: Nikkichchi)
-        * **Meaning:** **Tīvragaa/Spasṭaṅgā** (Intensely/Clearly)
-    3) Gīta kukkani chūsi bhayaṁtō urikindi. (Underlined: Uriki)
-        * **Meaning:** **Parigetti** (Ran)
-    4) Dāritappina lēgaḍūda bāvi sāyamtō tana tāvuku chērukundi. (Underlined: Sāyam)
-        * **Meaning:** **Sahāyaṁ** (Help)
+1) భిన్నత్వంలో - ఏకత్వం
+2) సమత - మమత
+3) విశాల భారతం - సౌభాగ్యం
+4) సమైక్య భారతి - శాంతి స్నేహం
+* **Answer Pronunciation:** bhinnatvaṁlō - ēkatvaṁ; samata - mamata; viśāla Bhārataṁ - saubhāgyaṁ; samaikya Bhārati - śānti snēhaṁ
 
-#### Q: H) Kindi vākyālanu chadivi tappoppulanu gurtinchaṇḍi. (True/False based on the context story about Nema and Pāṣaraṁ)
-* **Pronunciation:** H) Kindi vākyālanu chadivi tappoppulanu gurtinchaṇḍi.
-* **Meaning:** H) Read the following sentences and identify whether they are true (Oppu) or false (Tappu).
+#### Q: కింది పదాలను చదవండి. వాటిలో వేరుగా ఉన్న దాన్ని గుర్తించండి. (Identify the odd one out)
+* **Pronunciation:** Kindi padālanu chadavaṇḍi. vāṭilō vērugā unna dānni gurtin̄caṇḍi.
+* **Meaning:** Read the words below. Identify the one that is different in the group.
 * **Answer:**
-    1) Oka nadī okkaṭuna marri cheṭṭu unna-di. (A mango tree is on one side of the river.) - *Assuming 'marri chettu' is the target word despite possible picture context.* **Tappu**
-    2) Nema ekki kūrchunna āku oḍduku chēralēdu. (The leaf the bird landed on did not reach the bank.) **Tappu**
-    3) Pāṣaram chēsina sahāyāniki nema dhanyavādālu telipindi. (The bird thanked the hunter for the help given.) **Oppu**
-    4) Vēṭagāḍu nema-nu chūsi bāṇaṁ ekkupeṭṭināḍu. (The hunter saw the bird and aimed an arrow.) **Tappu**
-    5) Nema vēṭagāḍini kuṭṭi pāṣarānni rakṣinchindi. (The bird bit the hunter and saved Pāṣaram.) **Oppu**
+1) పువ్వు, ఆకాశం, కాయ, పండు -> ఆకాశం
+2) గుడి, కలం, కాగితం, పలక -> గుడి
+3) అంగరం, హారం, పాప, గాజులు -> పాప
+4) మేక, ఆవు, బర్రె, చేప -> చేప
+5) సైకిలు, కుర్చీ, బస్సు, కారు -> కుర్చీ
+* **Answer Pronunciation:**
+1) Ākāśaṁ
+2) Guḍi
+3) Pāpa
+4) Chēpa
+5) Kurcī
 
-#### Q: N) Kindi padāla varusalō vērugā unna dāni-ni gurtinchaṇḍi.
-* **Pronunciation:** N) Kindi padāla varusalō vērugā unna dāni-ni gurtinchaṇḍi.
-* **Meaning:** N) Identify the odd word out in the following word rows.
+#### Q: కింది పదాలకు బహువచనాలు రాయండి. (Write the plural forms)
+* **Pronunciation:** Kindi padālaku bahuvachanālu rāyaṇḍi.
+* **Meaning:** Write the plural forms for the words below.
 * **Answer:**
-    1) Pūvu (Flower), Ākāśaṁ (Sky), Kāyā (Unripe fruit), Paṇḍu (Ripe fruit)
-        * **Odd word:** **Ākāśaṁ**
-    2) Guḍi (Temple), Kalaṁ (Pen), Kāgitaṁ (Paper), Palaka (Slate)
-        * **Odd word:** **Guḍi**
-    3) Uṁgaraṁ (Ring), Hāraṁ (Necklace), Pāmu (Snake), Gājulut (Bangles)
-        * **Odd word:** **Pāmu**
-    4) Mēka (Goat), Āvu (Cow), Barre (Buffalo), Chepa (Fish)
-        * **Odd word:** **Chepa**
-    5) Saikilu (Bicycle), Kurcī (Chair), Bas-su (Bus), Kāru (Car)
-        * **Odd word:** **Kurcī**
+1) ఊరు : ఊర్లు
+2) కాలం : కాలాలు
+3) ఇల్లు : ఇళ్లు
+4) పాము : పాములు
+5) గది : గదులు
+6) బడి : బడులు
+7) దారి : దారులు
+8) కొడవలి : కొడవళ్ళు
+9) పులి : పులులు
+10) తోట : తోటలు
+* **Answer Pronunciation:** ūrlu, kālālu, iḷḷu, pāmulu, gadulu, baḍulu, dārulu, koḍavaḷḷu, pululu, tōṭalu
 
-#### Q: Ā) Kindi padālalaku bahuvachanālu rāyaṇḍi.
-* **Pronunciation:** Ā) Kindi padālalaku bahuvachanālu rāyaṇḍi.
-* **Meaning:** Ā) Write the plural forms for the following words.
+#### Q: కింది వాక్యాలను చదవండి. వాటిలోని క్రియా పదాలను గుర్తించండి. గీత గీయండి. (Identify and underline the verb/action words)
+* **Pronunciation:** Kindi vākyālanu chadavaṇḍi. vāṭilōni kriyā padālanu gurtin̄caṇi. gīta gīyaṇḍi.
+* **Meaning:** Read the sentences below. Identify the verb words in them. Underline them.
 * **Answer:**
-    1) Ūru (Village): **Ūḷḷḷu** (ఊళ్ళు)
-    2) Kālam (Time): **Kālālu** (కాలాలు)
-    3) Illu (House): **Iḷḷḷu** (ఇళ్ళు)
-    4) Pāmu (Snake): **Pāmulū** (పాములు)
-    5) Gadi (Room): **Gadulū** (గదులు)
-    6) Baḍi (School): **Baḍulū** (బడులు)
-    7) Dāri (Path): **Dārulu** (దారులు)
-    8) Koḍavali (Sickle): **Koḍavallū** (కొడవళ్ళు)
-    9) Puli (Tiger): **Pululū** (పులులు)
-    10) Tōṭa (Garden): **Tōṭalū** (తోటలు)
+1) నాయనమ్మ పూలు **తెంపుతున్నది**.
+2) మానస కుంటుడు బిళ్ళ **ఆడుతున్నది**.
+3) మేక ఆకులు **తిన్నది**.
+4) రాజు పొలంలో కలుపు **తీస్తున్నాడు**.
+5) అక్క సినిమాకు **వెళుతున్నది**.
+* **Answer Pronunciation:** teṁputunnadi, āḍutunnadi, tinnadi, tīstunnāḍu, veḷutunnadi
 
-#### Q: E) Kindi bommalaku pērḷu rāyaṇḍi. Ā padāniki oka svanta vākyaṁ rāyaṇḍi.
-* **Pronunciation:** E) Kindi bommalaku pērḷu rāyaṇḍi. Ā padāniki oka svanta vākyaṁ rāyaṇḍi.
-* **Meaning:** E) Write the names for the following pictures. Write one sentence of your own using that word.
+#### Q: కింది వాక్యాలలో ఉన్న క్రియాపదాన్ని రాయండి. (Write the verb word from the sentences)
+* **Pronunciation:** Kindi vākyālalō unna kriyāpadānni rāyaṇḍi.
+* **Meaning:** Write the verb word present in the sentences below.
 * **Answer:**
-    1) Image: Dog (Kukka - కుక్క)
-        * **Sentence:** **Kukka bāgā morigindi.** (The dog barked loudly.)
-    2) Image: Ladder (Niśśēna - నిశ్శేన)
-        * **Sentence:** **Niśśēna ekki paina padālanu chadavāli.** (Must climb the ladder and read the words above.)
-    3) Image: Rangoli (Muggu - ముగ్గు)
-        * **Sentence:** **Amma muggu vēsindi.** (Mother drew rangoli.)
-    4) Image: Bus (Bus-su - బస్సు)
-        * **Sentence:** **Nēnu bus-sulō prayāṇiṁchanu.** (I travel by bus.)
-    5) Image: Watermelon (Puccakhaṇḍi - పుచ్చకండి)
-        * **Sentence:** **Puccakhaṇḍi ruchigā undi.** (Watermelon is tasty.)
-    6) Image: Books (Pustakālu - పుస్తకాలు)
-        * **Sentence:** **Nēnu pustakālu chadavāli.** (I must read books.)
+1) అమ్మ జడ **వేస్తున్నది**.
+2) సాహితి ఇంటి పనులు **నేర్చుకున్నది**.
+3) పవన్ మొక్కలు నాటడానికి గుంతలు **తీస్తున్నాడు**.
+4) రజత బిందె నిండా నీళ్లు **తెస్తుంది**.
+5) రవి చెట్టుకున్న పండును ఎగిరి **అందుకున్నాడు**.
+* **Answer Pronunciation:** vēstunnadi, nērcukunnadi, tīstunnāḍu, testundi, andukunnāḍu
