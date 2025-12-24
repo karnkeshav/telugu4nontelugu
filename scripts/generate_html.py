@@ -5,19 +5,30 @@ def generate_lesson_page(chapter_title, md_content, template):
     table_rows = []
     lines = md_content.strip().splitlines()
 
-    # Find the table header separator
-    try:
-        separator_index = lines.index('|---|---|---|')
+    # Find the table header separator by looking for '---'
+    separator_index = -1
+    for i, line in enumerate(lines):
+        # A markdown table separator line contains '---' and '|'
+        if '---' in line and '|' in line:
+            separator_index = i
+            break
+
+    if separator_index != -1:
         data_lines = lines[separator_index + 1:]
-    except ValueError:
-        data_lines = []
+    else:
+        # If no separator is found, maybe the file is just the table data
+        # Let's try to process all lines that start with '|'
+        data_lines = [line for line in lines if line.strip().startswith('|')]
 
     for line in data_lines:
         if line.strip() == '':
             continue
         parts = [p.strip() for p in line.split('|')]
         if len(parts) >= 4:
-            telugu, pronunciation, meaning = parts[1], parts[2], parts[3]
+            # Replace markdown bold with HTML bold tags
+            telugu = parts[1].replace('**', '<b>').replace('**', '</b>')
+            pronunciation = parts[2].replace('**', '<b>').replace('**', '</b>')
+            meaning = parts[3].replace('**', '<b>').replace('**', '</b>')
             table_rows.append(f'<tr><td>{telugu}</td><td>{pronunciation}</td><td>{meaning}</td></tr>')
 
     table_html = '\n'.join(table_rows)
@@ -43,7 +54,10 @@ def generate_exercise_page(chapter_title, md_content, template):
         question = lines[0]
         pronunciation = ''
         meaning = ''
-        answer = ''
+        answers = [] # Use a list to hold multiple answers
+
+        current_answer = None
+        current_pronunciation = None
 
         for line in lines[1:]:
             if line.startswith('* **Pronunciation:**'):
@@ -51,14 +65,32 @@ def generate_exercise_page(chapter_title, md_content, template):
             elif line.startswith('* **Meaning:**'):
                 meaning = line.replace('* **Meaning:**', '').strip()
             elif line.startswith('* **Answer:**'):
-                answer = line.replace('* **Answer:**', '').strip()
+                # When we see a new Answer, store the previous one if it exists
+                if current_answer is not None:
+                    answers.append({'text': current_answer, 'pron': current_pronunciation or ''})
+                current_answer = line.replace('* **Answer:**', '').strip()
+                current_pronunciation = None # Reset for the new answer
+            elif line.startswith('* **Answer Pronunciation:**'):
+                current_pronunciation = line.replace('* **Answer Pronunciation:**', '').strip()
+
+        # Add the last answer to the list
+        if current_answer is not None:
+            answers.append({'text': current_answer, 'pron': current_pronunciation or ''})
+
+        # Generate HTML for all the answers
+        answers_html = ''
+        for ans in answers:
+            answers_html += f"""
+            <div class="detail"><strong>Answer:</strong> {ans['text']}</div>
+            <div class="detail"><strong>Answer Pronunciation:</strong> {ans['pron']}</div>
+            """
 
         card_html = f"""
         <div class="exercise-card">
             <div class="question">Q: {question}</div>
             <div class="detail"><strong>Pronunciation:</strong> {pronunciation}</div>
             <div class="detail"><strong>Meaning:</strong> {meaning}</div>
-            <div class="detail"><strong>Answer:</strong> {answer}</div>
+            {answers_html}
         </div>
         """
         exercise_cards.append(card_html)
