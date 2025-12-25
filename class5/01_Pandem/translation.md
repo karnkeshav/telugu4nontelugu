@@ -1,80 +1,136 @@
 # 📖 Pandem (The Race) - A story about a rabbit and tortoise.
 
+Here is the word-by-word translation of the "Pandem" (The Race) story and related introductory text from pages 12 and 13 of the Class 5 Telugu textbook. Pages 14-22 contain exercises and grammar points based on the story, not the narrative itself, and are thus excluded as per the request's focus on "Story/Poem."
+
 | Telugu | Pronunciation | Meaning |
 |---|---|---|
-| **కుందేలు తాబేలు - పందెమాడినవి.** | **Kundēlu tābēlu - pandemāḍinavi.** | **Rabbit and Tortoise - they raced.** |
-| కుందేలు | Kundēlu | Rabbit |
-| తాబేలు | tābēlu | Tortoise |
-| పందెమాడినవి | pandemāḍinavi | they raced |
-| **లేడివలె కుందేలు - లేపింది కాలు.** | **Lēḍivale kundēlu - lēpindi kālu.** | **Like a deer, the rabbit - lifted its leg (started).** |
-| లేడివలె | Lēḍivale | Like a deer |
-| కుందేలు | kundēlu | rabbit |
-| లేపింది | lēpindi | lifted |
-| కాలు | kālu | leg |
-| **చెవులు రిక్కించింది - చెట్టు దాటింది.** | **Cevulu rikkin̄cindi - ceṭṭu dāṭindi.** | **It pricked its ears - it crossed the tree.** |
-| చెవులు | Cevulu | ears |
-| రిక్కించింది | rikkin̄cindi | pricked up |
-| చెట్టు | ceṭṭu | tree |
-| దాటింది | dāṭindi | crossed |
-| **ఉరికింది ఊపింది - తిరిగి లేచింది.** | **Urikiñdi ūpindi - tirigi lēcindi.** | **It ran fast and paused - then got up again.** |
-| ఉరికింది | Urikiñdi | ran |
-| ఊపింది | ūpindi | paused |
-| తిరిగి | tirigi | again |
-| లేచింది | lēcin̄di | got up |
-| **పొదనునొకటి చూచింది - పొదనెకెసింది.** | **Podanunokaṭi cūcindi - podanekesindi.** | **It saw a bush - and jumped onto the bush.** |
-| పొదనునొకటి | Podanunokaṭi | one bush |
-| చూచింది | cūcindi | saw |
-| పొదనెకెసింది | podanekesindi | jumped onto the bush |
-| **తాబేలు రాదురా - గీబెలు రాదురా.** | **Tābēlu rādurā - gībelu rādurā.** | **The tortoise won't come, man - the slow one won't come, man.** |
-| తాబేలు | Tābēlu | Tortoise |
-| రాదురా | rādurā | won't come (man) |
-| గీబెలు | gībelu | slowpoke |
-| **అటు యిటు చూచింది - అణగిపడకుండీ.** | **Aṭu yiṭu cūcindi - aṇagipaḍakunḍī.** | **It looked hither and thither - without falling back.** |
-| అటు | Aṭu | that side / hither |
-| యిటు | yiṭu | this side / thither |
-| చూచింది | cūcindi | looked |
-| అణగిపడకుండీ | aṇagipaḍakunḍī | without collapsing/falling behind |
-| **నిద్దుర పట్టింది - పొద్దుగ్రుంకిందీ.** | **Niddura paṭṭindi - poddugruṅkindī.** | **Sleep caught it - the sun set.** |
-| నిద్దుర | Niddura | Sleep |
-| పట్టింది | paṭṭindi | caught |
-| పొద్దుగ్రుంకిందీ | poddugruṅkindī | the sun set |
-| **చల్లటి గాలికి - మెల్లగానొలిచి** | **Callaṭi gāliki - mellaganolicci** | **Due to the cool breeze - slowly moving** |
-| చల్లటి | Callṭi | Cool |
-| గాలికి | gāliki | to the breeze (due to the breeze) |
-| మెల్లగానొలిచి | mellaganolicci | slowly moving |
-| **పోయెను తాబేలు - పోయి చూచింది.** | **Pōyenu tābēlu - pōyi cūcindi.** | **The tortoise went - (the rabbit) went and saw.** |
-| పోయెను | Pōyenu | went |
-| తాబేలు | tābēlu | tortoise |
-| పోయి | pōyi | having gone |
-| చూచింది | cūcindi | saw |
-| **తనకంటె ముందర - తాబేలు చేరింది.** | **Tanakante mundara - tābēlu cērindi.** | **Ahead of itself - the tortoise reached.** |
-| తనకంటె | Tanakanṭe | than itself |
-| ముందర | mundara | ahead |
-| తాబేలు | tābēlu | tortoise |
-| చేరింది | cērindi | reached |
-| **ఓడింది కుందేలు - మాడింది మొగము.** | **Ōḍindi kundēlu - māḍindi mogamu.** | **The rabbit lost - its face burnt (shamed).** |
-| ఓడింది | Ōḍindi | lost |
-| కుందేలు | kundēlu | rabbit |
-| మాడింది | māḍindi | burnt (shamed) |
-| మొగము | mogamu | face |
-| **గెలిచింది తాబేలు - గెలిచివేసింది.** | **Gelincindi tābēlu - gelicivēsindi.** | **The tortoise won - it definitely won.** |
-| గెలిచింది | Gelincindi | won |
-| తాబేలు | tābēlu | tortoise |
-| గెలిచివేసింది | gelicivēsindi | won completely |
-| **ఉరుకునొకేసేవారు - ఓడిపోగలరు.** | **Urukunōkēsēvāru - ōḍipōgalaru.** | **Those who hurry/run too fast - might lose.** |
-| ఉరుకునొకేసేవారు | Urukunōkēsēvāru | those who run too fast/hurry |
-| ఓడిపోగలరు | ōḍipōgalaru | they might lose |
-| **ఓపికకుండేవారు - ఓడరెన్నటికి** | **Ōpikakunḍēvāru - ōḍarennaṭiki** | **Those who have patience - will never lose** |
-| ఓపికకుండేవారు | Ōpikakunḍēvāru | those who have patience |
-| ఓడరెన్నటికి | ōḍarennaṭiki | will never lose |
-| **జయము తాబేలుకే -** | **Jayamu tābēlukē -** | **Victory is only for the tortoise -** |
-| జయము | Jayamu | Victory |
-| తాబేలుకే | tābēlukē | only for the tortoise |
-| **జయము జయమంటు** | **Jayamu jayamantu** | **Saying victory, victory** |
-| జయము | Jayamu | Victory |
-| జయమంటు | jayamantu | saying victory |
-| **జంతుజాలంబెల్ల - చప్పట్లు గొట్టేరా!** | **Jantujālamubella - cappaṭlu goṭṭērā!** | **All the animal kingdom - clapped their hands!** |
-| జంతుజాలంబెల్ల | Jantujālamubella | All the animal kingdom |
-| చప్పట్లు | cappaṭlu | claps |
-| గొట్టేరా | goṭṭērā | did clap (exclamatory) |
-| **- గంగుల శాయిరెడ్డి** | **- Gaṅgula śāyireḍḍi** | **- Gangula Shayireddy (Author)** |
+| $<ë´s¡Tú\ $ø±kÕìøÏ Á|üuÛÑT‘·« ø±qTø£ | Vidyārthulu Vikāsānikī Prabhutva Kānuuka | Government Gift for Students' Development |
+| **1. |ü+<Ó+** | **1. Pandem** | **1. The Race** |
+| **øÏ+~ u§eTàqT #·÷&É+&ç, e÷{≤¢&É+&ç.** | **Kindi bommanu chūḍaṇḍi, māṭlāḍaṇḍi.** | **Look at the picture below and discuss.** |
+| øÏ+~ | kindi | below |
+| u§eTàqT | bommanu | the picture |
+| #·÷&É+&ç, | chūḍaṇḍi, | look, |
+| e÷{≤¢&É+&ç. | māṭlāḍaṇḍi. | and discuss. |
+| **Á|üX¯ï\≈£î »yêãT\T #Ó|üŒ+&ç** | **Praśnalakū javābūlu cheppaṇḍi** | **Answer the questions** |
+| Á|üX¯ï\≈£î | praśnalakū | to the questions |
+| »yêãT\T | javābūlu | answers |
+| #Ó|üŒ+&ç | cheppaṇḍi | tell. |
+| **✽ ô|’ u§eTà˝À me¬ses¡T ñHêïs¡T?** | **✽ Pai bommalō evarevaru unnāru?** | **✽ Who are in the picture above?** |
+| ✽ | ō | ✽ |
+| ô|’ | pai | above |
+| u§eTà˝À | bommalō | in the picture |
+| me¬ses¡T | evarevaru | who all |
+| ñHêïs¡T? | unnāru? | are there? |
+| **✽ yêfi¯ófl @+ #˚düTÔHêïs¡T?** | **✽ Vāḷḷu ēṃ chēstunnāru?** | **✽ What are they doing?** |
+| ✽ | ō | ✽ |
+| yêfi¯ófl | vāḷḷu | they |
+| @+ | ēṃ | what |
+| #˚düTÔHêïs¡T? | chēstunnāru? | are doing? |
+| **✽ Ç˝≤+{Ï |ü+<ë\T MTs¡T m|ü&Ó’Hê #·÷XÊsê? m≥Te+{Ï |ü+<ëìï #·÷XÊs¡T?** | **✽ Iḷāṇṭi pandemulu mīru eppuḍainā chūśārā? Eṭuvanṭi pandemuni chūśāru?** | **✽ Have you ever seen such races? What kind of races have you seen?** |
+| ✽ | ō | ✽ |
+| Ç˝≤+{Ï | iḷāṇṭi | such |
+| |ü+<ë\T | pandemulu | races |
+| MTs¡T | mīru | you |
+| m|ü&Ó’Hê | eppuḍainā | ever |
+| #·÷XÊsê? | chūśārā? | seen? |
+| m≥Te+{Ï | eṭuvanṭi | what kind of |
+| |ü+<ëìï | pandemuni | race |
+| #·÷XÊs¡T? | chūśāru? | have you seen? |
+| **≈£î+<˚\T ‘êuÒ\T – |ü+<Óe÷&çq$.** | **Kundaḷu tābeḷu – Pandemēsiṇavi.** | **Rabbit and Tortoise – Had a race.** |
+| ≈£î+<˚\T | kundaḷu | Rabbit |
+| ‘êuÒ\T | tābeḷu | Tortoise |
+| – | – | – |
+| |ü+<Óe÷&çq$. | pandemēsiṇavi. | had a race. |
+| **˝Ò&çe˝… ≈£î+<˚\T – ˝Ò|æ+~ ø±\T.** | **Leḍaceḷu kundaḷu – Leḷīsinā kāḷu.** | **Lazy Rabbit – Lazy feet.** |
+| ˝Ò&çe˝… | leḍaceḷu | Lazy |
+| ≈£î+<˚\T | kundaḷu | Rabbit |
+| – | – | – |
+| ˝Ò|æ+~ | leḷīsinā | lazy |
+| ø±\T. | kāḷu. | feet. |
+| **#Óe⁄\T ]øÏÿ+∫+~ – #Ó≥T¢ <ë{Ï+~.** | **Cevulu rikkīsinadi – Ceṭṭu dāṭinadi.** | **Ears pricked up – Crossed the tree.** |
+| #Óe⁄\T | cevulu | Ears |
+| ]øÏÿ+∫+~ | rikkīsinadi | pricked up |
+| – | – | – |
+| #Ó≥T¢ | ceṭṭu | tree |
+| <ë{Ï+~. | dāṭinadi. | crossed. |
+| **ñ]øÏ+~ }|æ+~ – ‹]– ˝Ò∫+~.** | **Urikīnadi ōpinadi – Tirigi lecinadi.** | **Ran fast, got tired – Got up again.** |
+| ñ]øÏ+~ | urikīnadi | ran fast |
+| }|æ+~ | ōpinadi | got tired |
+| – | – | – |
+| ‹]– | tirigi | again |
+| ˝Ò∫+~. | lecinadi. | got up. |
+| **bı<äH=ø£{Ï #·÷∫+~ – bıDÏ¬ø CÒdæ+~.** | **Podane okaṭi chūcinadi – Poṇḍike cēsinadi.** | **Saw one pot – Made a mark.** |
+| bı<äH=ø£{Ï | podane okaṭi | one pot |
+| #·÷∫+~ | chūcinadi | saw |
+| – | – | – |
+| bıDÏ¬ø | poṇḍike | mark |
+| CÒdæ+~. | cēsinadi. | made. |
+| **‘êuÒ\T sê<äTsê – ^uÒ\T sê<äTsê.** | **Tābeḷu rādusā – Jābūlu rādusā.** | **Tortoise, come on – Answers, come on.** |
+| ‘êuÒ\T | tābeḷu | Tortoise |
+| sê<äTsê | rādusā | (expression like 'come on') |
+| – | – | – |
+| ^uÒ\T | jābūlu | answers |
+| sê<äTsê. | rādusā. | (expression like 'come on'). |
+| **n≥T sTT≥T #·÷∫+~ – nD–|ü&ÉTø=+~.** | **Aṭu iṭu chūcinadi – Anugī-paḍukunnadi.** | **Looked here and there – Fell asleep.** |
+| n≥T | aṭu | there |
+| sTT≥T | iṭu | here |
+| #·÷∫+~ | chūcinadi | looked |
+| – | – | – |
+| nD–|ü&ÉTø=+~. | anugī-paḍukunnadi. | fell asleep. |
+| **ì<äT›πs |ü{Ïº+~ – bı<äT›>∑T+øÏ+~.** | **Niddurē paṭṭinadi – Podduguṇkīnadi.** | **Fell asleep – Sun set.** |
+| ì<äT›πs | niddurē | sleep |
+| |ü{Ïº+~ | paṭṭinadi | caught (fell) |
+| – | – | – |
+| bı<äT›>∑T+øÏ+~. | podduguṇkīnadi. | sun set. |
+| **#·\¢{Ï >±*øÏ – yÓT\¢>±˝Ò∫** | **Callaṭi gāliki – Mella-gā-leci** | **To the cool wind – Slowly got up** |
+| #·\¢{Ï | callaṭi | cool |
+| >±*øÏ | gāliki | to the wind |
+| – | – | – |
+| yÓT\¢>±˝Ò∫ | mella-gā-leci | slowly got up |
+| **b˛qTqï ‘êe⁄¬ø’ – b˛sTT #·÷∫+~.** | **Pōnunna tāvavai – Pōyī chūcinadi.** | **Towards the previous place – Went and saw.** |
+| b˛qTqï | pōnunna | went |
+| ‘êe⁄¬ø’ | tāvavai | towards the place |
+| – | – | – |
+| b˛sTT | pōyī | went |
+| #·÷∫+~. | chūcinadi. | and saw. |
+| **‘·qø£+f… eTT+<äπs – ‘êuÒ\T CÒ]+~.** | **Tanakante mundarē – Tābeḷu cērinadi.** | **Before itself – Tortoise arrived.** |
+| ‘·qø£+f… | tanakante | than himself |
+| eTT+<äπs | mundarē | already ahead |
+| – | – | – |
+| ‘êuÒ\T | tābeḷu | Tortoise |
+| CÒ]+~. | cērinadi. | arrived. |
+| **z&ç+~ ≈£î+<˚\T – e÷&ç+~ yÓTT>∑eTT.** | **Ōḍinadi kundaḷu – Māḍinadi mōgammu.** | **The Rabbit lost – Its face fell.** |
+| z&ç+~ | ōḍinadi | lost |
+| ≈£î+<˚\T | kundaḷu | Rabbit |
+| – | – | – |
+| e÷&ç+~ | māḍinadi | withered (fell) |
+| yÓTT>∑eTT. | mōgammu. | face. |
+| **¬>*∫+~ ‘êuÒ\T – π>*CÒdæ+~.** | **Gelīcinadi tābeḷu – Gēlijēsinadi.** | **The Tortoise won – Made fun of.** |
+| ¬>*∫+~ | gelīcinadi | won |
+| ‘êuÒ\T | tābeḷu | Tortoise |
+| – | – | – |
+| π>*CÒdæ+~. | gēlijēsinadi. | made fun of. |
+| **ñs¡T≈£î˝≤&Ó&çyês¡T – z&çb˛>∑\s¡T.** | **Urukū-ḷāḍinavāru – Ōḍī pōgalaru.** | **Those who play carelessly – Will lose.** |
+| ñs¡T≈£î˝≤&Ó&çyês¡T | urukū-ḷāḍinavāru | those who play carelessly |
+| – | – | – |
+| z&çb˛>∑\s¡T. | ōḍī pōgalaru. | will lose. |
+| **z|æ≈£î+&˚yês¡T – z&É¬sqï{ÏøÏ** | **Ōpikūṇḍēvāru – Ōḍasari-vaṇṇiṭiki** | **Those who lack patience – Will lose always** |
+| z|æ≈£î+&˚yês¡T | ōpikūṇḍēvāru | those who lack patience |
+| – | – | – |
+| z&É¬sqï{ÏøÏ | ōḍasari-vaṇṇiṭiki | will lose always. |
+| **»j·TeTT ‘êuÒ\Tπø –** | **Jayambu tābeḷukē –** | **Victory to the Tortoise –** |
+| »j·TeTT | jayambu | victory |
+| ‘êuÒ\Tπø | tābeḷukē | to the tortoise |
+| – | – | – |
+| **»j·TeTT »j·TeT+≥T** | **Jayambu jayambūnṭu** | **Victory, victory** |
+| »j·TeTT | jayambu | victory |
+| »j·TeT+≥T | jayambūnṭu | victory |
+| **»+‘·TC≤\+u…\¢ – #·|üŒ≥T¢ >=f…ºsê!** | **Jantu jālamubella – Cappaṭlu koṭṭerā!** | **All the animal kingdom – Clapped hands!** |
+| »+‘·TC≤\+u…\¢ | jantu jālamubella | all the animal kingdom |
+| – | – | – |
+| #·|üŒ≥T¢ | cappaṭlu | claps |
+| >=f…ºsê! | koṭṭerā! | clapped! |
+| **– >∑+>∑T\ XÊsTT¬s&ç¶** | **– Gaṅgula Śāyreḍḍi** | **– Gangula Shayreddy (Author)** |
+| – | – | – |
+| >∑+>∑T\ | gaṅgula | Gangula |
+| XÊsTT¬s&ç¶ | śāyreḍḍi | Shayreddy |

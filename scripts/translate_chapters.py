@@ -1,19 +1,9 @@
 import os
 import json
 import time
-import google.generativeai as genai
+import argparse
+from google import genai
 from google.api_core import exceptions
-
-# ============================================================================
-#  MODEL FALLBACK CHAIN (Updated based on your API response)
-# ============================================================================
-MODEL_CHAIN = [
-    "gemini-2.0-flash",       # Primary: Fast & High limits
-    "gemini-2.0-flash-exp",   # Secondary: Experimental version
-    "gemini-flash-latest",    # Tertiary: Rolling release
-    "gemini-1.5-pro-latest",  # Fallback: Higher capability
-    "gemini-pro"              # Last Resort
-]
 
 # 1. Setup & Key Verification
 API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -21,139 +11,196 @@ if not API_KEY:
     print("❌ CRITICAL: GEMINI_API_KEY is missing from environment variables!")
     exit(1)
 
-genai.configure(api_key=API_KEY)
 
-def get_working_model():
-    """Iterates through MODEL_CHAIN to find a usable model."""
-    print("🔄 Testing model connectivity...")
-    
-    for model_name in MODEL_CHAIN:
+def list_and_find_working_model(client: genai.client.Client):
+    """Lists available models and finds a usable one."""
+    print("🔄 Listing available models...")
+    available_models = []
+    for m in client.models.list():
+        # Corrected attribute name based on debugging output
+        if "generateContent" in m.supported_actions:
+            available_models.append(m.name)
+            print(f"  - Found model supporting generateContent: {m.name}")
+
+    if not available_models:
+        print("🔥 FATAL: No models supporting 'generateContent' found.")
+        exit(1)
+
+    print("\n🔄 Testing model connectivity...")
+    flash_models = [m for m in available_models if "flash" in m]
+    other_models = [m for m in available_models if "flash" not in m]
+    models_to_test = flash_models + other_models
+
+    for model_name in models_to_test:
         try:
             print(f"   👉 Attempting: {model_name}...", end=" ")
-            model = genai.GenerativeModel(model_name)
-            # Simple test generation to verify connection
-            response = model.generate_content("Hi") 
-            print("✅ SUCCESS!")
-            return model_name
+            response = client.models.generate_content(model=model_name, contents=["Hi"])
+            if response.text:
+                print("✅ SUCCESS!")
+                return model_name
+            else:
+                print("\n      ⚠️ Received empty response.")
         except Exception as e:
-            # We catch the error and print it so you can see if it's 404 or 403
             print(f"\n      ❌ FAILED. Error details: {str(e)}")
             continue
             
-    print("🔥 FATAL: All models failed.")
+    print("🔥 FATAL: All tested models failed.")
     exit(1)
 
-# Initialize the working model
-ACTIVE_MODEL_NAME = get_working_model()
 
-def translate_chapter(pdf_file, chapter):
-    model = genai.GenerativeModel(model_name=ACTIVE_MODEL_NAME)
-
+def get_translation(client: genai.client.Client, model_name: str, pdf_file, chapter):
     prompt = f"""
-    You are an educational translator for Class 5 students.
+    You are a meticulous educational translator for a Class 5 Telugu textbook. Your task is to be 100% accurate and complete.
     Analyze pages {chapter['start_page']} to {chapter['end_page']} of the provided PDF.
     Topic: {chapter['topic']}.
 
-    **TASK 1: TRANSLATION (Story/Poem)**
-    - Your task is to provide a word-by-word translation of the story or poem.
-    - You must output a single Markdown table with three columns: | Telugu | Pronunciation | Meaning |.
+    **TASK: TRANSLATION (Story/Poem)**
+    - You MUST provide a complete, word-by-word translation of the story or poem.
+    - You MUST process every single line of the text from the specified pages. Do not skip any content.
+    - Output a single Markdown table with three columns: | Telugu | Pronunciation | Meaning |.
     - The process for each sentence is as follows:
     1.  First, create a row for the complete sentence. The text in all three columns for this row must be bold (e.g., `**Full Sentence**`).
-    2.  Then, for each individual word in that sentence, create a new row in the table. This row will contain the single Telugu word, its pronunciation in simple English script, and its English meaning.
-    - Continue this pattern for all sentences in the text.
-    - Example:
-    | Telugu | Pronunciation | Meaning |
-    |---|---|---|
-    | **కుందేలు తాబేలు పందెమాడినవి.** | **Kundēlu tābēlu pandemāḍinavi.** | **The rabbit and the tortoise raced.** |
-    | కుందేలు | Kundēlu | rabbit |
-    | తాబేలు | tābēlu | tortoise |
-    | పందెమాడినవి | pandemāḍinavi | they raced |
-
-    **TASK 2: SEPARATOR**
-    Output strictly this string on a new line: <<<SPLIT_HERE>>>
-
-    **TASK 3: EXERCISES**
-    - Identify questions and grammar tasks.
-    - Format exactly like this, providing pronunciation for the answer as well:
-    #### Q: [Telugu Text]
-    * **Pronunciation:** ...
-    * **Meaning:** ...
-    * **Answer:** [Telugu Answer]
-    * **Answer Pronunciation:** ...
+    2.  Then, for each individual word in that sentence, create a new row in the table.
+    - This structure is mandatory.
     """
-
-    # Retry logic for generation
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            response = model.generate_content([pdf_file, prompt])
+            response = client.models.generate_content(model=model_name, contents=[pdf_file, prompt])
             return response.text
         except exceptions.ResourceExhausted:
             print(f"   ⚠️ Quota hit. Sleeping 20s...")
             time.sleep(20)
         except Exception as e:
-            print(f"   ⚠️ Error during generation: {e}")
+            print(f"   ⚠️ Error during translation generation: {e}")
             if attempt == max_retries - 1:
                 raise e
             time.sleep(5)
 
+
+def get_exercises(client: genai.client.Client, model_name: str, pdf_file, chapter):
+    prompt = f"""
+    You are a meticulous educational translator for a Class 5 Telugu textbook. Your task is to be 100% accurate and complete.
+
+    **TASK: EXERCISES**
+    - You MUST identify and process EVERY exercise, question, and grammar task ONLY from pages {chapter['start_page']} to {chapter['end_page']} of the provided PDF. Do not include exercises from any other pages. This includes questions based on images, which you must analyze and answer.
+    - You MUST number each question sequentially, starting from Q1. The format must be `#### Q1: [Telugu Text]`, `#### Q2: [Telugu Text]`, etc.
+    - For EVERY question, you MUST provide all four of the following fields. NO field can be left blank. If a field is not applicable, write 'Not Applicable', but do not leave it empty.
+        * **Pronunciation:** [Simple English Pronunciation]
+        * **Meaning:** [English Meaning]
+        * **Answer:** [Telugu Answer]
+        * **Answer Pronunciation:** [Simple English Pronunciation of Answer]
+    - For questions with multiple parts or sub-answers (e.g., fill-in-the-blanks, matching), list all parts clearly under the single question number.
+    - Maintain the exact formatting provided below. Do not deviate.
+    """
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(model=model_name, contents=[pdf_file, prompt])
+            return response.text
+        except exceptions.ResourceExhausted:
+            print(f"   ⚠️ Quota hit. Sleeping 20s...")
+            time.sleep(20)
+        except Exception as e:
+            print(f"   ⚠️ Error during exercise generation: {e}")
+            if attempt == max_retries - 1:
+                raise e
+            time.sleep(5)
+
+
 def main():
-    config_path = 'class5/chapters.json'
+    parser = argparse.ArgumentParser(description="Translate chapters from a PDF.")
+    parser.add_argument(
+        "chapter_folder",
+        nargs="?",
+        default=None,
+        help="The specific chapter folder to process (e.g., '01_Pandem'). If not provided, all chapters will be processed.",
+    )
+    args = parser.parse_args()
+
+    client = genai.Client()
+    active_model_name = list_and_find_working_model(client)
+    print(f"🚀 Using model: {active_model_name}")
+
+    config_path = "class5/chapters.json"
     if not os.path.exists(config_path):
         print(f"❌ Config not found at: {config_path}")
         exit(1)
 
-    with open(config_path, 'r') as f:
+    with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
 
     print(f"📂 Uploading PDF: {config['pdf_path']}...")
     try:
-        pdf_file = genai.upload_file(path=config['pdf_path'])
+        pdf_file = client.files.upload(file=config["pdf_path"])
     except Exception as e:
         print(f"❌ Upload Failed. Check file path. Details: {e}")
         exit(1)
-    
+
     print("⏳ Waiting for PDF processing...")
     while pdf_file.state.name == "PROCESSING":
-        time.sleep(2)
-        pdf_file = genai.get_file(pdf_file.name)
-    
+        time.sleep(10)
+        pdf_file = client.files.get(name=pdf_file.name)
+
     if pdf_file.state.name == "FAILED":
         print("❌ PDF processing failed by Google API.")
+        try:
+            client.files.delete(name=pdf_file.name)
+        except Exception as e:
+            print(f"   Could not delete failed file: {e}")
         exit(1)
 
-    print(f"🚀 Processing with model: {ACTIVE_MODEL_NAME}")
+    print("✅ PDF processed successfully.")
 
-    for chapter in config['chapters']:
-        print(f"   Translating {chapter['folder']}...", end=" ")
-        
+    chapters_to_process = []
+    if args.chapter_folder:
+        chapter_to_process = next(
+            (ch for ch in config["chapters"] if ch["folder"] == args.chapter_folder), None
+        )
+        if chapter_to_process:
+            chapters_to_process.append(chapter_to_process)
+        else:
+            print(f"❌ Chapter folder '{args.chapter_folder}' not found in {config_path}")
+            exit(1)
+    else:
+        chapters_to_process = config["chapters"]
+
+    for chapter in chapters_to_process:
+        print(f"   Translating {chapter['folder']}...")
         try:
-            full_response = translate_chapter(pdf_file, chapter)
-            
-            if not full_response:
+            print("      - Generating translation...", end=" ")
+            trans = get_translation(client, active_model_name, pdf_file, chapter)
+            if not trans:
                 print("❌ Empty response.")
-                continue
-
-            if "<<<SPLIT_HERE>>>" in full_response:
-                trans, exer = full_response.split("<<<SPLIT_HERE>>>")
+                trans = "Translation failed."
             else:
-                trans = full_response
+                print("✅")
+
+            print("      - Generating exercises...", end=" ")
+            exer = get_exercises(client, active_model_name, pdf_file, chapter)
+            if not exer:
+                print("❌ Empty response.")
                 exer = "Exercises parse failed. Check raw output."
+            else:
+                print("✅")
 
             base_path = f"class5/{chapter['folder']}"
             os.makedirs(base_path, exist_ok=True)
-
             with open(f"{base_path}/translation.md", "w", encoding="utf-8") as f:
                 f.write(f"# 📖 {chapter['topic']}\n\n{trans.strip()}")
-
             with open(f"{base_path}/exercise.md", "w", encoding="utf-8") as f:
                 f.write(f"# ✍️ Exercises\n\n{exer.strip()}")
-                
-            print(f"✅ Done.")
-            time.sleep(5) # Gentle rate limiting
-
+            print(f"   ✅ Done with {chapter['folder']}.")
+            time.sleep(5)
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"❌ Error processing {chapter['folder']}: {e}")
+
+    try:
+        client.files.delete(name=pdf_file.name)
+        print(f"✅ Cleaned up uploaded file: {pdf_file.display_name}")
+    except Exception as e:
+        print(f"   ⚠️ Could not delete uploaded file: {e}")
+
 
 if __name__ == "__main__":
     main()

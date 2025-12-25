@@ -1,206 +1,342 @@
 # 📖 Rekkala Enugu - A fantasy story about a flying elephant.
 
-## TASK 1: TRANSLATION (Story Text from pages 36-37)
+Here is the word-by-word translation of the story "Rekkala Enugu" from pages 36 and 37 of the Telugu textbook.
 
 | Telugu | Pronunciation | Meaning |
 |---|---|---|
-| **అనగా అనగా ఒక రాజు.** | **Anagā anagā oka rāju.** | **Once upon a time, there was a king.** |
-| అనగా | Anagā | meaning/once upon |
-| అనగా | anagā | meaning/once upon |
-| ఒక | oka | one (a) |
-| రాజు. | rāju. | king. |
-| **ఆ రాజుకి ఒక పెద్ద తోట.** | **Ā rājuki oka pedda tōṭa.** | **That king had a big garden.** |
-| ఆ | Ā | That |
-| రాజుకి | rājuki | to the king |
-| ఒక | oka | one (a) |
-| పెద్ద | pedda | big |
-| తోట. | tōṭa. | garden. |
-| **ఆ తోటకు కాపలాదారుడు సూర్య.** | **Ā tōṭaku kāpalādāruḍu sūrya.** | **The guardian for that garden was Surya.** |
-| ఆ | Ā | That |
-| తోటకు | tōṭaku | for the garden |
-| కాపలాదారుడు | kāpalādāruḍu | guardian/watchman |
-| సూర్య. | sūrya. | Surya (name). |
-| **అతని భార్య నరసమ్మ.** | **Atani bhārya narasamma.** | **His wife was Narasamma.** |
-| అతని | Atani | his |
-| భార్య | bhārya | wife |
-| నరసమ్మ. | narasamma. | Narasamma (name). |
-| **వారు తోటలోనే నివసించేవారు.** | **Vāru tōṭalōnē nivasin̄cēvāru.** | **They lived in the garden itself.** |
-| వారు | Vāru | they |
-| తోటలోనే | tōṭalōnē | in the garden itself |
-| నివసించేవారు. | nivasin̄cēvāru. | used to live. |
-| **ఒక రోజు ఉదయం సూర్య తోటలో తిరుగుతున్నాడు.** | **Oka rōju udayaṁ sūrya tōṭalō tirugutunnāḍu.** | **One day morning, Surya was roaming in the garden.** |
-| ఒక | Oka | one |
-| రోజు | rōju | day |
-| ఉదయం | udayaṁ | morning |
-| సూర్య | sūrya | Surya |
-| తోటలో | tōṭalō | in the garden |
-| తిరుగుతున్నాడు. | tirugutunnāḍu. | was roaming. |
-| **ఒక వైపున చెట్లని వేసి ఉండటం గమనించాడు.** | **Oka vaipun̄a ceṭlani vēsi un̄ḍaṭaṁ gamanin̄cāḍu.** | **He noticed trees being planted on one side.** |
-| ఒక | oka | one |
-| వైపున | vaipun̄a | side |
-| చెట్లని | ceṭlani | trees |
-| వేసి | vēsi | having placed/planted |
-| ఉండటం | un̄ḍaṭaṁ | being |
-| గమనించాడు. | gamanin̄cāḍu. | noticed. |
-| **తోటంతా తిరిగి వచ్చాడు.** | **Tōṭan̄tā tirigi vach̄cāḍu.** | **He came back after roaming the whole garden.** |
-| తోటంతా | Tōṭan̄tā | all over the garden |
-| తిరిగి | tirigi | having returned |
-| వచ్చాడు. | vach̄cāḍu. | came back. |
-| **కొంచెమంతా బాగానే ఉంది.** | **Kon̄cemantā bāganē undi.** | **Everything was fine somewhat.** |
-| కొంచెమంతా | Kon̄cemantā | somewhat |
-| బాగానే | bāganē | nicely/well |
-| ఉంది. | undi. | is. |
-| **మరి జంతువులు లోపలికెలా వచ్చాయి?** | **Mari jan̄tuvulu lōpalikela vach̄cāyi?** | **But how did animals come inside?** |
-| మరి | Mari | but |
-| జంతువులు | jan̄tuvulu | animals |
-| లోపలికెలా | lōpalikela | how inside |
-| వచ్చాయి? | vach̄cāyi. | came? |
-| **సూర్యకు అర్థం కాలేదు.** | **Sūryaku arthaṁ kālēdu.** | **Surya did not understand.** |
-| సూర్యకు | Sūryaku | to Surya |
-| అర్థం | arthaṁ | meaning/understanding |
-| కాలేదు. | kālēdu. | did not happen/understand. |
-| **ఆ రోజు నుండి ప్రతి రాత్రి సూర్య మాటవేసి కాపలాకాశాడు.** | **Ā rōju nun̄ḍi prati rātri sūrya māṭavēsi kāpalākāśāḍu.** | **From that day onwards every night Surya promised and watched over (it).** |
-| ఆ | Ā | That |
-| రోజు | rōju | day |
-| నుండి | nun̄ḍi | from |
-| ప్రతి | prati | every |
-| రాత్రి | rātri | night |
-| సూర్య | sūrya | Surya |
-| మాటవేసి | māṭavēsi | having promised |
-| కాపలాకాశాడు. | kāpalākāśāḍu. | watched over. |
-| **పున్నమిరాతిరి వచ్చింది.** | **Punnami rātiri vach̄cin̄di.** | **The full moon night came.** |
-| పున్నమిరాతిరి | Punnami rātiri | full moon night |
-| వచ్చింది. | vach̄cin̄di. | came. |
-| **వెన్నెల పిండారబోసినట్టుంది.** | **Vennela pinḍārabōsinaṭṭundi.** | **It was like the moonlight was poured out like dough.** |
-| వెన్నెల | Vennela | moonlight |
-| పిండారబోసినట్టుంది. | pinḍārabōsinaṭṭundi. | it is like dough was poured out (i.e., very bright). |
-| **సూర్య జాగ్రత్తగా చూస్తూ ఉన్నాడు.** | **Sūrya jāgrattagā chūstū unnāḍu.** | **Surya was watching carefully.** |
-| సూర్య | Sūrya | Surya |
-| జాగ్రత్తగా | jāgrattagā | carefully |
-| చూస్తూ | chūstū | watching |
-| ఉన్నాడు. | unnāḍu. | was. |
-| **ఇంతలో ఒక అద్భుతం జరిగింది.** | **In̄talō oka adbhutaṁ jarigin̄di.** | **In the meantime a wonder happened.** |
-| ఇంతలో | In̄talō | in the meantime |
-| ఒక | oka | one (a) |
-| అద్భుతం | adbhutaṁ | wonder/miracle |
-| జరిగింది. | jarigin̄di. | happened. |
-| **ఆకాశం నుండి ఒక కాంతి నెమ్మదిగా తోటలోకి దిగింది.** | **Ākāśaṁ nun̄ḍi oka kān̄ti nemmadigā tōṭalōki digin̄di.** | **A light gently descended from the sky into the garden.** |
-| ఆకాశం | Ākāśaṁ | sky |
-| నుండి | nun̄ḍi | from |
-| ఒక | oka | one (a) |
-| కాంతి | kān̄ti | light |
-| నెమ్మదిగా | nemmadigā | gently/slowly |
-| తోటలోకి | tōṭalōki | into the garden |
-| దిగింది. | digin̄di. | descended. |
-| **అది ఒక అందమైన రెక్కల ఏనుగు.** | **Adi oka andamaina rekkala ēnugu.** | **That was one beautiful flying elephant.** |
-| అది | Adi | that (non-human) |
-| ఒక | oka | one (a) |
-| అందమైన | andamaina | beautiful |
-| రెక్కల | rekkala | winged/flying |
-| ఏనుగు. | ēnugu. | elephant. |
-| **మిల్లిమిల్లిగా మెరుస్తూ ఉంది.** | **Millimilligā merustū undi.** | **It was slowly shining.** |
-| మిల్లిమిల్లిగా | Millimilligā | slowly/gradually |
-| మెరుస్తూ | merustū | shining |
-| ఉంది. | undi. | is. |
-| **సూర్య ఆశ్చర్యానికి అంతులేదు.** | **Sūrya āścaryāniki an̄tulēdu.** | **There was no end to Surya's surprise.** |
-| సూర్య | Sūrya | Surya |
-| ఆశ్చర్యానికి | āścaryāniki | to the surprise |
-| అంతులేదు. | an̄tulēdu. | no end. |
-| **ఆ ఏనుగు తోటంతా తిరిగి పడింది.** | **Ā ēnugu tōṭan̄tā tirigi paḍin̄di.** | **That elephant roamed the whole garden and landed.** |
-| ఆ | Ā | That |
-| ఏనుగు | ēnugu | elephant |
-| తోటంతా | tōṭan̄tā | all over the garden |
-| తిరిగి | tirigi | having roamed |
-| పడింది. | paḍin̄di. | landed/fell. |
-| **తనకు ఇష్టమైన ఆకులన్నీ వేసింది.** | **Tanaku iṣṭamaina ākulannī vēsin̄di.** | **It ate all the leaves it liked.** |
-| తనకు | Tanaku | to itself |
-| ఇష్టమైన | iṣṭamaina | liked |
-| ఆకులన్నీ | ākulannī | all the leaves |
-| వేసింది. | vēsin̄di. | put/placed (used here contextually to mean consumed). |
-| **సూర్య ఏనుగును నెమ్మదిగా వెంటాడాడు.** | **Sūrya ēnugunu nemmadigā venṭāḍāḍu.** | **Surya slowly chased the elephant.** |
-| సూర్య | Sūrya | Surya |
-| ఏనుగును | ēnugunu | elephant (object) |
-| నెమ్మదిగా | nemmadigā | gently/slowly |
-| వెంటాడాడు. | venṭāḍāḍu. | chased. |
-| **ఉదయం కావలసొస్తుంది.** | **Udayaṁ kāvalasostun̄di.** | **Morning is about to come.** |
-| ఉదయం | Udayaṁ | morning |
-| కావలసొస్తుంది. | kāvalasostun̄di. | is about to come. |
-| **ఏనుగు ఒక్కసారిగా పీంకరించింది.** | **Ēnugu okkasārigā pīn̄karin̄cin̄di.** | **The elephant trumpeted suddenly.** |
-| ఏనుగు | Ēnugu | elephant |
-| ఒక్కసారిగా | okkasārigā | suddenly |
-| పీంకరించింది. | pīn̄karin̄cin̄di. | trumpeted. |
-| **పైకి ఎగిరింది.** | **Paiki egirin̄di.** | **It flew up.** |
-| పైకి | Paiki | upwards |
-| ఎగిరింది. | egirin̄di. | flew. |
-| **సూర్య దాన్ని తొండం పట్టుకున్నాడు.** | **Sūrya dannī tonḍaṁ paṭṭukunnāḍu.** | **Surya caught hold of its trunk.** |
-| సూర్య | Sūrya | Surya |
-| దాన్ని | dannī | that (object) |
-| తొండం | tonḍaṁ | trunk |
-| పట్టుకున్నాడు. | paṭṭukunnāḍu. | caught hold of. |
-| **అతని కాలును నరసమ్మ,** | **Atani kālunu narasamma,** | **His leg, Narasamma,** |
-| అతని | Atani | his |
-| కాలును | kālunu | leg (object) |
-| నరసమ్మ, | narasamma, | Narasamma (name), |
-| **ఆమె కాలు మరొకరు, ఇలా అందరూ వేలాడుతూ ఆకాశంలో ప్రయాణించసాగారు.** | **āme kālu marokaru, ilā an̄darū vēlāḍutū ākāśaṁlō prayāṇin̄casāgāru.** | **her leg another person, thus everyone hanging started travelling in the sky.** |
-| ఆమె | āme | her |
-| కాలు | kālu | leg |
-| మరొకరు, | marokaru, | another person, |
-| ఇలా | ilā | thus |
-| అందరూ | an̄darū | everyone |
-| వేలాడుతూ | vēlāḍutū | hanging |
-| ఆకాశంలో | ākāśaṁlō | in the sky |
-| ప్రయాణించసాగారు. | prayāṇin̄casāgāru. | started travelling. |
-| **చివరలో మల్లమ్మ వేలాడుతున్నది.** | **Civaralō mallamma vēlāḍutunnadi.** | **Finally, Mallamma was hanging.** |
-| చివరలో | Civaralō | at the end |
-| మల్లమ్మ | mallamma | Mallamma (name) |
-| వేలాడుతున్నది. | vēlāḍutunnadi. | was hanging. |
-| **ఆమెకు ఒక సందేహం వచ్చింది.** | **Āmeku oka san̄dēhaṁ vach̄cin̄di.** | **A doubt came to her.** |
-| ఆమెకు | Āmeku | to her |
-| ఒక | oka | one (a) |
-| సందేహం | san̄dēhaṁ | doubt |
-| వచ్చింది. | vach̄cin̄di. | came. |
-| **ఓపిక పట్టలేక పోయింది.** | **Ōpika paṭṭalēka pōyin̄di.** | **She could not hold her patience.** |
-| ఓపిక | Ōpika | patience |
-| పట్టలేక | paṭṭalēka | unable to hold |
-| పోయింది. | pōyin̄di. | went/could not. |
-| **"వింతలోకంలో గుమ్మడికాయలు ఎంత పెద్దవిగా ఉంటాయీ?"** | **"Vin̄talōkaṁlō gummaḍikāyalu en̄ta peddavigā un̄ṭāyī?"** | **"How big will pumpkins be in the fantasy world?"** |
-| "వింతలోకంలో | "Vin̄talōkaṁlō | "In the fantasy world |
-| గుమ్మడికాయలు | gummaḍikāyalu | pumpkins |
-| ఎంత | en̄ta | how much |
-| పెద్దవిగా | peddavigā | big |
-| ఉంటాయీ?" | un̄ṭāyī?" | will be?" |
-| **అని పై వారిని అడిగింది.** | **Ani pai vārini aḍigin̄di.** | **She asked the people above.** |
-| అని | Ani | thus/saying |
-| పై | pai | upper/above |
-| వారిని | vārini | people (object) |
-| అడిగింది. | aḍigin̄di. | asked. |
-| **వారు తమ పై వారిని అడిగారు.** | **Vāru tama pai vārini aḍigāru.** | **They asked the people above them.** |
-| వారు | Vāru | they |
-| తమ | tama | their |
-| పై | pai | upper/above |
-| వారిని | vārini | people (object) |
-| అడిగారు. | aḍigāru. | asked. |
-| **చివరకు ఆ ప్రశ్న సూర్యకు చేరింది.** | **Civarāku ā praśna sūryaku cērin̄di.** | **Finally, that question reached Surya.** |
-| చివరకు | Civarāku | finally |
-| ఆ | ā | that |
-| ప్రశ్న | praśna | question |
-| సూర్యకు | sūryaku | to Surya |
-| చేరింది. | cērin̄di. | reached. |
-| **సూర్య ఆశ్చర్యాన్ని ఆపుకోలేకపోయాడు.** | **Sūrya āścaryānni āpukōlēkapōyāḍu.** | **Surya could not contain his surprise.** |
-| సూర్య | Sūrya | Surya |
-| ఆశ్చర్యాన్ని | āścaryānni | surprise (object) |
-| ఆపుకోలేకపోయాడు. | āpukōlēkapōyāḍu. | could not contain. |
-| **"చాచాడు. అంతె..."** | **"Cācāḍu. an̄te..."** | **"He stretched (his hands/hands). That's all..."** |
-| "చాచాడు. | "Cācāḍu. | "He stretched (his hands). |
-| అంతె..." | an̄te..." | That's all..." |
-| **గుమ్మడి కాయలు అంత పెద్దగా ఉంటాయని చూపుబోయి చేతులు చాచాడు. అంతె...** | **Gummaḍi kāyalu an̄ta peddagā un̄ṭāyani chūpuvōyi cētulu chācāḍu. an̄te...** | **He stretched out his hands to show that pumpkins would be that big. That's all...** |
-| గుమ్మడి | Gummaḍi | pumpkin |
-| కాయలు | kāyalu | fruits |
-| అంత | an̄ta | that much |
-| పెద్దగా | peddagā | big |
-| ఉంటాయని | un̄ṭāyani | that they would be |
-| చూపుబోయి | chūpuvōyi | while showing |
-| చేతులు | cētulu | hands |
-| చాచాడు. | chācāḍu. | stretched. |
-| అంతె... | an̄te... | That's all... |
-| **(ఏమి జరిగి ఉంటుందో ఊహించి చెప్పండి.)** | **(Ēmi jarigi un̄ṭun̄dō ūhin̄ci ceppaṇḍi.)** | **(Imagine what might have happened and tell.)** |
+| **nq>± nq>± ˇø£ sêE.** | **anagaa anagaa oka raaju.** | **Once upon a time, there was a king.** |
+| nq>± nq>± | anagaa anagaa | once upon a time |
+| ˇø£ | oka | one |
+| sêE. | raaju | king. |
+| **Ä sêEøÏ ˇø£ ô|<ä› ‘√≥.** | **Aa raajuiki oka pedda tota.** | **That king had a big garden.** |
+| Ä | Aa | That |
+| sêEøÏ | raajuiki | to the king |
+| ˇø£ | oka | one |
+| ô|<ä› | pedda | big |
+| ‘√≥. | tota | garden. |
+| **Ä ‘√≥≈£î ø±|ü˝≤<ës¡T&ÉT dü÷s¡j·T´.** | **Aa tota-ku kaapalaada-du Soorya.** | **Soorya was the guard for that garden.** |
+| Ä | Aa | That |
+| ‘√≥≈£î | tota-ku | to the garden |
+| ø±|ü˝≤<ës¡T&ÉT | kaapalaada-du | guard |
+| dü÷s¡j·T´. | Soorya | Soorya. |
+| **n‘·ì uÛ≤s¡´ qs¡düeTà.** | **atani bhaarya Narasamma.** | **His wife was Narasamma.** |
+| n‘·ì | atani | His |
+| uÛ≤s¡´ | bhaarya | wife |
+| qs¡düeTà. | Narasamma | Narasamma. |
+| **yês¡T ‘√≥˝ÀH˚ ìedæ+#˚yês¡T.** | **vaaru tota-lo-ne nivasinche-vaaru.** | **They lived in the garden itself.** |
+| yês¡T | vaaru | They |
+| ‘√≥˝ÀH˚ | tota-lo-ne | in the garden itself |
+| ìedæ+#˚yês¡T. | nivasinche-vaaru | used to live. |
+| **ˇø£ s√E ñ<äj·T+ dü÷s¡j·T´ ‘√≥˝À ‹s¡T>∑T‘·THêï&ÉT.** | **oka roju udayam Soorya tota-lo tirugutu-naadu.** | **One day, in the morning, Soorya was roaming in the garden.** |
+| ˇø£ | oka | One |
+| s√E | roju | day |
+| ñ<äj·T+ | udayam | morning |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| ‘√≥˝À | tota-lo | in the garden |
+| ‹s¡T>∑T‘·THêï&ÉT. | tirugutu-naadu | was roaming. |
+| **ˇø£ yÓ’|ü⁄q #Ó≥¢qT y˚Tdæ ñ+&É≥+ >∑eTì+#ê&ÉT.** | **oka vaipu-na chetta-nu vesi unda-dam gamaninchaadu.** | **He noticed a heap of garbage lying on one side.** |
+| ˇø£ | oka | One |
+| yÓ’|ü⁄q | vaipu-na | side |
+| #Ó≥¢qT | chetta-nu | garbage (accusative) |
+| y˚Tdæ | vesi | having put |
+| ñ+&É≥+ | unda-dam | being there |
+| >∑eTì+#ê&ÉT. | gamaninchaadu | noticed. |
+| **<ëìì m+&É˝À Äs¡u…&É‘ês¡T.** | **daani-ni enda-lo aarabettaaru.** | **They had dried it in the sun.** |
+| <ëìì | daani-ni | it (accusative) |
+| m+&É˝À | enda-lo | in the sun |
+| Äs¡u…&É‘ês¡T. | aarabettaaru | dried. |
+| **‘·s¡Tyê‘· n&Ée⁄\˝À <=]πø Ä≈£î |üdüs¡¢‘√ ‘·j·÷s¡T#˚dæq düVü≤» s¡+>∑T\qT e÷≈£î n~› eTeTà*ï Äø£s¡¸D°j·T+>± ‘·j·÷s¡T#˚kÕÔs¡T.** | **taruvaata adavulalo dorike aaku pasarlato chesina sahaja rangula-nu maaku adi mammalini aakarshaneeyam-gaa tayaru chestaaru.** | **Then, they make us (the toys) attractive with natural colors made from leaves found in the forests.** |
+| ‘·s¡Tyê‘· | taruvaata | Afterwards |
+| n&Ée⁄\˝À | adavulalo | in the forests |
+| <=]πø | dorike | found |
+| Ä≈£î | aaku | leaf |
+| |üdüs¡¢‘√ | pasarlato | with dyes |
+| ‘·j·÷s¡T#˚dæq | tayaru-chesina | made |
+| düVü≤» | sahaja | natural |
+| s¡+>∑T\qT | rangula-nu | colors (accusative) |
+| e÷≈£î | maaku | to us |
+| n~› | adi | that |
+| eTeTà*ï | mammalini | us (toys) |
+| Äø£s¡¸D°j·T+>± | aakarshaneeyam-gaa | attractively |
+| ‘·j·÷s¡T#˚kÕÔs¡T. | tayaru-chestaaru | make. |
+| **n˝≤ #˚dæq yê{Ï˝À |ü+&ÉT¢, ≈£Ls¡>±j·T\T, \e+>±\T, j·÷\≈£î\T, n–Zô|f…º, ‘·eT\bÕ≈£î\T yÓTT<ä˝…’q$ #·÷ùdÔ #ê˝≤ düVü≤»+>± ñ+{≤sTT.** | **analaa chesina vaati-lo pandlu, kuragaayalu, lavangaalu, yalakulu, aggi-pette, tamalapaakulu modalaina-vi choodde chaalaa sahajam-gaa untaayi.** | **When you look at the fruits, vegetables, cloves, cardamoms, matchboxes, betel leaves, etc., made like that, they look very natural.** |
+| n˝≤ | analaa | Like that |
+| #˚dæq | chesina | made |
+| yê{Ï˝À | vaati-lo | in those |
+| |ü+&ÉT¢, | pandlu, | fruits, |
+| ≈£Ls¡>±j·T\T, | kuragaayalu, | vegetables, |
+| \e+>±\T, | lavangaalu, | cloves, |
+| j·÷\≈£î\T, | yalakulu, | cardamoms, |
+| n–Zô|f…º, | aggi-pette, | matchboxes, |
+| ‘·eT\bÕ≈£î\T | tamalapaakulu | betel leaves |
+| yÓTT<ä˝…’q$ | modalaina-vi | etc. (those) |
+| #·÷ùdÔ | choodde | if seen |
+| #ê˝≤ | chaalaa | very |
+| düVü≤»+>± | sahajam-gaa | naturally |
+| ñ+{≤sTT. | untaayi | they are. |
+| **eTT≥Tºø=ì #·÷ùd<ëø± y˚T+ u§eTà\+ nì MT≈£î ‘Ó*j·T<äT.** | **muttu-koni choodde-daakaa memu bommalu ani meeku teliyadu.** | **Until you touch and see, you won't know that we are toys.** |
+| eTT≥Tºø=ì | muttu-koni | having touched |
+| #·÷ùd<ëø± | choodde-daakaa | until seen |
+| y˚T+ | memu | we |
+| u§eTà\+ | bommalu | toys |
+| nì | ani | (saying) that |
+| MT≈£î | meeku | to you |
+| ‘Ó*j·T<äT. | teliyadu | won't be known. |
+| **n+‘· düVü≤»+>± ñ+{≤sTT.** | **anta sahajam-gaa untaayi.** | **They look that natural.** |
+| n+‘· | anta | That |
+| düVü≤»+>± | sahajam-gaa | naturally |
+| ñ+{≤sTT. | untaayi | they are. |
+| **Ä s√E qT+&ç Á|ü‹ sêÁ‹ dü÷s¡j·T´ e÷≥Ty˚dæ ø±|ü˝≤ø±XÊ&ÉT.** | **Aa roju nunchi prati raatri Soorya maatu-vesi kaapalaa-kaashaadu.** | **From that day, every night, Soorya hid and started guarding.** |
+| Ä | Aa | That |
+| s√E | roju | day |
+| qT+&ç | nunchi | from |
+| Á|ü‹ | prati | every |
+| sêÁ‹ | raatri | night |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| e÷≥Ty˚dæ | maatu-vesi | having set a watch/hid |
+| ø±|ü˝≤ø±XÊ&ÉT. | kaapalaa-kaashaadu | started guarding. |
+| **|ü⁄qï$TsêÁ‹ e∫Ã+~.** | **punnami raatri vachhindi.** | **A full moon night arrived.** |
+| |ü⁄qï$TsêÁ‹ | punnami raatri | full moon night |
+| e∫Ã+~. | vachhindi | arrived. |
+| **yÓHÓï\ |æ+&Üs¡uÀdæq≥T¢+~.** | **vennela pindarasi-bodisina-natlundi.** | **It was as if moonlight was poured in heaps.** |
+| yÓHÓï\ | vennela | moonlight |
+| |æ+&Üs¡uÀdæq≥T¢+~. | pindarasi-bodisina-natlundi | like a heap poured. |
+| **dü÷s¡j·T´ C≤Á>∑‘·Ô>± #·÷düTÔHêï&ÉT.** | **Soorya jaagratta-gaa choodutu-naadu.** | **Soorya was watching carefully.** |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| C≤Á>∑‘·Ô>± | jaagratta-gaa | carefully |
+| #·÷düTÔHêï&ÉT. | choodutu-naadu | was watching. |
+| **Ç+‘·˝À ˇø£ n<äT“¤‘·+ »]–+~.** | **inta-lo oka adbhutam jarigindi.** | **Meanwhile, a wonder happened.** |
+| Ç+‘·˝À | inta-lo | In this (time) |
+| ˇø£ | oka | one |
+| n<äT“¤‘·+ | adbhutam | wonder |
+| »]–+~. | jarigindi | happened. |
+| **Äø±X¯+ qT+&ç ˇø£ ø±+‹ HÓeTà~>± ‘√≥˝ÀøÏ ~–+~.** | **aakaasham nunchi oka kaanti nematigaa tota-lokki digindi.** | **From the sky, a light slowly descended into the garden.** |
+| Äø±X¯+ | aakaasham | Sky |
+| qT+&ç | nunchi | from |
+| ˇø£ | oka | one |
+| ø±+‹ | kaanti | light |
+| HÓeTà~>± | nematigaa | slowly |
+| ‘√≥˝ÀøÏ | tota-lokki | into the garden |
+| ~–+~. | digindi | descended. |
+| **n~ ˇø£ n+<äyÓTÆq ¬sø£ÿ\ @qT>∑T.** | **adi oka andamaina rekkala enugu.** | **It was a beautiful winged elephant.** |
+| n~ | adi | It |
+| ˇø£ | oka | one |
+| n+<äyÓTÆq | andamaina | beautiful |
+| ¬sø£ÿ\ | rekkala | winged |
+| @qT>∑T. | enugu | elephant. |
+| **$T\$T˝≤ yÓTs¡TdüTÔqï~.** | **milamila merustondi.** | **It was glittering.** |
+| $T\$T˝≤ | milamila | glittering |
+| yÓTs¡TdüTÔqï~. | merustondi | was shining. |
+| **dü÷s¡j·T´ ÄX¯Ãsê´ìøÏ n+‘·T˝Ò<äT.** | **Soorya aashcharya-niki antu-le-du.** | **Soorya's wonder knew no bounds.** |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| ÄX¯Ãsê´ìøÏ | aashcharya-niki | to the wonder |
+| n+‘·T˝Ò<äT. | antu-le-du | had no end. |
+| **Ä @qT>∑T ‘√≥+‘ê ‹]–+~.** | **Aa enugu tota-anta tirigindi.** | **That elephant roamed all over the garden.** |
+| Ä | Aa | That |
+| @qT>∑T | enugu | elephant |
+| ‘√≥+‘ê | tota-anta | all over the garden |
+| ‹]–+~. | tirigindi | roamed. |
+| **‘·q≈£î ÇwüºyÓTÆq Ä≈£î\˙ï y˚Tdæ+~.** | **tanaku ishtamaina aakula-nii vesindi.** | **It put all its favorite leaves (on itself).** |
+| ‘·q≈£î | tanaku | to itself |
+| ÇwüºyÓTÆq | ishtamaina | favorite |
+| Ä≈£î\˙ï | aakula-nii | all leaves (accusative) |
+| y˚Tdæ+~. | vesindi | put. |
+| **dü÷s¡j·T´ @qT>∑TqT HÓeTà~>± yÓ+{≤&Ü&ÉT.** | **Soorya enugu-nu nematigaa vellantaadu.** | **Soorya went slowly after the elephant.** |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| @qT>∑TqT | enugu-nu | elephant (accusative) |
+| HÓeTà~>± | nematigaa | slowly |
+| yÓ+{≤&Ü&ÉT. | vellantaadu | followed. |
+| **ñ<äj·T+ ø±ek˛Ô+~.** | **udayam kaasostondi.** | **Dawn was approaching.** |
+| ñ<äj·T+ | udayam | Dawn |
+| ø±ek˛Ô+~. | kaasostondi | was approaching. |
+| **@qT>∑T ˇø£ÿkÕ]>± |ò”T+ø£]+∫+~.** | **enugu okkasarigaa phoonkarinchindi.** | **The elephant trumpeted suddenly.** |
+| @qT>∑T | enugu | Elephant |
+| ˇø£ÿkÕ]>± | okkasarigaa | suddenly |
+| |ò”T+ø£]+∫+~. | phoonkarinchindi | trumpeted. |
+| **ô|’øÏ m–]+~.** | **pai-ki egirindi.** | **It flew upwards.** |
+| ô|’øÏ | pai-ki | Upwards |
+| m–]+~. | egirindi | flew. |
+| **dü÷s¡j·T´ >∑ãT≈£îÿq <ëì ‘√ø£|ü≥Tº≈£îHêï&ÉT.** | **Soorya gabukkuna daani toka-pattukunaadu.** | **Soorya quickly grabbed its tail.** |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| >∑ãT≈£îÿq | gabukkuna | quickly |
+| <ëì | daani | its |
+| ‘√ø£|ü≥Tº≈£îHêï&ÉT. | toka-pattukunaadu | grabbed the tail. |
+| **Äø±X¯+˝À |üj·Tì+#ê&ÉT.** | **aakaasham-lo payaninchadu.** | **He traveled in the sky.** |
+| Äø±X¯+˝À | aakaasham-lo | In the sky |
+| |üj·Tì+#ê&ÉT. | payaninchadu | traveled. |
+| **$+‘·˝Àø£+ #˚sê&ÉT.** | **vintalokam cheraadu.** | **He reached a wondrous world.** |
+| $+‘·˝Àø£+ | vintalokam | World of wonders |
+| #˚sê&ÉT. | cheraadu | reached. |
+| **nø£ÿ&É m≥T#·÷dæHê s¡‘·ïsêdüT˝Ò!** | **akkada etu-choodinaa ratta-rastul-le!** | **No matter where he looked there, there were no roads!** |
+| nø£ÿ&É | akkada | There |
+| m≥T#·÷dæHê | etu-choodinaa | no matter where he looked |
+| s¡‘·ïsêdüT˝Ò! | ratta-rastul-le | no roads! |
+| **uÛÑeHê\˙ï ã+>±s¡TeTj·T+!** | **bhavanaal-anii bangaram-ayam!** | **All buildings were golden!** |
+| uÛÑeHê\˙ï | bhavanaal-anii | all buildings |
+| ã+>±s¡TeTj·T+! | bangaram-ayam | golden. |
+| **»+‘·Te⁄\T Äø±X¯+˝À m>∑Rs¡T‘·THêïsTT!** | **jantuvulu aakaasham-lo egurutu-naayi!** | **Animals were flying in the sky!** |
+| »+‘·Te⁄\T | jantuvulu | Animals |
+| Äø±X¯+˝À | aakaasham-lo | in the sky |
+| m>∑Rs¡T‘·THêïsTT! | egurutu-naayi | were flying. |
+| **|ü≈£åî\T e÷{≤¢&ÉT‘·THêïsTT!** | **pakshulu maatlaadutu-naayi!** | **Birds were talking!** |
+| |ü≈£åî\T | pakshulu | Birds |
+| e÷{≤¢&ÉT‘·THêïsTT! | maatlaadutu-naayi | were talking. |
+| **bÕeTT\T ‘√ø£\ô|’ ˝Ò∫ |ü&É>∑\T $|æŒ Hê≥´+ #˚düTÔHêïsTT!** | **paamulu tokala-pai lechi padagalu vippi naatyam chestu-naayi!** | **Snakes were rising on their tails, spreading their hoods, and dancing!** |
+| bÕeTT\T | paamulu | Snakes |
+| ‘√ø£\ô|’ | tokala-pai | on their tails |
+| ˝Ò∫ | lechi | having risen |
+| |ü&É>∑\T | padagalu | hoods |
+| $|æŒ | vippi | having spread |
+| Hê≥´+ | naatyam | dance |
+| #˚düTÔHêïsTT! | chestu-naayi | were doing. |
+| **ÄVü‰! mìï $+‘·\T, mìï e÷j·T\T!** | **ahaa! enni vintalu, enni mayalu!** | **Oh! How many wonders, how many illusions!** |
+| ÄVü‰! | ahaa | Oh! |
+| mìï | enni | how many |
+| $+‘·\T, | vintalu | wonders, |
+| mìï | enni | how many |
+| e÷j·T\T! | mayalu | illusions! |
+| **Çø£ dü÷s¡j·T´ ø√]+<˚ ‘·&Ée⁄>± n˙ï Á|ü‘·´ø£åeTj·÷´sTT.** | **ika Soorya korinde tadevu-gaa anii pratyaksham-ayayi.** | **Then, as if Soorya wished for it, all of them manifested.** |
+| Çø£ | ika | Then |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| ø√]+<˚ | korinde | wished for |
+| ‘·&Ée⁄>± | tadevu-gaa | as if (immediately) |
+| n˙ï | anii | all |
+| Á|ü‘·´ø£åeTj·÷´sTT. | pratyaksham-ayayi | manifested. |
+| **‘·q≈£î ø±e\dæqe˙ï eT÷≥ ø£≥Tº≈£îHêï&ÉT.** | **tanaku kaavalsinavannii moota kattukunaadu.** | **He packed everything he needed.** |
+| ‘·q≈£î | tanaku | To himself |
+| ø±e\dæqe˙ï | kaavalsinavannii | all that was needed |
+| eT÷≥ | moota | a bundle |
+| ø£≥Tº≈£îHêï&ÉT. | kattukunaadu | tied up. |
+| **eT∞fl |ü⁄qï$T s√E e∫Ã+~ @qT>∑T ‘√ø£ |ü≥Tº≈£îì uÛÑ÷˝Àø£+ #˚sê&ÉT.** | **malli punnami roju vachhindi enugu toka pattukoni bhoolokam cheraadu.** | **Again, the full moon day came, and holding the elephant's tail, he reached the earth.** |
+| eT∞fl | malli | again |
+| |ü⁄qï$T | punnami | full moon |
+| s√E | roju | day |
+| e∫Ã+~ | vachhindi | came |
+| @qT>∑T | enugu | elephant |
+| ‘√ø£ | toka | tail |
+| |ü≥Tº≈£îì | pattukoni | having held |
+| uÛÑ÷˝Àø£+ | bhoolokam | earth |
+| #˚sê&ÉT. | cheraadu | reached. |
+| **‘êqT #·÷dæq á $+‘·\˙ï dü÷s¡j·T´ }s¡+‘ê #ÓbÕŒ&ÉT.** | **taanu chusina ee vintalannii Soorya uuranta cheppaadu.** | **Soorya told the whole village about all these wonders he saw.** |
+| ‘êqT | taanu | He |
+| #·÷dæq | chusina | saw |
+| á | ee | these |
+| $+‘·\˙ï | vintalannii | all wonders |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| }s¡+‘ê | uuranta | all over the village |
+| #ÓbÕŒ&ÉT. | cheppaadu | told. |
+| **$+‘· edüTÔe⁄\˙ï #·÷bÕ&ÉT.** | **vinta vastuvulannii chuupadu.** | **He showed all the wondrous things.** |
+| $+‘· | vinta | Wonder |
+| edüTÔe⁄\˙ï | vastuvulannii | all objects |
+| #·÷bÕ&ÉT. | chuupadu | showed. |
+| **ø=+‘·eT+~ Ç‘·ì e÷≥\T qeTà˝Ò<äT.** | **kontamandi itani maatlu nammale-du.** | **Some people did not believe his words.** |
+| ø=+‘·eT+~ | kontamandi | some people |
+| Ç‘·ì | itani | his |
+| e÷≥\T | maatlu | words |
+| qeTà˝Ò<äT. | nammale-du | did not believe. |
+| **yês¡+<ä]˙ $+‘·˝Àø£+ rdüT≈£îb˛‘êqHêï&ÉT.** | **vaarandari-ni vintalokam teeskupota-nu-nnaadu.** | **He said he would take all of them to the wondrous world.** |
+| yês¡+<ä]˙ | vaarandari-ni | all of them (accusative) |
+| $+‘·˝Àø£+ | vintalokam | to the wondrous world |
+| rdüT≈£îb˛‘êqHêï&ÉT. | teeskupota-nu-nnaadu | said he would take. |
+| **|ü⁄qï$T s√E sêÁ‹ yês¡+<ä]˙ ‘√≥≈£î s¡eTàHêï&ÉT.** | **punnami roju raatri vaarandari-ni tota-ku ramma-nnaadu.** | **On the full moon night, he asked all of them to come to the garden.** |
+| |ü⁄qï$T | punnami | Full moon |
+| s√E | roju | day |
+| sêÁ‹ | raatri | night |
+| yês¡+<ä]˙ | vaarandari-ni | all of them (accusative) |
+| ‘√≥≈£î | tota-ku | to the garden |
+| s¡eTàHêï&ÉT. | ramma-nnaadu | asked to come. |
+| **|ü⁄qï$T s√E sêH˚ e∫Ã+~.** | **punnami roju raane vachhindi.** | **The full moon day indeed arrived.** |
+| |ü⁄qï$T | punnami | Full moon |
+| s√E | roju | day |
+| sêH˚ | raane | indeed |
+| e∫Ã+~. | vachhindi | arrived. |
+| **n+<äs¡÷ #·÷düTÔ+&É>± ¬sø£ÿ\ @qT>∑T ‘√≥˝À ~–+~.** | **andaroo choodutu-undagaa rekkala enugu tota-lo digindi.** | **As everyone watched, the winged elephant descended into the garden.** |
+| n+<äs¡÷ | andaroo | Everyone |
+| #·÷düTÔ+&É>± | choodutu-undagaa | while watching |
+| ¬sø£ÿ\ | rekkala | winged |
+| @qT>∑T | enugu | elephant |
+| ‘√≥˝À | tota-lo | in the garden |
+| ~–+~. | digindi | descended. |
+| **‘·q≈£î ø±e\dæq y˚T‘· y˚Tdæ+~.** | **tanaku kaavalsina meta vesindi.** | **It put the food it needed (on itself).** |
+| ‘·q≈£î | tanaku | To itself |
+| ø±e\dæq | kaavalsina | needed |
+| y˚T‘· | meta | food |
+| y˚Tdæ+~. | vesindi | put. |
+| **ñ<äj·T+ dü÷s¡j·T´ <ëì ‘√ø£ |ü≥Tº≈£îHêï&ÉT.** | **udayam Soorya daani toka pattukunaadu.** | **In the morning, Soorya held its tail.** |
+| ñ<äj·T+ | udayam | Morning |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| <ëì | daani | its |
+| ‘√ø£ | toka | tail |
+| |ü≥Tº≈£îHêï&ÉT. | pattukunaadu | held. |
+| **n‘·ì ø±\TqT qs¡düeTà, ÄyÓT ø±\T eTs=ø£s¡T, Ç˝≤ n+<äs¡÷ y˚˝≤&ÉT‘·÷ Äø±X¯+˝À Á|üj·÷DÏ+#·kÕ>∑s¡T.** | **atani kaalunu Narasamma, aame kaalunu marokaru, ilaa andaroo velaadutu-tu aakaasham-lo prayanincha-saagaaru.** | **His leg, Narasamma's (leg), her leg, another (person's), like this, everyone hung and started traveling in the sky.** |
+| n‘·ì | atani | His |
+| ø±\TqT | kaalunu | leg (accusative) |
+| qs¡düeTà, | Narasamma | Narasamma, |
+| ÄyÓT | aame | Her |
+| ø±\T | kaalunu | leg (accusative) |
+| eTs=ø£s¡T, | marokaru | another (person), |
+| Ç˝≤ | ilaa | Like this |
+| n+<äs¡÷ | andaroo | everyone |
+| y˚˝≤&ÉT‘·÷ | velaadutu-tu | while hanging |
+| Äø±X¯+˝À | aakaasham-lo | in the sky |
+| Á|üj·÷DÏ+#·kÕ>∑s¡T. | prayanincha-saagaaru | started traveling. |
+| **∫es¡˝À eT\¢eTà y˚˝≤&ÉT‘·Tqï~.** | **chivara-lo Mallamma velaadutu-undi.** | **At the end, Mallamma was hanging.** |
+| ∫es¡˝À | chivara-lo | At the end |
+| eT\¢eTà | Mallamma | Mallamma |
+| y˚˝≤&ÉT‘·Tqï~. | velaadutu-undi | was hanging. |
+| **ÄyÓT≈£î ˇø£ dü+<˚Vü≤+ e∫Ã+~.** | **aamaku oka sandeham vachchindi.** | **A doubt came to her.** |
+| ÄyÓT≈£î | aamaku | To her |
+| ˇø£ | oka | one |
+| dü+<˚Vü≤+ | sandeham | doubt |
+| e∫Ã+~. | vachchindi | came. |
+| **z|æø£ |ü≥º˝Òø£ b˛sTT+~.** | **opika pattuleka pooyindi.** | **She lost patience.** |
+| z|æø£ | opika | Patience |
+| |ü≥º˝Òø£ | pattuleka | having lost |
+| b˛sTT+~. | pooyindi | went away. |
+| **ªª$+‘·˝Àø£+˝À >∑TeTà&çø±j·T\T m+‘· ô|<ä›$>± ñ+{≤sTT?μμ nì ô|’ yê]ì n&ç–+~.** | **"Vintalokam-lo gumma-di-kayalu enta peddagaa untaayi?" ani pai vaari-ni adigindi.** | **"How big are pumpkins in the wondrous world?" she asked those above.** |
+| ªª$+‘·˝Àø£+˝À | "Vintalokam-lo | "In the wondrous world |
+| >∑TeTà&çø±j·T\T | gumma-di-kayalu | pumpkins |
+| m+‘· | enta | how much |
+| ô|<ä›$>± | peddagaa | big |
+| ñ+{≤sTT?μμ | untaayi?" | will they be?" |
+| nì | ani | (saying) thus |
+| ô|’ | pai | above |
+| yê]ì | vaari-ni | those (people) (accusative) |
+| n&ç–+~. | adigindi | asked. |
+| **yês¡T ‘·eT ô|’yê]ì n&ç>±s¡T.** | **vaaru tamapai vaari-ni adigaaru.** | **They asked those above them.** |
+| yês¡T | vaaru | They |
+| ‘·eT | tama | their own |
+| ô|’yê]ì | pai-vaari-ni | those above (accusative) |
+| n&ç>±s¡T. | adigaaru | asked. |
+| **∫e]øÏ Ä Á|üX¯ï dü÷s¡j·T´≈£î #˚]+~.** | **chivara-kki aa prashna Soorya-ku cherindi.** | **Finally, that question reached Soorya.** |
+| ∫e]øÏ | chivara-kki | Finally |
+| Ä | Aa | That |
+| Á|üX¯ï | prashna | question |
+| dü÷s¡j·T´≈£î | Soorya-ku | to Soorya |
+| #˚]+~. | cherindi | reached. |
+| **dü÷s¡j·T´ ñ‘ê‡Vü‰ìï Ä|ü⁄ø√˝Òø£b˛j·÷&ÉT.** | **Soorya utsaaham-ini aapukoleka-pooyadu.** | **Soorya could not control his excitement.** |
+| dü÷s¡j·T´ | Soorya | Soorya |
+| ñ‘ê‡Vü‰ìï | utsaaham-ini | excitement (accusative) |
+| Ä|ü⁄ø√˝Òø£b˛j·÷&ÉT. | aapukoleka-pooyadu | could not control. |
+| **ø±uÀ‘·T+&É>± |ò”T+ø£]+∫ ô|’øÏ m–]+~.** | **kaabootu-undagaa phoonkarinchindi pai-ki egirindi.** | **As it was about to happen, it trumpeted and flew upwards.** |
+| ø±uÀ‘·T+&É>± | kaabootu-undagaa | As it was about to be |
+| |ò”T+ø£]+∫ | phoonkarinchindi | trumpeted |
+| ô|’øÏ | pai-ki | upwards |
+| m–]+~. | egirindi | flew. |
+| **>∑TeTà&ç ø±j·T\T Ç+‘· ô|<ä›>± ñ+{≤j·Tì #·÷|üuÀsTT #˚‘·T\T #ê#ê&ÉT.** | **gumma-di-kayalu inta peddagaa untaayani choopu-bo-yi chetul-u chaachaadu.** | **He stretched out his hands to show that pumpkins would be so big.** |
+| >∑TeTà&ç | gumma-di-kayalu | Pumpkin |
+| ø±j·T\T | kayalu | fruits |
+| Ç+‘· | inta | this much |
+| ô|<ä›>± | peddagaa | big |
+| ñ+{≤j·Tì | untaayani | that they would be |
+| #·÷|üuÀsTT | choopu-bo-yi | about to show |
+| #˚‘·T\T | chetul-u | hands (accusative) |
+| #ê#ê&ÉT. | chaachaadu | stretched out. |
+| **n+‘˚ ...** | **ante...** | **And then...** |
+| n+‘˚ | ante | and then |
+| ... | ... | ... |
+| **(@$T »]–ñ+≥T+<√ }Væ≤+∫ #·|üŒ+&ç.)** | **(emi jarigi-untado uhin-chi cheppan-di.)** | **(Imagine what might have happened and tell.)** |
+| @$T | emi | What |
+| »]–ñ+≥T+<√ | jarigi-untado | might have happened |
+| }Væ≤+∫ | uhin-chi | having imagined |
+| #·|üŒ+&ç. | cheppan-di | tell. |
