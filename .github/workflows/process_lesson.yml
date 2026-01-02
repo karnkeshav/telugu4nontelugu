@@ -1,12 +1,10 @@
-
-
 name: Process Lesson Translation
 
 on:
   workflow_dispatch:
     inputs:
       chapter_folder:
-        description: 'Select the Chapter Folder (e.g., 06_Shataka_Padyalu)'
+        description: 'Select the Chapter Folder'
         required: true
         type: choice
         options:
@@ -26,11 +24,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: |
-          pip install google-generativeai
+          pip install google-genai
 
       - name: Run Translation Script
         env:
@@ -38,24 +36,32 @@ jobs:
         run: |
           python << 'EOF'
           import os
-          import google.generativeai as genai
+          import sys
+          from google import genai
+          from google.genai import types
 
           # Configuration
+          MODEL_CHAIN = [
+              "gemini-2.0-flash",        # Currently standard high-speed model
+              "gemini-flash-latest",     # Backup
+              "gemini-1.5-flash",        # Stable backup
+              "gemini-1.5-flash-8b"      # High-quota fallback
+          ]
+          
           chapter = "${{ github.event.inputs.chapter_folder }}"
           md_path = f"class5/{chapter}/lesson.md"
           html_path = f"class5/{chapter}/lesson.html"
           api_key = os.environ.get("GEMINI_API_KEY")
 
           if not os.path.exists(md_path):
-              print(f"Error: {md_path} not found.")
-              exit(1)
+              print(f"❌ Error: {md_path} not found.")
+              sys.exit(1)
 
           with open(md_path, "r", encoding="utf-8") as f:
               lesson_content = f.read()
 
-          genai.configure(api_key=api_key)
-          model = genai.GenerativeModel("gemini-2.0-flash")
-
+          client = genai.Client(api_key=api_key)
+          
           prompt = f"""
           You are a Telugu language tutor. Convert the following Telugu lesson text into a structured learning table.
           
@@ -67,33 +73,48 @@ jobs:
           Return ONLY a valid HTML snippet containing a table with these columns:
           | Telugu | Pronunciation | Meaning |
           
-          Use Bootstrap-like classes for styling: <table class="table table-striped table-bordered">
+          Use Bootstrap classes for styling: <table class="table table-striped table-bordered mt-3">
           
           TEXT TO PROCESS:
           {lesson_content}
           """
 
-          response = model.generate_content(prompt)
-          
-          # Basic parsing to ensure only the HTML table is kept
-          output_html = response.text
-          if "```html" in output_html:
-              output_html = output_html.split("```html")[1].split("```")[0]
-          elif "```" in output_html:
-              output_html = output_html.split("```")[1].split("```")[0]
+          success = False
+          for model_name in MODEL_CHAIN:
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  response = client.models.generate_content(
+                      model=model_name,
+                      contents=prompt
+                  )
+                  
+                  output_html = response.text
+                  
+                  # Clean Markdown artifacts
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
 
-          # Wrap in a basic container for lesson.html
-          final_code = f"""
+                  final_code = f"""
           <div class="container mt-4">
-              <h2>Lesson Translation</h2>
+              <h2 class="mb-4">Lesson Translation: {chapter.replace('_', ' ')}</h2>
               {output_html.strip()}
           </div>
           """
+                  with open(html_path, "w", encoding="utf-8") as f:
+                      f.write(final_code)
+                  
+                  print(f"✅ Successfully updated {html_path} using {model_name}")
+                  success = True
+                  break
+              except Exception as e:
+                  print(f"⚠️ Model {model_name} failed. Error: {e}")
+                  continue
 
-          with open(html_path, "w", encoding="utf-8") as f:
-              f.write(final_code)
-          
-          print(f"Successfully updated {html_path}")
+          if not success:
+              print("🔥 All models in the chain failed or reached quota limits.")
+              sys.exit(1)
           EOF
 
       - name: Commit and Push Changes
@@ -101,5 +122,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }}"
+          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} using fallback chain"
           git push
