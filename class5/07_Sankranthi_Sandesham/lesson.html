@@ -1,90 +1,613 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sankranthi Sandesham - Telugu Buddy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        h1 { margin: 0; font-size: 2em; }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Sankranthi Sandesham</h1>
-    </header>
-    <div class="container">
-        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Telugu</th>
-                    <th>Pronunciation</th>
-                    <th>Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>సంక్రాంతి పండుగ వస్తున్నది సందేశం తెస్తున్నది</td><td>Sankranthi paṇḍuga vastunnadi sandēśaṁ testunnadi</td><td>The Sankranthi festival is coming, bringing a message.</td></tr>
-<tr><td>సరికొత్త జీవితమును సాధించగ నడువమన్నది</td><td>sarikotta jīvitamunu sādhinchaga naḍuvamannadi</td><td>It asks us to walk towards achieving a new life.</td></tr>
-<tr><td>॥ సంక్రాంతి ॥</td><td></td><td></td></tr>
-<tr><td>పాత చేదు జ్ఞాపకాల పాతివేసి బ్రతుకునింక</td><td>pāta chēdu jñāpakāla pātivēsi bratukuninka</td><td>Burying the bitter memories of the past, now life,</td></tr>
-<tr><td>సార్థకమ్ము చేయుటకై సాగవలయునని యన్నది</td><td>sārthakammu chēyuṭakai sāgavalayunani yannadi</td><td>must proceed to make it meaningful.</td></tr>
-<tr><td>॥ సంక్రాంతి ॥</td><td></td><td></td></tr>
-<tr><td>ముగ్గులోని అందాని కీ మురియబోకుగాని దాని</td><td>muggulōni andānīki muriyabōkugāni dāni</td><td>Do not just revel in the beauty of the *muggu* (rangoli), but</td></tr>
-<tr><td>ముడుల వలెనే జీవితాన సుడులున్నవి కనుమన్నది</td><td>muḍula valenē jīvitāna suḍulunnavi kanumannadi</td><td>realize that there are also spirals (complications/challenges) in life, just like its coils.</td></tr>
-<tr><td>॥ సంక్రాంతి ॥</td><td></td><td></td></tr>
-<tr><td>తిలలు బెల్లమెల్లరుకును తినుటకీయ చాలదోయి</td><td>tilalu bellamellarukunu tinuṭakīya chāladōyi</td><td>The sesame seeds and jaggery are not enough for everyone to eat (it signifies unity/sharing)</td></tr>
-<tr><td>తీపి మనసు సాధించుట నేర్చుకొనిన మేలన్నది</td><td>tīpi manasu sādhinchuṭa nērchukonina mēlannadi</td><td>It is better to learn to achieve a sweet heart (kindness).</td></tr>
-<tr><td>॥ సంక్రాంతి ॥</td><td></td><td></td></tr>
-<tr><td>మనుషులంత కలిసి మెలిసి మనుగడ ఒకరోజునను</td><td>manuṣularata kalisi melisi manugaḍa okarōjunanu</td><td>All humans should live together, mingling, even if just for a day,</td></tr>
-<tr><td>మంచిని సాధించాలని మరల త్వరగ వస్తున్నది</td><td>manchini sādhinchālani marala tvaraga vastunnadi</td><td>(It says) I am quickly returning to achieve goodness again.</td></tr>
-<tr><td>॥ సంక్రాంతి ॥</td><td></td><td></td></tr>
-<tr><td>- వాసా నరసయ్య (బాలగేయ కుసుమాలు)</td><td>- Vāsā Narasayya (Bālagēya Kusumālu)</td><td>- Vāsā Narasayya (Children's Song Flowers - The Poet)</td></tr>
-            </tbody>
-        </table>
-        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
-    </div>
-</body>
-</html>
+<div class="container mt-4"><h2>07 Sankranthi Sandesham</h2><table class="table table-striped table-bordered mt-3">
+<thead>
+<tr>
+<th colspan="3" class="bg-primary text-white text-center">Telugu Lesson Structure</th>
+</tr>
+<tr>
+<th scope="col">Telugu Word</th>
+<th scope="col">Pronunciation</th>
+<th scope="col">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3" class="bg-warning"><strong>7. సంక్రాంతి సందేశం</strong></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>-</td>
+<td>7 (Number)</td>
+</tr>
+<tr>
+<td>సంక్రాంతి</td>
+<td>Saṅkrānti</td>
+<td>Sankranti (Festival name)</td>
+</tr>
+<tr>
+<td>సందేశం</td>
+<td>Sandēśaṁ</td>
+<td>Message</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-warning"><strong>గేయం:</strong></td>
+</tr>
+<tr>
+<td>గేయం</td>
+<td>Gēyaṁ</td>
+<td>Song / Poem</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>సంక్రాంతి పండుగ వస్తున్నది సందేశం తెస్తున్నది</strong></td>
+</tr>
+<tr>
+<td>సంక్రాంతి</td>
+<td>Saṅkrānti</td>
+<td>Sankranti (Festival name)</td>
+</tr>
+<tr>
+<td>పండుగ</td>
+<td>Paṇḍuga</td>
+<td>Festival</td>
+</tr>
+<tr>
+<td>వస్తున్నది</td>
+<td>Vastunnadi</td>
+<td>Is coming</td>
+</tr>
+<tr>
+<td>సందేశం</td>
+<td>Sandēśaṁ</td>
+<td>Message</td>
+</tr>
+<tr>
+<td>తెస్తున్నది</td>
+<td>Testunnadi</td>
+<td>Is bringing</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>సరికొత్త జీవితమును సాధించగ నడువమన్నది ॥సంక్రాంతి॥</strong></td>
+</tr>
+<tr>
+<td>సరికొత్త</td>
+<td>Sarikotta</td>
+<td>Brand new</td>
+</tr>
+<tr>
+<td>జీవితమును</td>
+<td>Jīvitamunu</td>
+<td>Life (accusative)</td>
+</tr>
+<tr>
+<td>సాధించగ</td>
+<td>Sādhiñcaga</td>
+<td>To achieve / to accomplish</td>
+</tr>
+<tr>
+<td>నడువమన్నది</td>
+<td>Naḍuvamannadi</td>
+<td>Told us to walk/proceed</td>
+</tr>
+<tr>
+<td>॥సంక్రాంతి॥</td>
+<td>-</td>
+<td>(Chorus indicator)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>పాత చేదు జ్ఞాపకాల పాతివేసి బ్రతుకునింక</strong></td>
+</tr>
+<tr>
+<td>పాత</td>
+<td>Pāta</td>
+<td>Old</td>
+</tr>
+<tr>
+<td>చేదు</td>
+<td>Cēdu</td>
+<td>Bitter</td>
+</tr>
+<tr>
+<td>జ్ఞాపకాల</td>
+<td>Jñāpakāla</td>
+<td>Memories (plural)</td>
+</tr>
+<tr>
+<td>పాతివేసి</td>
+<td>Pātivēsi</td>
+<td>Burying</td>
+</tr>
+<tr>
+<td>బ్రతుకునింక</td>
+<td>Bratukuniṅka</td>
+<td>This life now</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>సార్ధకమ్ము చేయుటకై సాగవలయునని యన్నది ॥సంక్రాంతి॥</strong></td>
+</tr>
+<tr>
+<td>సార్ధకమ్ము</td>
+<td>Sārdhakummu</td>
+<td>Meaningful / Purposeful</td>
+</tr>
+<tr>
+<td>చేయుటకై</td>
+<td>Cēyuṭakai</td>
+<td>In order to do/make</td>
+</tr>
+<tr>
+<td>సాగవలయునని</td>
+<td>Sāgavalayunani</td>
+<td>That one must proceed</td>
+</tr>
+<tr>
+<td>యన్నది</td>
+<td>Yannadi</td>
+<td>It said</td>
+</tr>
+<tr>
+<td>॥సంక్రాంతి॥</td>
+<td>-</td>
+<td>(Chorus indicator)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>ముగ్గులోని అందానికి మురియబోకుగాని దాని</strong></td>
+</tr>
+<tr>
+<td>ముగ్గులోని</td>
+<td>Muggulōni</td>
+<td>In the rangoli/design</td>
+</tr>
+<tr>
+<td>అందానికి</td>
+<td>Andāniki</td>
+<td>To the beauty</td>
+</tr>
+<tr>
+<td>మురియబోకుగాని</td>
+<td>Muriyabōkugāni</td>
+<td>Don't be ecstatic/delighted, but</td>
+</tr>
+<tr>
+<td>దాని</td>
+<td>Dāni</td>
+<td>Its</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>ముడుల వలెనె జీవితాన సుడులున్నవి కనుమన్నది ॥సంక్రాంతి॥</strong></td>
+</tr>
+<tr>
+<td>ముడుల</td>
+<td>Muḍula</td>
+<td>Knots / Twists</td>
+</tr>
+<tr>
+<td>వలెనె</td>
+<td>Valene</td>
+<td>Just like</td>
+</tr>
+<tr>
+<td>జీవితాన</td>
+<td>Jīvitāna</td>
+<td>In life</td>
+</tr>
+<tr>
+<td>సుడులున్నవి</td>
+<td>Suḍulunnavi</td>
+<td>There are swirls/whirlpools (referring to difficulties)</td>
+</tr>
+<tr>
+<td>కనుమన్నది</td>
+<td>Kanumannadi</td>
+<td>Told us to see/recognize</td>
+</tr>
+<tr>
+<td>॥సంక్రాంతి॥</td>
+<td>-</td>
+<td>(Chorus indicator)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>తిలలు బెల్లమెల్లరుకును తినుటకీయ చాలదోయి</strong></td>
+</tr>
+<tr>
+<td>తిలలు</td>
+<td>Tilalu</td>
+<td>Sesame seeds</td>
+</tr>
+<tr>
+<td>బెల్లమెల్లరుకును</td>
+<td>Bellamellarukunu</td>
+<td>Jaggery for everyone</td>
+</tr>
+<tr>
+<td>తినుటకీయ</td>
+<td>Tinuṭakiya</td>
+<td>To eat and give</td>
+</tr>
+<tr>
+<td>చాలదోయి</td>
+<td>Cāladdōyi</td>
+<td>That is not enough</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>తీపి మనసు సాధించుట నేర్చుకొనిన మేలన్నది ॥సంక్రాంతి॥</strong></td>
+</tr>
+<tr>
+<td>తీపి</td>
+<td>Tīpi</td>
+<td>Sweet</td>
+</tr>
+<tr>
+<td>మనసు</td>
+<td>Manasu</td>
+<td>Heart / Mind</td>
+</tr>
+<tr>
+<td>సాధించుట</td>
+<td>Sādhiñcuṭa</td>
+<td>Achieving</td>
+</tr>
+<tr>
+<td>నేర్చుకొనిన</td>
+<td>Nērcukonina</td>
+<td>If learned</td>
+</tr>
+<tr>
+<td>మేలన్నది</td>
+<td>Mēlannadi</td>
+<td>Said it is better</td>
+</tr>
+<tr>
+<td>॥సంక్రాంతి॥</td>
+<td>-</td>
+<td>(Chorus indicator)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>మనషులంత కలిసి మెలిసి మనుగడ ఒకరోజైనను</strong></td>
+</tr>
+<tr>
+<td>మనషులంత</td>
+<td>Manaṣulanta</td>
+<td>All the people</td>
+</tr>
+<tr>
+<td>కలిసి</td>
+<td>Kalisi</td>
+<td>Joining together</td>
+</tr>
+<tr>
+<td>మెలిసి</td>
+<td>Melisi</td>
+<td>Blending/mixing</td>
+</tr>
+<tr>
+<td>మనుగడ</td>
+<td>Manugaḍa</td>
+<td>Existence / Life</td>
+</tr>
+<tr>
+<td>ఒకరోజైనను</td>
+<td>Okarōjainanu</td>
+<td>Even if it is only one day</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>మంచిని సాధించాలని మరల త్వరగ వస్తున్నది ॥సంక్రాంతి॥</strong></td>
+</tr>
+<tr>
+<td>మంచిని</td>
+<td>Mañcini</td>
+<td>Goodness (accusative)</td>
+</tr>
+<tr>
+<td>సాధించాలని</td>
+<td>Sādhiñcālani</td>
+<td>That we must achieve</td>
+</tr>
+<tr>
+<td>మరల</td>
+<td>Marala</td>
+<td>Again</td>
+</tr>
+<tr>
+<td>త్వరగ</td>
+<td>Tvaraga</td>
+<td>Quickly</td>
+</tr>
+<tr>
+<td>వస్తున్నది</td>
+<td>Vastunnadi</td>
+<td>Is coming</td>
+</tr>
+<tr>
+<td>॥సంక్రాంతి॥</td>
+<td>-</td>
+<td>(Chorus indicator)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-warning"><strong>రచయిత: వాసాల నరసయ్య (బాలగేయ కుసుమాలు)</strong></td>
+</tr>
+<tr>
+<td>రచయిత</td>
+<td>Racayita</td>
+<td>Author</td>
+</tr>
+<tr>
+<td>వాసాల</td>
+<td>Vāsāla</td>
+<td>Vasala (Surname)</td>
+</tr>
+<tr>
+<td>నరసయ్య</td>
+<td>Narasayya</td>
+<td>Narasayya (Name)</td>
+</tr>
+<tr>
+<td>(బాలగేయ</td>
+<td>(Bālagēya</td>
+<td>(Children's Song</td>
+</tr>
+<tr>
+<td>కుసుమాలు)</td>
+<td>Kusumālu)</td>
+<td>Flowers / Blossoms)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-warning"><strong>పాఠం సారాంశం (Summary):</strong></td>
+</tr>
+<tr>
+<td>పాఠం</td>
+<td>Pāṭhaṁ</td>
+<td>Lesson</td>
+</tr>
+<tr>
+<td>సారాంశం</td>
+<td>Sārāṁśaṁ</td>
+<td>Summary / Essence</td>
+</tr>
+<tr>
+<td>(Summary)</td>
+<td>(Summary)</td>
+<td>(Summary)</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>సంక్రాంతి పండుగ మనకు కొత్త జీవితం వైపు అడుగులు వేయాలని చెబుతుంది.</strong></td>
+</tr>
+<tr>
+<td>సంక్రాంతి</td>
+<td>Saṅkrānti</td>
+<td>Sankranti</td>
+</tr>
+<tr>
+<td>పండుగ</td>
+<td>Paṇḍuga</td>
+<td>Festival</td>
+</tr>
+<tr>
+<td>మనకు</td>
+<td>Manaku</td>
+<td>To us</td>
+</tr>
+<tr>
+<td>కొత్త</td>
+<td>Kotta</td>
+<td>New</td>
+</tr>
+<tr>
+<td>జీవితం</td>
+<td>Jīvitaṁ</td>
+<td>Life</td>
+</tr>
+<tr>
+<td>వైపు</td>
+<td>Vaipu</td>
+<td>Towards</td>
+</tr>
+<tr>
+<td>అడుగులు</td>
+<td>Aḍugulu</td>
+<td>Steps</td>
+</tr>
+<tr>
+<td>వేయాలని</td>
+<td>Vēyālani</td>
+<td>That we should take/put</td>
+</tr>
+<tr>
+<td>చెబుతుంది.</td>
+<td>Cebūtundi.</td>
+<td>It tells.</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>పాత బాధలను మర్చిపోయి మంచి పనుల వైపు సాగాలి.</strong></td>
+</tr>
+<tr>
+<td>పాత</td>
+<td>Pāta</td>
+<td>Old</td>
+</tr>
+<tr>
+<td>బాధలను</td>
+<td>Bādhala nu</td>
+<td>Sorrows/Pains (accusative)</td>
+</tr>
+<tr>
+<td>మర్చిపోయి</td>
+<td>Marcipōyi</td>
+<td>Forgetting</td>
+</tr>
+<tr>
+<td>మంచి</td>
+<td>Mañci</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>పనుల</td>
+<td>Panula</td>
+<td>Works / Deeds</td>
+</tr>
+<tr>
+<td>వైపు</td>
+<td>Vaipu</td>
+<td>Towards</td>
+</tr>
+<tr>
+<td>సాగాలి.</td>
+<td>Sāgāli.</td>
+<td>Must proceed.</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>ఇంటి ముందు వేసే ముగ్గుల్లో ఎలాగైతే మెలికలు ఉంటాయో, జీవితంలో కూడా కష్టసుఖాలనే సుడులు ఉంటాయని గుర్తించాలి.</strong></td>
+</tr>
+<tr>
+<td>ఇంటి</td>
+<td>Inṭi</td>
+<td>House's</td>
+</tr>
+<tr>
+<td>ముందు</td>
+<td>Mundu</td>
+<td>Front</td>
+</tr>
+<tr>
+<td>వేసే</td>
+<td>Vēsē</td>
+<td>That are put/drawn</td>
+</tr>
+<tr>
+<td>ముగ్గుల్లో</td>
+<td>Muggullō</td>
+<td>In the Rangolis</td>
+</tr>
+<tr>
+<td>ఎలాగైతే</td>
+<td>Elāgaitē</td>
+<td>Just as</td>
+</tr>
+<tr>
+<td>మెలికలు</td>
+<td>Melikalu</td>
+<td>Twists / Curls</td>
+</tr>
+<tr>
+<td>ఉంటాయో,</td>
+<td>Unṭāyō,</td>
+<td>There are,</td>
+</tr>
+<tr>
+<td>జీవితంలో</td>
+<td>Jīvitaṁlō</td>
+<td>In life</td>
+</tr>
+<tr>
+<td>కూడా</td>
+<td>Kūḍā</td>
+<td>Also</td>
+</tr>
+<tr>
+<td>కష్టసుఖాలనే</td>
+<td>Kaṣṭasukhālanē</td>
+<td>Known as hardships and joys</td>
+</tr>
+<tr>
+<td>సుడులు</td>
+<td>Suḍulu</td>
+<td>Swirls / Whirlpools (Difficulties)</td>
+</tr>
+<tr>
+<td>ఉంటాయని</td>
+<td>Unṭāyani</td>
+<td>That there will be</td>
+</tr>
+<tr>
+<td>గుర్తించాలి.</td>
+<td>Gurtin̄cāli.</td>
+<td>Must recognize.</td>
+</tr>
+<tr>
+<td colspan="3" class="bg-success text-white"><strong>కేవలం నువ్వులు, బెల్లం పంచుకోవడం మాత్రమే కాదు, ఎదుటివారితో తీయగా మాట్లాడి మంచి మనసును కలిగి ఉండటమే సంక్రాంతి ఇచ్చే గొప్ప సందేశం.</strong></td>
+</tr>
+<tr>
+<td>కేవలం</td>
+<td>Kēvalaṁ</td>
+<td>Only / Just</td>
+</tr>
+<tr>
+<td>నువ్వులు,</td>
+<td>Nuvvulu,</td>
+<td>Sesame seeds,</td>
+</tr>
+<tr>
+<td>బెల్లం</td>
+<td>Bellaṁ</td>
+<td>Jaggery</td>
+</tr>
+<tr>
+<td>పంచుకోవడం</td>
+<td>Pañcukoṇḍaṁ</td>
+<td>Sharing</td>
+</tr>
+<tr>
+<td>మాత్రమే</td>
+<td>Mātrame</td>
+<td>Only</td>
+</tr>
+<tr>
+<td>కాదు,</td>
+<td>Kādu,</td>
+<td>Not</td>
+</tr>
+<tr>
+<td>ఎదుటివారితో</td>
+<td>Eduti vāritō</td>
+<td>With others (opposite people)</td>
+</tr>
+<tr>
+<td>తీయగా</td>
+<td>Tīyagā</td>
+<td>Sweetly</td>
+</tr>
+<tr>
+<td>మాట్లాడి</td>
+<td>Māṭlāḍi</td>
+<td>Having spoken</td>
+</tr>
+<tr>
+<td>మంచి</td>
+<td>Mañci</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>మనసును</td>
+<td>Manasunu</td>
+<td>Heart / Mind (accusative)</td>
+</tr>
+<tr>
+<td>కలిగి</td>
+<td>Kaligi</td>
+<td>Having</td>
+</tr>
+<tr>
+<td>ఉండటమే</td>
+<td>Unḍaṭamē</td>
+<td>That existence/being is (the core)</td>
+</tr>
+<tr>
+<td>సంక్రాంతి</td>
+<td>Saṅkrānti</td>
+<td>Sankranti</td>
+</tr>
+<tr>
+<td>ఇచ్చే</td>
+<td>Iccē</td>
+<td>That gives</td>
+</tr>
+<tr>
+<td>గొప్ప</td>
+<td>Goppa</td>
+<td>Great</td>
+</tr>
+<tr>
+<td>సందేశం.</td>
+<td>Sandēśaṁ.</td>
+<td>Message.</td>
+</tr>
+</tbody>
+</table></div>
