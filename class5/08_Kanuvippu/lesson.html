@@ -1,224 +1,2077 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanuvippu - Telugu Buddy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        h1 { margin: 0; font-size: 2em; }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Kanuvippu</h1>
-    </header>
-    <div class="container">
-        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Telugu</th>
-                    <th>Pronunciation</th>
-                    <th>Meaning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>పూర్వం చందనగిరి రాజ్యాన్ని చంద్రసేనుడే మహారాజు పాలించేవాడు.</td>
-                    <td>Purvam Chandanagiri raajyaanni ChandrasenuDE mahaaraaju paalinchevaaDu.</td>
-                    <td>Once upon a time, King Chandrasena ruled the kingdom of Chandanagiri.</td>
-                </tr>
-                <tr>
-                    <td>అతని కుమారుడు ప్రసేనుడు.</td>
-                    <td>Atani kumaaruDu PrasenuDu.</td>
-                    <td>His son was Prasena.</td>
-                </tr>
-                <tr>
-                    <td>ఒకనాడు ప్రసేనుడు వేటలో పరివారంతో బయలు దేరాడు.</td>
-                    <td>Okanadu PrasenuDu veeTalo parivaaramtho bayalu dEeraaDu.</td>
-                    <td>One day, Prasena set out for hunting with his entourage.</td>
-                </tr>
-                <tr>
-                    <td>ఒక అడవి పందిని తరుము కుంటూ పరివారానికి దూరమైపోయాడు.</td>
-                    <td>Oka aDavi pamdini tarumu kuntuu parivaaraaniki dooramayipoyaaDu.</td>
-                    <td>Chasing a wild boar, he got separated from his entourage.</td>
-                </tr>
-                <tr>
-                    <td>ప్రసేనుడు దానిని చంపి, తిరిగి గుర్రం పై బయలు దేరాడు.</td>
-                    <td>PrasenuDu daanini champi, tirigi gurram pai bayalu dEeraaDu.</td>
-                    <td>Prasena killed it and started back on his horse.</td>
-                </tr>
-                <tr>
-                    <td>అంతలోనే చీకటి పడింది.</td>
-                    <td>Antaloone cheekati paDindi.</td>
-                    <td>Meanwhile, it became dark.</td>
-                </tr>
-                <tr>
-                    <td>నల్లని మేఘాలు ఆకాశన్నంత కప్పివేయుటచే కాకారు చీకట్లు కమ్ముకున్నాయి.</td>
-                    <td>Nallani mEghalu aakashannanta kappiveyutache kaakaaru cheekatlu kammukunnaayi.</td>
-                    <td>Black clouds covered the entire sky, and pitch darkness set in.</td>
-                </tr>
-                <tr>
-                    <td>సుడి గాలితో జడివాన ప్రారంభమైంది.</td>
-                    <td>SuDi gaaliThO jaDivyaana praarambamayindi.</td>
-                    <td>A heavy rain started with a whirlwind.</td>
-                </tr>
-                <tr>
-                    <td>ఇంతలో పెనుగాలికి ఒక పెద్ద చెట్టు విరిగి పడింది.</td>
-                    <td>Intalo penugaaliki oka pedda chettu virigi paDindi.</td>
-                    <td>Meanwhile, due to the strong wind, a big tree fell down.</td>
-                </tr>
-                <tr>
-                    <td>దాంతో ప్రసేనుడు తీవ్రంగా గాయపడి స్పృహ తప్పాడు.</td>
-                    <td>Daanto PrasenuDu teevramgaa gaayapaDi spruha tappaaDu.</td>
-                    <td>With that, Prasena was severely injured and lost consciousness.</td>
-                </tr>
-                <tr>
-                    <td>ఈ లోపు ప్రసేనుడి కోసం గాలిస్తున్న సైన్యం అతడిని గుర్తించి నగరానికి చేర్చింది.</td>
-                    <td>Ee lopu PrasenuDi kosam gaalistunna sainyam ataDini gurtinchi nagaraaniki cherchindi.</td>
-                    <td>Meanwhile, the army searching for Prasena found him and brought him to the city.</td>
-                </tr>
-                <tr>
-                    <td>ఈ విషయం తెలుసుకున్న చంద్రసేన మహారాజు ప్రమాదానికి కారణం పెద్ద చెట్టు అని భావించి రాజ్యం లోని చెట్లన్నిటినీ కొట్టివేయమని ఆజ్ఞాపించాడు.</td>
-                    <td>Ee vishayam telusukunna Chandrasena mahaaraaju pramaadaniki kaaranam pedda chettu ani bhaavinchi raajyam loni chetlannitini kottiveyamani aajaapinchadu.</td>
-                    <td>King Chandrasena, learning of this and believing a big tree caused the accident, ordered all trees in the kingdom to be cut down.</td>
-                </tr>
-                <tr>
-                    <td>రాజవైద్యుడు ప్రసేనుడిని పరీక్షించి "మహారాజా!..."</td>
-                    <td>Raajavaidyudu Prasenudini pareekshinchi "Mahaaraaja!..."</td>
-                    <td>The royal physician examined Prasena and said "Oh King!..."</td>
-                </tr>
-                <tr>
-                    <td>అందుకు చంద్రసేనుడు ఉగ్రుడై "మొక్కల గురించి నాకు చెప్పకండి. వాటివల్లనే మా రాకుమారుడికి ఈ ఆపద సంభవించింది" అంటూ మండిపడ్డాడు.</td>
-                    <td>Anduku ChandrasenuDu ugruDai "Mokkala gurinchi naaku cheppakandi. Vaativallane maa raakumaarudiki ee aapada sambhavinchindi" antu mandipaddaadu.</td>
-                    <td>To that, Chandrasena became furious and said "Do not talk to me about plants. It is because of them that this danger befell our prince," fuming with anger.</td>
-                </tr>
-                <tr>
-                    <td>అప్పుడు రామాచారి "మహారాజా! ఇతడు మామూలు మనిషి కావాలంటే ఆ మొక్క తప్ప మరో మార్గం లేదు."</td>
-                    <td>Appudu Raamachaari "Mahaaraaja! Itadu maamoolu manishi kaavaalante aa mokka tappa maro maargam ledu."</td>
-                    <td>Then Ramachari said "Oh King! If he is to become a normal person again, there is no other way except that plant."</td>
-                </tr>
-                <tr>
-                    <td>"కనీసం పొరుగు రాజ్యంలోనున్న మా బంధువుల ఇంట్లోని సంజీవని మొక్కను తెప్పించాను."</td>
-                    <td>"KanIsam porugu raajyamlOnunna maa baMdhuuvula iMTlOni sanjeevani mokkanu teppiMchaanu."</td>
-                    <td>"I at least had the Sanjeevani plant brought from my relatives' house in the neighboring kingdom."</td>
-                </tr>
-                <tr>
-                    <td>"మీ కుమారునికి చికిత్స చేశాను."</td>
-                    <td>"Mee kumaaruNiki chikitsa chEshaanu."</td>
-                    <td>"I treated your son."</td>
-                </tr>
-                <tr>
-                    <td>"అందువల్లనే అతను మామూలు మనిషి అయ్యాడు."</td>
-                    <td>"Anduvallane atanu maamoolu manishi ayyaadu."</td>
-                    <td>"That is why he became a normal person."</td>
-                </tr>
-                <tr>
-                    <td>"నేను వైద్యం చేసింది మొక్కతోనే!"</td>
-                    <td>"Nenu vaidyaM chEsindi mokkatOne!"</td>
-                    <td>"The treatment I did was with the plant only!"</td>
-                </tr>
-                <tr>
-                    <td>"ఈ సృష్టిలో ఔషధ గుణాలు గల మొక్కలు, చెట్లు అనేకం ఉన్నాయి."</td>
-                    <td>"Ee sruShTilO aushadha gunaalu gala mokkalu, cheTTu anEkaM unnaayi."</td>
-                    <td>"In this creation, there are many plants and trees with medicinal properties."</td>
-                </tr>
-                <tr>
-                    <td>"ఇవి మనకు నీడను, ప్రాణవాయువును, ఫలాలను ఇస్తాయి."</td>
-                    <td>"Ivi manaku neeDanu, praaNavayuvunu, phalaalanu istaayi."</td>
-                    <td>"These give us shade, oxygen, and fruits."</td>
-                </tr>
-                <tr>
-                    <td>"చివరికి అది ఎండిపోయి కూడా మనకు కలపను ఇస్తాయి."</td>
-                    <td>"Chivariki adi enDipoyi kooDaa manaku kalpanu istaayi."</td>
-                    <td>"Finally, even after drying up, they give us timber."</td>
-                </tr>
-                <tr>
-                    <td>"అలాంటి త్యాగమూర్తులైన చెట్లను నరికించి మీరు ప్రకృతికి మహాద్రోహం చేశారు."</td>
-                    <td>"AlaMTi tyaagamuurTulaina cheTTlanu narikinchi meeru prakrutiki mahaadrOham chEsaaru."</td>
-                    <td>"By having such self-sacrificing trees cut down, you have committed a great treachery against nature."</td>
-                </tr>
-                <tr>
-                    <td>"ప్రజలను ఇబ్బందులకు గురిచేశారు" అన్నాడు.</td>
-                    <td>"Prajalanu ibbaMdulaku gurichEsaaru" annaaDu.</td>
-                    <td>"You have subjected the people to difficulties," he said.</td>
-                </tr>
-                <tr>
-                    <td>దానితో మహారాజుకు జ్ఞానోదయమైంది.</td>
-                    <td>Daanito Mahaaraaju ku gnaanOdayamayindi.</td>
-                    <td>With that, the King had a realization.</td>
-                </tr>
-                <tr>
-                    <td>"నా కళ్ళు తెరిపించారు. నేను చేసిన పనికి సిగ్గుపడుతున్నాను."</td>
-                    <td>"Naa kallu teripincharu. Nenu chesina paniki siggu padutunnanu."</td>
-                    <td>"You opened my eyes. I am ashamed of what I did."</td>
-                </tr>
-                <tr>
-                    <td>"నాకు కనువిప్పు కలిగింది. నిస్వార్థపరులైన మీరు ఈ చిన్న కోరిక కోసమే కదా!" అని అన్నాడు.</td>
-                    <td>"Naaku kanuvippu kaligindi. Niswartha parulaina meeru ee chinna korika kosame kadaa!" ani annaadu.</td>
-                    <td>"I have had an awakening. You selfless people, was it just for this small wish!" he said.</td>
-                </tr>
-                <tr>
-                    <td>వెంటనే రాజ్యంలో అందరూ మొక్కలు విధిగా నాటాలని, వాటిని కాపాడాలని ప్రకటించాడు.</td>
-                    <td>VeMTanE raajyamlO aMdarU mokkalu vidhigaa naaTalani, vaaTini kaapaaDalani prakatiMchaaDu.</td>
-                    <td>Immediately, he declared that everyone in the kingdom must dutifully plant trees and protect them.</td>
-                </tr>
-                <tr>
-                    <td>ఎవరు ఎక్కువ చెట్లు నాటితే వారిని తగిన విధంగా సన్మానిస్తామని కూడా ప్రకటించాడు.</td>
-                    <td>EvvarU ekkuva cheTTlu naaTite vaarini tagina vidhaM gaa sanmaanishTaamani kooDaa prakatiMchaaDu.</td>
-                    <td>He also announced that whoever plants more trees will be suitably honored.</td>
-                </tr>
-                <tr>
-                    <td>త్వరలోనే చందనగిరి రాజ్యం చెట్లతో కళకళలాడింది. ప్రజలంతా ఆనందించారు.</td>
-                    <td>TvaralOne Chandanagiri raajyaM cheTTlatO kalakalaaDindi. Prajalantaa aanandiMchaaru.</td>
-                    <td>Soon, the kingdom of Chandanagiri flourished with trees. All the people rejoiced.</td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
-    </div>
-</body>
-</html>
+<div class="container mt-4"><h2>08 Kanuvippu</h2><table class="table table-striped table-bordered mt-3">
+<thead>
+<tr>
+<th colspan="3">Lesson Text Analysis (Telugu to English)</th>
+</tr>
+<tr>
+<th>Telugu Word</th>
+<th>Pronunciation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3"><strong>పూర్వం చందనగిరి రాజ్యాన్ని చంద్రసేనుడనే మహారాజు పాలించేవాడు.</strong></td>
+</tr>
+<tr>
+<td>పూర్వం</td>
+<td>Pūrvaṁ</td>
+<td>Formerly / In the past</td>
+</tr>
+<tr>
+<td>చందనగిరి</td>
+<td>Chandanagiri</td>
+<td>Chandanagiri (Name of place)</td>
+</tr>
+<tr>
+<td>రాజ్యాన్ని</td>
+<td>Rājyānni</td>
+<td>Kingdom (accusative)</td>
+</tr>
+<tr>
+<td>చంద్రసేనుడనే</td>
+<td>Chandrasēnuḍanē</td>
+<td>Named Chandrasena</td>
+</tr>
+<tr>
+<td>మహారాజు</td>
+<td>Mahārāju</td>
+<td>Emperor / Great King</td>
+</tr>
+<tr>
+<td>పాలించేవాడు</td>
+<td>Pālinchēvāḍu</td>
+<td>Used to rule</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అతని కుమారుడు ప్రసేనుడు.</strong></td>
+</tr>
+<tr>
+<td>అతని</td>
+<td>Atani</td>
+<td>His</td>
+</tr>
+<tr>
+<td>కుమారుడు</td>
+<td>Kumāruḍu</td>
+<td>Son</td>
+</tr>
+<tr>
+<td>ప్రసేనుడు</td>
+<td>Prasēnuḍu</td>
+<td>Prasena (Name)</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఒకనాడు ప్రసేనుడు వేటకై పరివారంతో బయలుదేరాడు.</strong></td>
+</tr>
+<tr>
+<td>ఒకనాడు</td>
+<td>Okanāḍu</td>
+<td>One day</td>
+</tr>
+<tr>
+<td>ప్రసేనుడు</td>
+<td>Prasēnuḍu</td>
+<td>Prasena</td>
+</tr>
+<tr>
+<td>వేటకై</td>
+<td>Vēṭakai</td>
+<td>For hunting</td>
+</tr>
+<tr>
+<td>పరివారంతో</td>
+<td>Parivāraṁtō</td>
+<td>With his entourage / followers</td>
+</tr>
+<tr>
+<td>బయలుదేరాడు</td>
+<td>Bayaludērāḍu</td>
+<td>Started out / Set off</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఒక అడవి పందిని తరుముకుంటూ పరివారానికి దూరమైపోయాడు.</strong></td>
+</tr>
+<tr>
+<td>ఒక</td>
+<td>Oka</td>
+<td>A / One</td>
+</tr>
+<tr>
+<td>అడవి</td>
+<td>Aḍavi</td>
+<td>Wild / Forest</td>
+</tr>
+<tr>
+<td>పందిని</td>
+<td>Pandini</td>
+<td>Pig / Boar (accusative)</td>
+</tr>
+<tr>
+<td>తరుముకుంటూ</td>
+<td>Tarumukuṇṭū</td>
+<td>Chasing</td>
+</tr>
+<tr>
+<td>పరివారానికి</td>
+<td>Parivārāniki</td>
+<td>To the entourage</td>
+</tr>
+<tr>
+<td>దూరమైపోయాడు</td>
+<td>Dūramai-pōyāḍu</td>
+<td>Became distant / separated</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ప్రసేనుడు దానిని చంపి, తిరిగి గుర్రంపై బయలుదేరాడు.</strong></td>
+</tr>
+<tr>
+<td>ప్రసేనుడు</td>
+<td>Prasēnuḍu</td>
+<td>Prasena</td>
+</tr>
+<tr>
+<td>దానిని</td>
+<td>Dānini</td>
+<td>It (the boar, accusative)</td>
+</tr>
+<tr>
+<td>చంపి</td>
+<td>Champi</td>
+<td>Having killed</td>
+</tr>
+<tr>
+<td>తిరిగి</td>
+<td>Tirigi</td>
+<td>Returning / Back</td>
+</tr>
+<tr>
+<td>గుర్రంపై</td>
+<td>Gurraṁpai</td>
+<td>On the horse</td>
+</tr>
+<tr>
+<td>బయలుదేరాడు</td>
+<td>Bayaludērāḍu</td>
+<td>Set off</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అంతలోనే చీకటి పడింది.</strong></td>
+</tr>
+<tr>
+<td>అంతలోనే</td>
+<td>Antalōnē</td>
+<td>Just then / Immediately</td>
+</tr>
+<tr>
+<td>చీకటి</td>
+<td>Chīkaṭi</td>
+<td>Darkness</td>
+</tr>
+<tr>
+<td>పడింది</td>
+<td>Paḍindi</td>
+<td>Fell</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నల్లని మేఘాలు ఆకాశాన్నంతా కప్పివేయుటచే కారు చీకట్లు కమ్ముకున్నాయి.</strong></td>
+</tr>
+<tr>
+<td>నల్లని</td>
+<td>Nallani</td>
+<td>Black</td>
+</tr>
+<tr>
+<td>మేఘాలు</td>
+<td>Mēghālu</td>
+<td>Clouds</td>
+</tr>
+<tr>
+<td>ఆకాశాన్నంతా</td>
+<td>Ākāśānnantā</td>
+<td>The entire sky</td>
+</tr>
+<tr>
+<td>కప్పివేయుటచే</td>
+<td>Kappi-vēyuṭachē</td>
+<td>Because of covering</td>
+</tr>
+<tr>
+<td>కారు</td>
+<td>Kāru</td>
+<td>Deep / Intense</td>
+</tr>
+<tr>
+<td>చీకట్లు</td>
+<td>Chīkaṭlu</td>
+<td>Darkness (plural)</td>
+</tr>
+<tr>
+<td>కమ్ముకున్నాయి</td>
+<td>Kammukunnāyi</td>
+<td>Gathered / Spread over</td>
+</tr>
+<tr>
+<td colspan="3"><strong>సుడిగాలితో జడివాన ప్రారంభమైంది.</strong></td>
+</tr>
+<tr>
+<td>సుడిగాలితో</td>
+<td>Suḍigālitō</td>
+<td>With a whirl wind</td>
+</tr>
+<tr>
+<td>జడివాన</td>
+<td>Jaḍivāna</td>
+<td>Heavy rain / Downpour</td>
+</tr>
+<tr>
+<td>ప్రారంభమైంది</td>
+<td>Prāraṁbhamaindi</td>
+<td>Started</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఇంతలో పెనుగాలికి ఒక పెద్ద చెట్టు ప్రసేనుడిమీద పడింది.</strong></td>
+</tr>
+<tr>
+<td>ఇంతలో</td>
+<td>Intalō</td>
+<td>Meanwhile</td>
+</tr>
+<tr>
+<td>పెనుగాలికి</td>
+<td>Penugāliki</td>
+<td>Due to the severe wind</td>
+</tr>
+<tr>
+<td>ఒక</td>
+<td>Oka</td>
+<td>A / One</td>
+</tr>
+<tr>
+<td>పెద్ద</td>
+<td>Pedda</td>
+<td>Big</td>
+</tr>
+<tr>
+<td>చెట్టు</td>
+<td>Cheṭṭu</td>
+<td>Tree</td>
+</tr>
+<tr>
+<td>ప్రసేనుడిమీద</td>
+<td>Prasēnuḍi-mēda</td>
+<td>On Prasena</td>
+</tr>
+<tr>
+<td>పడింది</td>
+<td>Paḍindi</td>
+<td>Fell</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దాంతో ప్రసేనుడు తీవ్రంగా గాయపడి స్పృహతప్పాడు.</strong></td>
+</tr>
+<tr>
+<td>దాంతో</td>
+<td>Dāṁtō</td>
+<td>With that / Because of that</td>
+</tr>
+<tr>
+<td>ప్రసేనుడు</td>
+<td>Prasēnuḍu</td>
+<td>Prasena</td>
+</tr>
+<tr>
+<td>తీవ్రంగా</td>
+<td>Tīvraṁgā</td>
+<td>Severely</td>
+</tr>
+<tr>
+<td>గాయపడి</td>
+<td>Gāyapaḍi</td>
+<td>Having been injured</td>
+</tr>
+<tr>
+<td>స్పృహతప్పాడు</td>
+<td>Spruhatappāḍu</td>
+<td>Lost consciousness</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఈ లోపల ప్రసేనుడి కోసం గాలిస్తున్న సైన్యం అతడిని గుర్తించి నగరానికి చేర్చింది.</strong></td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>This</td>
+</tr>
+<tr>
+<td>లోపల</td>
+<td>Lōpala</td>
+<td>Inside / During (in the meantime)</td>
+</tr>
+<tr>
+<td>ప్రసేనుడి</td>
+<td>Prasēnuḍi</td>
+<td>Prasena's</td>
+</tr>
+<tr>
+<td>కోసం</td>
+<td>Kōsaṁ</td>
+<td>For</td>
+</tr>
+<tr>
+<td>గాలిస్తున్న</td>
+<td>Gālistunna</td>
+<td>Searching (present participle)</td>
+</tr>
+<tr>
+<td>సైన్యం</td>
+<td>Sainyaṁ</td>
+<td>Army / Soldiers</td>
+</tr>
+<tr>
+<td>అతడిని</td>
+<td>Ataḍini</td>
+<td>Him (accusative)</td>
+</tr>
+<tr>
+<td>గుర్తించి</td>
+<td>Gurtinchi</td>
+<td>Having recognized</td>
+</tr>
+<tr>
+<td>నగరానికి</td>
+<td>Nagarāniki</td>
+<td>To the city</td>
+</tr>
+<tr>
+<td>చేర్చింది</td>
+<td>Chērchindi</td>
+<td>Delivered / Took</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఈ విషయం తెలుసుకున్న చంద్రసేన మహారాజు ప్రమాదానికి కారణం పెద్ద చెట్టు అని భావించి రాజ్యంలోని చెట్లన్నిటినీ కొట్టివేయమని ఆజ్ఞాపించాడు.</strong></td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>This</td>
+</tr>
+<tr>
+<td>విషయం</td>
+<td>Viṣayaṁ</td>
+<td>Matter / Fact</td>
+</tr>
+<tr>
+<td>తెలుసుకున్న</td>
+<td>Telusukunnna</td>
+<td>Having learned / Known</td>
+</tr>
+<tr>
+<td>చంద్రసేన</td>
+<td>Chandrasēna</td>
+<td>Chandrasena (Name)</td>
+</tr>
+<tr>
+<td>మహారాజు</td>
+<td>Mahārāju</td>
+<td>Emperor</td>
+</tr>
+<tr>
+<td>ప్రమాదానికి</td>
+<td>Pramādāniki</td>
+<td>For the danger / accident</td>
+</tr>
+<tr>
+<td>కారణం</td>
+<td>Kāraṇaṁ</td>
+<td>Reason</td>
+</tr>
+<tr>
+<td>పెద్ద</td>
+<td>Pedda</td>
+<td>Big</td>
+</tr>
+<tr>
+<td>చెట్టు</td>
+<td>Cheṭṭu</td>
+<td>Tree</td>
+</tr>
+<tr>
+<td>అని</td>
+<td>Ani</td>
+<td>Thinking (quotation particle)</td>
+</tr>
+<tr>
+<td>భావించి</td>
+<td>Bhāvinchi</td>
+<td>Having thought</td>
+</tr>
+<tr>
+<td>రాజ్యంలోని</td>
+<td>Rājyaṁlōni</td>
+<td>In the kingdom</td>
+</tr>
+<tr>
+<td>చెట్లన్నిటినీ</td>
+<td>Cheṭlanniṭinī</td>
+<td>All the trees</td>
+</tr>
+<tr>
+<td>కొట్టివేయమని</td>
+<td>Koṭṭi-vēyamani</td>
+<td>To cut down (command)</td>
+</tr>
+<tr>
+<td>ఆజ్ఞాపించాడు</td>
+<td>Ājñāpin̄chāḍu</td>
+<td>Commanded / Ordered</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాజాజ్ఞతో ప్రజలు నివ్వెరపోయారు.</strong></td>
+</tr>
+<tr>
+<td>రాజాజ్ఞతో</td>
+<td>Rājājñatō</td>
+<td>With the king's order</td>
+</tr>
+<tr>
+<td>ప్రజలు</td>
+<td>Prajalu</td>
+<td>People</td>
+</tr>
+<tr>
+<td>నివ్వెరపోయారు</td>
+<td>Nivverapōyāru</td>
+<td>Were stunned / Bewildered</td>
+</tr>
+<tr>
+<td colspan="3"><strong>కానీ భయపడి చెట్లను కొట్టివేశారు.</strong></td>
+</tr>
+<tr>
+<td>కానీ</td>
+<td>Kāni</td>
+<td>But</td>
+</tr>
+<tr>
+<td>భయపడి</td>
+<td>Bhayapaḍi</td>
+<td>Having been afraid</td>
+</tr>
+<tr>
+<td>చెట్లను</td>
+<td>Cheṭlanu</td>
+<td>Trees (accusative)</td>
+</tr>
+<tr>
+<td>కొట్టివేశారు</td>
+<td>Koṭṭi-vēśāru</td>
+<td>Cut down</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాకుమారునికి వైద్యం చేయడానికి ఆస్థాన వైద్యుడైన రామాచారిని పిలిపించారు.</strong></td>
+</tr>
+<tr>
+<td>రాకుమారునికి</td>
+<td>Rākumāruniki</td>
+<td>To the prince</td>
+</tr>
+<tr>
+<td>వైద్యం</td>
+<td>Vaidyaṁ</td>
+<td>Treatment / Medicine</td>
+</tr>
+<tr>
+<td>చేయడానికి</td>
+<td>Chēyadaniki</td>
+<td>To do</td>
+</tr>
+<tr>
+<td>ఆస్థాన</td>
+<td>Āsthāna</td>
+<td>Court (Royal)</td>
+</tr>
+<tr>
+<td>వైద్యుడైన</td>
+<td>Vaidyuḍaina</td>
+<td>Who was the doctor</td>
+</tr>
+<tr>
+<td>రామాచారిని</td>
+<td>Rāmāchārini</td>
+<td>Ramachari (accusative)</td>
+</tr>
+<tr>
+<td>పిలిపించారు</td>
+<td>Pilipin̄chāru</td>
+<td>They summoned / Called</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాజవైద్యుడు ప్రసేనుడిని పరీక్షించి “మహరాజా! ప్రసేనుడు మామూలు మనిషి కావాలంటే సంజీవని మొక్క కావాలి.</strong></td>
+</tr>
+<tr>
+<td>రాజవైద్యుడు</td>
+<td>Rājavaidyuḍu</td>
+<td>Royal Physician</td>
+</tr>
+<tr>
+<td>ప్రసేనుడిని</td>
+<td>Prasēnuḍini</td>
+<td>Prasena (accusative)</td>
+</tr>
+<tr>
+<td>పరీక్షించి</td>
+<td>Parīkshinchi</td>
+<td>Having examined</td>
+</tr>
+<tr>
+<td>మహరాజా</td>
+<td>Mahārājā</td>
+<td>O Great King!</td>
+</tr>
+<tr>
+<td>ప్రసేనుడు</td>
+<td>Prasēnuḍu</td>
+<td>Prasena</td>
+</tr>
+<tr>
+<td>మామూలు</td>
+<td>Māmūlu</td>
+<td>Normal / Ordinary</td>
+</tr>
+<tr>
+<td>మనిషి</td>
+<td>Maniṣi</td>
+<td>Person / Man</td>
+</tr>
+<tr>
+<td>కావాలంటే</td>
+<td>Kāvālaṁṭē</td>
+<td>If (he) needs to become</td>
+</tr>
+<tr>
+<td>సంజీవని</td>
+<td>Saṁjīvani</td>
+<td>Sanjeevani (Mythical healing herb)</td>
+</tr>
+<tr>
+<td>మొక్క</td>
+<td>Mokka</td>
+<td>Plant / Sapling</td>
+</tr>
+<tr>
+<td>కావాలి</td>
+<td>Kāvāli</td>
+<td>Is needed</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దానిని తెప్పించండి” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>దానిని</td>
+<td>Dānini</td>
+<td>It (accusative)</td>
+</tr>
+<tr>
+<td>తెప్పించండి</td>
+<td>Teppin̄chanḍi</td>
+<td>Please arrange to get it (Bring it)</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అందుకు చంద్రసేనుడు ఉగ్రుడై “మొక్కల గురించి నాకు చెప్పకండి.</strong></td>
+</tr>
+<tr>
+<td>అందుకు</td>
+<td>Anduku</td>
+<td>For that / In response</td>
+</tr>
+<tr>
+<td>చంద్రసేనుడు</td>
+<td>Chandrasēnuḍu</td>
+<td>Chandrasena</td>
+</tr>
+<tr>
+<td>ఉగ్రుడై</td>
+<td>Ugruḍai</td>
+<td>Having become furious / angry</td>
+</tr>
+<tr>
+<td>మొక్కల</td>
+<td>Mokkala</td>
+<td>Of plants</td>
+</tr>
+<tr>
+<td>గురించి</td>
+<td>Gurinchi</td>
+<td>About</td>
+</tr>
+<tr>
+<td>నాకు</td>
+<td>Nāku</td>
+<td>To me</td>
+</tr>
+<tr>
+<td>చెప్పకండి</td>
+<td>Cheppakaṇḍi</td>
+<td>Don't tell</td>
+</tr>
+<tr>
+<td colspan="3"><strong>వాటివల్లనే మా రాకుమారుడికి ఈ ఆపద సంభవించింది” అంటూ మండిపడ్డాడు!</strong></td>
+</tr>
+<tr>
+<td>వాటివల్లనే</td>
+<td>Vāṭivallanē</td>
+<td>Because of them only</td>
+</tr>
+<tr>
+<td>మా</td>
+<td>Mā</td>
+<td>Our</td>
+</tr>
+<tr>
+<td>రాకుమారుడికి</td>
+<td>Rākumāruḍiki</td>
+<td>To the prince</td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>This</td>
+</tr>
+<tr>
+<td>ఆపద</td>
+<td>Āpada</td>
+<td>Calamity / Danger</td>
+</tr>
+<tr>
+<td>సంభవించింది</td>
+<td>Saṁbhavinchindi</td>
+<td>Happened / Occurred</td>
+</tr>
+<tr>
+<td>అంటూ</td>
+<td>Aṁṭū</td>
+<td>Saying</td>
+</tr>
+<tr>
+<td>మండిపడ్డాడు</td>
+<td>Maṇḍipaḍḍāḍu</td>
+<td>Flew into a rage / Flared up</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అప్పుడు రామాచారి “మహారాజా! ఇతడు మామూలు మనిషి కావాలంటే ఆ మొక్క తప్ప మరో మార్గం లేదు.</strong></td>
+</tr>
+<tr>
+<td>అప్పుడు</td>
+<td>Appuḍu</td>
+<td>Then</td>
+</tr>
+<tr>
+<td>రామాచారి</td>
+<td>Rāmāchāri</td>
+<td>Ramachari (Name)</td>
+</tr>
+<tr>
+<td>మహారాజా</td>
+<td>Mahārājā</td>
+<td>O Great King!</td>
+</tr>
+<tr>
+<td>ఇతడు</td>
+<td>Itaḍu</td>
+<td>He (This person)</td>
+</tr>
+<tr>
+<td>మామూలు</td>
+<td>Māmūlu</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>మనిషి</td>
+<td>Maniṣi</td>
+<td>Person</td>
+</tr>
+<tr>
+<td>కావాలంటే</td>
+<td>Kāvālaṁṭē</td>
+<td>If (he) needs to become</td>
+</tr>
+<tr>
+<td>ఆ</td>
+<td>Ā</td>
+<td>That</td>
+</tr>
+<tr>
+<td>మొక్క</td>
+<td>Mokka</td>
+<td>Plant</td>
+</tr>
+<tr>
+<td>తప్ప</td>
+<td>Tappa</td>
+<td>Except</td>
+</tr>
+<tr>
+<td>మరో</td>
+<td>Marō</td>
+<td>Another</td>
+</tr>
+<tr>
+<td>మార్గం</td>
+<td>Mārgaṁ</td>
+<td>Way / Path</td>
+</tr>
+<tr>
+<td>లేదు</td>
+<td>Lēdu</td>
+<td>There is not</td>
+</tr>
+<tr>
+<td colspan="3"><strong>కనీసం పొరుగు రాజ్యం నుంచైనా తెప్పించండి” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>కనీసం</td>
+<td>Kanīsaṁ</td>
+<td>At least</td>
+</tr>
+<tr>
+<td>పొరుగు</td>
+<td>Porugu</td>
+<td>Neighboring</td>
+</tr>
+<tr>
+<td>రాజ్యం</td>
+<td>Rājyaṁ</td>
+<td>Kingdom</td>
+</tr>
+<tr>
+<td>నుంచైనా</td>
+<td>Nun̄ch-ainā</td>
+<td>Even from</td>
+</tr>
+<tr>
+<td>తెప్పించండి</td>
+<td>Teppin̄chanḍi</td>
+<td>Please arrange to get it</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అందుకు కూడా రాజు అంగీకరించలేదు.</strong></td>
+</tr>
+<tr>
+<td>అందుకు</td>
+<td>Anduku</td>
+<td>For that</td>
+</tr>
+<tr>
+<td>కూడా</td>
+<td>Kūḍā</td>
+<td>Also / Even</td>
+</tr>
+<tr>
+<td>రాజు</td>
+<td>Rāju</td>
+<td>King</td>
+</tr>
+<tr>
+<td>అంగీకరించలేదు</td>
+<td>Aṅgīkarin̄chalēdu</td>
+<td>Did not agree</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దాంతో రాజవైద్యుడు మిన్నకుండిపోయాడు.</strong></td>
+</tr>
+<tr>
+<td>దాంతో</td>
+<td>Dāṁtō</td>
+<td>With that</td>
+</tr>
+<tr>
+<td>రాజవైద్యుడు</td>
+<td>Rājavaidyuḍu</td>
+<td>Royal Physician</td>
+</tr>
+<tr>
+<td>మిన్నకుండిపోయాడు</td>
+<td>Minnakunḍipōyāḍu</td>
+<td>Became silent / Kept quiet</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాజ్యంలో చెట్లను నరికివేయడంతో వర్షాలు లేక తీవ్రమైన కరువు వచ్చింది.</strong></td>
+</tr>
+<tr>
+<td>రాజ్యంలో</td>
+<td>Rājyaṁlō</td>
+<td>In the kingdom</td>
+</tr>
+<tr>
+<td>చెట్లను</td>
+<td>Cheṭlanu</td>
+<td>Trees (accusative)</td>
+</tr>
+<tr>
+<td>నరికివేయడంతో</td>
+<td>Nariki-vēyadaṁtō</td>
+<td>Because of cutting down</td>
+</tr>
+<tr>
+<td>వర్షాలు</td>
+<td>Varṣālu</td>
+<td>Rains</td>
+</tr>
+<tr>
+<td>లేక</td>
+<td>Lēka</td>
+<td>Without / Not having</td>
+</tr>
+<tr>
+<td>తీవ్రమైన</td>
+<td>Tīvramaina</td>
+<td>Severe</td>
+</tr>
+<tr>
+<td>కరువు</td>
+<td>Karuvu</td>
+<td>Drought / Famine</td>
+</tr>
+<tr>
+<td>వచ్చింది</td>
+<td>Vachindi</td>
+<td>Came</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ప్రజలు ఆకలితో అలమటించారు.</strong></td>
+</tr>
+<tr>
+<td>ప్రజలు</td>
+<td>Prajalu</td>
+<td>People</td>
+</tr>
+<tr>
+<td>ఆకలితో</td>
+<td>Ākalitō</td>
+<td>With hunger</td>
+</tr>
+<tr>
+<td>అలమటించారు</td>
+<td>Alamaṭin̄chāru</td>
+<td>Suffered / Languished</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఎక్కడ చూసినా హాహాకారాలే!</strong></td>
+</tr>
+<tr>
+<td>ఎక్కడ</td>
+<td>Ekkada</td>
+<td>Where</td>
+</tr>
+<tr>
+<td>చూసినా</td>
+<td>Chūsinā</td>
+<td>Even if seen</td>
+</tr>
+<tr>
+<td>హాహాకారాలే</td>
+<td>Hāhākārālē</td>
+<td>Only lamentations / Cries of distress</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాకుమారుడి పరిస్థితి రోజు రోజుకూ క్షీణించసాగింది.</strong></td>
+</tr>
+<tr>
+<td>రాకుమారుడి</td>
+<td>Rākumāruḍi</td>
+<td>Prince's</td>
+</tr>
+<tr>
+<td>పరిస్థితి</td>
+<td>Paristhiti</td>
+<td>Condition / Situation</td>
+</tr>
+<tr>
+<td>రోజు</td>
+<td>Rōju</td>
+<td>Day</td>
+</tr>
+<tr>
+<td>రోజుకూ</td>
+<td>Rōjukū</td>
+<td>Day by day</td>
+</tr>
+<tr>
+<td>క్షీణించసాగింది</td>
+<td>Kṣhīṇinchasāgindi</td>
+<td>Began to deteriorate / worsen</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దీనితో మహారాజు మళ్ళీ రాజవైద్యుడిని పిలిపించి వైద్యం చేయమని వేడుకున్నాడు.</strong></td>
+</tr>
+<tr>
+<td>దీనితో</td>
+<td>Dīnitō</td>
+<td>With this / Because of this</td>
+</tr>
+<tr>
+<td>మహారాజు</td>
+<td>Mahārāju</td>
+<td>Emperor</td>
+</tr>
+<tr>
+<td>మళ్ళీ</td>
+<td>Maḷḷī</td>
+<td>Again</td>
+</tr>
+<tr>
+<td>రాజవైద్యుడిని</td>
+<td>Rājavaidyuḍini</td>
+<td>Royal Physician (accusative)</td>
+</tr>
+<tr>
+<td>పిలిపించి</td>
+<td>Pilipin̄chi</td>
+<td>Having summoned</td>
+</tr>
+<tr>
+<td>వైద్యం</td>
+<td>Vaidyaṁ</td>
+<td>Treatment</td>
+</tr>
+<tr>
+<td>చేయమని</td>
+<td>Chēyamani</td>
+<td>To do (as a request)</td>
+</tr>
+<tr>
+<td>వేడుకున్నాడు</td>
+<td>Vēḍukunnāḍu</td>
+<td>Plead / Requested</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాజవైద్యుడి వైద్యంతో కొద్దిరోజులకే రాకుమారుడు మామూలు మనిషైనాడు.</strong></td>
+</tr>
+<tr>
+<td>రాజవైద్యుడి</td>
+<td>Rājavaidyuḍi</td>
+<td>Royal Physician's</td>
+</tr>
+<tr>
+<td>వైద్యంతో</td>
+<td>Vaidyaṁtō</td>
+<td>With the treatment</td>
+</tr>
+<tr>
+<td>కొద్దిరోజులకే</td>
+<td>Koddhi-rōjula-kē</td>
+<td>In just a few days</td>
+</tr>
+<tr>
+<td>రాకుమారుడు</td>
+<td>Rākumāruḍu</td>
+<td>Prince</td>
+</tr>
+<tr>
+<td>మామూలు</td>
+<td>Māmūlu</td>
+<td>Normal / Ordinary</td>
+</tr>
+<tr>
+<td>మనిషైనాడు</td>
+<td>Maniṣi-aināḍu</td>
+<td>Became a man</td>
+</tr>
+<tr>
+<td colspan="3"><strong>రాజుగారు ఆనందంతో రాజవైద్యుడైన రామాచారితో “అపర ధన్వంతరీ! నీవు మా రాకుమారుడిని మామూలు మనిషిగా చేసినందుకు సంతోషిస్తున్నాం!</strong></td>
+</tr>
+<tr>
+<td>రాజుగారు</td>
+<td>Rājūgāru</td>
+<td>The King (respectful)</td>
+</tr>
+<tr>
+<td>ఆనందంతో</td>
+<td>Ānandaṁtō</td>
+<td>With joy</td>
+</tr>
+<tr>
+<td>రాజవైద్యుడైన</td>
+<td>Rājavaidyuḍaina</td>
+<td>Who was the royal physician</td>
+</tr>
+<tr>
+<td>రామాచారితో</td>
+<td>Rāmāchāritō</td>
+<td>With Ramachari</td>
+</tr>
+<tr>
+<td>అపర</td>
+<td>Apara</td>
+<td>Another / Second</td>
+</tr>
+<tr>
+<td>ధన్వంతరీ</td>
+<td>Dhanvantarī</td>
+<td>Dhanvantari (Divine physician)</td>
+</tr>
+<tr>
+<td>నీవు</td>
+<td>Nīvu</td>
+<td>You (singular)</td>
+</tr>
+<tr>
+<td>మా</td>
+<td>Mā</td>
+<td>Our</td>
+</tr>
+<tr>
+<td>రాకుమారుడిని</td>
+<td>Rākumāruḍini</td>
+<td>The prince (accusative)</td>
+</tr>
+<tr>
+<td>మామూలు</td>
+<td>Māmūlu</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>మనిషిగా</td>
+<td>Maniṣigā</td>
+<td>As a person</td>
+</tr>
+<tr>
+<td>చేసినందుకు</td>
+<td>Chēsinanduku</td>
+<td>For having done / made</td>
+</tr>
+<tr>
+<td>సంతోషిస్తున్నాం</td>
+<td>Saṁtōṣhistunnāṁ</td>
+<td>We are happy</td>
+</tr>
+<tr>
+<td colspan="3"><strong>మీకేం కావాలో కోరుకోండి” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>మీకేం</td>
+<td>Mīkēṁ</td>
+<td>What to you (What you)</td>
+</tr>
+<tr>
+<td>కావాలో</td>
+<td>Kāvālō</td>
+<td>Is needed (interrogative)</td>
+</tr>
+<tr>
+<td>కోరుకోండి</td>
+<td>Kōrukoṇḍi</td>
+<td>Ask / Wish (for yourself)</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అప్పుడు రాజవైద్యుడు “మహారాజా! నేను ఒకే ఒక్క కోరిక కోరుతాను.</strong></td>
+</tr>
+<tr>
+<td>అప్పుడు</td>
+<td>Appuḍu</td>
+<td>Then</td>
+</tr>
+<tr>
+<td>రాజవైద్యుడు</td>
+<td>Rājavaidyuḍu</td>
+<td>Royal Physician</td>
+</tr>
+<tr>
+<td>మహారాజా</td>
+<td>Mahārājā</td>
+<td>O Great King!</td>
+</tr>
+<tr>
+<td>నేను</td>
+<td>Nēnu</td>
+<td>I</td>
+</tr>
+<tr>
+<td>ఒకే</td>
+<td>Okē</td>
+<td>Only one</td>
+</tr>
+<tr>
+<td>ఒక్క</td>
+<td>Okka</td>
+<td>One</td>
+</tr>
+<tr>
+<td>కోరిక</td>
+<td>Kōrika</td>
+<td>Wish / Desire</td>
+</tr>
+<tr>
+<td>కోరుతాను</td>
+<td>Kōrutānu</td>
+<td>I will ask for</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దానిని తమరు తీరుస్తారో! లేదో! అని సందేహం వెలిబుచ్చాడు.</strong></td>
+</tr>
+<tr>
+<td>దానిని</td>
+<td>Dānini</td>
+<td>It (accusative)</td>
+</tr>
+<tr>
+<td>తమరు</td>
+<td>Tamaru</td>
+<td>You (highly respectful)</td>
+</tr>
+<tr>
+<td>తీరుస్తారో</td>
+<td>Tīrustārō</td>
+<td>Whether you will fulfill</td>
+</tr>
+<tr>
+<td>లేదో</td>
+<td>Lēdō</td>
+<td>Or not</td>
+</tr>
+<tr>
+<td>అని</td>
+<td>Ani</td>
+<td>(Quotation particle)</td>
+</tr>
+<tr>
+<td>సందేహం</td>
+<td>Saṁdēhaṁ</td>
+<td>Doubt</td>
+</tr>
+<tr>
+<td>వెలిబుచ్చాడు</td>
+<td>Veli-bucchāḍu</td>
+<td>Expressed</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అందుకు రాజు “చెప్పండి.</strong></td>
+</tr>
+<tr>
+<td>అందుకు</td>
+<td>Anduku</td>
+<td>For that / In response</td>
+</tr>
+<tr>
+<td>రాజు</td>
+<td>Rāju</td>
+<td>King</td>
+</tr>
+<tr>
+<td>చెప్పండి</td>
+<td>Cheppaṇḍi</td>
+<td>Tell (me)</td>
+</tr>
+<tr>
+<td colspan="3"><strong>మీరేం అడిగినా ఇస్తాను.</strong></td>
+</tr>
+<tr>
+<td>మీరేం</td>
+<td>Mīrēṁ</td>
+<td>What you (Mīru+Ēmi)</td>
+</tr>
+<tr>
+<td>అడిగినా</td>
+<td>Aḍiginā</td>
+<td>Even if asked</td>
+</tr>
+<tr>
+<td>ఇస్తాను</td>
+<td>Istānu</td>
+<td>I will give</td>
+</tr>
+<tr>
+<td colspan="3"><strong>చివరికి నా రాజ్యంలో సగభాగం అయినా సరే!</strong></td>
+</tr>
+<tr>
+<td>చివరికి</td>
+<td>Chivariki</td>
+<td>Finally / In the end</td>
+</tr>
+<tr>
+<td>నా</td>
+<td>Nā</td>
+<td>My</td>
+</tr>
+<tr>
+<td>రాజ్యంలో</td>
+<td>Rājyaṁlō</td>
+<td>In the kingdom</td>
+</tr>
+<tr>
+<td>సగభాగం</td>
+<td>Saga-bhāgaṁ</td>
+<td>Half share</td>
+</tr>
+<tr>
+<td>అయినా</td>
+<td>Aynā</td>
+<td>Even if</td>
+</tr>
+<tr>
+<td>సరే</td>
+<td>Sarē</td>
+<td>Okay / All right</td>
+</tr>
+<tr>
+<td colspan="3"><strong>మా రాకుమారుని బ్రతికించినందుకు మీకు మేము ఎంతైనా ఋణపడ్డాం” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>మా</td>
+<td>Mā</td>
+<td>Our</td>
+</tr>
+<tr>
+<td>రాకుమారుని</td>
+<td>Rākumāruni</td>
+<td>Prince (accusative)</td>
+</tr>
+<tr>
+<td>బ్రతికించినందుకు</td>
+<td>Bratikin̄chinanduku</td>
+<td>For having saved (revived)</td>
+</tr>
+<tr>
+<td>మీకు</td>
+<td>Mīku</td>
+<td>To you</td>
+</tr>
+<tr>
+<td>మేము</td>
+<td>Mēmu</td>
+<td>We</td>
+</tr>
+<tr>
+<td>ఎంతైనా</td>
+<td>Entainā</td>
+<td>No matter how much</td>
+</tr>
+<tr>
+<td>ఋణపడ్డాం</td>
+<td>Ruṇapaḍḍāṁ</td>
+<td>Are indebted</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అప్పుడు రామాచారి "మీరు మొక్కలను నాటించి చెట్లను పెంచాలి మహారాజా!” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>అప్పుడు</td>
+<td>Appuḍu</td>
+<td>Then</td>
+</tr>
+<tr>
+<td>రామాచారి</td>
+<td>Rāmāchāri</td>
+<td>Ramachari</td>
+</tr>
+<tr>
+<td>మీరు</td>
+<td>Mīru</td>
+<td>You (plural/respectful)</td>
+</tr>
+<tr>
+<td>మొక్కలను</td>
+<td>Mokkala nu</td>
+<td>Plants (accusative)</td>
+</tr>
+<tr>
+<td>నాటించి</td>
+<td>Nāṭin̄chi</td>
+<td>Having planted</td>
+</tr>
+<tr>
+<td>చెట్లను</td>
+<td>Cheṭlanu</td>
+<td>Trees (accusative)</td>
+</tr>
+<tr>
+<td>పెంచాలి</td>
+<td>Pen̄chāli</td>
+<td>Must grow</td>
+</tr>
+<tr>
+<td>మహారాజా</td>
+<td>Mahārājā</td>
+<td>O Great King!</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>“ఏమిటీ! మీకేమన్నా మతిపోయిందా అలా అడిగారు.</strong></td>
+</tr>
+<tr>
+<td>ఏమిటీ</td>
+<td>Ēmiṭī</td>
+<td>What is this!</td>
+</tr>
+<tr>
+<td>మీకేమన్నా</td>
+<td>Mīkēmannā</td>
+<td>Did something happen to you</td>
+</tr>
+<tr>
+<td>మతిపోయిందా</td>
+<td>Matipōyindā</td>
+<td>Have you lost your mind?</td>
+</tr>
+<tr>
+<td>అలా</td>
+<td>Alā</td>
+<td>Like that</td>
+</tr>
+<tr>
+<td>అడిగారు</td>
+<td>Aḍigāru</td>
+<td>You asked</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నా కుమారుని గాయాలకు కారణమైన ఈ చెట్లను పెంచమంటారా?</strong></td>
+</tr>
+<tr>
+<td>నా</td>
+<td>Nā</td>
+<td>My</td>
+</tr>
+<tr>
+<td>కుమారుని</td>
+<td>Kumāruni</td>
+<td>Son's</td>
+</tr>
+<tr>
+<td>గాయాలకు</td>
+<td>Gāyālakú</td>
+<td>To the wounds / injuries</td>
+</tr>
+<tr>
+<td>కారణమైన</td>
+<td>Kāraṇamaina</td>
+<td>Which caused / became the reason</td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>These</td>
+</tr>
+<tr>
+<td>చెట్లను</td>
+<td>Cheṭlanu</td>
+<td>Trees (accusative)</td>
+</tr>
+<tr>
+<td>పెంచమంటారా</td>
+<td>Pen̄chamaṁṭārā</td>
+<td>Are you asking me to grow?</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఇదేనా మీ కోరిక?" అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>ఇదేనా</td>
+<td>Idēnā</td>
+<td>Is this it?</td>
+</tr>
+<tr>
+<td>మీ</td>
+<td>Mī</td>
+<td>Your</td>
+</tr>
+<tr>
+<td>కోరిక</td>
+<td>Kōrika</td>
+<td>Wish / Desire</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>"అవును మహారాజా! మీరు నన్ను క్షమించాలి.</strong></td>
+</tr>
+<tr>
+<td>అవును</td>
+<td>Avunu</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>మహారాజా</td>
+<td>Mahārājā</td>
+<td>O Great King!</td>
+</tr>
+<tr>
+<td>మీరు</td>
+<td>Mīru</td>
+<td>You</td>
+</tr>
+<tr>
+<td>నన్ను</td>
+<td>Nannu</td>
+<td>Me (accusative)</td>
+</tr>
+<tr>
+<td>క్షమించాలి</td>
+<td>Kṣhamin̄chāli</td>
+<td>Must forgive</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నేను మీకు తెలియకుండా పొరుగు రాజ్యంలోనున్న మా బంధువుల ఇంట్లోని సంజీవని మొక్కను తెప్పించాను.</strong></td>
+</tr>
+<tr>
+<td>నేను</td>
+<td>Nēnu</td>
+<td>I</td>
+</tr>
+<tr>
+<td>మీకు</td>
+<td>Mīku</td>
+<td>To you</td>
+</tr>
+<tr>
+<td>తెలియకుండా</td>
+<td>Teliyakuṇḍā</td>
+<td>Without knowing</td>
+</tr>
+<tr>
+<td>పొరుగు</td>
+<td>Porugu</td>
+<td>Neighboring</td>
+</tr>
+<tr>
+<td>రాజ్యంలోనున్న</td>
+<td>Rājyaṁlōnunna</td>
+<td>Which was in the kingdom</td>
+</tr>
+<tr>
+<td>మా</td>
+<td>Mā</td>
+<td>Our</td>
+</tr>
+<tr>
+<td>బంధువుల</td>
+<td>Bandhuvula</td>
+<td>Relatives'</td>
+</tr>
+<tr>
+<td>ఇంట్లోని</td>
+<td>Iṁṭlōni</td>
+<td>Inside the house</td>
+</tr>
+<tr>
+<td>సంజీవని</td>
+<td>Saṁjīvani</td>
+<td>Sanjeevani (herb)</td>
+</tr>
+<tr>
+<td>మొక్కను</td>
+<td>Mokkanu</td>
+<td>Plant (accusative)</td>
+</tr>
+<tr>
+<td>తెప్పించాను</td>
+<td>Teppin̄chānu</td>
+<td>I arranged to bring</td>
+</tr>
+<tr>
+<td colspan="3"><strong>మీ కుమారునికి చికిత్స చేశాను.</strong></td>
+</tr>
+<tr>
+<td>మీ</td>
+<td>Mī</td>
+<td>Your</td>
+</tr>
+<tr>
+<td>కుమారునికి</td>
+<td>Kumāruniki</td>
+<td>To the son</td>
+</tr>
+<tr>
+<td>చికిత్స</td>
+<td>Chikitsa</td>
+<td>Treatment</td>
+</tr>
+<tr>
+<td>చేశాను</td>
+<td>Chēśānu</td>
+<td>I did</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అందువల్లనే అతను మామూలు మనిషైనాడు.</strong></td>
+</tr>
+<tr>
+<td>అందువల్లనే</td>
+<td>Anduvallanē</td>
+<td>Because of that only</td>
+</tr>
+<tr>
+<td>అతను</td>
+<td>Atanu</td>
+<td>He</td>
+</tr>
+<tr>
+<td>మామూలు</td>
+<td>Māmūlu</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>మనిషైనాడు</td>
+<td>Maniṣi-aināḍu</td>
+<td>Became a man</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నాలుగు రోజులు ఆలస్యమైతే రాకుమారుడు మనకు దక్కేవాడు కాదు” అని అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>నాలుగు</td>
+<td>Nālugu</td>
+<td>Four</td>
+</tr>
+<tr>
+<td>రోజులు</td>
+<td>Rōjulu</td>
+<td>Days</td>
+</tr>
+<tr>
+<td>ఆలస్యమైతే</td>
+<td>Ālasyamaitē</td>
+<td>If delayed</td>
+</tr>
+<tr>
+<td>రాకుమారుడు</td>
+<td>Rākumāruḍu</td>
+<td>Prince</td>
+</tr>
+<tr>
+<td>మనకు</td>
+<td>Manaku</td>
+<td>To us</td>
+</tr>
+<tr>
+<td>దక్కేవాడు</td>
+<td>Dakkēvāḍu</td>
+<td>One who would remain/be obtained</td>
+</tr>
+<tr>
+<td>కాదు</td>
+<td>Kādu</td>
+<td>No / Not (negation)</td>
+</tr>
+<tr>
+<td>అని</td>
+<td>Ani</td>
+<td>(Quotation particle)</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>"నేను వైద్యం చేసింది మొక్కతోనే!</strong></td>
+</tr>
+<tr>
+<td>నేను</td>
+<td>Nēnu</td>
+<td>I</td>
+</tr>
+<tr>
+<td>వైద్యం</td>
+<td>Vaidyaṁ</td>
+<td>Treatment</td>
+</tr>
+<tr>
+<td>చేసింది</td>
+<td>Chēsindi</td>
+<td>The thing done</td>
+</tr>
+<tr>
+<td>మొక్కతోనే</td>
+<td>Mokkatōnē</td>
+<td>Only with the plant</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఈ సృష్టిలో ఔషధ గుణాలు గల మొక్కలు, చెట్లు అనేకం ఉన్నాయి.</strong></td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>This</td>
+</tr>
+<tr>
+<td>సృష్టిలో</td>
+<td>Sruṣṭilō</td>
+<td>In the creation / world</td>
+</tr>
+<tr>
+<td>ఔషధ</td>
+<td>Auṣhadha</td>
+<td>Medicinal</td>
+</tr>
+<tr>
+<td>గుణాలు</td>
+<td>Guṇālu</td>
+<td>Qualities / Properties</td>
+</tr>
+<tr>
+<td>గల</td>
+<td>Gala</td>
+<td>Having</td>
+</tr>
+<tr>
+<td>మొక్కలు</td>
+<td>Mokvalu</td>
+<td>Plants</td>
+</tr>
+<tr>
+<td>చెట్లు</td>
+<td>Cheṭlu</td>
+<td>Trees</td>
+</tr>
+<tr>
+<td>అనేకం</td>
+<td>Anēkaṁ</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>ఉన్నాయి</td>
+<td>Unnāyi</td>
+<td>Are (there)</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఇవి మనకు నీడను, ప్రాణవాయువును, ఫలాలను ఇస్తున్నాయి.</strong></td>
+</tr>
+<tr>
+<td>ఇవి</td>
+<td>Ivi</td>
+<td>These (things)</td>
+</tr>
+<tr>
+<td>మనకు</td>
+<td>Manaku</td>
+<td>To us</td>
+</tr>
+<tr>
+<td>నీడను</td>
+<td>Nīḍanu</td>
+<td>Shade (accusative)</td>
+</tr>
+<tr>
+<td>ప్రాణవాయువును</td>
+<td>Prāṇavāyuvunu</td>
+<td>Oxygen / Life air (accusative)</td>
+</tr>
+<tr>
+<td>ఫలాలను</td>
+<td>Phalālanu</td>
+<td>Fruits (accusative)</td>
+</tr>
+<tr>
+<td>ఇస్తున్నాయి</td>
+<td>Istunnāyi</td>
+<td>Are giving</td>
+</tr>
+<tr>
+<td colspan="3"><strong>చివరికి అది ఎండిపోయి కూడా మనకు కలపను ఇస్తున్నాయి.</strong></td>
+</tr>
+<tr>
+<td>చివరికి</td>
+<td>Chivariki</td>
+<td>Finally</td>
+</tr>
+<tr>
+<td>అది</td>
+<td>Adi</td>
+<td>It</td>
+</tr>
+<tr>
+<td>ఎండిపోయి</td>
+<td>Eṇḍipōyi</td>
+<td>Having dried up</td>
+</tr>
+<tr>
+<td>కూడా</td>
+<td>Kūḍā</td>
+<td>Also / Even</td>
+</tr>
+<tr>
+<td>మనకు</td>
+<td>Manaku</td>
+<td>To us</td>
+</tr>
+<tr>
+<td>కలపను</td>
+<td>Kalapanu</td>
+<td>Timber / Wood (accusative)</td>
+</tr>
+<tr>
+<td>ఇస్తున్నాయి</td>
+<td>Istunnāyi</td>
+<td>Are giving</td>
+</tr>
+<tr>
+<td colspan="3"><strong>అలాంటి త్యాగమూర్తులైన చెట్లను నరికించి మీరు ప్రకృతికి మహాద్రోహం చేశారు.</strong></td>
+</tr>
+<tr>
+<td>అలాంటి</td>
+<td>Alānṭi</td>
+<td>Such</td>
+</tr>
+<tr>
+<td>త్యాగమూర్తులైన</td>
+<td>Tyāgamūrtulaina</td>
+<td>Who are embodiments of sacrifice</td>
+</tr>
+<tr>
+<td>చెట్లను</td>
+<td>Cheṭlanu</td>
+<td>Trees (accusative)</td>
+</tr>
+<tr>
+<td>నరికించి</td>
+<td>Narikin̄chi</td>
+<td>Having cut down</td>
+</tr>
+<tr>
+<td>మీరు</td>
+<td>Mīru</td>
+<td>You</td>
+</tr>
+<tr>
+<td>ప్రకృతికి</td>
+<td>Prakrutiki</td>
+<td>To nature</td>
+</tr>
+<tr>
+<td>మహాద్రోహం</td>
+<td>Mahādrōhaṁ</td>
+<td>Great betrayal / treason</td>
+</tr>
+<tr>
+<td>చేశారు</td>
+<td>Chēśāru</td>
+<td>You did</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ప్రజలను ఇబ్బందులకు గురిచేశారు” అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>ప్రజలను</td>
+<td>Prajalanu</td>
+<td>People (accusative)</td>
+</tr>
+<tr>
+<td>ఇబ్బందులకు</td>
+<td>Ibbandulaku</td>
+<td>To difficulties</td>
+</tr>
+<tr>
+<td>గురిచేశారు</td>
+<td>Guri-chēśāru</td>
+<td>You exposed / subjected</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>దాంతో మహారాజుకు జ్ఞానోదయమైంది.</strong></td>
+</tr>
+<tr>
+<td>దాంతో</td>
+<td>Dāṁtō</td>
+<td>With that</td>
+</tr>
+<tr>
+<td>మహారాజుకు</td>
+<td>Mahārājukku</td>
+<td>To the Emperor</td>
+</tr>
+<tr>
+<td>జ్ఞానోదయమైంది</td>
+<td>Jñānōdayamaindi</td>
+<td>Enlightenment occurred</td>
+</tr>
+<tr>
+<td colspan="3"><strong>"నా కళ్ళు తెరిపించారు.</strong></td>
+</tr>
+<tr>
+<td>నా</td>
+<td>Nā</td>
+<td>My</td>
+</tr>
+<tr>
+<td>కళ్ళు</td>
+<td>Kaḷḷu</td>
+<td>Eyes</td>
+</tr>
+<tr>
+<td>తెరిపించారు</td>
+<td>Teripin̄chāru</td>
+<td>You opened (caused to open)</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నేను చేసిన పనికి సిగ్గుపడుతున్నాను.</strong></td>
+</tr>
+<tr>
+<td>నేను</td>
+<td>Nēnu</td>
+<td>I</td>
+</tr>
+<tr>
+<td>చేసిన</td>
+<td>Chēsina</td>
+<td>Done (adjective form)</td>
+</tr>
+<tr>
+<td>పనికి</td>
+<td>Paniki</td>
+<td>For the work/deed</td>
+</tr>
+<tr>
+<td>సిగ్గుపడుతున్నాను</td>
+<td>Siggu-paḍutunnānu</td>
+<td>I am feeling ashamed</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నాకు కనువిప్పు కలిగింది.</strong></td>
+</tr>
+<tr>
+<td>నాకు</td>
+<td>Nāku</td>
+<td>To me</td>
+</tr>
+<tr>
+<td>కనువిప్పు</td>
+<td>Kanuvippu</td>
+<td>Eye-opener / Realization</td>
+</tr>
+<tr>
+<td>కలిగింది</td>
+<td>Kaligindi</td>
+<td>Occurred / Happened</td>
+</tr>
+<tr>
+<td colspan="3"><strong>నిస్వార్ధపరులైన మీరు ఈ చిన్న కోరిక కోరడం లోకోపకారం కోసమే గదా!" అని అన్నాడు.</strong></td>
+</tr>
+<tr>
+<td>నిస్వార్ధపరులైన</td>
+<td>Niswārdhaparulaina</td>
+<td>Who are selfless people</td>
+</tr>
+<tr>
+<td>మీరు</td>
+<td>Mīru</td>
+<td>You</td>
+</tr>
+<tr>
+<td>ఈ</td>
+<td>Ī</td>
+<td>This</td>
+</tr>
+<tr>
+<td>చిన్న</td>
+<td>Chinna</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>కోరిక</td>
+<td>Kōrika</td>
+<td>Wish</td>
+</tr>
+<tr>
+<td>కోరడం</td>
+<td>Kōraḍaṁ</td>
+<td>Asking (the act of asking)</td>
+</tr>
+<tr>
+<td>లోకోపకారం</td>
+<td>Lōkōpakāraṁ</td>
+<td>World's welfare / Public good</td>
+</tr>
+<tr>
+<td>కోసమే</td>
+<td>Kōsamē</td>
+<td>Only for the sake of</td>
+</tr>
+<tr>
+<td>గదా</td>
+<td>Gadā</td>
+<td>Isn't it? (confirmation particle)</td>
+</tr>
+<tr>
+<td>అని</td>
+<td>Ani</td>
+<td>(Quotation particle)</td>
+</tr>
+<tr>
+<td>అన్నాడు</td>
+<td>Annāḍu</td>
+<td>He said</td>
+</tr>
+<tr>
+<td colspan="3"><strong>వెంటనే రాజ్యంలో అందరూ మొక్కలు విధిగా నాటాలని, వాటిని కాపాడాలని ప్రకటించాడు.</strong></td>
+</tr>
+<tr>
+<td>వెంటనే</td>
+<td>Veṇṭanē</td>
+<td>Immediately</td>
+</tr>
+<tr>
+<td>రాజ్యంలో</td>
+<td>Rājyaṁlō</td>
+<td>In the kingdom</td>
+</tr>
+<tr>
+<td>అందరూ</td>
+<td>Andarū</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>మొక్కలు</td>
+<td>Mokvalu</td>
+<td>Plants</td>
+</tr>
+<tr>
+<td>విధిగా</td>
+<td>Vidhigā</td>
+<td>Mandatorily / As a duty</td>
+</tr>
+<tr>
+<td>నాటాలని</td>
+<td>Nāṭālani</td>
+<td>That they must plant</td>
+</tr>
+<tr>
+<td>వాటిని</td>
+<td>Vāṭini</td>
+<td>Them (accusative)</td>
+</tr>
+<tr>
+<td>కాపాడాలని</td>
+<td>Kāpāḍālani</td>
+<td>That they must protect</td>
+</tr>
+<tr>
+<td>ప్రకటించాడు</td>
+<td>Prakatin̄chāḍu</td>
+<td>He announced / Declared</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ఎవ్వరు ఎక్కువ చెట్లు నాటితే వారిని తగిన విధంగా సన్మానిస్తామని కూడా ప్రకటించాడు.</strong></td>
+</tr>
+<tr>
+<td>ఎవ్వరు</td>
+<td>Evvaru</td>
+<td>Whoever</td>
+</tr>
+<tr>
+<td>ఎక్కువ</td>
+<td>Ekkuva</td>
+<td>More</td>
+</tr>
+<tr>
+<td>చెట్లు</td>
+<td>Cheṭlu</td>
+<td>Trees</td>
+</tr>
+<tr>
+<td>నాటితే</td>
+<td>Nāṭitē</td>
+<td>If they plant</td>
+</tr>
+<tr>
+<td>వారిని</td>
+<td>Vārini</td>
+<td>Them (accusative)</td>
+</tr>
+<tr>
+<td>తగిన</td>
+<td>Tagina</td>
+<td>Suitable / Appropriate</td>
+</tr>
+<tr>
+<td>విధంగా</td>
+<td>Vidhaṁgā</td>
+<td>Manner / Way</td>
+</tr>
+<tr>
+<td>సన్మానిస్తామని</td>
+<td>Sanmānistāmani</td>
+<td>That they would be honored</td>
+</tr>
+<tr>
+<td>కూడా</td>
+<td>Kūḍā</td>
+<td>Also</td>
+</tr>
+<tr>
+<td>ప్రకటించాడు</td>
+<td>Prakatin̄chāḍu</td>
+<td>He announced</td>
+</tr>
+<tr>
+<td colspan="3"><strong>త్వరలోనే చందనగిరి రాజ్యం చెట్లతో కళకళలాడింది.</strong></td>
+</tr>
+<tr>
+<td>త్వరలోనే</td>
+<td>Tvaralōnē</td>
+<td>Very soon / Quickly</td>
+</tr>
+<tr>
+<td>చందనగిరి</td>
+<td>Chandanagiri</td>
+<td>Chandanagiri</td>
+</tr>
+<tr>
+<td>రాజ్యం</td>
+<td>Rājyaṁ</td>
+<td>Kingdom</td>
+</tr>
+<tr>
+<td>చెట్లతో</td>
+<td>Cheṭlatō</td>
+<td>With trees</td>
+</tr>
+<tr>
+<td>కళకళలాడింది</td>
+<td>Kaḷakaḷalāḍindi</td>
+<td>Flourished / Was lush and lively</td>
+</tr>
+<tr>
+<td colspan="3"><strong>ప్రజలంతా ఆనందించారు.</strong></td>
+</tr>
+<tr>
+<td>ప్రజలంతా</td>
+<td>Prajalaṁtā</td>
+<td>All the people</td>
+</tr>
+<tr>
+<td>ఆనందించారు</td>
+<td>Ānandin̄chāru</td>
+<td>Rejoiced / Were happy</td>
+</tr>
+</tbody>
+</table></div>
