@@ -54,12 +54,12 @@ jobs:
           from google.genai import types
 
           # CONFIGURATION
-          # Ensure you have your textbook PDF at this location in your repo
           PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           PAGES = "${{ github.event.inputs.page_numbers }}"
           OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
           
+          # Using the stable 2.0 Flash model
           MODEL_CHAIN = ["gemini-2.0-flash", "gemini-1.5-flash"]
           
           if not os.path.exists(PDF_PATH):
@@ -69,14 +69,12 @@ jobs:
           client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
           # 1. Upload PDF
-          print(f"bi 📤 Uploading PDF...")
+          print(f"bi 📤 Uploading PDF: {PDF_PATH}...")
           try:
-              # Upload the file to Google File API
-              # Note: We use the V1beta client logic implicitly handled by the new library or fallback to standard upload
-              # For the 'google-genai' library specifically:
-              file_ref = client.files.upload(path=PDF_PATH, config={'display_name': 'Telugu_Textbook'})
+              # FIXED LINE: 'file=' argument used instead of 'path='
+              file_ref = client.files.upload(file=PDF_PATH, config={'display_name': 'Telugu_Textbook'})
               
-              # Wait for processing (usually instant for PDFs, but safe to check)
+              # Wait for processing
               while file_ref.state.name == "PROCESSING":
                   print("... processing file ...")
                   time.sleep(2)
@@ -126,7 +124,7 @@ jobs:
               try:
                   print(f"🔄 Attempting with model: {model_name}...")
                   
-                  # Generate content with the uploaded file reference
+                  # Generate content
                   response = client.models.generate_content(
                       model=model_name,
                       contents=[file_ref, prompt]
