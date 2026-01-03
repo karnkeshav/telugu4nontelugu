@@ -54,6 +54,7 @@ jobs:
           from google.genai import types
 
           # CONFIGURATION
+          # Exact path to your uploaded PDF
           PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           PAGES = "${{ github.event.inputs.page_numbers }}"
