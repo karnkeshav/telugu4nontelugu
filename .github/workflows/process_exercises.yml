@@ -54,14 +54,13 @@ jobs:
           from google.genai import types
 
           # CONFIGURATION
-          # Exact path to your uploaded PDF
           PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           PAGES = "${{ github.event.inputs.page_numbers }}"
           OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
           
-          # Using the stable 2.0 Flash model
-          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-1.5-flash"]
+          # Updated Model Chain (Added 'latest' variants and fallback)
+          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-1.5-flash-latest", "gemini-1.5-flash-002"]
           
           if not os.path.exists(PDF_PATH):
               print(f"❌ Error: PDF not found at {PDF_PATH}")
@@ -72,10 +71,8 @@ jobs:
           # 1. Upload PDF
           print(f"bi 📤 Uploading PDF: {PDF_PATH}...")
           try:
-              # FIXED LINE: 'file=' argument used instead of 'path='
               file_ref = client.files.upload(file=PDF_PATH, config={'display_name': 'Telugu_Textbook'})
               
-              # Wait for processing
               while file_ref.state.name == "PROCESSING":
                   print("... processing file ...")
                   time.sleep(2)
@@ -122,67 +119,79 @@ jobs:
           success = False
           
           for model_name in MODEL_CHAIN:
-              try:
-                  print(f"🔄 Attempting with model: {model_name}...")
-                  
-                  # Generate content
-                  response = client.models.generate_content(
-                      model=model_name,
-                      contents=[file_ref, prompt]
-                  )
-                  
-                  output_html = response.text
-                  
-                  # Clean Code Blocks
-                  if "```html" in output_html:
-                      output_html = output_html.split("```html")[1].split("```")[0]
-                  elif "```" in output_html:
-                      output_html = output_html.split("```")[1].split("```")[0]
+              # RETRY LOGIC for Rate Limits (429)
+              max_retries = 3
+              retry_count = 0
+              
+              while retry_count < max_retries:
+                  try:
+                      print(f"🔄 Attempting with model: {model_name} (Try {retry_count + 1})...")
+                      
+                      response = client.models.generate_content(
+                          model=model_name,
+                          contents=[file_ref, prompt]
+                      )
+                      
+                      output_html = response.text
+                      
+                      # Clean Code Blocks
+                      if "```html" in output_html:
+                          output_html = output_html.split("```html")[1].split("```")[0]
+                      elif "```" in output_html:
+                          output_html = output_html.split("```")[1].split("```")[0]
 
-                  # Add Full HTML Boilerplate + CSS
-                  final_html = f"""
-                  <!DOCTYPE html>
-                  <html lang="te">
-                  <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>{CHAPTER.replace("_", " ")} - Exercises</title>
-                      <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
-                      <style>
-                          body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; }}
-                          .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
-                          .card {{ border: none; border-radius: 12px; overflow: hidden; }}
-                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
-                          .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
-                          .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
-                          .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
-                          .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
-                          .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
-                          .en-mean {{ font-weight: 500; margin-top: 5px; }}
-                      </style>
-                  </head>
-                  <body>
-                      <div class="container">
-                          <div class="exercise-title">
-                              <h1>📖 Exercises</h1>
-                              <p class="mb-0">Pages: {PAGES}</p>
+                      final_html = f"""
+                      <!DOCTYPE html>
+                      <html lang="te">
+                      <head>
+                          <meta charset="UTF-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+                          <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
+                          <style>
+                              body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; }}
+                              .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
+                              .card {{ border: none; border-radius: 12px; overflow: hidden; }}
+                              .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
+                              .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
+                              .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
+                              .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
+                              .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
+                              .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
+                              .en-mean {{ font-weight: 500; margin-top: 5px; }}
+                          </style>
+                      </head>
+                      <body>
+                          <div class="container">
+                              <div class="exercise-title">
+                                  <h1>📖 Exercises</h1>
+                                  <p class="mb-0">Pages: {PAGES}</p>
+                              </div>
+                              {output_html.strip()}
                           </div>
-                          {output_html.strip()}
-                      </div>
-                  </body>
-                  </html>
-                  """
+                      </body>
+                      </html>
+                      """
 
-                  with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-                      f.write(final_html)
-                  
-                  print(f"✅ Successfully created {OUTPUT_PATH}")
-                  success = True
-                  break
+                      with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+                          f.write(final_html)
+                      
+                      print(f"✅ Successfully created {OUTPUT_PATH}")
+                      success = True
+                      break # Break retry loop
 
-              except Exception as e:
-                  print(f"⚠️ {model_name} failed: {e}")
-                  continue
+                  except Exception as e:
+                      error_str = str(e)
+                      if "429" in error_str:
+                          print("⏳ Quota exceeded (429). Waiting 30 seconds before retrying...")
+                          time.sleep(30)
+                          retry_count += 1
+                      else:
+                          print(f"⚠️ {model_name} failed with non-retriable error: {e}")
+                          break # Break retry loop, try next model
+              
+              if success:
+                  break # Break model loop
 
           if not success:
               print("❌ All models failed.")
