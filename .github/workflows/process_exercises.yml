@@ -18,11 +18,6 @@ on:
           - 08_Kanuvippu
           - 09_Ramappa
           - 10_Shibi_Chakravarti
-      page_numbers:
-        description: 'Page Numbers (Reference only)'
-        required: false
-        type: string
-        default: 'N/A'
 
 jobs:
   generate_exercises:
@@ -41,9 +36,9 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install --upgrade google-genai
+          pip install google-genai
 
-      - name: Generate Exercises HTML
+      - name: Run Exercise Generation Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -52,97 +47,118 @@ jobs:
           import sys
           from google import genai
 
-          # ---------------- CONFIG ----------------
-          CHAPTER = "${{ github.event.inputs.chapter_folder }}"
-          API_KEY = os.environ.get("GEMINI_API_KEY")
+          # ---------------- CONFIG (SAME AS LESSON PIPELINE) ----------------
+          MODEL_CHAIN = [
+              "gemini-2.0-flash",
+              "gemini-flash-latest",
+              "gemini-1.5-flash",
+              "gemini-1.5-flash-8b"
+          ]
 
-          if not API_KEY:
-              print("❌ GEMINI_API_KEY not set")
+          chapter = "${{ github.event.inputs.chapter_folder }}"
+          api_key = os.environ.get("GEMINI_API_KEY")
+
+          if not api_key:
+              print("❌ GEMINI_API_KEY missing")
               sys.exit(1)
 
-          MODEL_NAME = "models/gemini-1.5-flash"
-
-          # ---------------- PATH RESOLUTION ----------------
+          # ---------------- DETERMINE FILE NAMES ----------------
           try:
-              chapter_num = int(CHAPTER.split("_")[0])
-          except:
-              print("❌ Invalid chapter folder naming")
+              prefix = chapter.split("_")[0]
+              chapter_num = int(prefix)
+              filename = f"exercise_{chapter_num}.md"
+          except Exception as e:
+              print(f"❌ Error parsing chapter number: {e}")
               sys.exit(1)
 
-          md_path = f"class5/{CHAPTER}/exercise_{chapter_num}.md"
-          output_path = f"class5/{CHAPTER}/exercise.html"
+          md_path = f"class5/{chapter}/{filename}"
+          html_path = f"class5/{chapter}/exercise.html"
+
+          print(f"📂 Chapter: {chapter}")
+          print(f"📄 Source File: {md_path}")
 
           if not os.path.exists(md_path):
-              print(f"❌ Source file not found: {md_path}")
+              print(f"❌ Error: {md_path} not found.")
               sys.exit(1)
 
           with open(md_path, "r", encoding="utf-8") as f:
-              exercise_text = f.read()
+              exercise_content = f.read()
 
-          # ---------------- GEMINI CLIENT ----------------
-          client = genai.Client(api_key=API_KEY)
+          # ---------------- GEMINI CLIENT (IDENTICAL PATTERN) ----------------
+          client = genai.Client(api_key=api_key)
 
           prompt = f"""
           You are an expert Telugu language tutor for Class 5 students.
 
-          RAW OCR TEXT (Exercises):
-          {exercise_text}
+          The following text contains EXERCISES for a lesson.
 
           TASK:
-          1. Extract all questions.
-          2. Correct OCR mistakes intelligently.
-          3. Generate correct answers where needed.
+          1. Extract each question clearly.
+          2. Fix OCR or spelling errors intelligently.
+          3. Generate correct answers where required.
 
-          OUTPUT:
+          OUTPUT FORMAT (HTML ONLY):
+          - Each Question–Answer pair must be inside:
+            <div class="card mb-4 shadow-sm">
+          - Question block:
+            <div class="alert alert-info">
+              Telugu question
+              Pronunciation (English)
+              Meaning (Simple English)
+          - Answer block:
+            <div class="alert alert-success">
+              Telugu answer
+              Pronunciation (English)
+              Meaning (Simple English)
+
           Return ONLY raw HTML body content.
-
-          STRUCTURE:
-          - Each Q&A inside <div class="card mb-4 shadow-sm">
-          - Question block: alert alert-info
-          - Answer block: alert alert-success
-          - Telugu + Pronunciation + English Meaning for both
+          
+          TEXT TO PROCESS:
+          {exercise_content}
           """
 
-          try:
-              response = client.models.generate_content(
-                  model=MODEL_NAME,
-                  contents=prompt
-              )
-          except Exception as e:
-              if "RESOURCE_EXHAUSTED" in str(e):
-                  print("❌ Gemini quota exhausted. Enable billing or increase quota.")
-                  sys.exit(1)
-              print(f"❌ Gemini error: {e}")
-              sys.exit(1)
+          success = False
 
-          output_html = response.text.strip()
+          for model_name in MODEL_CHAIN:
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  response = client.models.generate_content(
+                      model=model_name,
+                      contents=prompt
+                  )
 
-          if "```" in output_html:
-              output_html = output_html.split("```")[1]
+                  output_html = response.text
 
-          final_html = f"""
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
+
+                  final_html = f"""
           <!DOCTYPE html>
           <html lang="te">
           <head>
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+              <title>{chapter.replace("_", " ")} - Exercises</title>
               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
               <style>
                   body {{
                       background-color: #f0f2f5;
                       font-family: 'Segoe UI', sans-serif;
-                      padding: 20px;
+                      padding-top: 20px;
+                      overflow-x: hidden;
                   }}
                   .exercise-title {{
                       background: linear-gradient(135deg, #0d6efd, #0dcaf0);
                       color: white;
-                      border-radius: 12px;
+                      border-radius: 15px;
                       padding: 20px;
                       margin-bottom: 30px;
                       text-align: center;
                   }}
                   .alert {{
+                      word-wrap: break-word;
                       word-break: break-word;
                       white-space: normal;
                   }}
@@ -151,24 +167,34 @@ jobs:
           <body>
               <div class="container">
                   <div class="exercise-title">
-                      <h2>📘 Exercises</h2>
+                      <h1>📖 Exercises</h1>
                   </div>
-                  {output_html}
+                  {output_html.strip()}
               </div>
           </body>
           </html>
           """
 
-          with open(output_path, "w", encoding="utf-8") as f:
-              f.write(final_html)
+                  with open(html_path, "w", encoding="utf-8") as f:
+                      f.write(final_html)
 
-          print(f"✅ Successfully generated {output_path}")
+                  print(f"✅ Updated {html_path} using {model_name}")
+                  success = True
+                  break
+
+              except Exception as e:
+                  print(f"⚠️ {model_name} failed: {e}")
+                  continue
+
+          if not success:
+              print("❌ All models failed.")
+              sys.exit(1)
           EOF
 
-      - name: Commit and Push
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }}"
+          git commit -m "Update exercise.html for ${{ github.event.inputs.chapter_folder }}"
           git push
