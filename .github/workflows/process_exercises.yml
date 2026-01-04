@@ -19,9 +19,10 @@ on:
           - 09_Ramappa
           - 10_Shibi_Chakravarti
       page_numbers:
-        description: 'Page Numbers (e.g., 45-47)'
-        required: true
+        description: 'Page Numbers (Reference only)'
+        required: false
         type: string
+        default: 'N/A'
 
 jobs:
   generate_exercises:
@@ -40,7 +41,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install google-genai pymupdf
+          pip install google-genai
 
       - name: Run Exercise Generation Script
         env:
@@ -50,95 +51,58 @@ jobs:
           import os
           import sys
           import time
-          import fitz  # PyMuPDF
           from google import genai
-          from google.genai import types
 
           # --- CONFIGURATION ---
-          SOURCE_PDF_PATH = "class5/pdf/5th telugu om 2025-26.pdf"
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
-          PAGES_INPUT = "${{ github.event.inputs.page_numbers }}"
-          OUTPUT_PATH = f"class5/{CHAPTER}/exercise.html"
-          TEMP_PDF_PATH = "temp_chapter_slice.pdf"
+          API_KEY = os.environ.get("GEMINI_API_KEY")
           
-          # FULL MODEL CHAIN (Restored)
           MODEL_CHAIN = [
               "gemini-2.0-flash", 
               "gemini-2.0-flash-exp", 
               "gemini-1.5-flash", 
-              "gemini-1.5-flash-latest", 
-              "gemini-1.5-flash-002", 
-              "gemini-1.5-pro", 
-              "gemini-1.5-pro-latest"
+              "gemini-1.5-pro"
           ]
 
-          # --- STEP 1: SPLIT PDF ---
-          print(f"✂️  Splitting PDF... Extracting pages {PAGES_INPUT}")
-          
-          if not os.path.exists(SOURCE_PDF_PATH):
-              print(f"❌ Error: Source PDF not found at {SOURCE_PDF_PATH}")
-              sys.exit(1)
-
+          # --- STEP 1: LOCATE SOURCE MARKDOWN ---
           try:
-              doc = fitz.open(SOURCE_PDF_PATH)
-              new_doc = fitz.open()
-              
-              # Parse page range
-              if "-" in PAGES_INPUT:
-                  start_page, end_page = map(int, PAGES_INPUT.split("-"))
-              else:
-                  start_page = end_page = int(PAGES_INPUT)
-
-              # Convert to 0-based index
-              start_idx = start_page - 1
-              end_idx = end_page - 1 
-
-              # Validate bounds
-              if start_idx < 0 or end_idx >= len(doc):
-                  print(f"❌ Error: Page range {PAGES_INPUT} is out of bounds (Max: {len(doc)})")
-                  sys.exit(1)
-
-              # Copy pages
-              new_doc.insert_pdf(doc, from_page=start_idx, to_page=end_idx)
-              new_doc.save(TEMP_PDF_PATH)
-              new_doc.close()
-              doc.close()
-              
-              print(f"✅ Created lightweight PDF: {TEMP_PDF_PATH}")
-              
+              # Extract chapter number (e.g., "06" -> 6) to find "exercise_6.md"
+              prefix = CHAPTER.split('_')[0]
+              chapter_num = int(prefix) 
+              filename = f"exercise_{chapter_num}.md"
           except Exception as e:
-              print(f"❌ PDF Split failed: {e}")
+              print(f"❌ Error parsing chapter number: {e}")
               sys.exit(1)
 
-          # --- STEP 2: UPLOAD TINY PDF ---
-          client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-          
-          print(f"bi 📤 Uploading Slice: {TEMP_PDF_PATH}...")
-          try:
-              file_ref = client.files.upload(file=TEMP_PDF_PATH, config={'display_name': 'Chapter_Slice'})
-              
-              while file_ref.state.name == "PROCESSING":
-                  print("... processing file ...")
-                  time.sleep(1)
-                  file_ref = client.files.get(name=file_ref.name)
-                  
-              if file_ref.state.name == "FAILED":
-                  raise ValueError("File processing failed on Google's side.")
-                  
-              print(f"✅ PDF Uploaded: {file_ref.uri}")
-              
-          except Exception as e:
-              print(f"❌ Upload failed: {e}")
+          md_path = f"class5/{CHAPTER}/{filename}"
+          output_path = f"class5/{CHAPTER}/exercise.html"
+
+          print(f"📂 Chapter: {CHAPTER}")
+          print(f"📄 Reading Source: {md_path}")
+
+          if not os.path.exists(md_path):
+              print(f"❌ Error: Source file {md_path} not found.")
+              print("👉 Please ensure the OCR process has run and created the markdown file.")
               sys.exit(1)
+
+          with open(md_path, "r", encoding="utf-8") as f:
+              exercise_text = f.read()
+
+          # --- STEP 2: PREPARE CLIENT ---
+          client = genai.Client(api_key=API_KEY)
 
           # --- STEP 3: PROMPT ---
           prompt = f"""
           You are an expert Telugu language tutor for Class 5 students.
-          Analyze the attached PDF, which contains the Exercises (Abhyasam/Prashnalu) for the chapter "{CHAPTER}".
+          Analyze the following raw Telugu text, which contains the Exercises (Abhyasam/Prashnalu) for the chapter "{CHAPTER}".
+
+          RAW TEXT INPUT:
+          {exercise_text}
 
           TASK:
-          Extract every question and answer pair found in this document.
-          For each question, generate the answer yourself if it is not explicitly in the text.
+          1. Extract every question and answer pair found in this text.
+          2. Since the text is raw OCR, there might be typos. Fix them intelligently.
+          3. For each question, generate the answer yourself if it is not explicitly in the text.
 
           OUTPUT FORMAT:
           Create a mobile-friendly HTML file using Bootstrap 5.
@@ -163,79 +127,94 @@ jobs:
           success = False
           
           for model_name in MODEL_CHAIN:
-              max_retries = 3
-              retry_count = 0
-              
-              while retry_count < max_retries:
-                  try:
-                      print(f"🔄 Attempting with model: {model_name} (Try {retry_count + 1})...")
-                      
-                      response = client.models.generate_content(
-                          model=model_name,
-                          contents=[file_ref, prompt]
-                      )
-                      
-                      output_html = response.text
-                      
-                      if "```html" in output_html:
-                          output_html = output_html.split("```html")[1].split("```")[0]
-                      elif "```" in output_html:
-                          output_html = output_html.split("```")[1].split("```")[0]
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  
+                  response = client.models.generate_content(
+                      model=model_name,
+                      contents=prompt
+                  )
+                  
+                  output_html = response.text
+                  
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
 
-                      final_html = f"""
-                      <!DOCTYPE html>
-                      <html lang="te">
-                      <head>
-                          <meta charset="UTF-8">
-                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                          <title>{CHAPTER.replace("_", " ")} - Exercises</title>
-                          <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
-                          <style>
-                              body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; }}
-                              .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
-                              .card {{ border: none; border-radius: 12px; overflow: hidden; }}
-                              .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
-                              .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
-                              .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
-                              .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
-                              .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
-                              .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
-                              .en-mean {{ font-weight: 500; margin-top: 5px; }}
-                          </style>
-                      </head>
-                      <body>
-                          <div class="container">
-                              <div class="exercise-title">
-                                  <h1>📖 Exercises</h1>
-                                  <p class="mb-0">Pages: {PAGES_INPUT}</p>
-                              </div>
-                              {output_html.strip()}
+                  final_html = f"""
+                  <!DOCTYPE html>
+                  <html lang="te">
+                  <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+                      <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
+                      <style>
+                          body {{ 
+                              background-color: #f0f2f5; 
+                              font-family: 'Segoe UI', sans-serif; 
+                              padding-top: 20px; 
+                              padding-bottom: 40px;
+                              overflow-x: hidden; /* Prevent horizontal scroll */
+                          }}
+                          .exercise-title {{ 
+                              background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); 
+                              color: white; 
+                              border-radius: 15px; 
+                              padding: 20px; 
+                              margin-bottom: 30px; 
+                              text-align: center; 
+                          }}
+                          .card {{ 
+                              border: none; 
+                              border-radius: 12px; 
+                              overflow: hidden; 
+                              width: 100%;
+                              max-width: 100%;
+                          }}
+                          
+                          /* --- MOBILE RESPONSIVE FIXES --- */
+                          .alert, .card-body, p, div, span {{
+                              word-wrap: break-word;
+                              overflow-wrap: break-word;
+                              word-break: break-word; /* Forces long words/Telugu to break */
+                              white-space: normal;
+                              max-width: 100%;
+                          }}
+
+                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
+                          .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
+                          .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
+                          
+                          .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
+                          .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
+                          .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
+                          .en-mean {{ font-weight: 500; margin-top: 5px; }}
+                      </style>
+                  </head>
+                  <body>
+                      <div class="container">
+                          <div class="exercise-title">
+                              <h1>📖 Exercises</h1>
                           </div>
-                      </body>
-                      </html>
-                      """
+                          {output_html.strip()}
+                      </div>
+                  </body>
+                  </html>
+                  """
 
-                      with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-                          f.write(final_html)
-                      
-                      print(f"✅ Successfully created {OUTPUT_PATH}")
-                      success = True
-                      break 
+                  with open(output_path, "w", encoding="utf-8") as f:
+                      f.write(final_html)
+                  
+                  print(f"✅ Successfully created {output_path}")
+                  success = True
+                  break 
 
-                  except Exception as e:
-                      error_str = str(e)
-                      if "429" in error_str:
-                          print("⏳ Quota exceeded (429). Waiting 30 seconds...")
-                          time.sleep(30)
-                          retry_count += 1
-                      else:
-                          # If it's a 404 (model not found) or other error, move to next model
-                          print(f"⚠️ {model_name} failed: {e}")
-                          break 
-              
-              if success:
-                  break
-
+              except Exception as e:
+                  print(f"⚠️ {model_name} failed: {e}")
+                  continue
+          
           if not success:
               print("❌ All models failed.")
               sys.exit(1)
@@ -247,5 +226,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull
           git add .
-          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }} (Pages ${{ github.event.inputs.page_numbers }})"
+          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }} using MD source"
           git push
