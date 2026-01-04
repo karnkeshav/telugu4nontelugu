@@ -50,9 +50,24 @@ jobs:
           MODEL_CHAIN = ["gemini-2.0-flash", "gemini-flash-latest", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
           
           chapter = "${{ github.event.inputs.chapter_folder }}"
-          md_path = f"class5/{chapter}/lesson.md"
-          html_path = f"class5/{chapter}/lesson.html"
           api_key = os.environ.get("GEMINI_API_KEY")
+
+          # --- NEW LOGIC: Determine filename based on chapter number ---
+          # Example: "06_Shataka_Padyalu" -> prefix "06" -> int 6 -> "lesson_6.md"
+          try:
+              prefix = chapter.split('_')[0]
+              chapter_num = int(prefix) 
+              filename = f"lesson_{chapter_num}.md"
+          except Exception as e:
+              print(f"❌ Error parsing chapter number from '{chapter}': {e}")
+              sys.exit(1)
+
+          md_path = f"class5/{chapter}/{filename}"
+          html_path = f"class5/{chapter}/lesson.html"
+
+          print(f"📂 Chapter: {chapter}")
+          print(f"📄 Source File: {md_path}")
+          print(f"🎯 Target File: {html_path}")
 
           if not os.path.exists(md_path):
               print(f"❌ Error: {md_path} not found.")
