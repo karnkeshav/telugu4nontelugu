@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -41,190 +41,134 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install google-genai
+          pip install --upgrade google-genai
 
-      - name: Run Exercise Generation Script
+      - name: Generate Exercises HTML
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python << 'EOF'
           import os
           import sys
-          import time
           from google import genai
 
-          # --- CONFIGURATION ---
+          # ---------------- CONFIG ----------------
           CHAPTER = "${{ github.event.inputs.chapter_folder }}"
           API_KEY = os.environ.get("GEMINI_API_KEY")
-          
-          MODEL_CHAIN = [
-              "gemini-2.0-flash", 
-              "gemini-2.0-flash-exp", 
-              "gemini-1.5-flash", 
-              "gemini-1.5-pro"
-          ]
 
-          # --- STEP 1: LOCATE SOURCE MARKDOWN ---
-          try:
-              # Extract chapter number (e.g., "06" -> 6) to find "exercise_6.md"
-              prefix = CHAPTER.split('_')[0]
-              chapter_num = int(prefix) 
-              filename = f"exercise_{chapter_num}.md"
-          except Exception as e:
-              print(f"❌ Error parsing chapter number: {e}")
+          if not API_KEY:
+              print("❌ GEMINI_API_KEY not set")
               sys.exit(1)
 
-          md_path = f"class5/{CHAPTER}/{filename}"
+          MODEL_NAME = "models/gemini-1.5-flash"
+
+          # ---------------- PATH RESOLUTION ----------------
+          try:
+              chapter_num = int(CHAPTER.split("_")[0])
+          except:
+              print("❌ Invalid chapter folder naming")
+              sys.exit(1)
+
+          md_path = f"class5/{CHAPTER}/exercise_{chapter_num}.md"
           output_path = f"class5/{CHAPTER}/exercise.html"
 
-          print(f"📂 Chapter: {CHAPTER}")
-          print(f"📄 Reading Source: {md_path}")
-
           if not os.path.exists(md_path):
-              print(f"❌ Error: Source file {md_path} not found.")
-              print("👉 Please ensure the OCR process has run and created the markdown file.")
+              print(f"❌ Source file not found: {md_path}")
               sys.exit(1)
 
           with open(md_path, "r", encoding="utf-8") as f:
               exercise_text = f.read()
 
-          # --- STEP 2: PREPARE CLIENT ---
+          # ---------------- GEMINI CLIENT ----------------
           client = genai.Client(api_key=API_KEY)
 
-          # --- STEP 3: PROMPT ---
           prompt = f"""
           You are an expert Telugu language tutor for Class 5 students.
-          Analyze the following raw Telugu text, which contains the Exercises (Abhyasam/Prashnalu) for the chapter "{CHAPTER}".
 
-          RAW TEXT INPUT:
+          RAW OCR TEXT (Exercises):
           {exercise_text}
 
           TASK:
-          1. Extract every question and answer pair found in this text.
-          2. Since the text is raw OCR, there might be typos. Fix them intelligently.
-          3. For each question, generate the answer yourself if it is not explicitly in the text.
+          1. Extract all questions.
+          2. Correct OCR mistakes intelligently.
+          3. Generate correct answers where needed.
 
-          OUTPUT FORMAT:
-          Create a mobile-friendly HTML file using Bootstrap 5.
-          For every Question & Answer pair, create a card with the following structure:
+          OUTPUT:
+          Return ONLY raw HTML body content.
 
-          1. **Block A (The Question)** - Style as `alert alert-info` (Light Blue):
-             - **Telugu:** The question in Telugu script.
-             - **Pronunciation:** The English transliteration of the question.
-             - **Meaning:** Simple English translation of the question.
-
-          2. **Block B (The Answer)** - Style as `alert alert-success` (Light Green):
-             - **Telugu:** The answer in Telugu script.
-             - **Pronunciation:** The English transliteration of the answer.
-             - **Meaning:** Simple English translation of the answer.
-
-          STYLING RULES:
-          - Wrap each Q&A pair in a `<div class="card mb-4 shadow-sm">`.
-          - Inside the card, put Block A and Block B stacked vertically.
-          - Return ONLY the raw HTML body content (do not wrap in ```html).
+          STRUCTURE:
+          - Each Q&A inside <div class="card mb-4 shadow-sm">
+          - Question block: alert alert-info
+          - Answer block: alert alert-success
+          - Telugu + Pronunciation + English Meaning for both
           """
 
-          success = False
-          
-          for model_name in MODEL_CHAIN:
-              try:
-                  print(f"🔄 Attempting with model: {model_name}...")
-                  
-                  response = client.models.generate_content(
-                      model=model_name,
-                      contents=prompt
-                  )
-                  
-                  output_html = response.text
-                  
-                  if "```html" in output_html:
-                      output_html = output_html.split("```html")[1].split("```")[0]
-                  elif "```" in output_html:
-                      output_html = output_html.split("```")[1].split("```")[0]
-
-                  final_html = f"""
-                  <!DOCTYPE html>
-                  <html lang="te">
-                  <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>{CHAPTER.replace("_", " ")} - Exercises</title>
-                      <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
-                      <style>
-                          body {{ 
-                              background-color: #f0f2f5; 
-                              font-family: 'Segoe UI', sans-serif; 
-                              padding-top: 20px; 
-                              padding-bottom: 40px;
-                              overflow-x: hidden; /* Prevent horizontal scroll */
-                          }}
-                          .exercise-title {{ 
-                              background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); 
-                              color: white; 
-                              border-radius: 15px; 
-                              padding: 20px; 
-                              margin-bottom: 30px; 
-                              text-align: center; 
-                          }}
-                          .card {{ 
-                              border: none; 
-                              border-radius: 12px; 
-                              overflow: hidden; 
-                              width: 100%;
-                              max-width: 100%;
-                          }}
-                          
-                          /* --- MOBILE RESPONSIVE FIXES --- */
-                          .alert, .card-body, p, div, span {{
-                              word-wrap: break-word;
-                              overflow-wrap: break-word;
-                              word-break: break-word; /* Forces long words/Telugu to break */
-                              white-space: normal;
-                              max-width: 100%;
-                          }}
-
-                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; }}
-                          .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
-                          .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
-                          
-                          .label {{ font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: block; margin-bottom: 4px; }}
-                          .te-text {{ font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; }}
-                          .en-pron {{ font-style: italic; color: #555; font-size: 0.95rem; }}
-                          .en-mean {{ font-weight: 500; margin-top: 5px; }}
-                      </style>
-                  </head>
-                  <body>
-                      <div class="container">
-                          <div class="exercise-title">
-                              <h1>📖 Exercises</h1>
-                          </div>
-                          {output_html.strip()}
-                      </div>
-                  </body>
-                  </html>
-                  """
-
-                  with open(output_path, "w", encoding="utf-8") as f:
-                      f.write(final_html)
-                  
-                  print(f"✅ Successfully created {output_path}")
-                  success = True
-                  break 
-
-              except Exception as e:
-                  print(f"⚠️ {model_name} failed: {e}")
-                  continue
-          
-          if not success:
-              print("❌ All models failed.")
+          try:
+              response = client.models.generate_content(
+                  model=MODEL_NAME,
+                  contents=prompt
+              )
+          except Exception as e:
+              if "RESOURCE_EXHAUSTED" in str(e):
+                  print("❌ Gemini quota exhausted. Enable billing or increase quota.")
+                  sys.exit(1)
+              print(f"❌ Gemini error: {e}")
               sys.exit(1)
+
+          output_html = response.text.strip()
+
+          if "```" in output_html:
+              output_html = output_html.split("```")[1]
+
+          final_html = f"""
+          <!DOCTYPE html>
+          <html lang="te">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+              <style>
+                  body {{
+                      background-color: #f0f2f5;
+                      font-family: 'Segoe UI', sans-serif;
+                      padding: 20px;
+                  }}
+                  .exercise-title {{
+                      background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+                      color: white;
+                      border-radius: 12px;
+                      padding: 20px;
+                      margin-bottom: 30px;
+                      text-align: center;
+                  }}
+                  .alert {{
+                      word-break: break-word;
+                      white-space: normal;
+                  }}
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <div class="exercise-title">
+                      <h2>📘 Exercises</h2>
+                  </div>
+                  {output_html}
+              </div>
+          </body>
+          </html>
+          """
+
+          with open(output_path, "w", encoding="utf-8") as f:
+              f.write(final_html)
+
+          print(f"✅ Successfully generated {output_path}")
           EOF
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull
           git add .
-          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }} using MD source"
+          git commit -m "Generate exercise.html for ${{ github.event.inputs.chapter_folder }}"
           git push
