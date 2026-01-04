@@ -5,113 +5,125 @@ import pytesseract
 from PIL import Image
 
 # --- CONFIGURATION ---
-SOURCE_DIR = "."                # Root of repo where you upload images
-DEST_IMG_DIR = "scanned_images" # Where to move images for storage
+SOURCE_DIR = "."                # Root of repo where images are uploaded
+DEST_IMG_DIR = "scanned_images" # Where to store images after processing
 OUTPUT_BASE = "class5"          # Base folder for chapters
 OCR_LANG = "tel"                # Telugu Language Code
 
-# Chapter Configuration: Folder Name -> { Lesson Ranges, Exercise Ranges, Chapter Number }
+# Chapter Mapping based on your request and chapters.json structure
 CHAPTER_MAPPING = {
     "06_Shataka_Padyalu": {
-        "id": 6,
+        "id": 6, 
         "lesson": (67, 70), 
         "exercise": (70, 74)
     },
     "07_Sankranthi_Sandesham": {
-        "id": 7,
+        "id": 7, 
         "lesson": (75, 76), 
         "exercise": (77, 80)
     },
     "08_Kanuvippu": {
-        "id": 8,
+        "id": 8, 
         "lesson": (81, 84), 
         "exercise": (84, 88)
     },
     "09_Ramappa": {
-        "id": 9,
+        "id": 9, 
         "lesson": (89, 92), 
         "exercise": (92, 96)
     },
     "10_Shibi_Chakravarti": {
-        "id": 10,
+        "id": 10, 
         "lesson": (97, 99), 
         "exercise": (100, 104)
     }
 }
 
-def move_images():
-    """Moves page-090.png etc. from root to scanned_images folder."""
-    if not os.path.exists(DEST_IMG_DIR):
-        os.makedirs(DEST_IMG_DIR)
-
-    # Regex to match page-090.png, page-90.png, etc.
-    file_pattern = re.compile(r"page-\d+\.png")
-
-    for filename in os.listdir(SOURCE_DIR):
-        if file_pattern.match(filename):
-            src = os.path.join(SOURCE_DIR, filename)
-            dst = os.path.join(DEST_IMG_DIR, filename)
-            shutil.move(src, dst)
-            print(f"   Moved {filename} -> {DEST_IMG_DIR}/")
-
-def get_ocr_text(page_num):
-    """Finds image for page_num and returns verbatim Telugu text."""
-    # Look for page-090.png or page-90.png
+def get_ocr_text_from_root(page_num):
+    """
+    Searches for page-XXX.png or page-X.png in the ROOT directory.
+    Returns the verbatim Telugu text found.
+    """
+    # Accept formats like page-067.png or page-67.png
     candidates = [f"page-{page_num:03d}.png", f"page-{page_num}.png"]
     
     img_path = None
+    # Check if file exists in root
     for c in candidates:
-        p = os.path.join(DEST_IMG_DIR, c)
-        if os.path.exists(p):
-            img_path = p
+        if os.path.exists(c):
+            img_path = c
             break
-    
+            
     if not img_path:
-        return f"\n\n\n\n"
+        print(f"      ⚠️  Warning: Image for page {page_num} not found in root.")
+        return f"\n\n"
 
     try:
-        # Extract text using Telugu model
+        # Perform OCR using Telugu language
         text = pytesseract.image_to_string(Image.open(img_path), lang=OCR_LANG)
-        return text
+        return text if text.strip() else f"\n\n"
     except Exception as e:
-        print(f"   ❌ OCR Error on {img_path}: {e}")
-        return ""
+        print(f"      ❌ OCR Error on {img_path}: {e}")
+        return f"\n\n"
+
+def cleanup_images():
+    """Moves processed images from root to scanned_images folder."""
+    if not os.path.exists(DEST_IMG_DIR):
+        os.makedirs(DEST_IMG_DIR)
+        
+    print(f"\n🧹 Moving images to {DEST_IMG_DIR}...")
+    
+    file_pattern = re.compile(r"page-\d+\.png")
+    count = 0
+    
+    # List files in current directory
+    for filename in os.listdir(SOURCE_DIR):
+        if file_pattern.match(filename) and os.path.isfile(filename):
+            src = os.path.join(SOURCE_DIR, filename)
+            dst = os.path.join(DEST_IMG_DIR, filename)
+            try:
+                shutil.move(src, dst)
+                count += 1
+            except Exception as e:
+                print(f"   ⚠️ Could not move {filename}: {e}")
+                
+    print(f"✅ Moved {count} images.")
 
 def main():
-    print("🧹 Step 1: Moving images...")
-    move_images()
+    print("🚀 Starting Verbatim OCR Processing...")
 
-    print("\n🔍 Step 2: Extracting Telugu Text...")
-    for folder, data in CHAPTER_MAPPING.items():
+    # 1. GENERATE MARKDOWN FILES
+    for folder_name, data in CHAPTER_MAPPING.items():
         chapter_id = data['id']
-        print(f"   👉 Processing Chapter {chapter_id} ({folder})...")
+        print(f"\n📂 Processing Chapter {chapter_id} ({folder_name})...")
         
-        output_dir = os.path.join(OUTPUT_BASE, folder)
+        # Ensure chapter folder exists (matches your repo structure)
+        output_dir = os.path.join(OUTPUT_BASE, folder_name)
         os.makedirs(output_dir, exist_ok=True)
 
-        # --- PROCESS LESSON ---
+        # --- Lesson Section ---
         l_start, l_end = data['lesson']
-        lesson_content = ""
-        for p in range(l_start, l_end + 1):
-            lesson_content += get_ocr_text(p) + "\n\n"
-        
-        # Save as lesson_6.md
-        lesson_file = os.path.join(output_dir, f"lesson_{chapter_id}.md")
-        with open(lesson_file, "w", encoding="utf-8") as f:
-            f.write(lesson_content.strip())
-        print(f"      ✅ Created {lesson_file}")
+        print(f"   📖 Generaring lesson_{chapter_id}.md (Pages {l_start}-{l_end})")
+        lesson_text = ""
+        for page in range(l_start, l_end + 1):
+            lesson_text += get_ocr_text_from_root(page) + "\n\n"
+            
+        with open(os.path.join(output_dir, f"lesson_{chapter_id}.md"), "w", encoding="utf-8") as f:
+            f.write(lesson_text.strip())
 
-        # --- PROCESS EXERCISE ---
+        # --- Exercise Section ---
         e_start, e_end = data['exercise']
-        exercise_content = ""
-        for p in range(e_start, e_end + 1):
-            exercise_content += get_ocr_text(p) + "\n\n"
+        print(f"   ✍️ Generaring exercise_{chapter_id}.md (Pages {e_start}-{e_end})")
+        exercise_text = ""
+        for page in range(e_start, e_end + 1):
+            exercise_text += get_ocr_text_from_root(page) + "\n\n"
+            
+        with open(os.path.join(output_dir, f"exercise_{chapter_id}.md"), "w", encoding="utf-8") as f:
+            f.write(exercise_text.strip())
 
-        # Save as exercise_6.md
-        exercise_file = os.path.join(output_dir, f"exercise_{chapter_id}.md")
-        with open(exercise_file, "w", encoding="utf-8") as f:
-            f.write(exercise_content.strip())
-        print(f"      ✅ Created {exercise_file}")
+    # 2. CLEANUP IMAGES (Run ONLY after processing)
+    cleanup_images()
+    print("\n✅ All Done!")
 
 if __name__ == "__main__":
     main()
