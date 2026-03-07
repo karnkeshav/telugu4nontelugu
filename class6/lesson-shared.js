@@ -182,7 +182,7 @@
             const resp = await fetch('https://api.soundoftext.com/sounds', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ engine: 'Google', data: { text, voice: 'te-IN' } })
+                body: JSON.stringify({ engine: 'Google', data: { text, voice: 'te' } })
             });
             if (!resp.ok) throw new Error('sot_request');
             const { id, success } = await resp.json();
