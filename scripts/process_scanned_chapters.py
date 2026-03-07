@@ -44,6 +44,7 @@ def get_ocr_text_from_root(page_num):
         text = pytesseract.image_to_string(Image.open(img_path), lang=OCR_LANG)
         return text if text.strip() else f"\n\n"
     except Exception as e:
+        print(f"❌ Exception in OCR for {img_path}: {e}")
         return f"\n\n"
 
 def cleanup_images():
