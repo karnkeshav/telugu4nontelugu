@@ -164,8 +164,6 @@
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
         <p class="page-note">Source: Textbook pages 2–3 &nbsp;|&nbsp; Click 🔊 to hear the Telugu pronunciation</p>
 
-        <!-- Hidden audio for Google Translate TTS fallback -->
-        <audio id="tts-audio"></audio>
 
         <!-- PAGE 2: Family members -->
         <div class="section-heading">👨‍👩‍👧 Family Members in the Scene (Page 2)</div>
@@ -285,62 +283,52 @@
     </div>
 
     <script>
-        // ─── Detect if a Telugu voice is available ───────────────────────────
+        // ─────────────────────────────────────────────────────────────────────
+        // Telugu TTS — Web Speech API (Tier 1) + Google Translate tab (Tier 2)
+        // Avoids CORB: we never fetch Google Translate audio directly.
+        // ─────────────────────────────────────────────────────────────────────
+
         let teluguVoice = null;
 
         function loadVoices() {
             const voices = window.speechSynthesis.getVoices();
-            teluguVoice = voices.find(v =>
-                v.lang === 'te-IN' || v.lang.startsWith('te')
-            ) || null;
+            // prefer te-IN; accept any Telugu variant
+            teluguVoice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
         }
 
-        // Voices may load asynchronously in some browsers
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-        loadVoices();
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
 
-        // ─── Main speak function ──────────────────────────────────────────────
         function speakTelugu(text, btn) {
-            // Stop anything currently playing
-            window.speechSynthesis.cancel();
-            document.getElementById('tts-audio').pause();
-
-            // Visual feedback
-            document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
-            btn.classList.add('speaking');
-            const cleanup = () => btn.classList.remove('speaking');
-
-            // ── TIER 1: Web Speech API (offline, instant) ──────────────────
+            // ── TIER 1: Web Speech API ────────────────────────────────────
             if ('speechSynthesis' in window) {
-                loadVoices(); // refresh in case voices loaded after page init
-                const voices = window.speechSynthesis.getVoices();
-                const voice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
+                window.speechSynthesis.cancel();
+                loadVoices();
 
-                if (voice) {
-                    const utt = new SpeechSynthesisUtterance(text);
-                    utt.voice = voice;
-                    utt.lang = 'te-IN';
-                    utt.rate = 0.85;
-                    utt.onend = cleanup;
-                    utt.onerror = () => { cleanup(); useFallback(text, btn); };
-                    window.speechSynthesis.speak(utt);
-                    return;
-                }
+                const utt = new SpeechSynthesisUtterance(text);
+                utt.lang = 'te-IN';
+                utt.rate = 0.85;
+                utt.pitch = 1;
+                if (teluguVoice) utt.voice = teluguVoice; // use native voice if found
+
+                // Visual pulse while speaking
+                document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
+                btn.classList.add('speaking');
+                utt.onend = () => btn.classList.remove('speaking');
+                utt.onerror = () => btn.classList.remove('speaking');
+
+                window.speechSynthesis.speak(utt);
+                return;
             }
 
-            // ── TIER 2: Google Translate TTS (online fallback) ─────────────
-            useFallback(text, cleanup);
-        }
-
-        function useFallback(text, cleanup) {
-            const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
-            const audio = document.getElementById('tts-audio');
-            audio.src = url;
-            audio.onended = typeof cleanup === 'function' ? cleanup : () => { };
-            audio.onerror = typeof cleanup === 'function' ? cleanup : () => { };
-            audio.play().catch(() => {
-                if (typeof cleanup === 'function') cleanup();
-            });
+            // ── TIER 2: speechSynthesis not supported (very old browser) ──
+            // Open Google Translate so student can hear it there
+            window.open(
+                'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
+                '_blank'
+            );
         }
     </script>
 </body>
