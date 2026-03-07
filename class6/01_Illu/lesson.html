@@ -146,11 +146,6 @@
             color: #999;
             margin-top: 4px;
         }
-
-        /* Hidden audio element for fallback */
-        #tts-audio {
-            display: none;
-        }
     </style>
 </head>
 
@@ -282,53 +277,82 @@
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
     </div>
 
-    <script>
-        // ─────────────────────────────────────────────────────────────────────
-        // Telugu TTS — Web Speech API (Tier 1) + Google Translate tab (Tier 2)
-        // Avoids CORB: we never fetch Google Translate audio directly.
-        // ─────────────────────────────────────────────────────────────────────
+    <!-- Hidden audio element used for CORS-proxied TTS fallback -->
+    <audio id="tts-audio"></audio>
 
+    <script>
+        // ═══════════════════════════════════════════════════════════════════
+        //  Telugu TTS  —  Three-tier strategy
+        //
+        //  TIER 1 │ Web Speech API (te-IN)   — offline, instant if installed
+        //  TIER 2 │ CORS proxy → Google TTS  — online, any device/browser
+        //  TIER 3 │ Open Google Translate tab — last resort
+        // ═══════════════════════════════════════════════════════════════════
+
+        const audio = document.getElementById('tts-audio');
         let teluguVoice = null;
 
         function loadVoices() {
             const voices = window.speechSynthesis.getVoices();
-            // prefer te-IN; accept any Telugu variant
             teluguVoice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
         }
-
         if ('speechSynthesis' in window) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
             loadVoices();
         }
 
-        function speakTelugu(text, btn) {
-            // ── TIER 1: Web Speech API ────────────────────────────────────
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                loadVoices();
+        function setBtnState(btn, speaking) {
+            document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
+            if (speaking) btn.classList.add('speaking');
+        }
 
+        function speakTelugu(text, btn) {
+            // Stop any current playback
+            window.speechSynthesis && window.speechSynthesis.cancel();
+            audio.pause();
+            audio.src = '';
+
+            setBtnState(btn, true);
+
+            // ── TIER 1: Web Speech API ──────────────────────────────────────
+            if ('speechSynthesis' in window && teluguVoice) {
                 const utt = new SpeechSynthesisUtterance(text);
+                utt.voice = teluguVoice;
                 utt.lang = 'te-IN';
                 utt.rate = 0.85;
-                utt.pitch = 1;
-                if (teluguVoice) utt.voice = teluguVoice; // use native voice if found
-
-                // Visual pulse while speaking
-                document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
-                btn.classList.add('speaking');
-                utt.onend = () => btn.classList.remove('speaking');
-                utt.onerror = () => btn.classList.remove('speaking');
-
+                utt.onend = () => setBtnState(btn, false);
+                utt.onerror = () => { setBtnState(btn, false); playViaProxy(text, btn); };
                 window.speechSynthesis.speak(utt);
                 return;
             }
 
-            // ── TIER 2: speechSynthesis not supported (very old browser) ──
-            // Open Google Translate so student can hear it there
-            window.open(
-                'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
-                '_blank'
-            );
+            // ── TIER 2: CORS-proxied Google TTS ────────────────────────────
+            playViaProxy(text, btn);
+        }
+
+        function playViaProxy(text, btn) {
+            // corsproxy.io adds CORS headers so the audio can be fetched
+            const gttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`;
+
+            audio.src = proxyUrl;
+            audio.onended = () => setBtnState(btn, false);
+            audio.onerror = () => {
+                setBtnState(btn, false);
+                // ── TIER 3: open Google Translate as last resort ──────────
+                window.open(
+                    'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
+                    '_blank'
+                );
+            };
+            audio.load();
+            audio.play().catch(() => {
+                setBtnState(btn, false);
+                window.open(
+                    'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
+                    '_blank'
+                );
+            });
         }
     </script>
 </body>
