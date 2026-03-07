@@ -1,0 +1,44 @@
+name: 📷 OCR Verbatim Automation
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    paths:
+      - 'page-*.png' # Auto-triggers when you upload images like page-090.png
+
+permissions:
+  contents: write
+
+jobs:
+  process_images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # CRITICAL: Install Tesseract with Telugu support
+      - name: Install Tesseract OCR (Telugu)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-tel
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install pytesseract pillow
+
+      - name: Run OCR Processing Script
+        run: |
+          python scripts/process_scanned_chapters.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "OCR Bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "✨ Generated verbatim Telugu MD files and moved images" || echo "No changes to commit"
+          git push

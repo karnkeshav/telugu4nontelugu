@@ -1,0 +1,17 @@
+{
+  "class_name": "Class 6",
+  "pdf_path": "class6/pdf/6th Tel for OM 2025-26.pdf",
+  "chapters": [
+    { "id": 1, "name": "Amma Odi", "folder": "01_Amma_Odi", "start_page": 1, "end_page": 12, "topic": "Poem about a mother's lap." },
+    { "id": 2, "name": "Trupti", "folder": "02_Trupti", "start_page": 13, "end_page": 24, "topic": "Story about satisfaction." },
+    { "id": 3, "name": "Maakoddi Tella Doratanamu", "folder": "03_Maakoddi_Tella_Doratanamu", "start_page": 25, "end_page": 36, "topic": "Patriotic song." },
+    { "id": 4, "name": "Samayaspurthi", "folder": "04_Samayaspurthi", "start_page": 37, "end_page": 48, "topic": "Presence of mind." },
+    { "id": 5, "name": "Mana Mahaneeyulu", "folder": "05_Mana_Mahaneeyulu", "start_page": 49, "end_page": 60, "topic": "Great personalities." },
+    { "id": 6, "name": "Subhashitalu", "folder": "06_Subhashitalu", "start_page": 61, "end_page": 72, "topic": "Moral poems." },
+    { "id": 7, "name": "Mamakaram", "folder": "07_Mamakaram", "start_page": 73, "end_page": 84, "topic": "Family bonds." },
+    { "id": 8, "name": "Melukolupu", "folder": "08_Melukolupu", "start_page": 85, "end_page": 96, "topic": "Social awakening." },
+    { "id": 9, "name": "Dharma Nirnayam", "folder": "09_Dharma_Nirnayam", "start_page": 97, "end_page": 108, "topic": "Justice." },
+    { "id": 10, "name": "Du Du Basavanna", "folder": "10_Du_Du_Basavanna", "start_page": 109, "end_page": 120, "topic": "Cultural traditions." },
+    { "id": 11, "name": "Entha Manchivaaramma", "folder": "11_Entha_Manchivaaramma", "start_page": 121, "end_page": 132, "topic": "Kindness." }
+  ]
+}

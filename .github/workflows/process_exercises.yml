@@ -1,0 +1,203 @@
+name: Process Exercise Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      chapter_folder:
+        description: 'Select the Chapter Folder'
+        required: true
+        type: choice
+        options:
+          - 01_Pandem
+          - 02_Samaikya_Bharati
+          - 03_Rekkala_Enugu
+          - 04_Parishubhrata
+          - 05_Nirmal_Bommalu
+          - 06_Shataka_Padyalu
+          - 07_Sankranthi_Sandesham
+          - 08_Kanuvippu
+          - 09_Ramappa
+          - 10_Shibi_Chakravarti
+
+jobs:
+  generate_exercises:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-genai
+
+      - name: Run Exercise Generation Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          import time
+          from google import genai
+
+          # --- CONFIGURATION ---
+          CHAPTER = "${{ github.event.inputs.chapter_folder }}"
+          API_KEY = os.environ.get("GEMINI_API_KEY")
+          
+          MODEL_CHAIN = [
+              "gemini-2.0-flash", 
+              "gemini-1.5-flash",
+              "gemini-1.5-flash-latest",
+              "gemini-1.5-pro"
+          ]
+
+          # --- STEP 1: LOCATE FILES ---
+          try:
+              prefix = CHAPTER.split('_')[0]
+              chapter_num = int(prefix) 
+              ex_filename = f"exercise_{chapter_num}.md"
+              lesson_filename = f"lesson_{chapter_num}.md"
+          except Exception as e:
+              print(f"❌ Error parsing chapter number: {e}")
+              sys.exit(1)
+
+          ex_path = f"class5/{CHAPTER}/{ex_filename}"
+          lesson_path = f"class5/{CHAPTER}/{lesson_filename}"
+          output_path = f"class5/{CHAPTER}/exercise.html"
+
+          print(f"📂 Chapter: {CHAPTER}")
+
+          if not os.path.exists(ex_path):
+              print(f"❌ Error: Exercise file {ex_path} not found.")
+              sys.exit(1)
+              
+          lesson_text = ""
+          if os.path.exists(lesson_path):
+              with open(lesson_path, "r", encoding="utf-8") as f:
+                  lesson_text = f.read()
+              print("✅ Lesson text loaded.")
+
+          with open(ex_path, "r", encoding="utf-8") as f:
+              exercise_text = f.read()
+
+          # --- STEP 2: PREPARE CLIENT ---
+          client = genai.Client(api_key=API_KEY)
+
+          # --- STEP 3: OPTIMIZED PROMPT ---
+          # Uses concise instructions and an HTML template to save tokens.
+          prompt = f"""
+          Role: Telugu Tutor.
+          Task: Convert Input to Q&A Cards (HTML).
+          
+          CONTEXT (Lesson):
+          {lesson_text}
+          
+          INPUT (Exercises):
+          {exercise_text}
+
+          RULES:
+          1. **Coverage:** Extract ALL Questions, Meanings, Blanks, & Matches.
+          2. **Matches:** Pair Left Item (Q) with Correct Right Item (A).
+          3. **Blanks:** Q = Sentence w/ blank; A = Filled Sentence.
+          4. **Logic:** Use CONTEXT to fix typos and find answers.
+          5. **STRICT REQUIREMENT:** EVERY Telugu phrase (Q & A) MUST have English Pronunciation & Meaning.
+
+          OUTPUT TEMPLATE (Return ONLY raw HTML, no markdown):
+          <div class="card mb-4 shadow-sm">
+            <div class="alert alert-info">
+               <strong>Q:</strong> [Telugu Q] <br>
+               <em>(Pronunciation: [English])</em> <br>
+               <span>Meaning: [English]</span>
+            </div>
+            <div class="alert alert-success">
+               <strong>A:</strong> [Telugu A] <br>
+               <em>(Pronunciation: [English])</em> <br>
+               <span>Meaning: [English]</span>
+            </div>
+          </div>
+          """
+
+          success = False
+          
+          for model_name in MODEL_CHAIN:
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  
+                  response = client.models.generate_content(
+                      model=model_name,
+                      contents=prompt
+                  )
+                  
+                  output_html = response.text
+                  
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
+
+                  final_html = f"""
+                  <!DOCTYPE html>
+                  <html lang="te">
+                  <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <title>{CHAPTER.replace("_", " ")} - Exercises</title>
+                      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                      <style>
+                          body {{ background-color: #f0f2f5; font-family: 'Segoe UI', sans-serif; padding-top: 20px; padding-bottom: 40px; overflow-x: hidden; }}
+                          .exercise-title {{ background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%); color: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; text-align: center; }}
+                          .card {{ border: none; border-radius: 12px; overflow: hidden; width: 100%; }}
+                          .alert, .card-body, p, div, span, strong, em {{ word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; white-space: normal; max-width: 100%; }}
+                          .alert {{ margin-bottom: 0; border-radius: 0; border: none; padding: 15px; }}
+                          .alert-info {{ background-color: #e7f1ff; color: #0c4128; border-bottom: 1px solid #cce5ff; }}
+                          .alert-success {{ background-color: #d1e7dd; color: #0f5132; }}
+                          em {{ color: #555; font-size: 0.9rem; display: block; margin-top: 2px; }}
+                          strong {{ font-size: 1.1rem; }}
+                      </style>
+                  </head>
+                  <body>
+                      <div class="container">
+                          <div class="exercise-title">
+                              <h1>📖 Exercises</h1>
+                          </div>
+                          {output_html.strip()}
+                      </div>
+                  </body>
+                  </html>
+                  """
+
+                  with open(output_path, "w", encoding="utf-8") as f:
+                      f.write(final_html)
+                  
+                  print(f"✅ Successfully created {output_path}")
+                  success = True
+                  break 
+
+              except Exception as e:
+                  print(f"⚠️ {model_name} failed: {e}")
+                  if "429" in str(e):
+                      print("⏳ Rate limit hit. Sleeping for 30s...")
+                      time.sleep(30)
+                  continue
+          
+          if not success:
+              print("❌ All models failed.")
+              sys.exit(1)
+          EOF
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull
+          git add .
+          git commit -m "Generate optimized exercises for ${{ github.event.inputs.chapter_folder }}"
+          git push

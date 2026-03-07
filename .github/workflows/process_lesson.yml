@@ -1,0 +1,198 @@
+name: Process Lesson Translation
+
+on:
+  workflow_dispatch:
+    inputs:
+      chapter_folder:
+        description: 'Select the Chapter Folder'
+        required: true
+        type: choice
+        options:
+          - 01_Pandem
+          - 02_Samaikya_Bharati
+          - 03_Rekkala_Enugu
+          - 04_Parishubhrata
+          - 05_Nirmal_Bommalu
+          - 06_Shataka_Padyalu
+          - 07_Sankranthi_Sandesham
+          - 08_Kanuvippu
+          - 09_Ramappa
+          - 10_Shibi_Chakravarti
+
+jobs:
+  translate_lesson:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-genai
+
+      - name: Run Translation Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python << 'EOF'
+          import os
+          import sys
+          from google import genai
+
+          MODEL_CHAIN = ["gemini-2.0-flash", "gemini-flash-latest", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
+          
+          chapter = "${{ github.event.inputs.chapter_folder }}"
+          api_key = os.environ.get("GEMINI_API_KEY")
+
+          # --- Determine filename based on chapter number ---
+          try:
+              prefix = chapter.split('_')[0]
+              chapter_num = int(prefix) 
+              filename = f"lesson_{chapter_num}.md"
+          except Exception as e:
+              print(f"❌ Error parsing chapter number: {e}")
+              sys.exit(1)
+
+          md_path = f"class5/{chapter}/{filename}"
+          html_path = f"class5/{chapter}/lesson.html"
+
+          print(f"📂 Chapter: {chapter}")
+          print(f"📄 Source File: {md_path}")
+
+          if not os.path.exists(md_path):
+              print(f"❌ Error: {md_path} not found.")
+              sys.exit(1)
+
+          with open(md_path, "r", encoding="utf-8") as f:
+              lesson_content = f.read()
+
+          client = genai.Client(api_key=api_key)
+          
+          # Refined prompt with strict class instruction
+          prompt = f"""
+          You are a Telugu language tutor for Class 5 students. 
+          Convert the following lesson text into a kid-friendly, mobile-optimized HTML learning guide.
+          
+          TASK:
+          1. Process the entire text (Poem/Story AND Summary/Taatparyam).
+          2. Break the text into logical sentences.
+          3. For EVERY sentence, create a card using the class "card sentence-card".
+          4. Inside each card, first display the full sentence in bold.
+          5. Below the full sentence, create a table with columns: | Telugu Word | Pronunciation | Meaning | 
+          6. Provide a row for EVERY individual word in that sentence.
+          
+          FORMAT:
+          Return ONLY the raw HTML content (no markdown code blocks) using Bootstrap 5 classes.
+          Use the table class "table table-hover mb-0".
+          
+          TEXT TO PROCESS:
+          {lesson_content}
+          """
+
+          success = False
+          for model_name in MODEL_CHAIN:
+              try:
+                  print(f"🔄 Attempting with model: {model_name}...")
+                  response = client.models.generate_content(model=model_name, contents=prompt)
+                  output_html = response.text
+                  
+                  if "```html" in output_html:
+                      output_html = output_html.split("```html")[1].split("```")[0]
+                  elif "```" in output_html:
+                      output_html = output_html.split("```")[1].split("```")[0]
+
+                  # CSS injection with Mobile Fixes (table-layout: fixed)
+                  styled_html = f"""
+          <!DOCTYPE html>
+          <html lang="te">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+              <style>
+                  body {{ background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; padding-top: 20px; overflow-x: hidden; }}
+                  
+                  .sentence-card {{ 
+                      background: white; 
+                      border-radius: 15px; 
+                      border: none; 
+                      margin-bottom: 25px; 
+                      box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+                      overflow: hidden; 
+                      width: 100%; /* Ensure card fits container */
+                  }}
+                  
+                  .full-sentence {{ 
+                      background-color: #eef2ff; 
+                      padding: 15px; 
+                      font-weight: bold; 
+                      color: #3730a3; 
+                      border-bottom: 1px solid #e0e7ff; 
+                  }}
+                  
+                  .lesson-title {{ 
+                      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+                      color: white; 
+                      border-radius: 15px; 
+                      padding: 20px; 
+                      margin-bottom: 30px; 
+                  }}
+
+                  /* --- MOBILE FIXES --- */
+                  .table {{
+                      table-layout: fixed; /* Forces table to stay within width */
+                      width: 100%;
+                  }}
+                  
+                  .table td, .table th {{
+                      white-space: normal !important; /* Forces text to wrap */
+                      word-wrap: break-word; 
+                      word-break: break-word;
+                      vertical-align: middle;
+                  }}
+                  
+                  @media (max-width: 576px) {{ 
+                      .table {{ font-size: 0.85rem; }} 
+                      .full-sentence {{ font-size: 1rem; }}
+                  }}
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <div class="lesson-title text-center">
+                      <h1>{chapter.replace("_", " ")}</h1>
+                  </div>
+                  {output_html.strip()}
+              </div>
+          </body>
+          </html>
+          """
+                  with open(html_path, "w", encoding="utf-8") as f:
+                      f.write(styled_html)
+                  
+                  print(f"✅ Updated {html_path} using {model_name}")
+                  success = True
+                  break
+              except Exception as e:
+                  print(f"⚠️ {model_name} failed: {e}")
+                  continue
+
+          if not success:
+              sys.exit(1)
+          EOF
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update lesson.html for ${{ github.event.inputs.chapter_folder }} with mobile fixes"
+          git push
