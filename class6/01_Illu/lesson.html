@@ -331,34 +331,33 @@
         }
 
         async function playViaProxy(text, btn) {
+            // Build Google TTS URL — text encoded ONCE with encodeURIComponent
             const gttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
-            const proxies = [
-                `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`,
-                `https://api.allorigins.win/raw?url=${encodeURIComponent(gttsUrl)}`
-            ];
 
-            for (const proxyUrl of proxies) {
-                try {
-                    const resp = await fetch(proxyUrl);
-                    if (!resp.ok) continue;
+            // Pass gttsUrl DIRECTLY after '?' — do NOT encodeURIComponent(gttsUrl) again!
+            // Double-encoding would turn %E0 → %25E0, sending garbled text to Google.
+            const proxyUrl = `https://corsproxy.io/?${gttsUrl}`;
 
-                    const blob = await resp.blob();
-                    const objectUrl = URL.createObjectURL(blob);
+            try {
+                const resp = await fetch(proxyUrl);
+                if (!resp.ok) throw new Error('not_ok');
 
-                    audio._objectUrl = objectUrl;
-                    audio.src = objectUrl;
-                    audio.onended = () => {
-                        setBtnState(btn, false);
-                        URL.revokeObjectURL(objectUrl);
-                        audio._objectUrl = null;
-                    };
-                    audio.onerror = () => setBtnState(btn, false);
+                const blob = await resp.blob();
+                const objectUrl = URL.createObjectURL(blob);
 
-                    await audio.play();
-                    return;                        // ✅ success — stop trying proxies
-                } catch (_) {
-                    continue;                      // try next proxy
-                }
+                audio._objectUrl = objectUrl;
+                audio.src = objectUrl;
+                audio.onended = () => {
+                    setBtnState(btn, false);
+                    URL.revokeObjectURL(objectUrl);
+                    audio._objectUrl = null;
+                };
+                audio.onerror = () => setBtnState(btn, false);
+
+                await audio.play();
+                return;                           // ✅ success
+            } catch (_) {
+                // proxy failed — fall through to Tier 3
             }
 
             // ── TIER 3: all proxies failed — show inline status, no new tab ─
