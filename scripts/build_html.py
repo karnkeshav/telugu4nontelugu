@@ -83,6 +83,8 @@ def main():
     # Copy stylesheet
     style_content = read_file("style.css")
     write_file(os.path.join(output_dir, "style.css"), style_content)
+    # Copy to class5 dir so ../style.css resolves correctly from docs/class5/folder/lesson.html
+    write_file(os.path.join(output_dir, "class5", "style.css"), style_content)
 
     print("✅ Build complete! Website generated in 'docs' directory.")
 

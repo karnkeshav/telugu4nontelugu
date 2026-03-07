@@ -68,8 +68,10 @@ def get_translation(client: genai.client.Client, model_name: str, pdf_file, chap
         try:
             response = client.models.generate_content(model=model_name, contents=[pdf_file, prompt])
             return response.text
-        except exceptions.ResourceExhausted:
+        except exceptions.ResourceExhausted as e:
             print(f"   ⚠️ Quota hit. Sleeping 20s...")
+            if attempt == max_retries - 1:
+                raise e
             time.sleep(20)
         except Exception as e:
             print(f"   ⚠️ Error during translation generation: {e}")
@@ -98,8 +100,10 @@ def get_exercises(client: genai.client.Client, model_name: str, pdf_file, chapte
         try:
             response = client.models.generate_content(model=model_name, contents=[pdf_file, prompt])
             return response.text
-        except exceptions.ResourceExhausted:
+        except exceptions.ResourceExhausted as e:
             print(f"   ⚠️ Quota hit. Sleeping 20s...")
+            if attempt == max_retries - 1:
+                raise e
             time.sleep(20)
         except Exception as e:
             print(f"   ⚠️ Error during exercise generation: {e}")
@@ -118,7 +122,7 @@ def main():
     )
     args = parser.parse_args()
 
-    client = genai.Client()
+    client = genai.Client(api_key=API_KEY)
     active_model_name = list_and_find_working_model(client)
     print(f"🚀 Using model: {active_model_name}")
 
