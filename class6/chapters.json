@@ -2,16 +2,105 @@
   "class_name": "Class 6",
   "pdf_path": "class6/pdf/6th Tel for OM 2025-26.pdf",
   "chapters": [
-    { "id": 1, "name": "Amma Odi", "enabled": true, "folder": "01_Amma_Odi", "start_page": 1, "end_page": 12, "topic": "Poem about a mother's lap." },
-    { "id": 2, "name": "Trupti", "enabled": true, "folder": "02_Trupti", "start_page": 13, "end_page": 24, "topic": "Story about satisfaction." },
-    { "id": 3, "name": "Maakoddi Tella Doratanamu", "enabled": true, "folder": "03_Maakoddi_Tella_Doratanamu", "start_page": 25, "end_page": 36, "topic": "Patriotic song." },
-    { "id": 4, "name": "Samayaspurthi", "enabled": true, "folder": "04_Samayaspurthi", "start_page": 37, "end_page": 48, "topic": "Presence of mind." },
-    { "id": 5, "name": "Mana Mahaneeyulu", "enabled": true, "folder": "05_Mana_Mahaneeyulu", "start_page": 49, "end_page": 60, "topic": "Great personalities." },
-    { "id": 6, "name": "Subhashitalu", "enabled": true, "folder": "06_Subhashitalu", "start_page": 61, "end_page": 72, "topic": "Moral poems." },
-    { "id": 7, "name": "Mamakaram", "enabled": true, "folder": "07_Mamakaram", "start_page": 73, "end_page": 84, "topic": "Family bonds." },
-    { "id": 8, "name": "Melukolupu", "enabled": true, "folder": "08_Melukolupu", "start_page": 85, "end_page": 96, "topic": "Social awakening." },
-    { "id": 9, "name": "Dharma Nirnayam", "enabled": true, "folder": "09_Dharma_Nirnayam", "start_page": 97, "end_page": 108, "topic": "Justice." },
-    { "id": 10, "name": "Du Du Basavanna", "enabled": true, "folder": "10_Du_Du_Basavanna", "start_page": 109, "end_page": 120, "topic": "Cultural traditions." },
-    { "id": 11, "name": "Entha Manchivaaramma", "enabled": true, "folder": "11_Entha_Manchivaaramma", "start_page": 121, "end_page": 132, "topic": "Kindness." }
+    {
+      "id": 1,
+      "name": "Illu",
+      "telugu": "ఇల్లు",
+      "enabled": true,
+      "folder": "01_Illu",
+      "type": "సన్నివేశ చిత్రం",
+      "start_page": 2,
+      "end_page": 11
+    },
+    {
+      "id": 2,
+      "name": "Manamantaa Okkate",
+      "telugu": "మనమంతా ఒక్కటే",
+      "enabled": true,
+      "folder": "02_Manamantaa_Okkate",
+      "type": "గేయం",
+      "start_page": 12,
+      "end_page": 25
+    },
+    {
+      "id": 3,
+      "name": "Vanaakalam",
+      "telugu": "వానాకాలం",
+      "enabled": true,
+      "folder": "03_Vanaakalam",
+      "type": "గేయం",
+      "start_page": 26,
+      "end_page": 38
+    },
+    {
+      "id": 4,
+      "name": "Chitti Mokka",
+      "telugu": "చిట్టి మొక్క",
+      "enabled": true,
+      "folder": "04_Chitti_Mokka",
+      "type": "చిత్రకథ",
+      "start_page": 39,
+      "end_page": 51
+    },
+    {
+      "id": 5,
+      "name": "Kothi Buddhi",
+      "telugu": "కోతి బుద్ధి",
+      "enabled": true,
+      "folder": "05_Kothi_Buddhi",
+      "type": "కథ",
+      "start_page": 52,
+      "end_page": 60
+    },
+    {
+      "id": 6,
+      "name": "Amma",
+      "telugu": "అమ్మ",
+      "enabled": true,
+      "folder": "06_Amma",
+      "type": "గేయం",
+      "start_page": 61,
+      "end_page": 67
+    },
+    {
+      "id": 7,
+      "name": "Simham Kundelu",
+      "telugu": "సింహం – కుందేలు",
+      "enabled": true,
+      "folder": "07_Simham_Kundelu",
+      "type": "సంభాషణ",
+      "start_page": 68,
+      "end_page": 75
+    },
+    {
+      "id": 8,
+      "name": "Warangal",
+      "telugu": "వరంగల్",
+      "enabled": true,
+      "folder": "08_Warangal",
+      "type": "లేఖ",
+      "start_page": 76,
+      "end_page": 82
+    },
+    {
+      "id": 9,
+      "name": "Selfon",
+      "telugu": "సెల్ఫోన్",
+      "enabled": true,
+      "folder": "09_Selfon",
+      "type": "సంభాషణ",
+      "start_page": 83,
+      "end_page": 92
+    },
+    {
+      "id": 10,
+      "name": "Neethi Padyalu",
+      "telugu": "నీతి పద్యాలు",
+      "enabled": true,
+      "folder": "10_Neethi_Padyalu",
+      "type": "పద్యాలు",
+      "start_page": 93,
+      "end_page": 110
+    }
   ]
 }
