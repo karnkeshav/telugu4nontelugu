@@ -35,7 +35,7 @@
         }
 
         .container {
-            max-width: 950px;
+            max-width: 980px;
             margin: 0 auto;
             background: white;
             padding: 24px;
@@ -44,7 +44,7 @@
         }
 
         .section-heading {
-            font-size: 1.15em;
+            font-size: 1.1em;
             font-weight: bold;
             color: #FF5E62;
             margin: 28px 0 8px;
@@ -69,7 +69,7 @@
         th {
             background-color: #FF9966;
             color: white;
-            font-size: 1em;
+            font-size: 0.95em;
         }
 
         td:first-child {
@@ -83,8 +83,50 @@
             color: #444;
         }
 
+        td:nth-child(4) {
+            text-align: center;
+            width: 56px;
+        }
+
         tr:nth-child(even) {
             background-color: #fdf5f0;
+        }
+
+        /* Speaker button */
+        .speak-btn {
+            background: none;
+            border: 2px solid #FF9966;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .speak-btn:hover {
+            background: #FF9966;
+            transform: scale(1.1);
+        }
+
+        .speak-btn.speaking {
+            background: #FF5E62;
+            border-color: #FF5E62;
+            animation: pulse 0.6s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.15);
+            }
         }
 
         .back-button {
@@ -100,9 +142,14 @@
         }
 
         .page-note {
-            font-size: 0.85em;
-            color: #888;
+            font-size: 0.82em;
+            color: #999;
             margin-top: 4px;
+        }
+
+        /* Hidden audio element for fallback */
+        #tts-audio {
+            display: none;
         }
     </style>
 </head>
@@ -112,9 +159,13 @@
         <h1>ఇల్లు</h1>
         <p class="subtitle">Chapter 1 &nbsp;|&nbsp; Illu (The Home) &nbsp;|&nbsp; Class 6 Telugu</p>
     </header>
+
     <div class="container">
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
-        <p class="page-note">Source: Textbook pages 2–3 &nbsp;|&nbsp; Scene illustration vocabulary</p>
+        <p class="page-note">Source: Textbook pages 2–3 &nbsp;|&nbsp; Click 🔊 to hear the Telugu pronunciation</p>
+
+        <!-- Hidden audio for Google Translate TTS fallback -->
+        <audio id="tts-audio"></audio>
 
         <!-- PAGE 2: Family members -->
         <div class="section-heading">👨‍👩‍👧 Family Members in the Scene (Page 2)</div>
@@ -124,6 +175,7 @@
                     <th>Telugu</th>
                     <th>Pronunciation</th>
                     <th>Meaning</th>
+                    <th>🔊</th>
                 </tr>
             </thead>
             <tbody>
@@ -131,16 +183,22 @@
                     <td>వనజ</td>
                     <td>Vanaja</td>
                     <td>Vanaja — the mother (combing her daughter's hair)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వనజ', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>సరళ</td>
                     <td>Sarala</td>
                     <td>Sarala — the daughter (getting her hair combed)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('సరళ', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>నాయనమ్మ కమల</td>
                     <td>Nāyanamma Kamala</td>
                     <td>Grandmother Kamala (sitting and cooking)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('నాయనమ్మ కమల', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
             </tbody>
         </table>
@@ -153,6 +211,7 @@
                     <th>Telugu</th>
                     <th>Pronunciation</th>
                     <th>Meaning</th>
+                    <th>🔊</th>
                 </tr>
             </thead>
             <tbody>
@@ -160,52 +219,130 @@
                     <td>పటం</td>
                     <td>Paṭam</td>
                     <td>Picture / Painting (framed on the wall)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పటం', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>హంస</td>
                     <td>Hamsa</td>
                     <td>Swan (the painting on the wall shows a swan)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('హంస', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>అలమర</td>
                     <td>Alamara</td>
                     <td>Cupboard / Wardrobe</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('అలమర', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>అరక</td>
                     <td>Araka</td>
                     <td>Shelf (open rack with clothes/items)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('అరక', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>రమణ</td>
                     <td>Ramaṇa</td>
                     <td>Ramana — family member (playing tabla)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('రమణ', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>తబల</td>
                     <td>Tabala</td>
                     <td>Tabla (a percussion drum instrument)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('తబల', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>వందన</td>
                     <td>Vandana</td>
                     <td>Vandana — family member (standing, watching chess)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వందన', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>తాత శంకరం</td>
                     <td>Tāta Śankaram</td>
                     <td>Grandfather Shankaram (playing chess)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('తాత శంకరం', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
                 <tr>
                     <td>చదరంగం</td>
                     <td>Chadaraṅgam</td>
                     <td>Chess (board game)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('చదరంగం', this)"
+                            title="Pronounce in Telugu">🔊</button></td>
                 </tr>
             </tbody>
         </table>
 
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
     </div>
+
+    <script>
+        // ─── Detect if a Telugu voice is available ───────────────────────────
+        let teluguVoice = null;
+
+        function loadVoices() {
+            const voices = window.speechSynthesis.getVoices();
+            teluguVoice = voices.find(v =>
+                v.lang === 'te-IN' || v.lang.startsWith('te')
+            ) || null;
+        }
+
+        // Voices may load asynchronously in some browsers
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices();
+
+        // ─── Main speak function ──────────────────────────────────────────────
+        function speakTelugu(text, btn) {
+            // Stop anything currently playing
+            window.speechSynthesis.cancel();
+            document.getElementById('tts-audio').pause();
+
+            // Visual feedback
+            document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
+            btn.classList.add('speaking');
+            const cleanup = () => btn.classList.remove('speaking');
+
+            // ── TIER 1: Web Speech API (offline, instant) ──────────────────
+            if ('speechSynthesis' in window) {
+                loadVoices(); // refresh in case voices loaded after page init
+                const voices = window.speechSynthesis.getVoices();
+                const voice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
+
+                if (voice) {
+                    const utt = new SpeechSynthesisUtterance(text);
+                    utt.voice = voice;
+                    utt.lang = 'te-IN';
+                    utt.rate = 0.85;
+                    utt.onend = cleanup;
+                    utt.onerror = () => { cleanup(); useFallback(text, btn); };
+                    window.speechSynthesis.speak(utt);
+                    return;
+                }
+            }
+
+            // ── TIER 2: Google Translate TTS (online fallback) ─────────────
+            useFallback(text, cleanup);
+        }
+
+        function useFallback(text, cleanup) {
+            const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
+            const audio = document.getElementById('tts-audio');
+            audio.src = url;
+            audio.onended = typeof cleanup === 'function' ? cleanup : () => { };
+            audio.onerror = typeof cleanup === 'function' ? cleanup : () => { };
+            audio.play().catch(() => {
+                if (typeof cleanup === 'function') cleanup();
+            });
+        }
+    </script>
 </body>
 
 </html>
