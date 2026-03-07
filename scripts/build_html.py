@@ -16,8 +16,8 @@ def main():
 
     # Configuration
     output_dir = "docs"
-    # Find all classes that have a chapters.json
-    class_dirs = [d for d in os.listdir(".") if d.startswith("class") and os.path.exists(os.path.join(d, "chapters.json"))]
+    # Find all classes that have a chapters.json (excluding class5 since it has a manual golden set of HTMLs)
+    class_dirs = [d for d in os.listdir(".") if d.startswith("class") and d != "class5" and os.path.exists(os.path.join(d, "chapters.json"))]
     
     # We will aggregate all classes into a single master index or just keep the static root index
     # Currently, PR #7's index_template.html is designed for a single class.
