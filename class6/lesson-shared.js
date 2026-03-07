@@ -174,34 +174,40 @@
     }
 
     async function playViaProxy(text, btn) {
-        // Text is encoded ONCE in gttsUrl — do NOT re-encode when building proxyUrl
-        const gttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
-        // ⚠️ encodeURIComponent(gttsUrl) is intentional:
-        //    Without it, the '?' inside gttsUrl becomes corsproxy's own query separator,
-        //    so corsproxy fetches only the bare base URL (no params) → 404.
-        //    corsproxy.io decodes the outer encoding before fetching, so Telugu chars
-        //    arrive at Google correctly as %E0%B0… (not %25E0%25B0…).
-        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`;
-
+        // ── Sound of Text API ─────────────────────────────────────────────
+        // Uses Google Cloud TTS under the hood, has proper CORS headers,
+        // supports te-IN, free with no API key.
+        // Step 1: request audio generation
         try {
-            const resp = await fetch(proxyUrl);
-            if (!resp.ok) throw new Error('proxy_not_ok');
+            const resp = await fetch('https://api.soundoftext.com/sounds', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ engine: 'Google', data: { text, voice: 'te-IN' } })
+            });
+            if (!resp.ok) throw new Error('sot_request');
+            const { id, success } = await resp.json();
+            if (!success || !id) throw new Error('sot_no_id');
 
-            const blob = await resp.blob();
-            const objectUrl = URL.createObjectURL(blob);
-
-            audio._objectUrl = objectUrl;
-            audio.src = objectUrl;
-            audio.onended = () => {
-                setBtnState(btn, false);
-                URL.revokeObjectURL(objectUrl);
-                audio._objectUrl = null;
-            };
-            audio.onerror = () => setBtnState(btn, false);
-            await audio.play();
+            // Step 2: poll until the audio file is ready (usually < 1 s)
+            for (let attempt = 0; attempt < 8; attempt++) {
+                await new Promise(r => setTimeout(r, 700));
+                const statusResp = await fetch(`https://api.soundoftext.com/sounds/${id}`);
+                if (!statusResp.ok) continue;
+                const { status, location } = await statusResp.json();
+                if (status === 'Done' && location) {
+                    // Step 3: play the S3 audio URL (CORS-enabled)
+                    audio.src = location;
+                    audio.onended = () => setBtnState(btn, false);
+                    audio.onerror = () => setBtnState(btn, false);
+                    await audio.play();
+                    return;                       // ✅ success
+                }
+                if (status === 'Error') throw new Error('sot_error');
+            }
+            throw new Error('sot_timeout');
 
         } catch (_) {
-            // All methods exhausted — show ⚠️ inline for 3 s, no new tab
+            // Tier 3: silent fail — show ⚠️ on the button for 3 s
             setBtnState(btn, false);
             btn.title = '⚠️ Audio unavailable — check internet connection';
             btn.textContent = '⚠️';
