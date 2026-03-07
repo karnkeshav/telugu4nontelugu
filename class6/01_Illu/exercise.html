@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ఇల్లు - Exercises - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
+    <style>
+        /* Exercise-specific styles */
+        .qa-block {
+            border: 1px solid #FFD0B0;
+            border-radius: 12px;
+            margin: 16px 0;
+            overflow: hidden;
+        }
+
+        .qa-question {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .qa-question .q-label {
+            font-size: 0.78em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 2px 10px;
+            white-space: nowrap;
+        }
+
+        .qa-question .q-text {
+            flex: 1;
+        }
+
+        .qa-question .q-telugu {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.15em;
+            font-weight: 600;
+            display: block;
+        }
+
+        .qa-question .q-english {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .qa-question .speak-btn {
+            border-color: rgba(255, 255, 255, 0.7);
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .qa-question .speak-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .qa-question .speak-btn.speaking {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+        .qa-answer-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .qa-answer-table th {
+            background: #fdf0e8;
+            color: #FF5E62;
+            padding: 8px 14px;
+            font-size: 0.85em;
+            text-align: left;
+            border-bottom: 1px solid #FFD0B0;
+        }
+
+        .qa-answer-table td {
+            padding: 10px 14px;
+            border: none;
+            border-bottom: 1px solid #f5e0d0;
+            vertical-align: middle;
+        }
+
+        .qa-answer-table td:first-child {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.15em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .qa-answer-table td:nth-child(2) {
+            font-style: italic;
+            color: #555;
+        }
+
+        .qa-answer-table td:nth-child(4) {
+            text-align: center;
+            width: 56px;
+        }
+
+        .qa-answer-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .qa-answer-table tr:nth-child(even) {
+            background: #fdf5f0;
+        }
+
+        .section-heading {
+            margin-top: 32px;
+        }
+
+        .vocab-note {
+            background: #fff8f4;
+            border-left: 4px solid #FF9966;
+            padding: 10px 14px;
+            font-size: 0.88em;
+            color: #666;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ఇల్లు — అభ్యాసాలు</h1>
+        <p class="subtitle">Chapter 1 &nbsp;|&nbsp; Illu: Exercises &nbsp;|&nbsp; Class 6 Telugu</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+        <p class="page-note">Source: Textbook pages 4–5 &nbsp;|&nbsp; Answers are from the lesson vocabulary
+            &nbsp;|&nbsp; Click 🔊 to hear any Telugu text</p>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!--  SECTION I — చూసి, అర్థం చేసుకొని, ఆలోచించి మాట్లాడదం        -->
+        <!--  (Look, understand, think and speak — Page 4)                  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="section-heading">I. చూసి, అర్థం చేసుకొని, మాట్లాడండి</div>
+        <p class="vocab-note">Look at the scene pictures on pages 2–3 of your textbook and answer the following
+            questions.</p>
+
+        <!-- Q1 -->
+        <div class="qa-block">
+            <div class="qa-question">
+                <span class="q-label">Q 1</span>
+                <span class="q-text">
+                    <span class="q-telugu">బొమ్మలో ఎవరెవరున్నారు? వారి పేర్లేమిటి?</span>
+                    <span class="q-english">Who are in the picture? What are their names?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('బొమ్మలో ఎవరెవరున్నారు? వారి పేర్లేమిటి?', this)"
+                    title="Pronounce question">🔊</button>
+            </div>
+            <table class="qa-answer-table">
+                <thead>
+                    <tr>
+                        <th>Telugu</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వనజ</td>
+                        <td>Vanaja</td>
+                        <td>Vanaja — the mother</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వనజ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>సరళ</td>
+                        <td>Sarala</td>
+                        <td>Sarala — the daughter</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('సరళ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>నాయనమ్మ కమల</td>
+                        <td>Nāyanamma Kamala</td>
+                        <td>Grandmother Kamala</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('నాయనమ్మ కమల', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>రమణ</td>
+                        <td>Ramaṇa</td>
+                        <td>Ramana — son / brother</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('రమణ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>వందన</td>
+                        <td>Vandana</td>
+                        <td>Vandana — daughter / sister</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వందన', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>తాత శంకరం</td>
+                        <td>Tāta Śankaram</td>
+                        <td>Grandfather Shankaram</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('తాత శంకరం', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-block">
+            <div class="qa-question">
+                <span class="q-label">Q 2</span>
+                <span class="q-text">
+                    <span class="q-telugu">బొమ్మలోనివారు ఏం చేస్తున్నారు?</span>
+                    <span class="q-english">What are the people in the picture doing?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('బొమ్మలోనివారు ఏం చేస్తున్నారు?', this)"
+                    title="Pronounce question">🔊</button>
+            </div>
+            <table class="qa-answer-table">
+                <thead>
+                    <tr>
+                        <th>Telugu</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వనజ జడ వేస్తుంది.</td>
+                        <td>Vanaja jaḍa vēstundi.</td>
+                        <td>Vanaja is braiding (Sarala's) hair.</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వనజ జడ వేస్తుంది', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>నాయనమ్మ కమల వంట చేస్తుంది.</td>
+                        <td>Nāyanamma Kamala vaṇṭa chēstundi.</td>
+                        <td>Grandmother Kamala is cooking.</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('నాయనమ్మ కమల వంట చేస్తుంది', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>రమణ తబల వాయిస్తున్నాడు.</td>
+                        <td>Ramaṇa tabala vāyistunnāḍu.</td>
+                        <td>Ramana is playing the tabla.</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('రమణ తబల వాయిస్తున్నాడు', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>తాత శంకరం చదరంగం ఆడుతున్నాడు.</td>
+                        <td>Tāta Śankaram chadaraṅgam āḍutunnāḍu.</td>
+                        <td>Grandfather Shankaram is playing chess.</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('తాత శంకరం చదరంగం ఆడుతున్నాడు', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>వందన నిలబడింది.</td>
+                        <td>Vandana nilabaDindi.</td>
+                        <td>Vandana is standing (watching).</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వందన నిలబడింది', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-block">
+            <div class="qa-question">
+                <span class="q-label">Q 3</span>
+                <span class="q-text">
+                    <span class="q-telugu">బొమ్మలో ఏమేమి కనిపిస్తున్నవి?</span>
+                    <span class="q-english">What objects can be seen in the picture?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('బొమ్మలో ఏమేమి కనిపిస్తున్నవి?', this)"
+                    title="Pronounce question">🔊</button>
+            </div>
+            <table class="qa-answer-table">
+                <thead>
+                    <tr>
+                        <th>Telugu</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>జడ</td>
+                        <td>Jaḍa</td>
+                        <td>Braid / Plait</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('జడ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>పటం</td>
+                        <td>Paṭam</td>
+                        <td>Picture / Painting on the wall</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('పటం', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>హంస</td>
+                        <td>Hamsa</td>
+                        <td>Swan (in the painting)</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('హంస', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>అలమర</td>
+                        <td>Alamara</td>
+                        <td>Cupboard / Wardrobe</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('అలమర', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>అరక</td>
+                        <td>Araka</td>
+                        <td>Shelf / Rack</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('అరక', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>తబల</td>
+                        <td>Tabala</td>
+                        <td>Tabla drums</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('తబల', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>చదరంగం</td>
+                        <td>Chadaraṅgam</td>
+                        <td>Chess (board game)</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('చదరంగం', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!--  SECTION II — ధారాళంగా చదువడం (Read the Words — Page 5)       -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="section-heading">II. ధారాళంగా చదువడం — పదాలను చదవండి</div>
+        <p class="vocab-note">Read each word aloud. Click 🔊 to hear its correct pronunciation.</p>
+
+        <div class="qa-block">
+            <div class="qa-question">
+                <span class="q-label">Q 4</span>
+                <span class="q-text">
+                    <span class="q-telugu">కింది పదాలను చదవండి.</span>
+                    <span class="q-english">Read the following words from the chapter.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది పదాలను చదవండి', this)"
+                    title="Pronounce question">🔊</button>
+            </div>
+            <table class="qa-answer-table">
+                <thead>
+                    <tr>
+                        <th>Telugu</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వనజ</td>
+                        <td>Vanaja</td>
+                        <td>Mother in the scene</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వనజ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>సరళ</td>
+                        <td>Sarala</td>
+                        <td>Daughter in the scene</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('సరళ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>కమల</td>
+                        <td>Kamala</td>
+                        <td>Grandmother's name</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('కమల', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>రమణ</td>
+                        <td>Ramaṇa</td>
+                        <td>Son in the scene</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('రమణ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>శంకరం</td>
+                        <td>Śankaram</td>
+                        <td>Grandfather's name</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('శంకరం', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>జడ</td>
+                        <td>Jaḍa</td>
+                        <td>Braid / Plait</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('జడ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ఆట</td>
+                        <td>Āṭa</td>
+                        <td>Game / Play</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('ఆట', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>తబల</td>
+                        <td>Tabala</td>
+                        <td>Tabla drums</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('తబల', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>హంస</td>
+                        <td>Hamsa</td>
+                        <td>Swan</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('హంస', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>పటం</td>
+                        <td>Paṭam</td>
+                        <td>Picture / Painting</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('పటం', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>అలమర</td>
+                        <td>Alamara</td>
+                        <td>Cupboard / Wardrobe</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('అలమర', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>చదరంగం</td>
+                        <td>Chadaraṅgam</td>
+                        <td>Chess</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('చదరంగం', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Q5 — Match pictures to words -->
+        <div class="qa-block">
+            <div class="qa-question">
+                <span class="q-label">Q 5</span>
+                <span class="q-text">
+                    <span class="q-telugu">బొమ్మలు చూసి పేర్లు చెప్పండి.</span>
+                    <span class="q-english">Look at the pictures and say the names of these objects.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('బొమ్మలు చూసి పేర్లు చెప్పండి', this)"
+                    title="Pronounce question">🔊</button>
+            </div>
+            <table class="qa-answer-table">
+                <thead>
+                    <tr>
+                        <th>Telugu</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>తబల</td>
+                        <td>Tabala</td>
+                        <td>🥁 Tabla drums</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('తబల', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>జడ</td>
+                        <td>Jaḍa</td>
+                        <td>💆 Braid / Plait</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('జడ', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>హంస</td>
+                        <td>Hamsa</td>
+                        <td>🦢 Swan</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('హంస', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>అలమర</td>
+                        <td>Alamara</td>
+                        <td>🗄️ Cupboard / Wardrobe</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('అలమర', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>పటం</td>
+                        <td>Paṭam</td>
+                        <td>🖼️ Picture / Painting</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('పటం', this)" title="Pronounce">🔊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>చదరంగం</td>
+                        <td>Chadaraṅgam</td>
+                        <td>♟️ Chess</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('చదరంగం', this)"
+                                title="Pronounce">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+    </div>
+</body>
+
+</html>
