@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>మనమంతా ఒక్కటే - అభ్యాసాలు - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
+    <style>
+        /* Exercise-specific enhancements */
+        .qa-block {
+            border: 1px solid #FFD0B0;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .qa-header {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label {
+            font-size: 0.9em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+
+        .qa-text {
+            flex: 1;
+        }
+
+        .telugu-text {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.15em;
+            font-weight: 600;
+            display: block;
+        }
+
+        .english-text {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .ans-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ans-table th {
+            background: #fdf0e8;
+            color: #FF5E62;
+            padding: 8px 14px;
+            font-size: 0.8em;
+            text-align: left;
+            border-bottom: 1px solid #FFD0B0;
+        }
+
+        .ans-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f5e0d0;
+            vertical-align: middle;
+        }
+
+        .ans-table td:first-child {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .ans-table td:nth-child(2) {
+            font-style: italic;
+            color: #555;
+        }
+
+        .ans-table td:last-child {
+            text-align: center;
+            width: 50px;
+        }
+
+        .activity-box {
+            background: #fffafa;
+            border: 1px dashed #FF9966;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .grid-item {
+            border: 1px solid #FF9966;
+            padding: 8px;
+            text-align: center;
+            border-radius: 8px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .grid-item span {
+            display: block;
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .sub-header {
+            color: #FF5E62;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>భాషాసామర్థ్యాల సాధన</h1>
+        <p class="subtitle">Chapter 2 &nbsp;|&nbsp; Manamantaa Okkate &nbsp;|&nbsp; Class 6 Telugu</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+
+        <p class="page-note">Source: Textbook pages 14–25 &nbsp;|&nbsp; Word-by-word, line-by-line coverage.</p>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION I — విని, అర్థంచేసుకొని, ఆలోచించి మాట్లాడడం (Page 14-15) -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section I</span> విని, అర్థంచేసుకొని, ఆలోచించి మాట్లాడడం</h2>
+
+        <!-- Page 14 - Intro Questions -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1 (అ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">బొమ్మలో ఎవరెవరున్నారు? వారు ఏం చేస్తున్నారు?</span>
+                    <span class="english-text">Who are in the picture? What are they doing?</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('బొమ్మలో ఎవరెవరున్నారు? వారు ఏం చేస్తున్నారు?', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Telugu Answer</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>బొమ్మలో పావురాలు ఉన్నాయి. అవి వలతో సహా ఎగిరిపోతున్నాయి.</td>
+                        <td>Bommalō pāvurālu unnāyi. Avi valatō sahā egiripōtunnāyi.</td>
+                        <td>There are pigeons in the picture. They are flying away along with the net.</td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('బొమ్మలో పావురాలు ఉన్నాయి. అవి వలతో సహా ఎగిరిపోతున్నాయి.', this)">🔊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 2 (ఆ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">వలలో చిక్కుకున్న పావురాలు బయటపడడానికి ఏం చేసి ఉంటాయి?</span>
+                    <span class="english-text">What did the pigeons caught in the net do to escape?</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('వలలో చిక్కుకున్న పావురాలు బయటపడడానికి ఏం చేసి ఉంటాయి?', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Telugu Answer</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>పావురాలు అన్నీ కలిసి ఒకేసారి రెక్కలు విదిల్చి వలతో సహా ఆకాశంలోకి ఎగిరాయి.</td>
+                        <td>Pāvurālu annī kalisi okēsāri rekkalu vidilci valatō sahā ākāśamlōki egirāyi.</td>
+                        <td>All the pigeons together flapped their wings at once and flew into the sky with the net.
+                        </td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('పావురాలు అన్నీ కలిసి ఒకేసారి రెక్కలు విదిల్చి వలతో సహా ఆకాశంలోకి ఎగిరాయి.', this)">🔊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Page 15 - Thinking activities -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 3 (ఇ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">"ఐకమత్యమే మహాబలం" అంటే మరేమిటి?</span>
+                    <span class="english-text">What does "Unity is Strength" mean?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('ఐకమత్యమే మహాబలం అంటే మరేమిటి?', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Telugu Answer</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మనం అందరం కలిసి పనిచేస్తే ఎలాంటి కష్టాన్నైనా ఎదుర్కోవచ్చు.</td>
+                        <td>Manam andaram kalisi panicēstē elāṇṭi kaṣṭānnainā edurkōvaccu.</td>
+                        <td>If we all work together, we can face any difficulty.</td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('మనం అందరం కలిసి పనిచేస్తే ఎలాంటి కష్టాన్నైనా ఎదుర్కోవచ్చు.', this)">🔊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 4 (ఈ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">మనమంతా ఒక్కటే అని ఎందుకు అనాలి?</span>
+                    <span class="english-text">Why should we say that we are all one?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('మనమంతా ఒక్కటే అని ఎందుకు అనాలి?', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Telugu Answer</th>
+                        <th>Pronunciation</th>
+                        <th>Meaning</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మనం వేరు వేరు భాషలు మాట్లాడవచ్చు, కానీ మనమంతా భారతీయులం.</td>
+                        <td>Manam vēru vēru bhāṣalu māṭlāḍavaccu, kānī manamantā bhāratīyulaṃ.</td>
+                        <td>We may speak different languages, but we are all Indians.</td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('మనం వేరు వేరు భాషలు మాట్లాడవచ్చు, కానీ మనమంతా భారతీయులం.', this)">🔊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION II — ധారాళంగా చదువడం - అర్థം చేసుకోవడం (Page 16-18)    -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section II</span> ధారాళంగా చదువడం - అర్థం చేసుకోవడం</h2>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1 (అ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పదాలను చదవండి. గేయంలో ఎక్కడ ఉన్నాయో గుర్తించి వాటి కింద గీత
+                        గీయండి.</span>
+                    <span class="english-text">Read the following words. Identify them in the poem and underline
+                        them.</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('కింది పదాలను చదవండి. గేయంలో ఎక్కడ ఉన్నాయో గుర్తించి వాటి కింద గీత గీయండి.', this)">🔊</button>
+            </div>
+            <div class="activity-box">
+                <div class="grid-container">
+                    <div class="grid-item"><span>ఒక్కటే</span><button class="speak-btn"
+                            onclick="speakTelugu('ఒక్కటే', this)">🔊</button></div>
+                    <div class="grid-item"><span>భాషలు</span><button class="speak-btn"
+                            onclick="speakTelugu('భాషలు', this)">🔊</button></div>
+                    <div class="grid-item"><span>మతాలు</span><button class="speak-btn"
+                            onclick="speakTelugu('మతాలు', this)">🔊</button></div>
+                    <div class="grid-item"><span>కులాలు</span><button class="speak-btn"
+                            onclick="speakTelugu('కులాలు', this)">🔊</button></div>
+                    <div class="grid-item"><span>రంగులు</span><button class="speak-btn"
+                            onclick="speakTelugu('రంగులు', this)">🔊</button></div>
+                    <div class="grid-item"><span>వేషం</span><button class="speak-btn"
+                            onclick="speakTelugu('వేషం', this)">🔊</button></div>
+                    <div class="grid-item"><span>రక్తం</span><button class="speak-btn"
+                            onclick="speakTelugu('రక్తం', this)">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 2 (ఆ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది గళ్ళలోని అక్షరాలతో పదాలను రాయండి.</span>
+                    <span class="english-text">Write words using letters in the following cells.</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('కింది గళ్ళలోని అక్షరాలతో పదాలను రాయండి', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Letters</th>
+                        <th>Word Formed</th>
+                        <th>Pronunciation</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>మ, న, మం, తా</td>
+                        <td>మనమంతా</td>
+                        <td>Manamantā</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('మనమంతా', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>వే, రై, నా</td>
+                        <td>వేరైనా</td>
+                        <td>Vērainā</td>
+                        <td><button class="speak-btn" onclick="speakTelugu('వేరైనా', this)">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION III — రాయడం (Writing - Page 18-21)                    -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section III</span> రాయడం</h2>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1 (అ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పదాలను చూసి అందంగా రాయండి.</span>
+                    <span class="english-text">Copy the following words neatly.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది పదాలను చూసి అందంగా రాయండి', this)">🔊</button>
+            </div>
+            <div class="activity-box">
+                <div class="grid-container">
+                    <div class="grid-item"><span>రంగు</span><button class="speak-btn"
+                            onclick="speakTelugu('రంగు', this)">🔊</button></div>
+                    <div class="grid-item"><span>భాష</span><button class="speak-btn"
+                            onclick="speakTelugu('భాష', this)">🔊</button></div>
+                    <div class="grid-item"><span>మతం</span><button class="speak-btn"
+                            onclick="speakTelugu('మతం', this)">🔊</button></div>
+                    <div class="grid-item"><span>కులం</span><button class="speak-btn"
+                            onclick="speakTelugu('కులం', this)">🔊</button></div>
+                    <div class="grid-item"><span>రక్తం</span><button class="speak-btn"
+                            onclick="speakTelugu('రక్తం', this)">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION IV — సృజనాత్మకత (Creativity - Page 22)                  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section IV</span> సృజనాత్మకత</h2>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1</span>
+                <span class="qa-text">
+                    <span class="telugu-text">ఐకమత్యం గురించి చెప్పే పద్యం లేదా పాట పాడండి.</span>
+                    <span class="english-text">Sing a poem or song that tells about unity.</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('ఐకమత్యం గురించి చెప్పే పద్యం లేదా పాట పాడండి', this)">🔊</button>
+            </div>
+            <div class="activity-box" style="text-align: center;">
+                <p>మనమంతా ఒక్కటే అని పాడండి!</p>
+                <div class="grid-item" style="display: inline-flex; width: auto; margin: 10px;">
+                    <span>మనమంతా ఒక్కటే</span>
+                    <button class="speak-btn" onclick="speakTelugu('మనమంతా ఒక్కటే', this)">🔊</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION V — పదజాలం (Vocabulary - Page 23-24)                  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section V</span> పదజాలం</h2>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1 (అ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పదాలను గమనించండి. వాటిలో అచ్చులను గుర్తించండి.</span>
+                    <span class="english-text">Observe the following words. Identify the vowels (Achulu) in them.</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('కింది పదాలను గమనించండి. వాటిలో అచ్చులను గుర్తించండి', this)">🔊</button>
+            </div>
+            <div class="activity-box">
+                <div class="grid-container">
+                    <div class="grid-item"><span>అమ్మ</span><button class="speak-btn"
+                            onclick="speakTelugu('అమ్మ', this)">🔊</button></div>
+                    <div class="grid-item"><span>ఆట</span><button class="speak-btn"
+                            onclick="speakTelugu('ఆట', this)">🔊</button></div>
+                    <div class="grid-item"><span>ఇల్లు</span><button class="speak-btn"
+                            onclick="speakTelugu('ఇల్లు', this)">🔊</button></div>
+                    <div class="grid-item"><span>ఈల</span><button class="speak-btn"
+                            onclick="speakTelugu('ఈల', this)">🔊</button></div>
+                    <div class="grid-item"><span>ఉడుత</span><button class="speak-btn"
+                            onclick="speakTelugu('ఉడుత', this)">🔊</button></div>
+                    <div class="grid-item"><span>ఊయల</span><button class="speak-btn"
+                            onclick="speakTelugu('ఊయల', this)">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION VI — భాషను గురించి తెలుసుకుందాం (Language - Page 25)    -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">Section VI</span> భాషను గురించి తెలుసుకుందాం</h2>
+
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1 (అ)</span>
+                <span class="qa-text">
+                    <span class="telugu-text">వర్ణమాలలోని అచ్చులను, హల్లులను చదవండి.</span>
+                    <span class="english-text">Read the vowels (Achulu) and consonants (Hallulu) in the alphabet.</span>
+                </span>
+                <button class="speak-btn"
+                    onclick="speakTelugu('వర్ణమాలలోని అచ్చులను హల్లులను చదవండి', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Letters</th>
+                        <th>🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>అచ్చులు (Achulu)</td>
+                        <td>అ, ఆ, ఇ, ఈ, ఉ, ఊ, ఋ, ౠ, ఎ, ఏ, ఐ, ఒ, ఓ, ఔ, అం, అః</td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('అ ఆ ఇ ఈ ఉ ఊ ఋ ౠ ఎ ఏ ఐ ఒ ఓ ఔ అం అః', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>హల్లులు (Hallulu)</td>
+                        <td>క, ఖ, గ, ఘ, ఙ, చ, ఛ, జ, ఝ, ఞ, ట, ఠ, డ, ఢ, ణ, త, థ, ద, ధ, న, ప, ఫ, బ, భ, మ, య, ర, ల, వ, శ, ష,
+                            స, హ, ళ, క్ష, ఱ</td>
+                        <td><button class="speak-btn"
+                                onclick="speakTelugu('క ఖ గ ఘ ఙ చ ఛ జ ఝ ఞ ట ఠ డ ఢ ణ త థ ద ధ న ప ఫ బ భ మ య ర ల వ శ ష స హ ళ క్ష ఱ', this)">🔊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+    </div>
+</body>
+
+</html>
