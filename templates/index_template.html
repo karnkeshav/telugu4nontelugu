@@ -9,15 +9,14 @@
 </head>
 
 <body>
+    <header>
+        <h1>{{ class_name }} Chapters</h1>
+    </header>
     <div class="container">
-        <header>
-            <h1>{{ class_name }}</h1>
-        </header>
-        <main>
-            {{ chapter_links }}
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="../index.html" class="back-button">&larr; Back to Class Selection</a>
-            </div>
+        {{ chapter_links }}
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="../index.html" class="back-button">&larr; Back to Class Selection</a>
+        </div>
         </main>
     </div>
 </body>
