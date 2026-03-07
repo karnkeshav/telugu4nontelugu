@@ -49,6 +49,18 @@ def main():
         for chapter in config["chapters"]:
             folder = chapter["folder"]
             topic = chapter["topic"]
+            chapter_id = chapter.get("id", "")
+            name = chapter.get("name", "")
+            
+            if not name:
+                name = chapter.get("topic", "").split(" - ")[0]
+                if not chapter_id:
+                    try:
+                        chapter_id = int(folder.split("_")[0])
+                    except ValueError:
+                        chapter_id = ""
+
+            display_title = f"{chapter_id}. {name}" if str(chapter_id) else name
 
             # Skip chapters that are not enabled in the config
             if not chapter.get("enabled", False):
@@ -83,7 +95,7 @@ def main():
             # Convert translation markdown to HTML
             translation_md = read_file(translation_md_path)
             translation_html = markdown2.markdown(translation_md, extras=["tables"])
-            lesson_content = lesson_template.replace("{{ chapter_title }}", topic).replace("{{ content }}", translation_html)
+            lesson_content = lesson_template.replace("{{ chapter_title }}", display_title).replace("{{ content }}", translation_html)
             
             # Fix style path locally for chapter depth (e.g. docs/class5/folder/lesson.html -> ../../style.css)
             lesson_content = lesson_content.replace('href="../style.css"', 'href="../../style.css"')
@@ -93,19 +105,19 @@ def main():
             # Convert exercise markdown to HTML
             exercise_md = read_file(exercise_md_path)
             exercise_html = markdown2.markdown(exercise_md)
-            exercise_content = exercise_template.replace("{{ chapter_title }}", topic).replace("{{ content }}", exercise_html)
+            exercise_content = exercise_template.replace("{{ chapter_title }}", display_title).replace("{{ content }}", exercise_html)
             exercise_content = exercise_content.replace('href="../style.css"', 'href="../../style.css"')
             write_file(os.path.join(chapter_output_dir, "exercise.html"), exercise_content)
 
             # Create chapter index page
-            chapter_index_content = chapter_template.replace("{{ chapter_title }}", topic)
+            chapter_index_content = chapter_template.replace("{{ chapter_title }}", display_title)
             chapter_index_content = chapter_index_content.replace('href="../style.css"', 'href="../../style.css"')
             write_file(os.path.join(chapter_output_dir, "index.html"), chapter_index_content)
 
             # Add link to class index
             card_html = f'''
             <div class="chapter-card">
-                <span class="chapter-title">{topic}</span>
+                <span class="chapter-title">{display_title}</span>
                 <div class="chapter-actions">
                     <a href="{folder}/lesson.html" class="action-button">Read Story</a>
                     <a href="{folder}/exercise.html" class="action-button">Do Exercises</a>

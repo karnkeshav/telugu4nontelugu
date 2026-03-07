@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mandali&family=Ramabhadra&display=swap');
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f4f8;
@@ -15,7 +13,7 @@ body {
     background: white;
     padding: 0 0 30px 0;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
 
@@ -29,8 +27,8 @@ header {
 }
 
 header h1 {
-    margin: 0; 
-    font-size: 2.2em; 
+    margin: 0;
+    font-size: 2.2em;
     letter-spacing: 1px;
 }
 
@@ -110,18 +108,7 @@ main {
     background-color: #f1f1f1;
 }
 
-/* Telugu text specific styling */
-.story-content p,
-.exercise-content p,
-.story-content td:first-child,
-.exercise-content td:first-child,
-.exercise-content td:nth-child(3),
-.exercise-content h4 {
-    font-family: 'Ramabhadra', 'Mandali', 'Gautami', sans-serif;
-    font-size: 1.15em;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
+/* Removed custom Telugu fonts snippet to rely on system defaults */
 
 .exercise-content h4 {
     border-bottom: 2px solid #FF9966;
@@ -136,18 +123,20 @@ main {
     padding: 25px;
     margin-bottom: 20px;
     text-align: left;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #eee;
 }
+
 .chapter-title {
     font-size: 1.5em;
     font-weight: bold;
     color: #333;
     font-family: 'Ramabhadra', 'Mandali', 'Gautami', sans-serif;
 }
+
 .buttons {
     display: flex;
     gap: 10px;
