@@ -103,7 +103,16 @@ def main():
             write_file(os.path.join(chapter_output_dir, "index.html"), chapter_index_content)
 
             # Add link to class index
-            chapter_links.append(f'<li><a href="{folder}/index.html">{topic}</a></li>')
+            card_html = f'''
+            <div class="chapter-card">
+                <span class="chapter-title">{topic}</span>
+                <div class="chapter-actions">
+                    <a href="{folder}/lesson.html" class="action-button">Read Story</a>
+                    <a href="{folder}/exercise.html" class="action-button">Do Exercises</a>
+                </div>
+            </div>
+            '''
+            chapter_links.append(card_html)
 
         # Create class index page
         class_index_content = index_template.replace("{{ class_name }}", class_name).replace("{{ chapter_links }}", "\n".join(chapter_links))
