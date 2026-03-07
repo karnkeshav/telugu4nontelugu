@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.chapter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.chapter-list li {
+    margin-bottom: 10px;
+    background: #eee;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.chapter-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.chapter-actions {
+    text-align: center;
+}
+
+.action-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1.1em;
+}
+
+.story-content table,
+.exercise-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.story-content th,
+.story-content td,
+.exercise-content th,
+.exercise-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.story-content th {
+    background-color: #f2f2f2;
+}
+
+.exercise-content h4 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
