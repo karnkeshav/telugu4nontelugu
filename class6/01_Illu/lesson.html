@@ -282,11 +282,11 @@
 
     <script>
         // ═══════════════════════════════════════════════════════════════════
-        //  Telugu TTS  —  Three-tier strategy
+        //  Telugu TTS  —  Three-tier strategy (same-page audio only)
         //
-        //  TIER 1 │ Web Speech API (te-IN)   — offline, instant if installed
-        //  TIER 2 │ CORS proxy → Google TTS  — online, any device/browser
-        //  TIER 3 │ Open Google Translate tab — last resort
+        //  TIER 1 │ Web Speech API (te-IN)          — offline, instant if installed
+        //  TIER 2 │ fetch → blob → objectURL audio  — online, no new tab, no CORB
+        //  TIER 3 │ Inline status message            — silent graceful fail
         // ═══════════════════════════════════════════════════════════════════
 
         const audio = document.getElementById('tts-audio');
@@ -307,14 +307,14 @@
         }
 
         function speakTelugu(text, btn) {
-            // Stop any current playback
             window.speechSynthesis && window.speechSynthesis.cancel();
             audio.pause();
+            if (audio._objectUrl) { URL.revokeObjectURL(audio._objectUrl); audio._objectUrl = null; }
             audio.src = '';
 
             setBtnState(btn, true);
 
-            // ── TIER 1: Web Speech API ──────────────────────────────────────
+            // ── TIER 1: Web Speech API (native te-IN voice) ─────────────────
             if ('speechSynthesis' in window && teluguVoice) {
                 const utt = new SpeechSynthesisUtterance(text);
                 utt.voice = teluguVoice;
@@ -326,33 +326,46 @@
                 return;
             }
 
-            // ── TIER 2: CORS-proxied Google TTS ────────────────────────────
+            // ── TIER 2: fetch → blob → objectURL (no new tab, no CORB) ──────
             playViaProxy(text, btn);
         }
 
-        function playViaProxy(text, btn) {
-            // corsproxy.io adds CORS headers so the audio can be fetched
+        async function playViaProxy(text, btn) {
             const gttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
-            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`;
+            const proxies = [
+                `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`,
+                `https://api.allorigins.win/raw?url=${encodeURIComponent(gttsUrl)}`
+            ];
 
-            audio.src = proxyUrl;
-            audio.onended = () => setBtnState(btn, false);
-            audio.onerror = () => {
-                setBtnState(btn, false);
-                // ── TIER 3: open Google Translate as last resort ──────────
-                window.open(
-                    'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
-                    '_blank'
-                );
-            };
-            audio.load();
-            audio.play().catch(() => {
-                setBtnState(btn, false);
-                window.open(
-                    'https://translate.google.com/?sl=te&tl=en&text=' + encodeURIComponent(text),
-                    '_blank'
-                );
-            });
+            for (const proxyUrl of proxies) {
+                try {
+                    const resp = await fetch(proxyUrl);
+                    if (!resp.ok) continue;
+
+                    const blob = await resp.blob();
+                    const objectUrl = URL.createObjectURL(blob);
+
+                    audio._objectUrl = objectUrl;
+                    audio.src = objectUrl;
+                    audio.onended = () => {
+                        setBtnState(btn, false);
+                        URL.revokeObjectURL(objectUrl);
+                        audio._objectUrl = null;
+                    };
+                    audio.onerror = () => setBtnState(btn, false);
+
+                    await audio.play();
+                    return;                        // ✅ success — stop trying proxies
+                } catch (_) {
+                    continue;                      // try next proxy
+                }
+            }
+
+            // ── TIER 3: all proxies failed — show inline status, no new tab ─
+            setBtnState(btn, false);
+            btn.title = '⚠️ Audio unavailable — check internet connection';
+            btn.textContent = '⚠️';
+            setTimeout(() => { btn.textContent = '🔊'; btn.title = 'Pronounce in Telugu'; }, 3000);
         }
     </script>
 </body>
