@@ -176,7 +176,12 @@
     async function playViaProxy(text, btn) {
         // Text is encoded ONCE in gttsUrl — do NOT re-encode when building proxyUrl
         const gttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=te&client=tw-ob`;
-        const proxyUrl = `https://corsproxy.io/?${gttsUrl}`;
+        // ⚠️ encodeURIComponent(gttsUrl) is intentional:
+        //    Without it, the '?' inside gttsUrl becomes corsproxy's own query separator,
+        //    so corsproxy fetches only the bare base URL (no params) → 404.
+        //    corsproxy.io decodes the outer encoding before fetching, so Telugu chars
+        //    arrive at Google correctly as %E0%B0… (not %25E0%25B0…).
+        const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(gttsUrl)}`;
 
         try {
             const resp = await fetch(proxyUrl);
