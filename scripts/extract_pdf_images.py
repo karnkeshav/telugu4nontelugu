@@ -2,10 +2,11 @@ import os
 import argparse
 import fitz  # PyMuPDF
 
-def extract_pages_to_images(pdf_path, output_dir=".", single_page=None):
+def extract_pages_to_images(pdf_path, output_dir=".", single_page=None, start_page=None, end_page=None):
     """
     Extracts pages from a PDF to PNG images.
     If single_page is provided (1-indexed), only extracts that page.
+    If start_page and end_page are provided, extracts that range.
     """
     if not os.path.exists(pdf_path):
         print(f"❌ Error: PDF file not found at {pdf_path}")
@@ -21,7 +22,12 @@ def extract_pages_to_images(pdf_path, output_dir=".", single_page=None):
     print(f"📄 Found {total_pages} pages in {pdf_path}")
 
     # Determine range
-    if single_page is not None:
+    if start_page is not None and end_page is not None:
+        if start_page < 1 or end_page > total_pages or start_page > end_page:
+            print(f"❌ Error: Invalid page range {start_page}-{end_page}.")
+            return
+        pages_to_extract = range(start_page - 1, end_page)
+    elif single_page is not None:
         if single_page < 1 or single_page > total_pages:
             print(f"❌ Error: Page {single_page} is out of bounds (1-{total_pages}).")
             return
@@ -51,7 +57,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extract PDF pages to PNG.")
     parser.add_argument("pdf_path", help="Path to the source PDF file")
     parser.add_argument("--page", type=int, help="Single page number to extract (1-indexed)")
+    parser.add_argument("--start", type=int, help="Start page number (1-indexed)")
+    parser.add_argument("--end", type=int, help="End page number (inclusive, 1-indexed)")
     parser.add_argument("--out", default=".", help="Output directory for images")
     
     args = parser.parse_args()
-    extract_pages_to_images(args.pdf_path, args.out, args.page)
+    extract_pages_to_images(args.pdf_path, args.out, args.page, args.start, args.end)
