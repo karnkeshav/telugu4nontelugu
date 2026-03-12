@@ -6,48 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>వానాకాలం - Lesson - Telugu Buddy</title>
     <script src="../lesson-shared.js"></script>
-    <style>
-        /* Specific styles for Chapter 3 poem layout if needed */
-        .poem-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fdfdfd;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #4A90E2;
-        }
-
-        .stanza {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #eee;
-        }
-
-        .stanza:last-child {
-            border-bottom: none;
-        }
-
-        .line-pair {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .telugu-line {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            flex: 1;
-        }
-
-        .english-trans {
-            font-size: 0.95rem;
-            color: #7f8c8d;
-            font-style: italic;
-            flex: 1;
-        }
-    </style>
 </head>
 
 <body>
@@ -61,261 +19,308 @@
         <p class="page-note">Source: Textbook pages 26–27 &nbsp;|&nbsp; Click 🔊 to hear the Telugu pronunciation</p>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- PAGE 26 — Introduction Scene                                   -->
+        <!-- PAGE 26 — Introduction: Observe and Discuss                   -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <div class="section-heading">📖 Page 26 — బొమ్మను చూడండి - ఆలోచించి చెప్పండి (Observe the Picture - Think and
-            Say)</div>
-
-        <div class="activity-box" style="margin-bottom: 30px;">
-            <p style="font-weight: bold; color: #4A90E2;">Questions for Discussion:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Telugu Question</th>
-                        <th>Meaning</th>
-                        <th>🔊</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1. పై బొమ్మలో ఎవరెవరు ఉన్నారు? ఏమేమి కనిపిస్తున్నాయి?</td>
-                        <td>Who are there in the picture above? What do you see?</td>
-                        <td><button class="speak-btn"
-                                onclick="speakTelugu('పై బొమ్మలో ఎవరెవరు ఉన్నారు? ఏమేమి కనిపిస్తున్నాయి?', this)">🔊</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. పిల్లలు ఏం చేస్తున్నారు?</td>
-                        <td>What are the children doing?</td>
-                        <td><button class="speak-btn"
-                                onclick="speakTelugu('పిల్లలు ఏం చేస్తున్నారు?', this)">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>3. వానపడుతుంటే మీరు ఏమేమి చేస్తారు?</td>
-                        <td>What do you do when it rains?</td>
-                        <td><button class="speak-btn"
-                                onclick="speakTelugu('వానపడుతుంటే మీరు ఏమేమి చేస్తారు?', this)">🔊</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="activity-box" style="background: #eef7ff; border-left: 5px solid #4A90E2;">
-            <p style="font-weight: bold; color: #2c3e50;">విద్యార్థులకు సూచనలు (Instructions for Students):</p>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;">
-                    🔹 పాఠంలోని బొమ్మను చూడండి. ఆ బొమ్మ గురించి మాట్లాడండి.
-                    <button class="speak-btn-sm"
-                        onclick="speakTelugu('పాఠంలోని బొమ్మను చూడండి. ఆ బొమ్మ గురించి మాట్లాడండి.', this)">🔊</button>
-                    <br><small>Look at the picture in the lesson. Talk about that picture.</small>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    🔹 మీ ఉపాధ్యాయులు గేయాన్ని చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.
-                    <button class="speak-btn-sm"
-                        onclick="speakTelugu('మీ ఉపాధ్యాయులు గేయాన్ని చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.', this)">🔊</button>
-                    <br><small>Listen carefully when your teacher reads the song (poem).</small>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    🔹 పాఠం చదవండి. అర్థం కాని పదాల కింద గీత గీయండి.
-                    <button class="speak-btn-sm"
-                        onclick="speakTelugu('పాఠం చదవండి. అర్థం కాని పదాల కింద గీత గీయండి.', this)">🔊</button>
-                    <br><small>Read the lesson. Underline the words you don't understand.</small>
-                </li>
-                <li>
-                    🔹 గీతగీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడిగి తెలుసుకోండి.
-                    <button class="speak-btn-sm"
-                        onclick="speakTelugu('గీతగీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడిగి తెలుసుకోండి.', this)">🔊</button>
-                    <br><small>Ask your friends or teachers to find the meanings of the underlined words.</small>
-                </li>
-            </ul>
-        </div>
+        <div class="section-heading">📖 Page 26 — బొమ్మను చూడండి - ఆలోచించి చెప్పండి (Look at the Picture — Think and Say)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>పై బొమ్మలో ఎవరెవరు ఉన్నారు? ఏమేమి కనిపిస్తున్నాయి?</td>
+                    <td>Pai bommalo evarēvaru unnāru? Ēmēmi kanipistunn āyī?</td>
+                    <td>Who are there in the picture above? What do you see?</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పై బొమ్మలో ఎవరెవరు ఉన్నారు? ఏమేమి కనిపిస్తున్నాయి?', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పిల్లలు ఏం చేస్తున్నారు?</td>
+                    <td>Pillalu ēṃ cēstunnāru?</td>
+                    <td>What are the children doing?</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పిల్లలు ఏం చేస్తున్నారు?', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>వానపడుతుంటే మీరు ఏమేమి చేస్తారు?</td>
+                    <td>Vānapaḍutuṃṭē mīru ēmēmi cēstāru?</td>
+                    <td>What do you do when it rains?</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వానపడుతుంటే మీరు ఏమేమి చేస్తారు?', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- PAGE 27 — The Poem (గేయం)                                        -->
+        <!-- PAGE 26 — Student Instructions                                 -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <div class="section-heading">📖 Page 27 — వానాకాలం (Rainy Season Poem)</div>
+        <div class="section-heading">📋 Page 26 — విద్యార్థులకు సూచనలు (Instructions for Students)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>పాఠంలోని బొమ్మను చూడండి. ఆ బొమ్మ గురించి మాట్లాడండి.</td>
+                    <td>Pāṭhaṃlōni bommanu cūḍaṃḍi. Ā bomma guriṃci māṭlāḍaṃḍi.</td>
+                    <td>Look at the picture in the lesson. Talk about that picture.</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పాఠంలోని బొమ్మను చూడండి. ఆ బొమ్మ గురించి మాట్లాడండి.', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>మీ ఉపాధ్యాయులు గేయాన్ని చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.</td>
+                    <td>Mī upādhyāyulu gēyānni caduvutunnappuḍu jāgrattaga vinaṃḍi.</td>
+                    <td>Listen carefully when your teacher reads the song (poem).</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('మీ ఉపాధ్యాయులు గేయాన్ని చదువుతున్నప్పుడు జాగ్రత్తగా వినండి.', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పాఠం చదవండి. అర్థం కాని పదాల కింద గీత గీయండి.</td>
+                    <td>Pāṭhaṃ cadavaṃḍi. Arthaṃ kāni padāla kiṃda gīta gīyaṃḍi.</td>
+                    <td>Read the lesson. Underline the words you don't understand.</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పాఠం చదవండి. అర్థం కాని పదాల కింద గీత గీయండి.', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>గీతగీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడిగి తెలుసుకోండి.</td>
+                    <td>Gītagīsina padālaku arthālanu mī mitrulanugāni, upādhyāyulanugāni aḍigi telusukoṃḍi.</td>
+                    <td>Ask your friends or teachers to find the meanings of the underlined words.</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('గీతగీసిన పదాలకు అర్థాలను మీ మిత్రులనుగాని, ఉపాధ్యాయులనుగాని అడిగి తెలుసుకోండి.', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div class="poem-container">
-            <!-- Stanza 1 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">వానాకాలం వచ్చిందీ</span>
-                    <span class="english-trans">Rainy season has come (Vānākālaṃ vacciṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('వానాకాలం వచ్చిందీ', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">వరదల కాలం వచ్చిందీ</span>
-                    <span class="english-trans">Season of floods has come (Varadala kālaṃ vacciṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('వరదల కాలం వచ్చిందీ', this)">🔊</button>
-                </div>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 27 — The Poem: వానాకాలం                                  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="section-heading">📖 Page 27 — వానాకాలం గేయం (Rainy Season Poem) — స్తబకం 1 &amp; 2</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>వానాకాలం వచ్చిందీ</td>
+                    <td>Vānākālaṃ vacciṃdī</td>
+                    <td>The rainy season has come</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వానాకాలం వచ్చిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>వరదల కాలం వచ్చిందీ</td>
+                    <td>Varadala kālaṃ vacciṃdī</td>
+                    <td>The season of floods has come</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వరదల కాలం వచ్చిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>చల్లని గాలులు తెచ్చిందీ</td>
+                    <td>Callani gālulu tecciṃdī</td>
+                    <td>It brought cool winds</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('చల్లని గాలులు తెచ్చిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>ఉల్లము 'ఝల్లున' చేసిందీ</td>
+                    <td>Ullamu 'Jhalluna' cēsiṃdī</td>
+                    <td>It made the heart thrill with a "jhall" sensation</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('ఉల్లము ఝల్లున చేసిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Stanza 2 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">చల్లని గాలులు తెచ్చిందీ</span>
-                    <span class="english-trans">Brought cool winds (Callani gālulu tecciṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('చల్లని గాలులు తెచ్చిんだీ', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">ఉల్లము ‘ఝల్లున’ చేసిందీ</span>
-                    <span class="english-trans">Made the heart feel a thrill (Ullamu jhalluna cēsiṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('ఉల్లము ఝల్లున చేసింది', this)">🔊</button>
-                </div>
-            </div>
+        <div class="section-heading">📖 Page 27 — వానాకాలం గేయం — స్తబకం 3 &amp; 4</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>వింతలనెన్నో చూపించిందీ</td>
+                    <td>Viṃtalanenno cūpiṃciṃdī</td>
+                    <td>It showed countless wonders</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వింతలనెన్నో చూపించిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>సంతోషాన్నీ పంచిందీ</td>
+                    <td>Saṃtōṣānni paṃciṃdī</td>
+                    <td>It distributed happiness everywhere</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('సంతోషాన్నీ పంచిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>చకచక మేఘాల్ పట్టినవీ</td>
+                    <td>Cakacaka mēghāl paṭṭinavī</td>
+                    <td>Clouds gathered swiftly (chaka-chaka)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('చకచక మేఘాల్ పట్టినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>ధగధగ మెరుపులు మెరిసినవీ</td>
+                    <td>Dhagadhaga merupulu merisinavī</td>
+                    <td>Lightning flashed brilliantly (dhaga-dhaga)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('ధగధగ మెరుపులు మెరిసినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Stanza 3 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">వింతలనెన్నో చూపించిందీ</span>
-                    <span class="english-trans">Showed many wonders (Viṃtalaneṅnō cūpiṃciṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('వింతలనెన్నో చూపించింది', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">సంతోషాన్నీ పంచిందీ</span>
-                    <span class="english-trans">Distributed happiness (Saṃtōṣāṅnī paṃciṃdī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('సంతోషాన్నీ పంచిందీ', this)">🔊</button>
-                </div>
-            </div>
+        <div class="section-heading">📖 Page 27 — వానాకాలం గేయం — స్తబకం 5 &amp; 6</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>బడబడ ఉరుములు ఉరిమినవీ</td>
+                    <td>Baḍabaḍa urumulu uriminavī</td>
+                    <td>Thunders roared loudly (baḍa-baḍa)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('బడబడ ఉరుములు ఉరిమినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>చిటపట చినుకులు రాలినవీ</td>
+                    <td>Ciṭapaṭa cinukulu rālinavī</td>
+                    <td>Raindrops fell with a pitter-patter (ciṭa-paṭa)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('చిటపట చినుకులు రాలినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>నల్లని మేఘం</td>
+                    <td>Nallani mēghaṃ</td>
+                    <td>Black cloud</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('నల్లని మేఘం', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>తెల్లని కొంగలు</td>
+                    <td>Tellani koṃgalu</td>
+                    <td>White cranes</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('తెల్లని కొంగలు', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పిట్టల కూతలు</td>
+                    <td>Piṭṭala kūtalu</td>
+                    <td>Birds' chirping / calls</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పిట్టల కూతలు', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పిల్లల ఆటలు</td>
+                    <td>Pillala āṭalu</td>
+                    <td>Children's games / play</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పిల్లల ఆటలు', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Stanza 4 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">చకచక మేఘాల్ పట్టినవీ</span>
-                    <span class="english-trans">Clouds gathered quickly (Cakacaka mēghāl paṭṭinavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('చకచక మేఘాల్ పట్టినవీ', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">ధగధగ మెరుపులు మెరిసినవీ</span>
-                    <span class="english-trans">Lightnings flashed brightly (Dhagadhaga merupulu merisinavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('ధగధగ మెరుపులు మెరిసినవీ', this)">🔊</button>
-                </div>
-            </div>
+        <div class="section-heading">📖 Page 27 — వానాకాలం గేయం — స్తబకం 7, 8, 9 &amp; 10</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>నీటితో గుంటలు</td>
+                    <td>Nīṭitō guṃṭalu</td>
+                    <td>Puddles filled with water</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('నీటితో గుంటలు', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>నిండెను అంతట</td>
+                    <td>Niṃḍenu aṃtaṭa</td>
+                    <td>Filled everywhere all around</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('నిండెను అంతట', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>ఎక్కడ చూసిన</td>
+                    <td>Ekkaḍa cūsina</td>
+                    <td>Wherever one looks</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('ఎక్కడ చూసిన', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>బెకబెక కప్పలు</td>
+                    <td>Bekabeka kappalu</td>
+                    <td>Croaking frogs (beka-beka)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('బెకబెక కప్పలు', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పంటకాల్వలూ నిండినవీ</td>
+                    <td>Paṃṭakālvalū niṃḍinavī</td>
+                    <td>Irrigation canals filled up</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పంటకాల్వలూ నిండినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పంట చేలనూ తడిపినవీ</td>
+                    <td>Paṃṭa cēlanū taḍipinavī</td>
+                    <td>Soaked the crop fields with water</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పంట చేలనూ తడిపినవీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పచ్చగ పంటలు పండునులే</td>
+                    <td>Paccaga paṃṭalu paṃḍunulē</td>
+                    <td>Crops will grow green and lush</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పచ్చగ పంటలు పండునులే', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>పుడమిని కాంతులు నిండునులే</td>
+                    <td>Puḍamini kāṃtulu niṃḍunulē</td>
+                    <td>Light and radiance will fill the earth</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('పుడమిని కాంతులు నిండునులే', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Stanza 5 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">బడబడ ఉరుములు ఉరిమినవీ</span>
-                    <span class="english-trans">Thunders roared loudly (Baḍabaḍa urumulu uriminavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('బడబడ ఉరుములు ఉరిమినవీ', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">చిటపట చినుకులు రాలినవీ</span>
-                    <span class="english-trans">Pitter-patter raindrops fell (Ciṭapaṭa cinukulu rālinavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('చిటపట చినుకులు రాలినవీ', this)">🔊</button>
-                </div>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- Poem Closing Refrain                                           -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div class="section-heading">🔁 Page 27 — పల్లవి (Refrain / Chorus)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Telugu</th>
+                    <th>Pronunciation</th>
+                    <th>Meaning</th>
+                    <th>🔊</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>వానాకాలం వచ్చిందీ</td>
+                    <td>Vānākālaṃ vacciṃdī</td>
+                    <td>The rainy season has come</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వానాకాలం వచ్చిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>వరదల కాలం వచ్చిందీ॥</td>
+                    <td>Varadala kālaṃ vacciṃdī</td>
+                    <td>The season of floods has come ॥</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వరదల కాలం వచ్చిందీ', this)" title="Pronounce">🔊</button></td>
+                </tr>
+                <tr>
+                    <td>— రెడ్డి రాఘవయ్య గారి 'పూల తోట' బాలల గేయాల నుండి</td>
+                    <td>— Reḍḍi Rāghavayya gāri 'Pūla Ṭōṭa' Bālala Gēyāla nuṃḍi</td>
+                    <td>From 'Poola Thota' children's songs by Reddy Raghavayya</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('రెడ్డి రాఘవయ్య గారి పూల తోట బాలల గేయాల నుండి', this)" title="Pronounce">🔊</button></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <!-- Stanza 6 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">నల్లని మేఘం</span>
-                    <span class="english-trans">Black cloud (Nallani mēghaṃ)</span>
-                    <button class="speak-btn" onclick="speakTelugu('నల్లని మేఘం', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">తెల్లని కొంగలు</span>
-                    <span class="english-trans">White cranes (Tellani koṃgalu)</span>
-                    <button class="speak-btn" onclick="speakTelugu('తెల్లని కొంగలు', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">పిట్టల కూతలు</span>
-                    <span class="english-trans">Birds' chirping (Piṭṭala kūtalu)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పిట్టల కూతలు', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">పిల్లల ఆటలు</span>
-                    <span class="english-trans">Children's games (Pillala āṭalu)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పిల్లల ఆటలు', this)">🔊</button>
-                </div>
-            </div>
-
-            <!-- Stanza 7 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">నీటితో గుంటలు</span>
-                    <span class="english-trans">Puddles with water (Nīṭitō guṃṭalu)</span>
-                    <button class="speak-btn" onclick="speakTelugu('నీటితో గుంటలు', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">నిండెను అంతట</span>
-                    <span class="english-trans">Filled everywhere (Niṃḍenu aṃtaṭa)</span>
-                    <button class="speak-btn" onclick="speakTelugu('నిండెను అంతట', this)">🔊</button>
-                </div>
-            </div>
-
-            <!-- Stanza 8 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">ఎక్కడ చూసిన</span>
-                    <span class="english-trans">Wherever one looks (Ekkaḍa cūsina)</span>
-                    <button class="speak-btn" onclick="speakTelugu('ఎక్కడ చూసిన', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">బెకబెక కప్పలు</span>
-                    <span class="english-trans">Croaking frogs (Bekabeka kappalu)</span>
-                    <button class="speak-btn" onclick="speakTelugu('బెకబెక కప్పలు', this)">🔊</button>
-                </div>
-            </div>
-
-            <!-- Stanza 9 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">పంటకాల్వలూ నిండినవీ</span>
-                    <span class="english-trans">Irrigation canals filled up (Paṃṭakālvālū niṃḍinavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పంటకాల్వలూ నిండినవీ', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">పంట చేలనూ తడిపినవీ</span>
-                    <span class="english-trans">Soaked the crop fields (Paṃṭa cēlanū taḍipinavī)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పంట చేలనూ తడిపినవీ', this)">🔊</button>
-                </div>
-            </div>
-
-            <!-- Stanza 10 -->
-            <div class="stanza">
-                <div class="line-pair">
-                    <span class="telugu-line">పచ్చగ పంటలు పండునులే</span>
-                    <span class="english-trans">Crops will grow green (Paccaga paṃṭalu paṃḍunulē)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పచ్చగ పంటలు పండునులే', this)">🔊</button>
-                </div>
-                <div class="line-pair">
-                    <span class="telugu-line">పుడమిని కాంతులు నిండునులే</span>
-                    <span class="english-trans">Light will fill the earth (Puḍamini kāṃtulu niṃḍunulē)</span>
-                    <button class="speak-btn" onclick="speakTelugu('పుడమిని కాంతులు నిండునులే', this)">🔊</button>
-                </div>
-            </div>
-
-            <!-- Closing -->
-            <div class="stanza" style="border: none; text-align: center; margin-top: 20px;">
-                <div class="line-pair" style="justify-content: center;">
-                    <span class="telugu-line" style="font-weight: bold;">వానాకాలం వచ్చిందీ</span>
-                    <button class="speak-btn" onclick="speakTelugu('వానాకాలం వచ్చిందీ', this)">🔊</button>
-                </div>
-                <div class="line-pair" style="justify-content: center;">
-                    <span class="telugu-line" style="font-weight: bold;">వరదల కాలం వచ్చిందీ॥</span>
-                    <button class="speak-btn" onclick="speakTelugu('వరదల కాలం వచ్చిందీ', this)">🔊</button>
-                </div>
-                <p style="margin-top: 15px; color: #7f8c8d; font-size: 0.9rem;">
-                    - 'రెడ్డి రాఘవయ్య గారి పూల తోట' బాలల గేయాల నుండి
-                    <br>(From 'Poola Thota' children's songs by Reddy Raghavayya)
-                </p>
-            </div>
-        </div>
-
-        <div class="activity-box" style="margin-top: 40px; background: #fff;">
-            <p style="font-weight: bold; color: #4A90E2; border-bottom: 2px solid #eef7ff; padding-bottom: 10px;">
-                Summary of the Poem:
-            </p>
-            <p>The rainy season has arrived, bringing with it floods and refreshing cool winds that thrill the heart. It
-                unveils countless wonders and spreads joy everywhere. Dark clouds gather swiftly, lightning flashes
-                brilliantly, and thunder roars with power as raindrops fall with a rhythmic pitter-patter. The landscape
-                is dotted with white cranes against black clouds, bustling with the sounds of birds and the play of
-                children. Puddles fill the ground, and frogs croak in unison. Irrigation canals overflow, nourishing the
-                fields and promising a lush green harvest that will fill the earth with prosperity.</p>
-        </div>
-
-        <a href="../index.html" class="back-button" style="margin-top: 30px;">← Back to Chapter Selection</a>
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
     </div>
 </body>
 
