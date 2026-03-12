@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>వానాకాలం - అభ్యాసాలు - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
+    <style>
+        /* Exercise-specific enhancements */
+        .qa-block {
+            border: 1px solid #FFD0B0;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #fff;
+        }
+        .qa-header {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label {
+            font-size: 0.9em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+        .qa-text { flex: 1; }
+        .telugu-text {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.15em;
+            font-weight: 600;
+            display: block;
+        }
+        .english-text {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .ans-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .ans-table th {
+            background: #fdf0e8;
+            color: #FF5E62;
+            padding: 8px 14px;
+            font-size: 0.8em;
+            text-align: left;
+            border-bottom: 1px solid #FFD0B0;
+        }
+        .ans-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f5e0d0;
+            vertical-align: middle;
+        }
+        .ans-table td:first-child {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+        .ans-table td:nth-child(2) {
+            font-style: italic;
+            color: #555;
+        }
+        .ans-table td:nth-child(4) {
+            text-align: center;
+            width: 50px;
+        }
+        .activity-box {
+            background: #fffafa;
+            border: 1px dashed #FF9966;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .grid-item {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .grid-item span { display: block; }
+        .sub-header {
+            color: #FF5E62;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>భాషాసామర్థ్యాల సాధన</h1>
+        <p class="subtitle">Chapter 3 &nbsp;|&nbsp; Language Proficiency Practice &nbsp;|&nbsp; Class 6 Telugu</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+
+        <p class="page-note">Textbook pages 28–38 &nbsp;|&nbsp; Everything is covered "word by word, line by line".</p>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION I — విని, అర్థంచేసుకొని, ఆలోచించి మాట్లాడడం (Page 28) -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">I</span> విని, అర్థంచేసుకొని, ఆలోచించి మాట్లాడడం</h2>
+
+        <!-- అ & ఆ: Singing & Question -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">అ, ఆ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">గేయాన్ని రాగంతో పాడండి. అభినయం చేయండి. వానాకాలం ఎలా ఉంటుంది?</span>
+                    <span class="english-text">Sing the song with melody and act. How is the rainy season?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('గేయాన్ని రాగంతో పాడండి. అభినయం చేయండి. వానాకాలం ఎలా ఉంటుంది?', this)">🔊</button>
+            </div>
+            <div class="activity-box">
+                <p><em>(Oral practice - Sing the Vanaakalam poem from the lesson and describe the rainy season.)</em></p>
+            </div>
+        </div>
+
+        <!-- ఇ: Sound recognition - difference between letters -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఇ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">ధ్వని గుర్తింపు కృత్యాలు. కింది అక్షరాల మధ్య తేడాను చెప్పండి.</span>
+                    <span class="english-text">Sound recognition activities. Tell the difference between these letters.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('ధ్వని గుర్తింపు కృత్యాలు. కింది అక్షరాల మధ్య తేడాను చెప్పండి.', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead>
+                    <tr><th>Short Vowel (హ్రస్వం)</th><th>Long Vowel (దీర్ఘం)</th><th>Explanation</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>వ (Va) <button class="speak-btn" onclick="speakTelugu('వ', this)">🔊</button></td>
+                        <td>వా (Vā) <button class="speak-btn" onclick="speakTelugu('వా', this)">🔊</button></td>
+                        <td>The ' ా ' symbol gives the long 'aa' sound.</td>
+                    </tr>
+                    <tr>
+                        <td>న (Na) <button class="speak-btn" onclick="speakTelugu('న', this)">🔊</button></td>
+                        <td>నా (Nā) <button class="speak-btn" onclick="speakTelugu('నా', this)">🔊</button></td>
+                        <td>The ' ా ' symbol gives the long 'aa' sound.</td>
+                    </tr>
+                    <tr>
+                        <td>క (Ka) <button class="speak-btn" onclick="speakTelugu('క', this)">🔊</button></td>
+                        <td>కా (Kā) <button class="speak-btn" onclick="speakTelugu('కా', this)">🔊</button></td>
+                        <td>The ' ా ' symbol gives the long 'aa' sound.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ఈ: Long vowel words and game -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఈ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">దీర్ఘం ఉన్న మరికొన్ని పదాలు చెప్పాలి. దీర్ఘం ఉన్న అక్షరంతో వచ్చే పదం చెబితే ముందుకు దూకాలి. లేకుంటే వెనుకకు దూకాలి.</span>
+                    <span class="english-text">Say some more words with long vowels. Jump forward if the word has a long vowel, jump backward if it doesn't.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('దీర్ఘం ఉన్న మరికొన్ని పదాలు చెప్పాలి. దీర్ఘం ఉన్న అక్షరంతో వచ్చే పదం చెబితే ముందుకు దూకాలి. లేకుంటే వెనుకకు దూకాలి.', this)">🔊</button>
+            </div>
+            <div class="activity-box">
+                <div class="grid-container">
+                    <div class="grid-item"><span>కాలం (Kālam)</span><br><em style="font-size:0.8em">ముందుకు దూకాలి (Jump fwd)</em> <button class="speak-btn" onclick="speakTelugu('కాలం', this)">🔊</button></div>
+                    <div class="grid-item"><span>కలం (Kalam)</span><br><em style="font-size:0.8em">వెనుకకు దూకాలి (Jump back)</em> <button class="speak-btn" onclick="speakTelugu('కలం', this)">🔊</button></div>
+                    <div class="grid-item"><span>కారం (Kāram)</span><br><em style="font-size:0.8em">ముందుకు దూకాలి (Jump fwd)</em> <button class="speak-btn" onclick="speakTelugu('కారం', this)">🔊</button></div>
+                    <div class="grid-item"><span>కరం (Karam)</span><br><em style="font-size:0.8em">వెనుకకు దూకాలి (Jump back)</em> <button class="speak-btn" onclick="speakTelugu('కరం', this)">🔊</button></div>
+                    <div class="grid-item"><span>వాడ (Vāḍa)</span><br><em style="font-size:0.8em">ముందుకు దూకాలి (Jump fwd)</em> <button class="speak-btn" onclick="speakTelugu('వాడ', this)">🔊</button></div>
+                    <div class="grid-item"><span>వడ (Vaḍa)</span><br><em style="font-size:0.8em">వెనుకకు దూకాలి (Jump back)</em> <button class="speak-btn" onclick="speakTelugu('వడ', this)">🔊</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ఉ: Identify position of long vowel -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఉ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పదాల్లో దీర్ఘం ఎన్నవ అక్షరానికి ఉన్నది?</span>
+                    <span class="english-text">In the following words, which letter position has the long vowel?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది పదాల్లో దీర్ఘం ఎన్నవ అక్షరానికి ఉన్నది?', this)">🔊</button>
+            </div>
+            <table class="ans-table" style="text-align:center;">
+                <thead>
+                    <tr><th>Word</th><th>Pronunciation</th><th>Position of Long Vowel</th><th>🔊</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td style="font-size: 1.25em;">తాత</td><td>Tāta</td><td>1st letter (తా)</td><td><button class="speak-btn" onclick="speakTelugu('తాత', this)">🔊</button></td></tr>
+                    <tr><td style="font-size: 1.25em;">తరాజు</td><td>Tarāju</td><td>2nd letter (రా)</td><td><button class="speak-btn" onclick="speakTelugu('తరాజు', this)">🔊</button></td></tr>
+                    <tr><td style="font-size: 1.25em;">దాబా</td><td>Dābā</td><td>1st & 2nd letters (దా, బా)</td><td><button class="speak-btn" onclick="speakTelugu('దాబా', this)">🔊</button></td></tr>
+                    <tr><td style="font-size: 1.25em;">సీసా</td><td>Sīsā</td><td>1st & 2nd letters (సీ, సా)</td><td><button class="speak-btn" onclick="speakTelugu('సీసా', this)">🔊</button></td></tr>
+                    <tr><td style="font-size: 1.25em;">ఉపాయం</td><td>Upāyaṃ</td><td>2nd letter (పా)</td><td><button class="speak-btn" onclick="speakTelugu('ఉపాయం', this)">🔊</button></td></tr>
+                </tbody>
+            </table>
+            
+            <p style="margin:15px; font-weight:bold; color:#FF5E62;">కింది అక్షరాల మధ్య తేడాను గమనించండి: (Notice the difference between the following letters:)</p>
+            <div class="grid-container" style="margin: 0 15px 15px;">
+                <div class="grid-item"><span style="font-size: 1.25em;">కి - కీ</span> (ki - kī) <button class="speak-btn" onclick="speakTelugu('కి, కీ', this)">🔊</button></div>
+                <div class="grid-item"><span style="font-size: 1.25em;">కు - కూ</span> (ku - kū) <button class="speak-btn" onclick="speakTelugu('కు, కూ', this)">🔊</button></div>
+                <div class="grid-item"><span style="font-size: 1.25em;">కె - కే</span> (ke - kē) <button class="speak-btn" onclick="speakTelugu('కె, కే', this)">🔊</button></div>
+                <div class="grid-item"><span style="font-size: 1.25em;">కొ - కో</span> (ko - kō) <button class="speak-btn" onclick="speakTelugu('కొ, కో', this)">🔊</button></div>
+            </div>
+        </div>
+
+        <!-- ఊ: Word Logic (Page 29) -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఊ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది వాక్యంలో ఎన్ని అక్షరాలు ఉన్నాయి? అక్షరాలను కలిపి పదాలు రాయండి.</span>
+                    <span class="english-text">How many letters are in this sentence? Join the letters to form words.</span>
+                </span>
+            </div>
+            <div class="activity-box" style="text-align: center;">
+                <table style="margin: 0 auto 20px; border-collapse: collapse; text-align:center;">
+                    <tr style="border-bottom: 1px solid #FF9966; font-size:1.4em; font-family:'Noto Sans Telugu',sans-serif;">
+                        <td style="padding:10px; border-right:1px solid #FF9966;">వా</td><td style="padding:10px; border-right:1px solid #FF9966;">నా</td><td style="padding:10px; border-right:1px solid #FF9966;">కా</td><td style="padding:10px; border-right:1px solid #FF9966;">లం</td><td style="padding:10px; border-right:1px solid #FF9966;">పం</td><td style="padding:10px; border-right:1px solid #FF9966;">ట</td><td style="padding:10px; border-right:1px solid #FF9966;">ల</td><td style="padding:10px; border-right:1px solid #FF9966;">కా</td><td style="padding:10px;">లం</td>
+                    </tr>
+                    <tr style="font-size: 1.1em; color:#555;">
+                        <td style="padding:5px; border-right:1px solid #FF9966;">1</td><td style="padding:5px; border-right:1px solid #FF9966;">2</td><td style="padding:5px; border-right:1px solid #FF9966;">3</td><td style="padding:5px; border-right:1px solid #FF9966;">4</td><td style="padding:5px; border-right:1px solid #FF9966;">5</td><td style="padding:5px; border-right:1px solid #FF9966;">6</td><td style="padding:5px; border-right:1px solid #FF9966;">7</td><td style="padding:5px; border-right:1px solid #FF9966;">8</td><td style="padding:5px;">9</td>
+                    </tr>
+                </table>
+                <table class="ans-table">
+                    <tr><td>1, 4 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>వాలం</td><td>Join 1, 4 (Vālam) <button class="speak-btn" onclick="speakTelugu('వాలం', this)">🔊</button></td></tr>
+                    <tr><td>3, 4 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>కాలం</td><td>Join 3, 4 (Kālam) <button class="speak-btn" onclick="speakTelugu('కాలం', this)">🔊</button></td></tr>
+                    <tr><td>5, 6 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>పంట</td><td>Join 5, 6 (Paṇṭa) <button class="speak-btn" onclick="speakTelugu('పంట', this)">🔊</button></td></tr>
+                    <tr><td>1, 9 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>వాలం</td><td>Join 1, 9 (Vālam) <button class="speak-btn" onclick="speakTelugu('వాలం', this)">🔊</button></td></tr>
+                    <tr><td>1, 6 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>వాట</td><td>Join 1, 6 (Vāṭa) <button class="speak-btn" onclick="speakTelugu('వాట', this)">🔊</button></td></tr>
+                    <tr><td>8, 4 అక్షరాలు కలిపితే ఏ పదం అవుతుంది?</td><td>కాలం</td><td>Join 8, 4 (Kālam) <button class="speak-btn" onclick="speakTelugu('కాలం', this)">🔊</button></td></tr>
+                </table>
+            </div>
+        </div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION II — ధారాళంగా చదువడం - అర్థం చేసుకోవడం (Pages 29-33)      -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <h2 class="sub-header"><span class="section-label">II</span> ధారాళంగా చదువడం - అర్థం చేసుకోవడం</h2>
+
+        <!-- అ: Poem words -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">అ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">గేయంలో ఇలాంటి పదాలను గుర్తించండి. వాటిని రాయండి.</span>
+                    <span class="english-text">Identify such words in the song. Write them.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('గేయంలో ఇలాంటి పదాలను గుర్తించండి. వాటిని రాయండి.', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <tbody>
+                    <tr>
+                        <td>చక చక</td><td>Chaka chaka</td><td>Quickly / Swiftly</td><td><button class="speak-btn" onclick="speakTelugu('చక చక', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>బడ బడ</td><td>Baḍa baḍa</td><td>Pounding sound (of thunder)</td><td><button class="speak-btn" onclick="speakTelugu('బడ బడ', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>చిట పట</td><td>Ciṭa paṭa</td><td>Pitter-patter sound (of rain)</td><td><button class="speak-btn" onclick="speakTelugu('చిట పట', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>వచ్చింది</td><td>Vacciṃdi</td><td>Has come</td><td><button class="speak-btn" onclick="speakTelugu('వచ్చింది', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>తెచ్చింది</td><td>Tecciṃdi</td><td>Has brought</td><td><button class="speak-btn" onclick="speakTelugu('తెచ్చింది', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>చేసింది</td><td>Cēsiṃdi</td><td>Has done</td><td><button class="speak-btn" onclick="speakTelugu('చేసింది', this)">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ఆ: Matching -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఆ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">గేయం ఆధారంగా కింది పదాలను జతచేసి రాయండి.</span>
+                    <span class="english-text">Match the following words based on the song and write.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('గేయం ఆధారంగా కింది పదాలను జతచేసి రాయండి.', this)">🔊</button>
+            </div>
+            <table class="ans-table">
+                <thead><tr><th>Word 1</th><th>Word 2</th><th>Matched Phrase</th><th>Meaning</th><th>🔊</th></tr></thead>
+                <tbody>
+                    <tr><td>చల్లని</td><td>గాలులు</td><td>చల్లని గాలులు (Challani gālulu)</td><td>Cool breezes</td><td><button class="speak-btn" onclick="speakTelugu('చల్లని గాలులు', this)">🔊</button></td></tr>
+                    <tr><td>ఉరుములు</td><td>ఉరిమినవీ</td><td>ఉరుములు ఉరిమినవీ (Urumulu uriminavī)</td><td>Thunders thundered</td><td><button class="speak-btn" onclick="speakTelugu('ఉరుములు ఉరిమినవీ', this)">🔊</button></td></tr>
+                    <tr><td>నల్లని</td><td>మేఘాలు</td><td>నల్లని మేఘాలు (Nallani mēghālu)</td><td>Black clouds</td><td><button class="speak-btn" onclick="speakTelugu('నల్లని మేఘాలు', this)">🔊</button></td></tr>
+                    <tr><td>పచ్చని</td><td>పంటలు</td><td>పచ్చని పంటలు (Paccani paṇṭalu)</td><td>Green crops</td><td><button class="speak-btn" onclick="speakTelugu('పచ్చని పంటలు', this)">🔊</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ఇ: Vowels table with gunintham signs -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఇ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పట్టికలో పై గళ్ళలోని అచ్చులను చదువండి. కింది గళ్ళలోని వాటి గుర్తులను ఎలా పలుకాలో చెప్పండి.</span>
+                    <span class="english-text">Read the vowels in the upper cells of the table below. Tell how to pronounce their symbols in the lower cells.</span>
+                </span>
+            </div>
+            <div class="activity-box" style="overflow-x:auto;">
+                <table class="alphabet-table">
+                    <tr>
+                        <td>అ</td><td>ఆ</td><td>ఇ</td><td>ఈ</td><td>ఉ</td><td>ఊ</td><td>ఋ</td><td>ఎ</td><td>ఏ</td><td>ఐ</td><td>ఒ</td><td>ఓ</td><td>ఔ</td>
+                    </tr>
+                    <tr style="font-size:1.5em; color:#FF5E62;">
+                        <td>✓</td><td>ా</td><td>ి</td><td>ీ</td><td>ు</td><td>ూ</td><td>ృ</td><td>ె</td><td>ే</td><td>ై</td><td>ొ</td><td>ో</td><td>ౌ</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ఈ: Pictures and spelling -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">ఈ</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది బొమ్మల ఆధారంగా పదాలను చదువండి. వాటిలోని అక్షరాలను వర్ణమాల చార్టులో, గుణింతాల చార్టులో చూపండి.</span>
+                    <span class="english-text">Read the words based on the pictures below. Show their letters in the alphabet and gunintham charts.</span>
+                </span>
+            </div>
+            <table class="ans-table">
+                <thead><tr><th>Picture</th><th>Telugu Word</th><th>Pronunciation</th><th>Meaning</th><th>🔊</th></tr></thead>
+                <tbody>
+                    <tr><td>Baby girl</td><td>పాప</td><td>Pāpa</td><td>Baby girl</td><td><button class="speak-btn" onclick="speakTelugu('పాప', this)">🔊</button></td></tr>
+                    <tr><td>Chilli</td><td>మిరప</td><td>Mirapa</td><td>Chilli</td><td><button class="speak-btn" onclick="speakTelugu('మిరప', this)">🔊</button></td></tr>
+                    <tr><td>Ant</td><td>చీమ</td><td>Cīma</td><td>Ant</td><td><button class="speak-btn" onclick="speakTelugu('చీమ', this)">🔊</button></td></tr>
+                    <tr><td>Drumstick (veg)</td><td>మునగ</td><td>Munaga</td><td>Drumstick</td><td><button class="speak-btn" onclick="speakTelugu('మునగ', this)">🔊</button></td></tr>
+                    <tr><td>Pot/Jug</td><td>కూజా</td><td>Kūjā</td><td>Jug</td><td><button class="speak-btn" onclick="speakTelugu('కూజా', this)">🔊</button></td></tr>
+                    <tr><td>Okra</td><td>బెండ</td><td>Beṇḍa</td><td>Okra (Ladies finger)</td><td><button class="speak-btn" onclick="speakTelugu('బెండ', this)">🔊</button></td></tr>
+                    <tr><td>Goat</td><td>మేక</td><td>Mēka</td><td>Goat</td><td><button class="speak-btn" onclick="speakTelugu('మేక', this)">🔊</button></td></tr>
+                    <tr><td>Train</td><td>రైలు</td><td>Railu</td><td>Train</td><td><button class="speak-btn" onclick="speakTelugu('రైలు', this)">🔊</button></td></tr>
+                    <tr><td>Top (toy)</td><td>బొంగరం</td><td>Boṃgaraṃ</td><td>Spinning top</td><td><button class="speak-btn" onclick="speakTelugu('బొంగరం', this)">🔊</button></td></tr>
+                    <tr><td>Tail</td><td>తోక</td><td>Tōka</td><td>Tail</td><td><button class="speak-btn" onclick="speakTelugu('తోక', this)">🔊</button></td></tr>
+                    <tr><td>Ship/Boat</td><td>నౌక</td><td>Nauka</td><td>Ship</td><td><button class="speak-btn" onclick="speakTelugu('నౌక', this)">🔊</button></td></tr>
+                    <tr><td>Basket</td><td>గంప</td><td>Gaṃpa</td><td>Basket</td><td><button class="speak-btn" onclick="speakTelugu('గంప', this)">🔊</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+<!-- PART3_START -->
+<!-- PART3_END -->
+
+<!-- PART4_START -->
+<!-- PART4_END -->
+
+<!-- PART5_START -->
+<!-- PART5_END -->
+
+        <a href="../index.html" class="back-button" style="margin-top: 30px;">← Back to Chapter Selection</a>
+    </div>
+</body>
+</html>
