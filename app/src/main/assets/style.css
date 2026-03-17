@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Base Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 0 0 30px 0;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 20px 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.back-button:hover {
+    color: #FF5E62;
+}
+
+main {
+    padding: 0 30px;
+}
+
+/* Action Buttons */
+.chapter-actions {
+    text-align: center;
+    padding: 20px;
+}
+
+.action-button {
+    display: inline-block;
+    background-color: #FF5E62;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    font-size: 1.1em;
+}
+
+.action-button:hover {
+    background-color: #FF9966;
+    transform: translateY(-2px);
+}
+
+/* Tables for Telugu Content */
+.story-content table,
+.exercise-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.story-content th,
+.story-content td,
+.exercise-content th,
+.exercise-content td {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.story-content th,
+.exercise-content th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+}
+
+.story-content tr:nth-child(even),
+.exercise-content tr:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.story-content tr:hover,
+.exercise-content tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Removed custom Telugu fonts snippet to rely on system defaults */
+
+.exercise-content h4 {
+    border-bottom: 2px solid #FF9966;
+    padding-bottom: 8px;
+    margin-top: 30px;
+    font-size: 1.3em;
+}
+
+.chapter-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+}
+
+.chapter-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Ramabhadra', 'Mandali', 'Gautami', sans-serif;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
