@@ -1,42 +1,43 @@
 package com.telugu4nontelugu
 
 import android.os.Bundle
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.OnBackPressedCallback
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.viewinterop.AndroidView
 
-class MainActivity : ComponentActivity() {
-    private var webView: WebView? = null
+class MainActivity : AppCompatActivity() {
+    private lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        setContent {
-            MaterialTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    WebViewContainer { wv ->
-                        webView = wv
-                    }
-                }
+        // Initialize WebView
+        webView = WebView(this)
+        webView.settings.apply {
+            javaScriptEnabled = true
+            domStorageEnabled = true
+            allowFileAccess = true
+            allowContentAccess = true
+            databaseEnabled = true
+        }
+        
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
             }
         }
 
+        setContentView(webView)
+        
+        // Load the entry point
+        webView.loadUrl("file:///android_asset/index.html")
+
+        // Handle hardware back button
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (webView?.canGoBack() == true) {
-                    webView?.goBack()
+                if (webView.canGoBack()) {
+                    webView.goBack()
                 } else {
                     isEnabled = false
                     onBackPressedDispatcher.onBackPressed()
@@ -44,31 +45,4 @@ class MainActivity : ComponentActivity() {
             }
         })
     }
-}
-
-@Composable
-fun WebViewContainer(onWebViewCreated: (WebView) -> Unit) {
-    AndroidView(
-        factory = { context ->
-            WebView(context).apply {
-                settings.apply {
-                    javaScriptEnabled = true
-                    domStorageEnabled = true
-                    allowFileAccess = true
-                    allowContentAccess = true
-                }
-                webViewClient = object : WebViewClient() {
-                    override fun shouldOverrideUrlLoading(
-                        view: WebView?,
-                        request: WebResourceRequest?
-                    ): Boolean {
-                        return false // Handle all links inside the WebView
-                    }
-                }
-                loadUrl("file:///android_asset/index.html")
-                onWebViewCreated(this)
-            }
-        },
-        modifier = Modifier.fillMaxSize()
-    )
 }
