@@ -1,143 +1,193 @@
+/* Pro-Mobile Aesthetic Overhaul */
+:root {
+    --primary-gradient: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --radius: 16px;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    color: #333;
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Base Container */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 0 0 30px 0;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-}
-
+/* Header - Modern App Bar Style */
 header {
-    background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+    background: var(--primary-gradient);
     color: white;
-    padding: 30px 20px;
+    padding: 32px 20px;
     text-align: center;
-    border-bottom: none;
-    margin-bottom: 20px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 10px 25px -5px rgba(255, 94, 98, 0.3);
+    margin-bottom: 24px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.2em;
-    letter-spacing: 1px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
 }
 
-.back-button {
-    display: inline-block;
-    margin: 20px 30px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.1em;
+header p {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 500;
 }
 
-.back-button:hover {
-    color: #FF5E62;
+/* Container & Grid */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
 }
 
-main {
-    padding: 0 30px;
-}
-
-/* Action Buttons */
-.chapter-actions {
-    text-align: center;
+/* Modern Card Layout */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
     padding: 20px;
-}
-
-.action-button {
-    display: inline-block;
-    background-color: #FF5E62;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 12px;
+    margin-bottom: 16px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 10px;
-    font-size: 1.1em;
-}
-
-.action-button:hover {
-    background-color: #FF9966;
-    transform: translateY(-2px);
-}
-
-/* Tables for Telugu Content */
-.story-content table,
-.exercise-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 1.1em;
-}
-
-.story-content th,
-.story-content td,
-.exercise-content th,
-.exercise-content td {
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    text-align: left;
-}
-
-.story-content th,
-.exercise-content th {
-    background-color: #f8f9fa;
-    color: #333;
-    font-weight: bold;
-}
-
-.story-content tr:nth-child(even),
-.exercise-content tr:nth-child(even) {
-    background-color: #fafbfc;
-}
-
-.story-content tr:hover,
-.exercise-content tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Removed custom Telugu fonts snippet to rely on system defaults */
-
-.exercise-content h4 {
-    border-bottom: 2px solid #FF9966;
-    padding-bottom: 8px;
-    margin-top: 30px;
-    font-size: 1.3em;
-}
-
-.chapter-card {
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 20px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    color: inherit;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border: 1px solid #eee;
+    gap: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.chapter-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Ramabhadra', 'Mandali', 'Gautami', sans-serif;
+.card:active {
+    transform: scale(0.98);
+    background-color: #f1f5f9;
 }
 
-.buttons {
+.card .icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    background: #fff1f0;
+    width: 64px;
+    height: 64px;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.class-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.book-name {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Status Badges */
+.badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.ready {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.soon {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Active Highlight */
+.card.active {
+    border-left: 4px solid #22c55e;
+}
+
+/* Tables - Mobile Optimized scroll */
+.story-content, .exercise-content {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 16px 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Responsive Overrides */
+@media (max-width: 480px) {
+    header {
+        padding: 24px 16px;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .card {
+        padding: 16px;
+    }
+    .card .icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.8rem;
+    }
 }

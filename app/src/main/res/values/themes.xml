@@ -1,6 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.TeluguBuddy" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/purple_500</item>
-    </style>
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+    <style name="Theme.TeluguBuddy" parent="Theme.AppCompat.Light.NoActionBar">  
+        <item name="colorPrimary">#FF9966</item>  
+        <item name="colorPrimaryDark">#FF5E62</item>  
+        <item name="colorAccent">#FF5E62</item>  
+    </style>  
 </resources>
