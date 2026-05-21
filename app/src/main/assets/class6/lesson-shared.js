@@ -145,6 +145,70 @@
             color: #999;
             margin-top: 4px;
         }
+
+        /* ── Mobile Responsive ─────────────────────────────────────────────── */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+
+            h1 { font-size: 1.5em; }
+
+            .container {
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            /* Fixed column layout prevents horizontal overflow in vocab tables */
+            table { table-layout: fixed; }
+            th, td {
+                padding: 8px 6px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                font-size: 0.88em;
+            }
+            td:first-child { font-size: 1em; width: 22%; }
+            td:nth-child(2) { width: 25%; }
+            td:nth-child(3) { width: 41%; }
+            td:nth-child(4) { width: 12%; }
+
+            /* QA headers: allow content to wrap on narrow screens */
+            .qa-header { flex-wrap: wrap; gap: 8px; }
+
+            /* Section badge: allow text to wrap */
+            .section-label {
+                white-space: normal !important;
+                font-size: 0.8em !important;
+            }
+
+            /* Grid items: max 2 columns */
+            .grid-container { grid-template-columns: repeat(2, 1fr) !important; }
+
+            /* Letter practice grid: tighter cells */
+            .letter-grid td {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1.1em;
+            }
+
+            /* Alphabet table: tighter padding */
+            .alphabet-table td { padding: 5px 4px !important; font-size: 0.9em; }
+
+            /* Inline side-by-side boxes (e.g. vowels + consonants) → single column */
+            div[style*="display: flex; gap: 20px"] {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+
+            /* Sub-section headers: allow wrap */
+            .sub-header { flex-wrap: wrap; font-size: 1em; }
+
+            /* Answer / exercise tables */
+            .ans-table th, .ans-table td {
+                padding: 7px 6px !important;
+                font-size: 0.85em;
+            }
+            .ans-table td:first-child { font-size: 0.95em !important; }
+            .ans-table td:nth-child(4) { width: 44px !important; }
+        }
     `;
     document.head.appendChild(style);
 })();

@@ -133,6 +133,57 @@ header p {
     border-left: 4px solid #22c55e;
 }
 
+/* Chapter card layout (class5 / class6 index pages) */
+.chapter-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow-sm);
+}
+
+.chapter-info { flex-grow: 1; }
+
+.chapter-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.button {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.button:active { opacity: 0.8; }
+
+.back-button {
+    display: inline-block;
+    margin-top: 16px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 /* Tables - Mobile Optimized scroll */
 .story-content, .exercise-content {
     width: 100%;
@@ -189,5 +240,21 @@ footer {
         width: 52px;
         height: 52px;
         font-size: 1.8rem;
+    }
+    /* Chapter cards: stack title above buttons on narrow screens */
+    .chapter-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        gap: 10px;
+    }
+    .buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .button {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+        white-space: normal;
     }
 }

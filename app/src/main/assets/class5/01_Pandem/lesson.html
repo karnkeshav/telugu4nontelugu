@@ -48,6 +48,23 @@
             color: #333;
             font-weight: bold;
         }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.5em; }
+            header { padding: 16px; }
+            .container { padding: 16px; }
+            table { table-layout: fixed; }
+            th, td {
+                padding: 8px 6px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+                font-size: 0.88em;
+            }
+            td:first-child { width: 34%; font-size: 0.9em; }
+            td:nth-child(2) { width: 32%; }
+            td:nth-child(3) { width: 34%; }
+        }
     </style>
 </head>
 <body>
