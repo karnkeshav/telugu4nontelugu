@@ -1,103 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samaikya Bharati - Telugu Buddy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        td:first-child {
-            font-family: 'Noto Sans Telugu', sans-serif;
-            font-size: 1.1em;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            h1 { font-size: 1.5em; }
-            header { padding: 16px; }
-            .container { padding: 16px; }
-            table { table-layout: fixed; }
-            th, td {
-                padding: 8px 6px;
-                word-break: break-word;
-                overflow-wrap: break-word;
-                font-size: 0.88em;
-            }
-            td:first-child { width: 34%; font-size: 0.95em; }
-            td:nth-child(2) { width: 32%; }
-            td:nth-child(3) { width: 34%; }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Samaikya Bharati - Lesson - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
 </head>
-
 <body>
     <header>
         <h1>Samaikya Bharati</h1>
+        <p class="subtitle">Chapter 2 &nbsp;|&nbsp; United India (Patriotic Song) &nbsp;|&nbsp; Class 5 Telugu</p>
     </header>
     <div class="container">
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <p class="page-note">Click 🔊 to hear the Telugu pronunciation</p>
         <table>
             <thead>
                 <tr>
                     <th>Telugu</th>
                     <th>Pronunciation</th>
                     <th>Meaning</th>
+                    <th>🔊</th>
                 </tr>
             </thead>
             <tbody>
@@ -105,116 +28,138 @@
                     <td>సమైక్య భారతి మాది</td>
                     <td>Samaikya bhārati mādi</td>
                     <td>Ours is United India</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('సమైక్య భారతి మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>స్వతంత్ర భారతి మాది</td>
                     <td>Swatantra bhārati mādi</td>
                     <td>Ours is Independent India</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('స్వతంత్ర భారతి మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>మతాలు, కులాలు ఎన్నైనా</td>
                     <td>Matālu, kulālu ennainā</td>
                     <td>Though there are many religions, castes</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('మతాలు, కులాలు ఎన్నైనా', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>జాతులు రీతులు వేరైనా</td>
                     <td>Jātulu rītulu vērainā</td>
                     <td>Though castes and customs are different</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('జాతులు రీతులు వేరైనా', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>భారతమొక్కటే మాది</td>
                     <td>Bhāratha mokkatē mādi</td>
                     <td>India is one for us</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('భారతమొక్కటే మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>భావమొక్కటే మాది</td>
                     <td>Bhāvam okkatē mādi</td>
                     <td>The feeling/emotion is one for us</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('భావమొక్కటే మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>ఉజ్జ్వల సంస్కృతి మాది</td>
                     <td>Ujvaala samskruti mādi</td>
                     <td>Ours is the glorious culture</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('ఉజ్జ్వల సంస్కృతి మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>తరాల తరబడి నాగరికతగల</td>
                     <td>Tarāla tarabadi nāgarikatagala</td>
                     <td>Having civilization spanning generations</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('తరాల తరబడి నాగరికతగల', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>తరగని చరిత్ర మాది</td>
                     <td>Taragani charitra mādi</td>
                     <td>Ours is the inexhaustible history</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('తరగని చరిత్ర మాది', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>జయ జయ భారతం అంటున్నప్పుడు</td>
                     <td>Jaya jaya bhāratam antunnappuḍu</td>
-                    <td>When saying Victory, Victory to India</td>
+                    <td>When we say 'Victory to India'</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('జయ జయ భారతం అంటున్నప్పుడు', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>చైతన్యం మా అందరికొకటే</td>
                     <td>Chaitanyam mā andarik okatē</td>
                     <td>Our consciousness is one for everyone</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('చైతన్యం మా అందరికొకటే', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>వందేమాతరం అంటున్నప్పుడు</td>
                     <td>Vandēmātar antunnappuḍu</td>
-                    <td>When saying Vande Mataram</td>
+                    <td>When we say 'Vande Mataram'</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('వందేమాతరం అంటున్నప్పుడు', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>అందరి భావస్పందనమొక్కటే</td>
                     <td>Andari bhāvaspandanam okatē</td>
                     <td>Everyone's emotional response is one</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('అందరి భావస్పందనమొక్కటే', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>త్రివర్ణ పతాక నీడన నిలిచి</td>
                     <td>Trivarṇapatāka nīḍana nilichi</td>
-                    <td>Standing in the shade of the tricolor flag</td>
+                    <td>Standing under the shade of the tricolour flag</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('త్రివర్ణ పతాక నీడన నిలిచి', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>దీక్షాకంకణధారులమై</td>
                     <td>Dīkṣākaṅkhaṇadhārulavai</td>
                     <td>Becoming those who wear the protective thread (of resolve)</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('దీక్షాకంకణధారులమై', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
-                    <td>"జనగణమన" అని పాడేవేళల</td>
-                    <td>"Janagaṇamana" ani pāḍēvēḷala</td>
+                    <td>జనగణమన అని పాడేవేళల</td>
+                    <td>Janagaṇamana ani pāḍēvēḷala</td>
                     <td>When we sing "Jana Gana Mana"</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('జనగణమన అని పాడేవేళల', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>జాతీయత మా అందరికొకటే</td>
                     <td>Jātīyata mā andarik okatē</td>
                     <td>Our nationality is one for everyone</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('జాతీయత మా అందరికొకటే', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>విశాల భారత విశిష్ట సంస్కృతి</td>
                     <td>Viśāla bhāratha viśiṣṭa saṁskruti</td>
                     <td>India's vast and unique culture</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('విశాల భారత విశిష్ట సంస్కృతి', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>భిన్నత్వంలో ఏకత్వం</td>
                     <td>Bhinnatvaṁlō ēkatvaṁ</td>
                     <td>Unity in diversity</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('భిన్నత్వంలో ఏకత్వం', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>సమత మమత శాంతి స్నేహం</td>
                     <td>Samata mamatā śānti snēhaṁ</td>
                     <td>Equality, affection, peace, friendship</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('సమత మమత శాంతి స్నేహం', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>సమైక్య భారతి సౌభాగ్యం</td>
                     <td>Samaikya bhārati saubhāgyaṁ</td>
                     <td>The prosperity of United India</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('సమైక్య భారతి సౌభాగ్యం', this)" title="Pronounce">🔊</button></td>
                 </tr>
                 <tr>
                     <td>యుగాల నుండి జగాన వెలిగే</td>
                     <td>Yugāla nuṇḍi jagāna veligē</td>
                     <td>Shining in the world for ages</td>
+                    <td><button class="speak-btn" onclick="speakTelugu('యుగాల నుండి జగాన వెలిగే', this)" title="Pronounce">🔊</button></td>
                 </tr>
             </tbody>
         </table>
         <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="exercise.html" class="back-button" style="margin-left:16px">✍️ Do Exercises</a>
     </div>
 </body>
-
 </html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pandem - Exercises - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
+    <style>
+        .qa-block {
+            border: 1px solid #FFD0B0;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #fff;
+        }
+        .qa-header {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .section-label {
+            font-size: 0.9em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.25);
+            border-radius: 8px;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+        .qa-text { flex: 1; }
+        .telugu-text {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: block;
+        }
+        .english-text {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .qa-body { padding: 14px 16px; }
+        .answer-row { margin-bottom: 8px; font-size: 0.95em; }
+        .answer-row strong { color: #FF5E62; }
+        .ans-table { width: 100%; border-collapse: collapse; }
+        .ans-table th {
+            background: #fdf0e8; color: #FF5E62;
+            padding: 8px 14px; font-size: 0.8em;
+            text-align: left; border-bottom: 1px solid #FFD0B0;
+        }
+        .ans-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f5e0d0;
+            vertical-align: middle;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .ans-table td:first-child {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pandem</h1>
+        <p class="subtitle">Chapter 1 &nbsp;|&nbsp; Exercises &nbsp;|&nbsp; Class 5 Telugu</p>
+    </header>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+
+        <!-- Q1 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1</span>
+                <span class="qa-text">
+                    <span class="telugu-text">ఎవరెవరు పందెం పెట్టుకున్నారు?</span>
+                    <span class="english-text">Who all made the bet (race)?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('ఎవరెవరు పందెం పెట్టుకున్నారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Evarevaru pandeṁ peṭṭukunnāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">కుందేలు, తాబేలు పందెం పెట్టుకున్నారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 2</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కుందేలు ఎట్లా పరుగెత్తింది?</span>
+                    <span class="english-text">How did the rabbit run?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కుందేలు ఎట్లా పరుగెత్తింది?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Kundēlu eṭlā parugettindi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">కుందేలు లేడివలె వేగముగా పరుగెత్తింది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 3</span>
+                <span class="qa-text">
+                    <span class="telugu-text">ముందుగా గమ్యస్థానం చేరింది ఎవరు?</span>
+                    <span class="english-text">Who reached the destination first?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('ముందుగా గమ్యస్థానం చేరింది ఎవరు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Mundugā gamyasthānaṁ cērindi evaru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">ముందుగా గమ్యస్థానం చేరింది తాబేలు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 4</span>
+                <span class="qa-text">
+                    <span class="telugu-text">ఎటువంటివారు ఓడిపోతారు?</span>
+                    <span class="english-text">What kind of people/beings lose?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('ఎటువంటివారు ఓడిపోతారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Etuvaṇṭivāru ōḍipōtāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">ఉరుకులాడేవారు ఓడిపోతారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 5</span>
+                <span class="qa-text">
+                    <span class="telugu-text">తాబేలు గెలువగానే ఎవరు చప్పట్లు కొట్టారు?</span>
+                    <span class="english-text">Who clapped immediately after the tortoise won?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('తాబేలు గెలువగానే ఎవరు చప్పట్లు కొట్టారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Tābēlu geluvagānē evaru cappatlu koṭṭāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">జంతుజాలంబెల్ల చప్పట్లు కొట్టారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 6</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది వాక్యాలలోని గీత గీసిన పదాలకు అర్థాలను రాయండి.</span>
+                    <span class="english-text">Write the meanings of the underlined words in the sentences below.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది వాక్యాలలోని గీత గీసిన పదాలకు అర్థాలను రాయండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Kindi vākyālalōni gīta gīsina padālaku arthālanu rāyanḍi.</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">తావు = స్థలం / చోటు (place/spot)</span></div>
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 7</span>
+                <span class="qa-text">
+                    <span class="telugu-text">పాఠం ఆధారంగా ప్రాస పదాలను రాయండి.</span>
+                    <span class="english-text">Write rhyming words based on the lesson.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('పాఠం ఆధారంగా ప్రాస పదాలను రాయండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Pāṭhaṁ ādhāraṅgā prāsa padālanu rāyanḍi.</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">చూచింది – జేసింది; పట్టింది – గ్రుంకింది; ఓడింది – మాడింది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 8</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది పదాలలో ఏకవచన పదాలకు బహువచనపదాలను రాయండి.</span>
+                    <span class="english-text">Write the plural forms for the singular words below.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది పదాలలో ఏకవచన పదాలకు బహువచనపదాలను రాయండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Kindi padālalō ēkavacana padālaku bahuvacanapadālanu rāyanḍi.</div>
+                <table class="ans-table">
+                    <thead><tr><th>Singular (ఏకవచనం)</th><th>Plural (బహువచనం)</th></tr></thead>
+                    <tbody>
+                        <tr><td>చెట్టు</td><td>చెట్లు</td></tr>
+                        <tr><td>లేడి</td><td>లేళ్లు</td></tr>
+                        <tr><td>చెవి</td><td>చెవులు</td></tr>
+                        <tr><td>కుందేలు</td><td>కుందేళ్ళు</td></tr>
+                        <tr><td>తాబేలు</td><td>తాబేళ్ళు</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 9</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కింది వాక్యాలను చదవండి. నామవాచక, సర్వనామ పదాలను గుర్తించండి.</span>
+                    <span class="english-text">Read the following sentences. Identify the Noun and Pronoun words.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కింది వాక్యాలను చదవండి. నామవాచక, సర్వనామ పదాలను గుర్తించండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Kindi vākyālanu cadavaṇḍi. Nāmavācaka, sarvanāma padālanu gurthin̄canḍi.</div>
+                <table class="ans-table">
+                    <thead><tr><th>వాక్యం</th><th>నామవాచకం</th><th>సర్వనామం</th></tr></thead>
+                    <tbody>
+                        <tr><td>రాజు మంచి బాలుడు.</td><td>రాజు, బాలుడు</td><td>—</td></tr>
+                        <tr><td>ఆమె పాట పాడింది.</td><td>పాట</td><td>ఆమె</td></tr>
+                        <tr><td>అతడు సినిమా చూశాడు.</td><td>సినిమా</td><td>అతడు</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 10</span>
+                <span class="qa-text">
+                    <span class="telugu-text">పాఠం ఆధారంగా కింది నామవాచక పదాల ఆధారంగా ఖాళీలు పూరించండి.</span>
+                    <span class="english-text">Fill in the blanks based on the context using the given words.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('పాఠం ఆధారంగా కింది నామవాచక పదాల ఆధారంగా ఖాళీలు పూరించండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Pāṭhaṁ ādhāraṅgā kindi nāmavācaka padāla ādhāraṅgā khālīlu pūrin̄canḍi.</div>
+                <div class="answer-row"><strong>Words:</strong> ఏనుగు, పావురం, ఆకు, చెరువు, చెట్టు</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">ఒక చిలుక <strong>చెట్టు</strong> మీద నివసిస్తుంది. చెట్టు కింద <strong>ఏనుగు</strong> నివసిస్తుంది. ఒక రోజు చిలుక <strong>చెరువు</strong> నీటిలో పడిపోయింది. <strong>పావురం</strong> అది చూసి <strong>ఆకు</strong>తో కాపాడింది.</span></div>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+    </div>
+</body>
+</html>
