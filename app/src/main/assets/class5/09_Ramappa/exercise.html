@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ramappa - Exercises - Telugu Buddy</title>
+    <script src="../lesson-shared.js"></script>
+    <style>
+        .qa-block {
+            border: 1px solid #FFD0B0;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            background: #fff;
+        }
+        .qa-header {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .section-label {
+            font-size: 0.9em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.25);
+            border-radius: 8px;
+            padding: 4px 12px;
+            white-space: nowrap;
+        }
+        .qa-text { flex: 1; }
+        .telugu-text {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: block;
+        }
+        .english-text {
+            font-size: 0.85em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        .qa-body { padding: 14px 16px; }
+        .answer-row { margin-bottom: 8px; font-size: 0.95em; }
+        .answer-row strong { color: #FF5E62; }
+        .ans-table { width: 100%; border-collapse: collapse; }
+        .ans-table th {
+            background: #fdf0e8; color: #FF5E62;
+            padding: 8px 14px; font-size: 0.8em;
+            text-align: left; border-bottom: 1px solid #FFD0B0;
+        }
+        .ans-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f5e0d0;
+            vertical-align: middle;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .ans-table td:first-child {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ramappa</h1>
+        <p class="subtitle">Chapter 9 &nbsp;|&nbsp; Exercises &nbsp;|&nbsp; Class 5 Telugu</p>
+    </header>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+        <a href="lesson.html" class="back-button" style="margin-left:16px">📖 Go to Lesson</a>
+
+        <!-- Q1 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 1</span>
+                <span class="qa-text">
+                    <span class="telugu-text">బొమ్మలో ఏమేమి కనపడుతున్నాయి?</span>
+                    <span class="english-text">What all are visible in the picture?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('బొమ్మలో ఏమేమి కనపడుతున్నాయి?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Bommalō ēyēmi kanapaḍutunnāyi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">టీచరు, పిల్లలు, రామప్ప గుడి, నంది విగ్రహం, శిల్పాలు కనపడుతున్నాయి.</span></div>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 2</span>
+                <span class="qa-text">
+                    <span class="telugu-text">టీచరు, పిల్లలంతా అక్కడికి ఎందుకు వెళ్ళి ఉంటారు?</span>
+                    <span class="english-text">Why might the teacher and children have gone there?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('టీచరు, పిల్లలంతా అక్కడికి ఎందుకు వెళ్ళి ఉంటారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Tīcharu, pillalantā akkaḍiki enduku veḷḷi unṭāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">రామప్ప గుడిని చూడడానికి, గుడి చరిత్ర గురించి తెలుసుకోవడానికి వెళ్ళారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 3</span>
+                <span class="qa-text">
+                    <span class="telugu-text">వాళ్ళు దేని గురించి ఏం మాట్లాడుకుంటున్నారు?</span>
+                    <span class="english-text">What are they talking about?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('వాళ్ళు దేని గురించి ఏం మాట్లాడుకుంటున్నారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Vāḷḷu dēni gurinchi ēṁ māṭlāḍukuṇṭunnāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">రామప్ప గుడి చరిత్ర, శిల్పకళా వైభవం గురించి మాట్లాడుకుంటున్నారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 4</span>
+                <span class="qa-text">
+                    <span class="telugu-text">భద్రాచలం పుణ్యక్షేత్రం ఎక్కడ ఉంది?</span>
+                    <span class="english-text">Where is the pilgrimage site Bhadrachalam located?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('భద్రాచలం పుణ్యక్షేత్రం ఎక్కడ ఉంది?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Bhadrāchalaṁ puṇyakṣētraṁ ekkaḍa undi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">తెలంగాణ రాష్ట్రంలో భద్రాద్రి కొత్తగూడెం జిల్లాలో ఉంది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 5</span>
+                <span class="qa-text">
+                    <span class="telugu-text">శ్రీ సీతారామచంద్రస్వామి ఆలయాన్ని ఎవరు కట్టించారు?</span>
+                    <span class="english-text">Who built the Sri Sitaramachandra Swamy temple?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('శ్రీ సీతారామచంద్రస్వామి ఆలయాన్ని ఎవరు కట్టించారు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Śrī Sītārāmachandrasvāmi ālayānni evaru kaṭṭin̄cāru?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">కంచెర్ల గోపన్న కట్టించారు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 6</span>
+                <span class="qa-text">
+                    <span class="telugu-text">కంచెర్ల గోపన్న ఏ పేరుతో ప్రసిద్ధుడు?</span>
+                    <span class="english-text">By what name is Kancherla Gopanna famous?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('కంచెర్ల గోపన్న ఏ పేరుతో ప్రసిద్ధుడు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Kancherla Gōpanna ē pērutō prasiddhuḍu?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">రామదాసు</span></div>
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 7</span>
+                <span class="qa-text">
+                    <span class="telugu-text">రామదాసు రచించిన శతకం పేరేమిటి?</span>
+                    <span class="english-text">What is the name of the Shatakam composed by Ramadasu?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('రామదాసు రచించిన శతకం పేరేమిటి?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Rāmadāsu rachin̄cina śatakaṁ pērēmiṭi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">దాశరథీ శతకం</span></div>
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 8</span>
+                <span class="qa-text">
+                    <span class="telugu-text">భద్రాచలంలో సీతారామ కళ్యాణం ఏ రోజున జరుగుతుంది?</span>
+                    <span class="english-text">On which day does the Sitarama Kalyanam take place in Bhadrachalam?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('భద్రాచలంలో సీతారామ కళ్యాణం ఏ రోజున జరుగుతుంది?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Bhadrāchalaṁlō Sītārāma kaḷyāṇaṁ ē rōjuna jarugutundi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">శ్రీరామ నవమి పండుగ రోజున జరుగుతుంది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 9</span>
+                <span class="qa-text">
+                    <span class="telugu-text">రామప్ప గుడికి ఆ పేరు ఎందుకు వచ్చింది?</span>
+                    <span class="english-text">Why did Ramappa temple get that name?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('రామప్ప గుడికి ఆ పేరు ఎందుకు వచ్చింది?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Rāmāppa guḍiki ā pēru enduku vacchindi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">ఈ గుడిని నిర్మించిన శిల్పి పేరు రామప్ప కాబట్టి, ఆ గుడికి రామప్ప గుడి అని పేరు వచ్చింది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 10</span>
+                <span class="qa-text">
+                    <span class="telugu-text">రామప్ప గుడిలో ఏమేమి శిల్పాలు చూడవచ్చు?</span>
+                    <span class="english-text">What all sculptures can be seen in Ramappa temple?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('రామప్ప గుడిలో ఏమేమి శిల్పాలు చూడవచ్చు?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Rāmāppa guḍilō ēyēmi śilpālu chūḍavaccu?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">స్తంభాలపై, దూలాలపై, పైకప్పుపై బొమ్మలు, నల్ల రాతి నాట్య కత్తెల విగ్రహాలు, మదనిక, నాగిని శిల్పాలు చూడవచ్చు.</span></div>
+            </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 11</span>
+                <span class="qa-text">
+                    <span class="telugu-text">రామప్ప గుడి ఆవరణలో ఉన్న నంది ప్రత్యేకత ఏమిటి?</span>
+                    <span class="english-text">What is the specialty of the Nandi in the Ramappa temple premises?</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('రామప్ప గుడి ఆవరణలో ఉన్న నంది ప్రత్యేకత ఏమిటి?', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Rāmāppa guḍi āvaraṇalō unna Nandi pratyēkata ēmiṭi?</div>
+                <div class="answer-row"><strong>Answer:</strong> <span style="font-family:'Noto Sans Telugu',sans-serif;">నంది ఏవైపు నుండి చూస్తే ఆ దిశకే చూస్తున్నట్లు అనిపిస్తుంది.</span></div>
+            </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 12</span>
+                <span class="qa-text">
+                    <span class="telugu-text">క్రింది పదాలకు ముందు 'అ' కలిపి వ్రాయండి. అవి వ్యతిరేకార్థక పదాలుగా మారుతాయి.</span>
+                    <span class="english-text">Add 'a' before the following words. They change into antonyms.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('క్రింది పదాలకు ముందు అ కలిపి వ్రాయండి. అవి వ్యతిరేకార్థక పదాలుగా మారుతాయి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Krindi padālaku mundu 'a' kalipi vrāyanḍi. Avi vyatirēkārthaka padālugā mārutāyi.</div>
+                <table class="ans-table">
+                    <thead><tr><th>పదం</th><th>వ్యతిరేకార్థక పదం</th></tr></thead>
+                    <tbody>
+                        <tr><td>ధైర్యం</td><td>అధైర్యం</td></tr>
+                        <tr><td>ప్రధానం</td><td>అప్రధానం</td></tr>
+                        <tr><td>ధర్మం</td><td>అధర్మం</td></tr>
+                        <tr><td>సత్యం</td><td>అసత్యం</td></tr>
+                        <tr><td>సాధ్యం</td><td>అసాధ్యం</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 13</span>
+                <span class="qa-text">
+                    <span class="telugu-text">క్రింది వాక్యాలను విడదీసి రెండు వాక్యాలుగా వ్రాయండి.</span>
+                    <span class="english-text">Separate the following sentences into two sentences.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('క్రింది వాక్యాలను విడదీసి రెండు వాక్యాలుగా వ్రాయండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Krindi vākyālanu viḍadīsi reṇḍu vākyālugā vrāyanḍi.</div>
+                <table class="ans-table">
+                    <thead><tr><th>కలిపిన వాక్యం</th><th>విడిగా రెండు వాక్యాలు</th></tr></thead>
+                    <tbody>
+                        <tr><td>స్వాతి బొమ్మగీసి, రంగులు వేసింది.</td><td>స్వాతి బొమ్మ గీసింది. స్వాతి రంగులు వేసింది.</td></tr>
+                        <tr><td>అరుణ్ ఇంటికి వెళ్ళి, అన్నం తిన్నాడు.</td><td>అరుణ్ ఇంటికి వెళ్ళాడు. అరుణ్ అన్నం తిన్నాడు.</td></tr>
+                        <tr><td>అలేఖ్య అన్నం తిని, కొద్దిసేపు ఆడుకున్నది.</td><td>అలేఖ్య అన్నం తిన్నది. అలేఖ్య కొద్దిసేపు ఆడుకున్నది.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="qa-block">
+            <div class="qa-header">
+                <span class="section-label">Q 14</span>
+                <span class="qa-text">
+                    <span class="telugu-text">క్రింది రెండు వాక్యాలను కలిపి ఒకే వాక్యంగా వ్రాయండి.</span>
+                    <span class="english-text">Combine the following two sentences into a single sentence.</span>
+                </span>
+                <button class="speak-btn" onclick="speakTelugu('క్రింది రెండు వాక్యాలను కలిపి ఒకే వాక్యంగా వ్రాయండి.', this)">🔊</button>
+            </div>
+            <div class="qa-body">
+                <div class="answer-row"><strong>Pronunciation:</strong> Krindi reṇḍu vākyālanu kalipi okē vākyaṁgā vrāyanḍi.</div>
+                <table class="ans-table">
+                    <thead><tr><th>రెండు వాక్యాలు</th><th>కలిపిన వాక్యం</th></tr></thead>
+                    <tbody>
+                        <tr><td>అనూష బడికి వచ్చింది. అనూష బాగా చదువుకున్నది.</td><td>అనూష బడికి వచ్చి, బాగా చదువుకున్నది.</td></tr>
+                        <tr><td>వైశాలి హైదరాబాద్ వచ్చింది. వైశాలి "జూ" చూసింది.</td><td>వైశాలి హైదరాబాద్ వచ్చి, "జూ" చూసింది.</td></tr>
+                        <tr><td>రహమత్ దుకాణానికి వెళ్ళాడు. రహమత్ పుస్తకాలు కొన్నాడు.</td><td>రహమత్ దుకాణానికి వెళ్ళి, పుస్తకాలు కొన్నాడు.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-button">← Back to Chapter Selection</a>
+    </div>
+</body>
+</html>

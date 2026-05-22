@@ -4,130 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Class 5 Chapters - Telugu Buddy</title>
-    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+            color: white;
+            padding: 40px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+        }
+        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .chapter-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chapter-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            background-color: #FF5E62;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #FF9966;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 0; }
+            header { padding: 24px 16px; }
+            .container { margin: 20px auto; padding: 0 12px; }
+            .chapter-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 16px;
+            }
+            .chapter-title { font-size: 1.15em; }
+            .buttons { width: 100%; flex-wrap: wrap; }
+            .button { padding: 9px 14px; font-size: 0.9em; }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Class 5 Chapters</h1>
-        <p>Tenepalukulu 5</p>
     </header>
     <div class="container">
-        <!-- 1. Pandem -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">1. Pandem</span>
-            </div>
+            <span class="chapter-title">1. Pandem</span>
             <div class="buttons">
                 <a href="01_Pandem/lesson.html" class="button">Read Story</a>
                 <a href="01_Pandem/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 2. Samaikya Bharati -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">2. Samaikya Bharati</span>
-            </div>
+            <span class="chapter-title">2. Samaikya Bharati</span>
             <div class="buttons">
                 <a href="02_Samaikya_Bharati/lesson.html" class="button">Read Story</a>
                 <a href="02_Samaikya_Bharati/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 3. Rekkala Enugu -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">3. Rekkala Enugu</span>
-            </div>
+            <span class="chapter-title">3. Rekkala Enugu</span>
             <div class="buttons">
                 <a href="03_Rekkala_Enugu/lesson.html" class="button">Read Story</a>
                 <a href="03_Rekkala_Enugu/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 4. Parishubhrata -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">4. Parishubhrata</span>
-            </div>
+            <span class="chapter-title">4. Parishubhrata</span>
             <div class="buttons">
                 <a href="04_Parishubhrata/lesson.html" class="button">Read Story</a>
                 <a href="04_Parishubhrata/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 5. Nirmal Bommalu -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">5. Nirmal Bommalu</span>
-            </div>
+            <span class="chapter-title">5. Nirmal Bommalu</span>
             <div class="buttons">
                 <a href="05_Nirmal_Bommalu/lesson.html" class="button">Read Story</a>
                 <a href="05_Nirmal_Bommalu/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 6. Shataka Padyalu -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">6. Shataka Padyalu</span>
-            </div>
+            <span class="chapter-title">6. Shataka Padyalu</span>
             <div class="buttons">
                 <a href="06_Shataka_Padyalu/lesson.html" class="button">Read Story</a>
                 <a href="06_Shataka_Padyalu/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 7. Sankranthi Sandesham -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">7. Sankranthi Sandesham</span>
-            </div>
+            <span class="chapter-title">7. Sankranthi Sandesham</span>
             <div class="buttons">
                 <a href="07_Sankranthi_Sandesham/lesson.html" class="button">Read Story</a>
                 <a href="07_Sankranthi_Sandesham/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 8. Kanuvippu -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">8. Kanuvippu</span>
-            </div>
+            <span class="chapter-title">8. Kanuvippu</span>
             <div class="buttons">
                 <a href="08_Kanuvippu/lesson.html" class="button">Read Story</a>
                 <a href="08_Kanuvippu/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 9. Ramappa -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">9. Ramappa</span>
-            </div>
+            <span class="chapter-title">9. Ramappa</span>
             <div class="buttons">
                 <a href="09_Ramappa/lesson.html" class="button">Read Story</a>
                 <a href="09_Ramappa/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <!-- 10. Shibi Chakravarti -->
         <div class="chapter-card">
-            <div class="chapter-info">
-                <span class="chapter-title">10. Shibi Chakravarti</span>
-            </div>
+            <span class="chapter-title">10. Shibi Chakravarti</span>
             <div class="buttons">
                 <a href="10_Shibi_Chakravarti/lesson.html" class="button">Read Story</a>
                 <a href="10_Shibi_Chakravarti/exercise.html" class="button">Do Exercises</a>
             </div>
         </div>
-
-        <div style="text-align: center; margin-top: 32px;">
-            <a href="../index.html" class="back-button">&larr; Back to Class Selection</a>
-        </div>
+        <a href="../index.html" class="back-button">← Back to Class Selection</a>
     </div>
-    <footer>
-        <p>Made with ❤️ for young learners.</p>
-    </footer>
 </body>
 </html>
