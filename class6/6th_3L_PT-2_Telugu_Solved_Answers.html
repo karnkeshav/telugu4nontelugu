@@ -1498,27 +1498,51 @@
     })();
 
     function loadVoices() {
-        if (!('speechSynthesis' in window)) return;
+        if (!('speechSynthesis' in window)) return false;
         const voices = window.speechSynthesis.getVoices();
-        if (voices.length === 0) return;
-        voicesReady = true;
-        teluguVoice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
-        maybeShowNoVoiceBanner();
+        const found = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('te')) || null;
+        if (found) {
+            teluguVoice = found;
+            voicesReady = true;
+            hideNoVoiceBanner();
+            return true;
+        }
+        if (voices.length > 0) voicesReady = true;
+        return false;
+    }
+
+    function hideNoVoiceBanner() {
+        const banner = document.getElementById('tts-status-banner');
+        if (banner) banner.style.display = 'none';
     }
 
     function maybeShowNoVoiceBanner() {
-        if (voicesReady && !teluguVoice) {
+        if (!teluguVoice) {
             const banner = document.getElementById('tts-status-banner');
             if (banner) banner.style.display = 'block';
+        } else {
+            hideNoVoiceBanner();
         }
     }
 
     if ('speechSynthesis' in window) {
         window.speechSynthesis.onvoiceschanged = loadVoices;
         loadVoices();
-        // Some browsers populate the voice list asynchronously with no event -
-        // re-check shortly after load as a safety net.
-        setTimeout(loadVoices, 800);
+        // Chrome (especially on Android) often reports an empty or partial
+        // voice list right after page load and only finishes populating it
+        // - sometimes only after the very first speak() call - a moment
+        // later, with no reliable event. Poll for a few seconds before
+        // concluding there really is no Telugu voice, so we don't show a
+        // false "no voice" notice on devices that do have one.
+        let pollAttempts = 0;
+        const pollTimer = setInterval(() => {
+            pollAttempts++;
+            const found = loadVoices();
+            if (found || pollAttempts >= 8) {
+                clearInterval(pollTimer);
+                if (!found) maybeShowNoVoiceBanner();
+            }
+        }, 500);
     } else {
         voicesReady = true;
         maybeShowNoVoiceBanner();
