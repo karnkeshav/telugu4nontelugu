@@ -4,53 +4,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Class 6 Chapters - Telugu Buddy</title>
+    <title>Class 6 Chapters & Homework - Telugu Buddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f4f8;
             margin: 0;
             padding: 0;
             text-align: center;
+            color: #2d3748;
         }
 
         header {
             background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 35px 20px 25px;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
             box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.5em;
+            margin: 0 0 8px;
+            font-size: 2.3em;
             letter-spacing: 1px;
         }
 
+        .header-subtitle {
+            margin: 0 0 18px;
+            font-size: 1.05em;
+            opacity: 0.95;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .header-btn {
+            background: white;
+            color: #FF5E62;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.25s ease;
+        }
+
+        .header-btn:hover {
+            background: #fff3eb;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .header-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 860px;
+            margin: 30px auto 50px;
             padding: 0 20px;
         }
 
-        .chapter-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
+        /* SECTION HEADINGS */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 30px 0 15px;
             text-align: left;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: #1a365d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* HOMEWORK HUB SECTION */
+        .homework-hub {
+            background: linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 35px;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(43, 108, 176, 0.1);
+            border: 2px solid #bee3f8;
+            position: relative;
+        }
+
+        .homework-badge {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .homework-hub h2 {
+            margin: 0 0 8px;
+            color: #1a365d;
+            font-size: 1.5em;
+        }
+
+        .homework-hub p {
+            margin: 0 0 18px;
+            color: #4a5568;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .homework-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .hw-card {
+            background: white;
+            border-radius: 14px;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+        }
+
+        .hw-card:hover {
+            border-color: #90cdf4;
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(43, 108, 176, 0.08);
+        }
+
+        .hw-info h3 {
+            margin: 0 0 4px;
+            font-size: 1.1em;
+            color: #2d3748;
+        }
+
+        .hw-info p {
+            margin: 0;
+            font-size: 0.86em;
+            color: #718096;
+        }
+
+        .hw-links {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .hw-btn {
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.2s;
+        }
+
+        .hw-btn-audio {
+            background: #2b6cb0;
+            color: white;
+        }
+
+        .hw-btn-audio:hover {
+            background: #1a365d;
+        }
+
+        .hw-btn-pdf {
+            background: #edf2f7;
+            color: #2d3748;
+            border: 1px solid #cbd5e0;
+        }
+
+        .hw-btn-pdf:hover {
+            background: #e2e8f0;
+        }
+
+        .hw-portal-btn {
+            background: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(26, 54, 93, 0.15);
+        }
+
+        .hw-portal-btn:hover {
+            opacity: 0.95;
+            box-shadow: 0 6px 15px rgba(26, 54, 93, 0.25);
+        }
+
+        /* CHAPTER CARDS */
+        .chapter-card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .chapter-card:hover {
+            border-color: #FF9966;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 94, 98, 0.12);
         }
 
         .chapter-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #2d3748;
         }
 
         .buttons {
@@ -61,11 +274,12 @@
         .button {
             background-color: #FF5E62;
             color: white;
-            padding: 10px 20px;
+            padding: 9px 18px;
             border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: background-color 0.2s ease;
         }
 
         .button:hover {
@@ -74,34 +288,129 @@
 
         .back-button {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #e2e8f0;
+            transition: background 0.2s;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; letter-spacing: 0; }
-            header { padding: 24px 16px; }
-            .container { margin: 20px auto; padding: 0 12px; }
+        .back-button:hover {
+            background: #cbd5e0;
+            color: #1a202c;
+        }
+
+        @media (max-width: 680px) {
+            h1 { font-size: 1.7em; }
+            header { padding: 25px 15px 20px; }
+            .container { margin: 15px auto; padding: 0 12px; }
             .chapter-card {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
                 padding: 16px;
             }
-            .chapter-title { font-size: 1.15em; }
+            .chapter-title { font-size: 1.1em; }
             .buttons { width: 100%; flex-wrap: wrap; }
-            .button { padding: 9px 14px; font-size: 0.9em; }
+            .button { padding: 8px 14px; font-size: 0.88em; }
+            
+            .hw-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .hw-links { width: 100%; }
+            .hw-btn { flex: 1; justify-content: center; text-align: center; }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Class 6 Chapters</h1>
+        <h1>Class 6 Telugu (తృతీయ భాష)</h1>
+        <p class="header-subtitle">Matrusri DAV Public School • Nawa Vasantam 1</p>
+        <div class="header-actions">
+            <a href="#homework-section" class="header-btn">
+                📝 Homework & Solved Worksheets
+            </a>
+            <a href="6th_3L_Telugu_Study_Portal_Index.html" class="header-btn header-btn-secondary">
+                🌟 Audio Study Portal
+            </a>
+        </div>
     </header>
+
     <div class="container">
+        
+        <!-- HOMEWORK & SOLVED WORKSHEETS SECTION -->
+        <div id="homework-section" class="homework-hub">
+            <span class="homework-badge">📖 Practice & Exam Revision</span>
+            <h2>📝 Homework & Solved Worksheets</h2>
+            <p>Complete solved answers strictly verified from SCERT Class 6 textbook. Click any audio study app to listen to word-by-word pronunciation or sentence audio playback.</p>
+
+            <div class="homework-grid">
+                <!-- Homework Item 1: WS 1 -->
+                <div class="hw-card">
+                    <div class="hw-info">
+                        <h3>1. Work Sheet 1 (Lessons 1, 2, 3)</h3>
+                        <p>1. ఇల్లు, 2. మనమంతా ఒక్కటే, 3. వానాకాలం • అర్థాలు, సొంత వాక్యాలు, అల్ప/మహా ప్రాణాలు, స్పెల్లింగ్స్</p>
+                    </div>
+                    <div class="hw-links">
+                        <a href="6th_3L_WS1_Illu_Manamanta_Vanaakalam_Solved.html" class="hw-btn hw-btn-audio">🔊 Audio Study App</a>
+                        <a href="6th_3L_WS1_Illu_Manamanta_Vanaakalam_Solved.pdf" class="hw-btn hw-btn-pdf" target="_blank">📄 PDF</a>
+                    </div>
+                </div>
+
+                <!-- Homework Item 2: WS 2 -->
+                <div class="hw-card">
+                    <div class="hw-info">
+                        <h3>2. Work Sheet 2 (Lesson 4)</h3>
+                        <p>4. చిట్టి మొక్క • తారుమారైన అక్షరాలు, దీపావళి చిత్ర వర్ణన, పదాల గడి, సరిత ప్రశ్నోత్తరాలు</p>
+                    </div>
+                    <div class="hw-links">
+                        <a href="6th_3L_WS2_Chitti_Mokka_Solved.html" class="hw-btn hw-btn-audio">🔊 Audio Study App</a>
+                        <a href="6th_3L_WS2_Chitti_Mokka_Solved.pdf" class="hw-btn hw-btn-pdf" target="_blank">📄 PDF</a>
+                    </div>
+                </div>
+
+                <!-- Homework Item 3: WS 3 -->
+                <div class="hw-card">
+                    <div class="hw-info">
+                        <h3>3. Work Sheet 3 (Lesson 5)</h3>
+                        <p>5. కోతి బుద్ధి • అర్థాలు, 'ఊరు' వెబ్ చార్ట్, 'తి' అంతమయ్యే పదాలు (పతి, అతి, యతి, మతి), ఒత్తుల పదాలు</p>
+                    </div>
+                    <div class="hw-links">
+                        <a href="6th_3L_WS3_Kothi_Buddhi_Solved.html" class="hw-btn hw-btn-audio">🔊 Audio Study App</a>
+                        <a href="6th_3L_WS3_Kothi_Buddhi_Solved.pdf" class="hw-btn hw-btn-pdf" target="_blank">📄 PDF</a>
+                    </div>
+                </div>
+
+                <!-- Homework Item 4: PT-2 -->
+                <div class="hw-card">
+                    <div class="hw-info">
+                        <h3>4. PT-2 Exam Revision Sheet</h3>
+                        <p>లేఖలు (మిత్రునికి & సెలవు పత్రం), నీతి పద్యాలు & భావాలు, భాషా భాగాలు, కాలాలు, విభక్తులు</p>
+                    </div>
+                    <div class="hw-links">
+                        <a href="6th_3L_PT-2_Telugu_Solved_Answers.html" class="hw-btn hw-btn-audio">🔊 Audio Study App</a>
+                        <a href="6th_3L_PT-2_Telugu_Solved_Answers.pdf" class="hw-btn hw-btn-pdf" target="_blank">📄 PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="6th_3L_Telugu_Study_Portal_Index.html" class="hw-portal-btn">
+                🚀 Open Master Audio Study Portal (All Worksheets Hub)
+            </a>
+        </div>
+
+        <!-- CHAPTERS SECTION -->
+        <div class="section-header">
+            <span class="section-title">📖 Textbook Chapters</span>
+        </div>
+
         <div class="chapter-card">
             <span class="chapter-title">1. Illu (ఇల్లు)</span>
             <div class="buttons">

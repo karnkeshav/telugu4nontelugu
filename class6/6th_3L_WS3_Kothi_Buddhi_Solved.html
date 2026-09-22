@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Telugu Lesson 5 కోతి బుద్ధి Solved Worksheet & TTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --primary: #2b6cb0;
+        --primary-dark: #1a365d;
+        --primary-light: #ebf8ff;
+        --accent-orange: #dd6b20;
+        --accent-green: #2f855a;
+        --bg-page: #f0f4f8;
+        --card-bg: #ffffff;
+        --text-main: #2d3748;
+        --text-muted: #718096;
+        --border-color: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        margin: 0;
+        padding: 20px 15px 60px;
+        line-height: 1.6;
+    }
+    .telugu-font, .t-word, .telugu-text {
+        font-family: 'Noto Sans Telugu', sans-serif;
+    }
+    .container { max-width: 1040px; margin: 0 auto; }
+    header {
+        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+        color: white;
+        padding: 24px 20px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(26, 54, 93, 0.18);
+        margin-bottom: 20px;
+    }
+    header h1 { margin: 0 0 6px; font-size: 1.8rem; font-family: 'Noto Sans Telugu', sans-serif; font-weight: 700; }
+    header .subtitle { margin: 0 0 10px; font-size: 1.1rem; opacity: 0.95; font-weight: 500; }
+    .badge-pill {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+    .audio-bar {
+        background: white;
+        padding: 14px 20px;
+        border-radius: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid var(--border-color);
+        position: sticky;
+        top: 10px;
+        z-index: 100;
+    }
+    .audio-info { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--primary-dark); font-weight: 600; }
+    .audio-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .speed-btn, .stop-btn {
+        background: #edf2f7;
+        border: 1px solid #cbd5e0;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .speed-btn:hover, .speed-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+    .stop-btn { background: #fed7d7; color: #9b2c2c; border-color: #feb2b2; }
+    .t-word {
+        display: inline-block;
+        cursor: pointer;
+        padding: 1px 3px;
+        border-radius: 4px;
+        transition: all 0.15s ease-in-out;
+        border-bottom: 1.5px dotted #90cdf4;
+    }
+    .t-word:hover { background-color: #feebc8; color: #9c4221; transform: scale(1.06); border-bottom-color: #dd6b20; }
+    .t-word.speaking-word {
+        background-color: #feebc8 !important;
+        color: #c05621 !important;
+        font-weight: 700;
+        animation: pulse-word 0.5s infinite alternate;
+    }
+    @keyframes pulse-word { from { transform: scale(1.02); } to { transform: scale(1.1); } }
+    .speak-btn {
+        background: #ebf8ff;
+        border: 1.5px solid #bee3f8;
+        color: var(--primary);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        flex-shrink: 0;
+        vertical-align: middle;
+        margin-left: 6px;
+    }
+    .speak-btn:hover { background: var(--primary); color: white; transform: scale(1.12); }
+    .speak-btn.speaking { background: #e53e3e; color: white; border-color: #c53030; animation: pulse-btn 0.6s infinite alternate; }
+    @keyframes pulse-btn { from { transform: scale(1); } to { transform: scale(1.15); } }
+    .section-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        border: 1px solid var(--border-color);
+    }
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--primary-light);
+        padding-bottom: 12px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .section-title { font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); margin: 0; }
+    .section-desc { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+    .rule-card {
+        background: #f7fafc;
+        border-left: 4px solid var(--primary);
+        padding: 12px 16px;
+        border-radius: 0 10px 10px 0;
+        margin-bottom: 18px;
+        font-size: 0.92rem;
+    }
+    .rule-card h4 { margin: 0 0 6px; color: var(--primary-dark); font-size: 0.98rem; }
+    .qa-box {
+        background: #fafafa;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 14px 18px;
+        margin-bottom: 14px;
+    }
+    .qa-q {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .qa-a {
+        font-size: 1.12rem;
+        color: #2d3748;
+        line-height: 1.75;
+        background: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        border-left: 3.5px solid var(--accent-green);
+    }
+    .table-responsive { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.98rem; }
+    th, td { padding: 12px 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: middle; }
+    th { background-color: #edf2f7; color: #2d3748; font-weight: 600; font-size: 0.92rem; }
+    tr:nth-child(even) { background-color: #f7fafc; }
+    tr:hover { background-color: #ebf8ff; }
+    .badge-ans {
+        display: inline-block;
+        background-color: #c6f6d5;
+        color: #22543d;
+        border: 1px solid #9ae6b4;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.92rem;
+    }
+    .web-chart {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+    }
+    .chart-node {
+        background: #ebf8ff;
+        border: 2px solid #90cdf4;
+        border-radius: 12px;
+        padding: 12px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+    }
+    .chart-center {
+        background: #feebc8;
+        border-color: #dd6b20;
+        color: #7b341e;
+        font-size: 1.3rem;
+        grid-column: 1 / -1;
+    }
+    footer { text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem; }
+    @media (max-width: 768px) {
+        body { padding: 10px 8px 40px; }
+        header { padding: 18px 12px; }
+        header h1 { font-size: 1.4rem; }
+        .section-card { padding: 16px 12px; }
+        table { font-size: 0.88rem; }
+        th, td { padding: 8px 6px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>మాతృశ్రీ డి.ఎ.వి. పబ్లిక్ స్కూల్ – మియాపూర్</h1>
+        <div class="subtitle">6 వ తరగతి తృతీయ భాష - తెలుగు | 5. కోతి బుద్ధి వర్క్ షీట్ సంపూర్ణ సమాధానాలు</div>
+        <div class="badge-pill">🔊 Interactive Audio & Pronunciation Guide</div>
+    </header>
+
+    <div class="audio-bar">
+        <div class="audio-info">
+            <span class="icon">💡</span>
+            <span><b>Audio Tip:</b> Click on <u>ANY Telugu word</u> to hear it pronounced individually, or click <button class="speak-btn" style="width:24px;height:24px;font-size:0.75rem;pointer-events:none;">🔊</button> to hear full sentences!</span>
+        </div>
+        <div class="audio-controls">
+            <button class="speed-btn" onclick="setPlaybackRate(0.7, this)">🐢 0.7x</button>
+            <button class="speed-btn active" onclick="setPlaybackRate(0.9, this)">🚶 0.9x</button>
+            <button class="speed-btn" onclick="setPlaybackRate(1.1, this)">🏃 1.1x</button>
+            <button class="stop-btn" onclick="stopAllSpeech()">⏹️ Stop</button>
+        </div>
+    </div>
+
+    <!-- SECTION I: అర్థాలు -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">I. క్రింది పదాలకు అర్థాలు రాయండి (Meanings)</h2>
+                <p class="section-desc">Word Meanings from Lesson 5 'కోతి బుద్ధి'</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:6%;text-align:center;">#</th>
+                        <th style="width:30%;">పదం (Telugu Word)</th>
+                        <th style="width:34%;">అర్థం (Telugu Meaning)</th>
+                        <th style="width:22%;">English Meaning</th>
+                        <th style="width:8%;text-align:center;">🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">1</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;"><span class="t-word" onclick="event.stopPropagation(); speakWord('ధనం', this)" title="Click to hear: ధనం">ధనం</span></td>
+                        <td class="telugu-text" style="font-size:1.1rem;color:#2c5282;"><span class="t-word" onclick="event.stopPropagation(); speakWord('డబ్బు', this)" title="Click to hear: డబ్బు">డబ్బు</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('సంపద', this)" title="Click to hear: సంపద">సంపద</span></td>
+                        <td style="color:#4a5568;">Money / Wealth</td>
+                        <td style="text-align:center;">
+                            <button class="speak-btn" onclick="speakTelugu('ధనం: డబ్బు / సంపద', this)">🔊</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">2</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;"><span class="t-word" onclick="event.stopPropagation(); speakWord('గుడి', this)" title="Click to hear: గుడి">గుడి</span></td>
+                        <td class="telugu-text" style="font-size:1.1rem;color:#2c5282;"><span class="t-word" onclick="event.stopPropagation(); speakWord('దేవాలయం', this)" title="Click to hear: దేవాలయం">దేవాలయం</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('కోవెల', this)" title="Click to hear: కోవెల">కోవెల</span></td>
+                        <td style="color:#4a5568;">Temple</td>
+                        <td style="text-align:center;">
+                            <button class="speak-btn" onclick="speakTelugu('గుడి: దేవాలయం / కోవెల', this)">🔊</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">3</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;"><span class="t-word" onclick="event.stopPropagation(); speakWord('ఊరు', this)" title="Click to hear: ఊరు">ఊరు</span></td>
+                        <td class="telugu-text" style="font-size:1.1rem;color:#2c5282;"><span class="t-word" onclick="event.stopPropagation(); speakWord('గ్రామం', this)" title="Click to hear: గ్రామం">గ్రామం</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('పల్లె', this)" title="Click to hear: పల్లె">పల్లె</span></td>
+                        <td style="color:#4a5568;">Village / Town</td>
+                        <td style="text-align:center;">
+                            <button class="speak-btn" onclick="speakTelugu('ఊరు: గ్రామం / పల్లె', this)">🔊</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">4</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;"><span class="t-word" onclick="event.stopPropagation(); speakWord('గుంపు', this)" title="Click to hear: గుంపు">గుంపు</span></td>
+                        <td class="telugu-text" style="font-size:1.1rem;color:#2c5282;"><span class="t-word" onclick="event.stopPropagation(); speakWord('సమూహం', this)" title="Click to hear: సమూహం">సమూహం</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('మంద', this)" title="Click to hear: మంద">మంద</span></td>
+                        <td style="color:#4a5568;">Group / Troop / Flock</td>
+                        <td style="text-align:center;">
+                            <button class="speak-btn" onclick="speakTelugu('గుంపు: సమూహం / మంద', this)">🔊</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">5</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;"><span class="t-word" onclick="event.stopPropagation(); speakWord('పండు', this)" title="Click to hear: పండు">పండు</span></td>
+                        <td class="telugu-text" style="font-size:1.1rem;color:#2c5282;"><span class="t-word" onclick="event.stopPropagation(); speakWord('ఫలం', this)" title="Click to hear: ఫలం">ఫలం</span></td>
+                        <td style="color:#4a5568;">Fruit</td>
+                        <td style="text-align:center;">
+                            <button class="speak-btn" onclick="speakTelugu('పండు: ఫలం', this)">🔊</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION II: సొంతవాక్యాలు -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">II. క్రింది పదాలకు సొంతవాక్యాలు రాయండి (Own Sentences)</h2>
+                <p class="section-desc">Source: Textbook Page 58</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:6%;text-align:center;">#</th>
+                        <th style="width:22%;">పదం</th>
+                        <th style="width:42%;">సొంతవాక్యం (Sentence)</th>
+                        <th style="width:22%;">English Translation</th>
+                        <th style="width:8%;text-align:center;">🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">1.</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('విలవిలలాడడం', this)" title="Click to hear: విలవిలలాడడం">విలవిలలాడడం</span></td>
+                        <td class="sentence-cell telugu-text"><span class="t-word" onclick="event.stopPropagation(); speakWord('చేపను', this)" title="Click to hear: చేపను">చేపను</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('నీటి', this)" title="Click to hear: నీటి">నీటి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('నుండి', this)" title="Click to hear: నుండి">నుండి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('బయటకు', this)" title="Click to hear: బయటకు">బయటకు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('తీస్తే', this)" title="Click to hear: తీస్తే">తీస్తే</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ప్రాణం', this)" title="Click to hear: ప్రాణం">ప్రాణం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కోసం', this)" title="Click to hear: కోసం">కోసం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('విలవిలలాడుతుంది', this)" title="Click to hear: విలవిలలాడుతుంది">విలవిలలాడుతుంది</span>.</td>
+                        <td style="color:#4a5568;font-size:0.9rem;">When a fish is taken out of water, it writhes frantically for life.</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('చేపను నీటి నుండి బయటకు తీస్తే ప్రాణం కోసం విలవిలలాడుతుంది.', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">2.</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:600;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('బెదిరించడం', this)" title="Click to hear: బెదిరించడం">బెదిరించడం</span></td>
+                        <td class="sentence-cell telugu-text"><span class="t-word" onclick="event.stopPropagation(); speakWord('కోతులు', this)" title="Click to hear: కోతులు">కోతులు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పండ్ల', this)" title="Click to hear: పండ్ల">పండ్ల</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కోసం', this)" title="Click to hear: కోసం">కోసం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('మనుషులను', this)" title="Click to hear: మనుషులను">మనుషులను</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చూసి', this)" title="Click to hear: చూసి">చూసి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పళ్ళు', this)" title="Click to hear: పళ్ళు">పళ్ళు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఇకిలిస్తూ', this)" title="Click to hear: ఇకిలిస్తూ">ఇకిలిస్తూ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('బెదిరిస్తాయి', this)" title="Click to hear: బెదిరిస్తాయి">బెదిరిస్తాయి</span>.</td>
+                        <td style="color:#4a5568;font-size:0.9rem;">Monkeys intimidate people by baring their teeth to get fruits.</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('కోతులు పండ్ల కోసం మనుషులను చూసి పళ్ళు ఇకిలిస్తూ బెదిరిస్తాయి.', this)">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION III: ప్రశ్నోత్తరాలు -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">III. క్రింది ప్రశ్నలకు సమాధానాలు రాయండి (Questions & Answers)</h2>
+                <p class="section-desc">Source: Textbook Lesson 5 (Page 57)</p>
+            </div>
+        </div>
+
+        <div class="qa-box">
+            <div class="qa-q telugu-text">
+                <span>1. <span class="t-word" onclick="event.stopPropagation(); speakWord('కోతి', this)" title="Click to hear: కోతి">కోతి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చేసిన', this)" title="Click to hear: చేసిన">చేసిన</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పని', this)" title="Click to hear: పని">పని</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఏమిటి', this)" title="Click to hear: ఏమిటి">ఏమిటి</span>?</span>
+                <button class="speak-btn" onclick="speakTelugu('కోతి చేసిన పని ఏమిటి?', this)">🔊</button>
+            </div>
+            <div style="font-size:0.88rem;color:#718096;margin-bottom:8px;font-style:italic;">What action did the monkey do?</div>
+            <div class="qa-a telugu-text">
+                <b>జవాబు:</b> <span class="t-word" onclick="event.stopPropagation(); speakWord('కోతి', this)" title="Click to hear: కోతి">కోతి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('గుడి', this)" title="Click to hear: గుడి">గుడి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('దగ్గర', this)" title="Click to hear: దగ్గర">దగ్గర</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పనివారు', this)" title="Click to hear: పనివారు">పనివారు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చీల్చి', this)" title="Click to hear: చీల్చి">చీల్చి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఉంచిన', this)" title="Click to hear: ఉంచిన">ఉంచిన</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చెక్క', this)" title="Click to hear: చెక్క">చెక్క</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('దుంగపై', this)" title="Click to hear: దుంగపై">దుంగపై</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కూర్చుని', this)" title="Click to hear: కూర్చుని">కూర్చుని</span>, <span class="t-word" onclick="event.stopPropagation(); speakWord('ఆ', this)" title="Click to hear: ఆ">ఆ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చీలికలో', this)" title="Click to hear: చీలికలో">చీలికలో</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఉన్న', this)" title="Click to hear: ఉన్న">ఉన్న</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('మేకును', this)" title="Click to hear: మేకును">మేకును</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('అటూ', this)" title="Click to hear: అటూ">అటూ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఇటూ', this)" title="Click to hear: ఇటూ">ఇటూ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఊపి', this)" title="Click to hear: ఊపి">ఊపి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('గట్టిగా', this)" title="Click to hear: గట్టిగా">గట్టిగా</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('లాగింది', this)" title="Click to hear: లాగింది">లాగింది</span>. <span class="t-word" onclick="event.stopPropagation(); speakWord('దాంతో', this)" title="Click to hear: దాంతో">దాంతో</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('దుంగ', this)" title="Click to hear: దుంగ">దుంగ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చీలిక', this)" title="Click to hear: చీలిక">చీలిక</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('మూసుకుపోయి', this)" title="Click to hear: మూసుకుపోయి">మూసుకుపోయి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కోతి', this)" title="Click to hear: కోతి">కోతి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('తోక', this)" title="Click to hear: తోక">తోక</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఆ', this)" title="Click to hear: ఆ">ఆ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చీలిక', this)" title="Click to hear: చీలిక">చీలిక</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('మధ్య', this)" title="Click to hear: మధ్య">మధ్య</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఇరుక్కుపోయింది', this)" title="Click to hear: ఇరుక్కుపోయింది">ఇరుక్కుపోయింది</span>.
+                <div style="text-align:right;margin-top:6px;">
+                    <button class="speak-btn" onclick="speakTelugu('కోతి గుడి దగ్గర పనివారు చీల్చి ఉంచిన చెక్క దుంగపై కూర్చుని, ఆ చీలికలో ఉన్న మేకును అటూ ఇటూ ఊపి గట్టిగా లాగింది. దాంతో దుంగ చీలిక మూసుకుపోయి కోతి తోక ఆ చీలిక మధ్య ఇరుక్కుపోయింది.', this)">🔊 Listen Answer</button>
+                </div>
+            </div>
+            <div style="font-size:0.88rem;color:#4a5568;margin-top:6px;background:#fffdf5;padding:6px 10px;border-radius:6px;">
+                <b>Meaning:</b> The monkey sat on a split wooden log near the temple and yanked out the wedge placed between the split. As a result, the log snapped shut and trapped the monkey's tail.
+            </div>
+        </div>
+
+        <div class="qa-box">
+            <div class="qa-q telugu-text">
+                <span>2. <span class="t-word" onclick="event.stopPropagation(); speakWord('కోతి', this)" title="Click to hear: కోతి">కోతి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('వల్ల', this)" title="Click to hear: వల్ల">వల్ల</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఏమి', this)" title="Click to hear: ఏమి">ఏమి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('తెలిసింది', this)" title="Click to hear: తెలిసింది">తెలిసింది</span>?</span>
+                <button class="speak-btn" onclick="speakTelugu('కోతి వల్ల ఏమి తెలిసింది?', this)">🔊</button>
+            </div>
+            <div style="font-size:0.88rem;color:#718096;margin-bottom:8px;font-style:italic;">What lesson is learned from the monkey?</div>
+            <div class="qa-a telugu-text">
+                <b>జవాబు:</b> <span class="t-word" onclick="event.stopPropagation(); speakWord('మనకు', this)" title="Click to hear: మనకు">మనకు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('సంబంధం', this)" title="Click to hear: సంబంధం">సంబంధం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('లేని', this)" title="Click to hear: లేని">లేని</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పనులలో', this)" title="Click to hear: పనులలో">పనులలో</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('అనవసరంగా', this)" title="Click to hear: అనవసరంగా">అనవసరంగా</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('జోక్యం', this)" title="Click to hear: జోక్యం">జోక్యం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చేసుకోకూడదని', this)" title="Click to hear: చేసుకోకూడదని">చేసుకోకూడదని</span>, <span class="t-word" onclick="event.stopPropagation(); speakWord('తెలియని', this)" title="Click to hear: తెలియని">తెలియని</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('పనులు', this)" title="Click to hear: పనులు">పనులు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చేస్తే', this)" title="Click to hear: చేస్తే">చేస్తే</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ప్రాణాపాయం', this)" title="Click to hear: ప్రాణాపాయం">ప్రాణాపాయం</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('మరియు', this)" title="Click to hear: మరియు">మరియు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('ఆపదలు', this)" title="Click to hear: ఆపదలు">ఆపదలు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కలుగుతాయని', this)" title="Click to hear: కలుగుతాయని">కలుగుతాయని</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కోతి', this)" title="Click to hear: కోతి">కోతి</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కథ', this)" title="Click to hear: కథ">కథ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('వల్ల', this)" title="Click to hear: వల్ల">వల్ల</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('తెలిసింది', this)" title="Click to hear: తెలిసింది">తెలిసింది</span>.
+                <div style="text-align:right;margin-top:6px;">
+                    <button class="speak-btn" onclick="speakTelugu('మనకు సంబంధం లేని పనులలో అనవసరంగా జోక్యం చేసుకోకూడదని తెలియని పనులు చేస్తే ప్రాణాపాయం మరియు ఆపదలు కలుగుతాయని కోతి కథ వల్ల తెలిసింది.', this)">🔊 Listen Answer</button>
+                </div>
+            </div>
+            <div style="font-size:0.88rem;color:#4a5568;margin-top:6px;background:#fffdf5;padding:6px 10px;border-radius:6px;">
+                <b>Meaning:</b> From the monkey's story, we learn that we should not unnecessarily meddle in matters that do not concern us, and doing unfamiliar tasks thoughtlessly brings danger and harm.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION IV: ఊరు వెబ్ చార్ట్ -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">IV. ఊరికి సంబంధించిన పదాలు (Words Related to 'Village')</h2>
+                <p class="section-desc">Source: Textbook Page 58 Web Chart</p>
+            </div>
+        </div>
+
+        <div class="web-chart telugu-text">
+            <div class="chart-node chart-center">🏠 <span class="t-word" onclick="event.stopPropagation(); speakWord('ఊరు', this)" title="Click to hear: ఊరు">ఊరు</span> (Village) <button class="speak-btn" onclick="speakTelugu('ఊరు', this)">🔊</button></div>
+            <div class="chart-node">🛕 <span class="t-word" onclick="event.stopPropagation(); speakWord('గుడి', this)" title="Click to hear: గుడి">గుడి</span><br><small style="font-size:0.8rem;color:#718096;">Temple</small> <button class="speak-btn" onclick="speakTelugu('గుడి', this)">🔊</button></div>
+            <div class="chart-node">🏫 <span class="t-word" onclick="event.stopPropagation(); speakWord('బడి', this)" title="Click to hear: బడి">బడి</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('పాఠశాల', this)" title="Click to hear: పాఠశాల">పాఠశాల</span><br><small style="font-size:0.8rem;color:#718096;">School</small> <button class="speak-btn" onclick="speakTelugu('బడి పాఠశాల', this)">🔊</button></div>
+            <div class="chart-node">🌊 <span class="t-word" onclick="event.stopPropagation(); speakWord('చెరువు', this)" title="Click to hear: చెరువు">చెరువు</span><br><small style="font-size:0.8rem;color:#718096;">Lake / Pond</small> <button class="speak-btn" onclick="speakTelugu('చెరువు', this)">🔊</button></div>
+            <div class="chart-node">🌾 <span class="t-word" onclick="event.stopPropagation(); speakWord('పొలం', this)" title="Click to hear: పొలం">పొలం</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('చేలు', this)" title="Click to hear: చేలు">చేలు</span><br><small style="font-size:0.8rem;color:#718096;">Fields / Crops</small> <button class="speak-btn" onclick="speakTelugu('పొలం చేలు', this)">🔊</button></div>
+            <div class="chart-node">🌳 <span class="t-word" onclick="event.stopPropagation(); speakWord('చెట్లు', this)" title="Click to hear: చెట్లు">చెట్లు</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('తోట', this)" title="Click to hear: తోట">తోట</span><br><small style="font-size:0.8rem;color:#718096;">Trees / Garden</small> <button class="speak-btn" onclick="speakTelugu('చెట్లు తోట', this)">🔊</button></div>
+            <div class="chart-node">🏡 <span class="t-word" onclick="event.stopPropagation(); speakWord('ఇండ్లు', this)" title="Click to hear: ఇండ్లు">ఇండ్లు</span> / <span class="t-word" onclick="event.stopPropagation(); speakWord('రైతులు', this)" title="Click to hear: రైతులు">రైతులు</span><br><small style="font-size:0.8rem;color:#718096;">Houses / Farmers</small> <button class="speak-btn" onclick="speakTelugu('ఇండ్లు రైతులు', this)">🔊</button></div>
+        </div>
+    </div>
+
+    <!-- SECTION V: 'తి' అంతమయ్యే పదాలు -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">V. సూచనల ఆధారంగా పదాలను రాయండి (Words ending with 'తి')</h2>
+                <p class="section-desc">Source: Textbook Page 58</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:6%;text-align:center;">#</th>
+                        <th style="width:48%;">సూచన (Clue)</th>
+                        <th style="width:24%;">సమాధానం (Word ending in 'తి')</th>
+                        <th style="width:14%;">English</th>
+                        <th style="width:8%;text-align:center;">🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">1.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">భర్తను ఇలా కూడా పిలుస్తారు.</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('పతి', this)" title="Click to hear: పతి">పతి</span> [ ప తి ]</span></td>
+                        <td>Husband (Pati)</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('పతి', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">2.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">ఏదైనా ఎక్కువగా చేస్తే ఇలా అంటారు.</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('అతి', this)" title="Click to hear: అతి">అతి</span> [ అ తి ]</span></td>
+                        <td>Excess (Ati)</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('అతి', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">3.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">సన్యాసి అంటే...</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('యతి', this)" title="Click to hear: యతి">యతి</span> [ య తి ]</span></td>
+                        <td>Ascetic / Monk (Yati)</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('యతి', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">4.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">బుద్ధికి సమాన పదం...</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('మతి', this)" title="Click to hear: మతి">మతి</span> [ మ తి ]</span></td>
+                        <td>Intellect / Mind (Mati)</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('మతి', this)">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION VI: సరైన పదానికి చుట్టండి -->
+    <div class="section-card">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">VI. కింది పదాలలో సరైన పదాన్ని గుర్తించండి (Correct Spelling)</h2>
+                <p class="section-desc">Source: Textbook Page 58</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:6%;text-align:center;">#</th>
+                        <th style="width:48%;">ఇచ్చిన పదాలు (Options)</th>
+                        <th style="width:26%;">సరైన పదం (Correct Word)</th>
+                        <th style="width:12%;">English</th>
+                        <th style="width:8%;text-align:center;">🔊</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">1.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">కొమ / కోమ్మ / <b>కొమ్మ</b> / కుమ్మ</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('కొమ్మ', this)" title="Click to hear: కొమ్మ">కొమ్మ</span></span></td>
+                        <td>Branch</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('కొమ్మ', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">2.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">మధ్యన్నం / <b>మధ్యాహ్నం</b> / మధాయన్నాం / మధ్యన్నం</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('మధ్యాహ్నం', this)" title="Click to hear: మధ్యాహ్నం">మధ్యాహ్నం</span></span></td>
+                        <td>Afternoon</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('మధ్యాహ్నం', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">3.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">పందలు / పడ్లు / <b>పండ్లు</b> / పిండు</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('పండ్లు', this)" title="Click to hear: పండ్లు">పండ్లు</span></span></td>
+                        <td>Fruits</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('పండ్లు', this)">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;font-weight:600;">4.</td>
+                        <td class="telugu-text" style="font-size:1.1rem;">చేట్లు / <b>చెట్లు</b> / చెటులు / చెట్లలు</td>
+                        <td><span class="badge-ans telugu-text" style="font-size:1.15rem;"><span class="t-word" onclick="event.stopPropagation(); speakWord('చెట్లు', this)" title="Click to hear: చెట్లు">చెట్లు</span></span></td>
+                        <td>Trees</td>
+                        <td style="text-align:center;"><button class="speak-btn" onclick="speakTelugu('చెట్లు', this)">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>మాతృశ్రీ డి.ఎ.వి. పబ్లిక్ స్కూల్ – 6వ తరగతి తెలుగు 5. కోతి బుద్ధి వర్క్ షీట్ సంపూర్ణ సమాధానాలు | Telugu4NonTelugu</p>
+    </footer>
+</div>
+
+{JS_COMMON}
+</body>
+</html>
