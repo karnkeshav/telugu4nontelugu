@@ -1213,16 +1213,19 @@
         </div>
 
         <div class="rule-card">
-            <h4>💡 విభక్తి ప్రత్యయాల పట్టిక (Vibhakti Chart - Textbook Page 99, 100):</h4>
+            <h4>💡 విభక్తి ప్రత్యయాల పట్టిక (Traditional Telugu Grammar Reference):</h4>
             <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:8px;margin-top:6px;font-size:0.9rem;">
                 <div><b>1. ప్రథమా:</b> డు, ము, వు, లు</div>
                 <div><b>2. ద్వితీయా:</b> నిన్, నున్, లన్, కూర్చి, గురించి</div>
                 <div><b>3. తృతీయా:</b> చేతన్, చేన్, తోడన్, తోన్</div>
                 <div><b>4. చతుర్థీ:</b> కొఱకున్ (కొరకు), కై</div>
                 <div><b>5. పంచమీ:</b> వలనన్, కంటెన్, పట్టి</div>
-                <div><b>6. షష్ఠీ:</b> కిన్, కున్, యొక్క, లోన్, లోపలన్</div>
-                <div><b>7. సప్తమీ:</b> అందున్, నన్</div>
+                <div><b>6. షష్ఠీ:</b> కిన్, కున్, యొక్క</div>
+                <div><b>7. సప్తమీ:</b> అందున్, నన్, లోన్, లోపలన్</div>
                 <div><b>8. సంబోధనా ప్రథమా:</b> ఓ, ఓయి, ఓరీ, ఓసీ</div>
+            </div>
+            <div style="margin-top:8px;font-size:0.82rem;color:#718096;font-style:italic;">
+                గమనిక: ఈ 8 విభక్తుల పేర్ల పట్టిక సంప్రదాయ తెలుగు వ్యాకరణం ఆధారంగా ఇవ్వబడింది. పాఠ్యపుస్తకం (10వ పాఠం, పేజీ 99) విభక్తి ప్రత్యయపదాలను గుర్తించమని మాత్రమే బోధిస్తుంది — ద్వితీయ/తృతీయ వంటి పేర్లను ఇవ్వదు.
             </div>
         </div>
 
@@ -1399,12 +1402,12 @@
                             <span class="t-word" onclick="event.stopPropagation(); speakWord('శ్రీ', this)" title="Click to hear: శ్రీ">శ్రీ</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కృష్ణుని', this)" title="Click to hear: కృష్ణుని">కృష్ణుని</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చేతిలో', this)" title="Click to hear: చేతిలో">చేతిలో</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('కంసుడు', this)" title="Click to hear: కంసుడు">కంసుడు</span> <span class="t-word" onclick="event.stopPropagation(); speakWord('చనిపోయాడు', this)" title="Click to hear: చనిపోయాడు">చనిపోయాడు</span>.
                             <span class="translit-text">Śrī kṛṣṇuni cētilō kaṁsuḍu canipōyāḍu.</span>
                         </td>
-                        <td style="text-align:center;"><b style="color:#c53030;font-size:1.1rem;">లో</b></td>
+                        <td style="text-align:center;"><b style="color:#c53030;font-size:1.1rem;">చేతిలో (చేత+లో)</b></td>
                         <td>
                             <div class="meaning-text">Kamsa died in the hands of Sri Krishna.</div>
-                            <small style="color:#718096;">Case: Genitive / In</small>
+                            <small style="color:#718096;">Case: Locative ('in the hands of')</small>
                         </td>
-                        <td><span class="badge-ans">షష్ఠీ విభక్తి</span></td>
+                        <td><span class="badge-ans">సప్తమీ విభక్తి</span></td>
                         <td style="text-align:center;">
                             <button class="speak-btn" onclick="speakTelugu('శ్రీ కృష్ణుని చేతిలో కంసుడు చనిపోయాడు.', this)" title="Speak sentence">🔊</button>
                         </td>
@@ -1461,6 +1464,8 @@
     let currentPlaybackRate = 0.9;
     let teluguVoice = null;
     const audioPlayer = document.getElementById('tts-audio');
+    let audioQueue = [];
+    let queueOnEnd = null;
 
     function loadVoices() {
         if (!('speechSynthesis' in window)) return;
@@ -1481,6 +1486,10 @@
 
     function stopAllSpeech() {
         if (window.speechSynthesis) window.speechSynthesis.cancel();
+        audioQueue = [];
+        queueOnEnd = null;
+        audioPlayer.onended = null;
+        audioPlayer.onerror = null;
         audioPlayer.pause();
         audioPlayer.src = '';
         clearSpeakingVisuals();
@@ -1501,77 +1510,84 @@
         if (speaking && elem) elem.classList.add('speaking-word');
     }
 
-    async function playViaProxy(text, onStart, onEnd) {
-        try {
-            onStart && onStart();
-            const resp = await fetch('https://api.soundoftext.com/sounds', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ engine: 'Google', data: { text: text, voice: 'te' } })
-            });
-            if (!resp.ok) throw new Error('sot_request_failed');
-            const data = await resp.json();
-            if (!data.success || !data.id) throw new Error('sot_no_id');
-
-            for (let attempt = 0; attempt < 8; attempt++) {
-                await new Promise(r => setTimeout(r, 600));
-                const statusResp = await fetch('https://api.soundoftext.com/sounds/' + data.id);
-                if (!statusResp.ok) continue;
-                const statusData = await statusResp.json();
-                if (statusData.status === 'Done' && statusData.location) {
-                    audioPlayer.src = statusData.location;
-                    audioPlayer.playbackRate = currentPlaybackRate;
-                    audioPlayer.onended = () => { onEnd && onEnd(); clearSpeakingVisuals(); };
-                    audioPlayer.onerror = () => { onEnd && onEnd(); clearSpeakingVisuals(); };
-                    await audioPlayer.play();
-                    return;
-                }
-                if (statusData.status === 'Error') throw new Error('sot_error');
+    // Splits long Telugu text into <=190 char chunks (Google TTS endpoint limit),
+    // breaking on sentence/clause boundaries where possible.
+    function chunkText(text) {
+        const maxLen = 190;
+        if (text.length <= maxLen) return [text];
+        const parts = text.split(/([.!?।,]\s*)/);
+        const chunks = [];
+        let cur = '';
+        for (const part of parts) {
+            if ((cur + part).length > maxLen && cur.length > 0) {
+                chunks.push(cur.trim());
+                cur = part;
+            } else {
+                cur += part;
             }
-            throw new Error('sot_timeout');
-        } catch (e) {
-            console.warn('Fallback audio failed:', e);
-            onEnd && onEnd();
-            clearSpeakingVisuals();
         }
+        if (cur.trim()) chunks.push(cur.trim());
+        return chunks.length ? chunks : [text.slice(0, maxLen)];
+    }
+
+    function playQueue(onEnd) {
+        if (audioQueue.length === 0) {
+            clearSpeakingVisuals();
+            onEnd && onEnd();
+            return;
+        }
+        const next = audioQueue.shift();
+        const url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=te&q=' + encodeURIComponent(next);
+        audioPlayer.src = url;
+        audioPlayer.playbackRate = currentPlaybackRate;
+        audioPlayer.onended = () => playQueue(onEnd);
+        audioPlayer.onerror = () => {
+            console.warn('TTS audio chunk failed to load:', next);
+            playQueue(onEnd);
+        };
+        audioPlayer.play().catch(err => {
+            console.warn('Audio play blocked/failed:', err);
+            playQueue(onEnd);
+        });
+    }
+
+    function playViaGoogleTTS(text, onStart, onEnd) {
+        onStart && onStart();
+        audioQueue = chunkText(text);
+        playQueue(onEnd);
+    }
+
+    function speakGeneric(text, onStart, onEnd) {
+        stopAllSpeech();
+        loadVoices();
+
+        if ('speechSynthesis' in window && teluguVoice) {
+            onStart && onStart();
+            const utt = new SpeechSynthesisUtterance(text);
+            utt.voice = teluguVoice;
+            utt.lang = 'te-IN';
+            utt.rate = currentPlaybackRate;
+            utt.onend = () => { clearSpeakingVisuals(); onEnd && onEnd(); };
+            utt.onerror = () => {
+                console.warn('Native speechSynthesis failed, falling back to Google TTS.');
+                playViaGoogleTTS(text, onStart, onEnd);
+            };
+            window.speechSynthesis.speak(utt);
+            return;
+        }
+
+        // No Telugu system voice available (common on Windows without the
+        // Telugu language pack, or on browsers with no local Telugu voice) -
+        // fall back to Google Translate's TTS endpoint, which needs no API key.
+        playViaGoogleTTS(text, onStart, onEnd);
     }
 
     window.speakWord = function(word, elem) {
-        stopAllSpeech();
-        setWordState(elem, true);
-
-        if ('speechSynthesis' in window && teluguVoice) {
-            loadVoices();
-            const utt = new SpeechSynthesisUtterance(word);
-            utt.voice = teluguVoice;
-            utt.lang = 'te-IN';
-            utt.rate = currentPlaybackRate;
-            utt.onend = () => clearSpeakingVisuals();
-            utt.onerror = () => { clearSpeakingVisuals(); playViaProxy(word, () => setWordState(elem, true), () => clearSpeakingVisuals()); };
-            window.speechSynthesis.speak(utt);
-            return;
-        }
-
-        playViaProxy(word, () => setWordState(elem, true), () => clearSpeakingVisuals());
+        speakGeneric(word, () => setWordState(elem, true), () => clearSpeakingVisuals());
     };
 
     window.speakTelugu = function(sentence, btn) {
-        stopAllSpeech();
-        setBtnState(btn, true);
-
-        if ('speechSynthesis' in window && teluguVoice) {
-            loadVoices();
-            const utt = new SpeechSynthesisUtterance(sentence);
-            utt.voice = teluguVoice;
-            utt.lang = 'te-IN';
-            utt.rate = currentPlaybackRate;
-            utt.onend = () => clearSpeakingVisuals();
-            utt.onerror = () => { clearSpeakingVisuals(); playViaProxy(sentence, () => setBtnState(btn, true), () => clearSpeakingVisuals()); };
-            window.speechSynthesis.speak(utt);
-            return;
-        }
-
-        playViaProxy(sentence, () => setBtnState(btn, true), () => clearSpeakingVisuals());
+        speakGeneric(sentence, () => setBtnState(btn, true), () => clearSpeakingVisuals());
     };
 </script>
 

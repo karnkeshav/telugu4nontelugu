@@ -278,10 +278,10 @@
                     <tr>
                         <td style="text-align:center;font-weight:600;">2</td>
                         <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('క్కచురకూ', this)" title="Click to hear: క్కచురకూ">క్కచురకూ</span></td>
-                        <td class="telugu-text" style="font-size:1.15rem;font-weight:700;color:#22543d;"><span class="badge-ans"><span class="t-word" onclick="event.stopPropagation(); speakWord('కూరచుక్క', this)" title="Click to hear: కూరచుక్క">కూరచుక్క</span></span></td>
-                        <td style="color:#4a5568;">A type of leafy vegetable (Chukkakura)</td>
+                        <td class="telugu-text" style="font-size:1.15rem;font-weight:700;color:#22543d;"><span class="badge-ans"><span class="t-word" onclick="event.stopPropagation(); speakWord('చుక్కకూర', this)" title="Click to hear: చుక్కకూర">చుక్కకూర</span></span></td>
+                        <td style="color:#4a5568;">A type of leafy vegetable (Chukkakura / Amaranth greens)</td>
                         <td style="text-align:center;">
-                            <button class="speak-btn" onclick="speakTelugu('కూరచుక్క', this)">🔊</button>
+                            <button class="speak-btn" onclick="speakTelugu('చుక్కకూర', this)">🔊</button>
                         </td>
                     </tr>
 
@@ -307,7 +307,7 @@
 
                     <tr>
                         <td style="text-align:center;font-weight:600;">5</td>
-                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('తుమ్మకబ', this)" title="Click to hear: తుమ్మకబ">తుమ్మకబ</span></td>
+                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('తుమ్మకట', this)" title="Click to hear: తుమ్మకట">తుమ్మకట</span></td>
                         <td class="telugu-text" style="font-size:1.15rem;font-weight:700;color:#22543d;"><span class="badge-ans"><span class="t-word" onclick="event.stopPropagation(); speakWord('బతుకమ్మ', this)" title="Click to hear: బతుకమ్మ">బతుకమ్మ</span></span></td>
                         <td style="color:#4a5568;">Bathukamma (Telangana floral festival)</td>
                         <td style="text-align:center;">
@@ -317,7 +317,7 @@
 
                     <tr>
                         <td style="text-align:center;font-weight:600;">6</td>
-                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('త్తిరకోమీ', this)" title="Click to hear: త్తిరకోమీ">త్తిరకోమీ</span></td>
+                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('త్తిరకొమీ', this)" title="Click to hear: త్తిరకొమీ">త్తిరకొమీ</span></td>
                         <td class="telugu-text" style="font-size:1.15rem;font-weight:700;color:#22543d;"><span class="badge-ans"><span class="t-word" onclick="event.stopPropagation(); speakWord('కొత్తిమీర', this)" title="Click to hear: కొత్తిమీర">కొత్తిమీర</span></span></td>
                         <td style="color:#4a5568;">Coriander leaves</td>
                         <td style="text-align:center;">
@@ -337,7 +337,7 @@
 
                     <tr>
                         <td style="text-align:center;font-weight:600;">8</td>
-                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('మేబుకజ్జి', this)" title="Click to hear: మేబుకజ్జి">మేబుకజ్జి</span></td>
+                        <td class="telugu-text" style="font-size:1.15rem;color:#c53030;"><span class="t-word" onclick="event.stopPropagation(); speakWord('మేటుకజ్జి', this)" title="Click to hear: మేటుకజ్జి">మేటుకజ్జి</span></td>
                         <td class="telugu-text" style="font-size:1.15rem;font-weight:700;color:#22543d;"><span class="badge-ans"><span class="t-word" onclick="event.stopPropagation(); speakWord('బుజ్జిమేక', this)" title="Click to hear: బుజ్జిమేక">బుజ్జిమేక</span></span></td>
                         <td style="color:#4a5568;">Little cute goat</td>
                         <td style="text-align:center;">
@@ -529,6 +529,138 @@
     </footer>
 </div>
 
-{JS_COMMON}
+<audio id="tts-audio" style="display:none;"></audio>
+
+<script>
+    let currentPlaybackRate = 0.9;
+    let teluguVoice = null;
+    const audioPlayer = document.getElementById('tts-audio');
+    let audioQueue = [];
+    let queueOnEnd = null;
+
+    function loadVoices() {
+        if (!('speechSynthesis' in window)) return;
+        const voices = window.speechSynthesis.getVoices();
+        teluguVoice = voices.find(v => v.lang === 'te-IN' || v.lang.startsWith('te')) || null;
+    }
+
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices();
+    }
+
+    function setPlaybackRate(rate, btn) {
+        currentPlaybackRate = rate;
+        document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+    }
+
+    function stopAllSpeech() {
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+        audioQueue = [];
+        queueOnEnd = null;
+        audioPlayer.onended = null;
+        audioPlayer.onerror = null;
+        audioPlayer.pause();
+        audioPlayer.src = '';
+        clearSpeakingVisuals();
+    }
+
+    function clearSpeakingVisuals() {
+        document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
+        document.querySelectorAll('.t-word').forEach(w => w.classList.remove('speaking-word'));
+    }
+
+    function setBtnState(btn, speaking) {
+        clearSpeakingVisuals();
+        if (speaking && btn) btn.classList.add('speaking');
+    }
+
+    function setWordState(elem, speaking) {
+        clearSpeakingVisuals();
+        if (speaking && elem) elem.classList.add('speaking-word');
+    }
+
+    // Splits long Telugu text into <=190 char chunks (Google TTS endpoint limit),
+    // breaking on sentence/clause boundaries where possible.
+    function chunkText(text) {
+        const maxLen = 190;
+        if (text.length <= maxLen) return [text];
+        const parts = text.split(/([.!?।,]\s*)/);
+        const chunks = [];
+        let cur = '';
+        for (const part of parts) {
+            if ((cur + part).length > maxLen && cur.length > 0) {
+                chunks.push(cur.trim());
+                cur = part;
+            } else {
+                cur += part;
+            }
+        }
+        if (cur.trim()) chunks.push(cur.trim());
+        return chunks.length ? chunks : [text.slice(0, maxLen)];
+    }
+
+    function playQueue(onEnd) {
+        if (audioQueue.length === 0) {
+            clearSpeakingVisuals();
+            onEnd && onEnd();
+            return;
+        }
+        const next = audioQueue.shift();
+        const url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=te&q=' + encodeURIComponent(next);
+        audioPlayer.src = url;
+        audioPlayer.playbackRate = currentPlaybackRate;
+        audioPlayer.onended = () => playQueue(onEnd);
+        audioPlayer.onerror = () => {
+            console.warn('TTS audio chunk failed to load:', next);
+            playQueue(onEnd);
+        };
+        audioPlayer.play().catch(err => {
+            console.warn('Audio play blocked/failed:', err);
+            playQueue(onEnd);
+        });
+    }
+
+    function playViaGoogleTTS(text, onStart, onEnd) {
+        onStart && onStart();
+        audioQueue = chunkText(text);
+        playQueue(onEnd);
+    }
+
+    function speakGeneric(text, onStart, onEnd) {
+        stopAllSpeech();
+        loadVoices();
+
+        if ('speechSynthesis' in window && teluguVoice) {
+            onStart && onStart();
+            const utt = new SpeechSynthesisUtterance(text);
+            utt.voice = teluguVoice;
+            utt.lang = 'te-IN';
+            utt.rate = currentPlaybackRate;
+            utt.onend = () => { clearSpeakingVisuals(); onEnd && onEnd(); };
+            utt.onerror = () => {
+                console.warn('Native speechSynthesis failed, falling back to Google TTS.');
+                playViaGoogleTTS(text, onStart, onEnd);
+            };
+            window.speechSynthesis.speak(utt);
+            return;
+        }
+
+        // No Telugu system voice available (common on Windows without the
+        // Telugu language pack, or on browsers with no local Telugu voice) -
+        // fall back to Google Translate's TTS endpoint, which needs no API key.
+        playViaGoogleTTS(text, onStart, onEnd);
+    }
+
+    window.speakWord = function(word, elem) {
+        speakGeneric(word, () => setWordState(elem, true), () => clearSpeakingVisuals());
+    };
+
+    window.speakTelugu = function(sentence, btn) {
+        speakGeneric(sentence, () => setBtnState(btn, true), () => clearSpeakingVisuals());
+    };
+</script>
+
 </body>
 </html>
