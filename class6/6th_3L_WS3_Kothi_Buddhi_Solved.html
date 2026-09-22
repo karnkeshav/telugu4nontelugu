@@ -544,6 +544,8 @@
     let voicesReady = false;
     const audioPlayer = document.getElementById('tts-audio');
     const ttsAudioCache = new Map();
+    let audioQueue = [];
+    let isPlayingQueue = false;
     let activeSafetyTimer = null;
 
     function loadVoices() {
@@ -591,6 +593,8 @@
         if (window.speechSynthesis) {
             try { window.speechSynthesis.cancel(); } catch (_) {}
         }
+        audioQueue = [];
+        isPlayingQueue = false;
         if (audioPlayer) {
             audioPlayer.onended = null;
             audioPlayer.onerror = null;
@@ -615,62 +619,101 @@
         if (speaking && elem) elem.classList.add('speaking-word');
     }
 
-    async function playViaCloudTTS(text, onStart, onEnd) {
-        if (!audioPlayer) {
+    // Splits text into chunks <= 130 chars on punctuation boundaries for Google TTS
+    function chunkText(text, maxLen = 130) {
+        if (text.length <= maxLen) return [text];
+        const parts = text.split(/([.!?।,]\s*)/);
+        const chunks = [];
+        let curr = '';
+        for (const p of parts) {
+            if ((curr + p).length > maxLen && curr.length > 0) {
+                chunks.push(curr.trim());
+                curr = p;
+            } else {
+                curr += p;
+            }
+        }
+        if (curr.trim()) chunks.push(curr.trim());
+        return chunks.length ? chunks : [text.slice(0, maxLen)];
+    }
+
+    // Playback queue for multi-chunk sentences
+    function playAudioQueue(onEnd, onError) {
+        if (audioQueue.length === 0) {
+            isPlayingQueue = false;
             clearSpeakingVisuals();
             onEnd && onEnd();
             return;
         }
 
+        isPlayingQueue = true;
+        const nextChunk = audioQueue.shift();
+        const url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=te&q=' + encodeURIComponent(nextChunk);
+        
+        audioPlayer.src = url;
+        audioPlayer.playbackRate = currentPlaybackRate || 0.9;
+        
+        audioPlayer.onended = () => {
+            playAudioQueue(onEnd, onError);
+        };
+        
+        audioPlayer.onerror = () => {
+            console.warn('Direct stream failed for chunk, trying SoundOfText fallback:', nextChunk);
+            playViaSoundOfText(nextChunk, () => {
+                playAudioQueue(onEnd, onError);
+            }, () => {
+                playAudioQueue(onEnd, onError);
+            });
+        };
+
+        const playPromise = audioPlayer.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(err => {
+                console.warn('audioPlayer.play() exception:', err);
+                playViaSoundOfText(nextChunk, () => {
+                    playAudioQueue(onEnd, onError);
+                }, () => {
+                    clearSpeakingVisuals();
+                    showToast('⚠️ ఆడియో ప్లే కాలేదు (Audio playback blocked)', 3000);
+                    onError && onError();
+                });
+            });
+        }
+    }
+
+    async function playViaSoundOfText(text, onEnd, onError) {
         try {
             let audioUrl = ttsAudioCache.get(text);
-
             if (!audioUrl) {
                 const resp = await fetch('https://api.soundoftext.com/sounds', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ engine: 'Google', data: { text: text, voice: 'te' } })
                 });
-                if (!resp.ok) throw new Error('Cloud TTS request failed');
+                if (!resp.ok) throw new Error('SOT failed');
                 const data = await resp.json();
-                if (!data || !data.success || !data.id) throw new Error('Cloud TTS no sound ID');
-
+                if (!data.success || !data.id) throw new Error('SOT error');
                 const soundId = data.id;
-                for (let attempt = 0; attempt < 8; attempt++) {
-                    await new Promise(r => setTimeout(r, 250 + attempt * 100));
-                    const statusResp = await fetch('https://api.soundoftext.com/sounds/' + soundId);
-                    if (!statusResp.ok) continue;
-                    const statusData = await statusResp.json();
-                    if (statusData.status === 'Done' && statusData.location) {
-                        audioUrl = statusData.location;
+                for (let i = 0; i < 8; i++) {
+                    await new Promise(r => setTimeout(r, 200 + i * 100));
+                    const sResp = await fetch('https://api.soundoftext.com/sounds/' + soundId);
+                    if (!sResp.ok) continue;
+                    const sData = await sResp.json();
+                    if (sData.status === 'Done' && sData.location) {
+                        audioUrl = sData.location;
                         ttsAudioCache.set(text, audioUrl);
                         break;
                     }
-                    if (statusData.status === 'Error') throw new Error('Cloud TTS generation error');
                 }
             }
-
-            if (!audioUrl) throw new Error('Cloud TTS timed out');
-
-            onStart && onStart();
+            if (!audioUrl) throw new Error('SOT timeout');
             audioPlayer.src = audioUrl;
             audioPlayer.playbackRate = currentPlaybackRate || 0.9;
-            audioPlayer.onended = () => {
-                clearSpeakingVisuals();
-                onEnd && onEnd();
-            };
-            audioPlayer.onerror = () => {
-                clearSpeakingVisuals();
-                showToast('⚠️ ఆడియో లోడ్ కాలేదు (Audio failed to load)', 3000);
-                onEnd && onEnd();
-            };
+            audioPlayer.onended = () => { onEnd && onEnd(); };
+            audioPlayer.onerror = () => { onError && onError(); };
             await audioPlayer.play();
-
-        } catch (err) {
-            console.warn('Cloud TTS error:', err);
-            clearSpeakingVisuals();
-            showToast('⚠️ ఆడియో అందుబాటులో లేదు - ఇంటర్నెట్ తనిఖీ చేయండి (Audio unavailable - check internet)', 3500);
-            onEnd && onEnd();
+        } catch (e) {
+            onError && onError();
         }
     }
 
@@ -702,8 +745,9 @@
                 if (finished) return;
                 finished = true;
                 if (activeSafetyTimer) { clearTimeout(activeSafetyTimer); activeSafetyTimer = null; }
-                console.warn('Web Speech error, falling back to Cloud TTS:', e);
-                playViaCloudTTS(cleanText, onStart, onEnd);
+                console.warn('Web Speech error, falling back to direct stream:', e);
+                audioQueue = chunkText(cleanText);
+                playAudioQueue(onEnd, () => clearSpeakingVisuals());
             };
 
             const timeoutMs = Math.max(3500, cleanText.length * 160);
@@ -721,8 +765,10 @@
             }
         }
 
-        // Tier 2: Cloud Google TTS proxy (supports all devices/browsers with authentic Telugu audio)
-        playViaCloudTTS(cleanText, onStart, onEnd);
+        // Tier 2: Direct Google Cloud Telugu Stream with Chunking (Instant synchronous playback)
+        onStart && onStart();
+        audioQueue = chunkText(cleanText);
+        playAudioQueue(onEnd, () => clearSpeakingVisuals());
     }
 
     window.speakWord = function(word, elem) {
